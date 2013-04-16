@@ -9,5 +9,12 @@ package Model;
  * @author jack
  */
 public class Kunde {
+    private String navn;
+    private String adresse;
+    private int postNr;
+    private String by;
+    private int tlfNr;
+    private boolean bedemand;
+    
     
 }
