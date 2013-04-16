@@ -11,7 +11,7 @@ package Model;
 public class Produkt {
     private int produktID;
     private String produktType;
-    private Double salgsPris;
+    private double salgsPris;
     private String dekoration;
     private String inskriptionsLinje;
     

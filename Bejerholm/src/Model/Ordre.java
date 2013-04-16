@@ -17,8 +17,8 @@ public class Ordre {
     private String skrifttype;
     private int skriftstørrelse;
     private String bemærkninger;
-    private Double totalPris;
-    private Double MILJØ_AFGIFT;
-    private Double moms;
+    private double totalPris;
+    private double MILJØ_AFGIFT;
+    private double moms;
     
 }
