@@ -1,15 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Database;
 
 import java.sql.*;
 
-/**
- *
- * @author Mathias
- */
 public class DBConnection {
 
     private Connection conn;
@@ -38,8 +30,7 @@ public class DBConnection {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(conString, user, pass);
             state = conn.createStatement();
-
-            System.out.println("Det fungerer");
+            System.out.println(this.getClass().getName() + " siger det fungerer!");
 
         } catch (SQLException ex) {
             result = false;
@@ -74,59 +65,7 @@ public class DBConnection {
         }
     }
 
-    public Statement getState() {
-        return state;
-    }
-
-    public void setState(Statement state) {
-        this.state = state;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public String getPort() {
-        return port;
-    }
-
-    public void setPort(String port) {
-        this.port = port;
-    }
-
-    public String getDatabase() {
-        return database;
-    }
-
-    public void setDatabase(String database) {
-        this.database = database;
-    }
-
     public boolean isConnected() {
         return connected;
-    }
-
-    void databaseExecute(String string) {
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 }
