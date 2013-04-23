@@ -6,7 +6,6 @@ package model;
  */
 public class Kunde {
 
-    private int kundeID;
     private String fNavn;
     private String eNavn;
     private String adresse;
@@ -15,11 +14,9 @@ public class Kunde {
     private int tlfNr;
     private int mobil;
 
-    //denne constructor skal checke om der er nogle kunder med det navn og
-    //tlf nr, og returnere liste med infoer på matches
-    public Kunde(String fNavn, String eNavn, int tlfNr){
-        this.fNavn = fNavn;
-        this.eNavn = eNavn;
+    //denne constructor skal checke om der er nogle kunder med det
+    //tlf nr, og returnere infoer på matches
+    public Kunde(int tlfNr){
         this.tlfNr = tlfNr;
         hentMuligeKunderFraDatabase();
     }
