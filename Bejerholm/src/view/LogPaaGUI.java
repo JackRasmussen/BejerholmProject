@@ -158,10 +158,10 @@ public LogPaaGUI() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
-        dbconnect = new DBConnection(username.getText(), password.getText(),
-            hostname.getText(), port.getText(), database.getText());
-        if (dbconnect.connection()){
-        }
+//        dbconnect = new DBConnection(username.getText(), password.getText(),
+//            hostname.getText(), port.getText(), database.getText());
+//        if (dbconnect.connection()){
+//        }
     }//GEN-LAST:event_login1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
