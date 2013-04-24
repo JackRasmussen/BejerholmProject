@@ -13,7 +13,8 @@ public class DBConnection {
     private String database;
     private boolean connected;
 
-    public DBConnection(String user, String pass, String host, String port, String database) {
+    public DBConnection() {
+        //test
         connected = false;
         this.user = user;
         this.pass = pass;
