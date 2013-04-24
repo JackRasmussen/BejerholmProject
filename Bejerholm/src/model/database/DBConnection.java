@@ -16,11 +16,11 @@ public class DBConnection {
     public DBConnection() {
         //test
         connected = false;
-        this.user = user;
-        this.pass = pass;
-        this.host = host;
-        this.port = port;
-        this.database = database;
+        this.user = "root";
+        this.pass = "";
+        this.host = "localhost";
+        this.port = "3306";
+        this.database = "Bejerholm";
         connection();
     }
 

@@ -14,7 +14,7 @@ public class Handler {
 
         ResultSet rs = dbConnection.getResultSetWithCommand(command);
 
-        dbConnection.closeConnection();
+        //dbConnection.closeConnection(); 
         return rs;
     }
 

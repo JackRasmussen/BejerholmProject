@@ -26,14 +26,20 @@ public class Kunde {
         this.tlfNr = tlfNr;
     }
 
-    private void hentMuligeKunderFraDatabase() throws SQLException {
+    public void hentMuligeKunderFraDatabase() throws SQLException {
         ResultSet rs = handler.soegKunder(tlfNr);
-        while (rs.next()) {
+        if (rs.next()) {
             fNavn = rs.getString("fNavn");
             eNavn = rs.getString("eNavn");
             adresse = rs.getString("adresse");
             postNr = rs.getInt("postNr");
             by = rs.getString("byNavn");
+        } else {
+            fNavn = "Kunde findes ikke";
+            eNavn = "Kunde findes ikke";
+            adresse = "Kunde findes ikke";
+            postNr = 0;
+            by = "Kunde findes ikke";
         }
         rs.close();
     }
@@ -53,14 +59,17 @@ public class Kunde {
 
     public void redigerKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by) throws SQLException {
         ResultSet rs = handler.soegKunder(tlfNr);
-        if (!rs.getString("fNavn").equals(fNavn)
-                || !rs.getString("eNavn").equals(eNavn)
-                || !rs.getString("adresse").equals(adresse)
-                || rs.getInt("postNr") != postNr
-                || !rs.getString("byNavn").equals(by)) {
+        if (rs.next()) {
+            if (!rs.getString("fNavn").equals(fNavn)
+                    || !rs.getString("eNavn").equals(eNavn)
+                    || !rs.getString("adresse").equals(adresse)
+                    || rs.getInt("postNr") != postNr
+                    || !rs.getString("byNavn").equals(by)) {
 
-            handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by);
+                handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by);
+            }
         }
+
         rs.close();
     }
 
