@@ -8,9 +8,10 @@ import java.sql.Statement;
 public class Handler {
     
     Connection conn;
+    DBConnection dbConnection;
 
-    public Handler(Connection conn) {
-        this.conn = conn;
+    public Handler() {
+         dbConnection = new DBConnection();
     }  
     
     public ResultSet soegKunder(int tlfNr) throws SQLException{
@@ -23,6 +24,10 @@ public class Handler {
         
         stmt.close();
         return rs;
+    }
+    
+    public void indsaetKunde(){
+        
     }
 }
 

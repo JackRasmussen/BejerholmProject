@@ -54,12 +54,12 @@ public class DBConnection {
         state.execute(sql);
     }
 
-    public ResultSet getResult(String sql) throws SQLException {
+    public ResultSet getResultSet(String sql) throws SQLException {
         ResultSet rs = state.executeQuery(sql);
         return rs;
     }
 
-    public void close() {
+    public void closeConnection() {
         try {
             conn.close();
         } catch (SQLException ex) {
