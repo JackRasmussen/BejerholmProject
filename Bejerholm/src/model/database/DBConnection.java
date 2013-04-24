@@ -49,18 +49,23 @@ public class DBConnection {
         connected = result;
         return result;
     }
+    
+    public Connection getConn(){
+        return conn;
+    }
 
     public void execute(String sql) throws SQLException {
         state.execute(sql);
     }
 
-    public ResultSet getResultSet(String sql) throws SQLException {
+    public ResultSet getResultSetWithCommand(String sql) throws SQLException {
         ResultSet rs = state.executeQuery(sql);
         return rs;
     }
 
     public void closeConnection() {
         try {
+            state.close();
             conn.close();
         } catch (SQLException ex) {
         }
