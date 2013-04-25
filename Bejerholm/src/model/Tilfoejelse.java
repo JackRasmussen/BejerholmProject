@@ -2,7 +2,6 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import model.database.Handler;
 
 /**
@@ -12,40 +11,48 @@ import model.database.Handler;
 public class Tilfoejelse {
     
     private Handler handler;
+    private int tilfoejelsesID;
+    private String tilfoejelsesType;
+    private double tilfoejelsesPris;
     
-    public Tilfoejelse(){
+    public Tilfoejelse(String tilfoejelsesType) throws SQLException{
         handler = new Handler();
+        this.tilfoejelsesType = tilfoejelsesType;
+        hentTilfoejelsesInfo();
     }
     
-    public ArrayList<Integer> hentListeOverTilfoejelser() throws SQLException{
-        ResultSet rs = handler.hentListeOverTilfoejelserFraDatabase();
-        ArrayList<Integer> listeAfTilfoejelser = new ArrayList<>();
-        
-        while (rs.next()){
-            listeAfTilfoejelser.add(rs.getInt("tilfoejelsesID"));
+    private void hentTilfoejelsesInfo() throws SQLException{
+        ResultSet rs = handler.hentTilfoejelseFraDatabase(tilfoejelsesType);
+        if (rs.next()) {
+            this.tilfoejelsesID = rs.getInt("tilfoejelsesID");
+            this.tilfoejelsesPris = rs.getDouble("pris");
+        } else {
+            this.tilfoejelsesID = 0;
+            this.tilfoejelsesPris = 0;
         }
-        
-        return listeAfTilfoejelser;
     }
     
-    public String hentTilfoejelsesType(int tilfoejelsesID) throws SQLException{
-        return handler.hentTilfoejelsesTypeFraDatabase(tilfoejelsesID);
+    public void indsaetTilfoejelseIDatabase(int tilfoejelsesID, double pris) throws SQLException{
+        handler.indsaetTilfoejelseIDatabase(tilfoejelsesID, tilfoejelsesType, pris);
     }
     
-    public int hentTilfoejelsesPris(int tilfoejelsesID) throws SQLException{
-        return handler.hentTilfoejelsesPrisFraDatabase(tilfoejelsesID);
-    }
-    
-    public void indsaetNyTilfoejelse(int tilfoejelsesID, String type, double pris) throws SQLException{
-        handler.indsaetTilfoejelseIDatabase(tilfoejelsesID, type, pris);
-    }
-    
-    public void redigerTilfoejelse(int tilfoejelsesID, String type, double pris) throws SQLException{
+    public void redigerTilfoejelse(String type, double pris) throws SQLException{
         handler.redigerTilfoejelseIDatabase(tilfoejelsesID, type, pris);
     }
     
-    public void sletTilfoejelse(int tilfoejelsesID) throws SQLException{
+    public void sletTilfoejelse() throws SQLException{
         handler.sletTilfoejelseFraDatabase(tilfoejelsesID);
     }
-    
+
+    public int getTilfoejelsesID() {
+        return tilfoejelsesID;
+    }
+
+    public String getTilfoejelsesType() {
+        return tilfoejelsesType;
+    }
+
+    public double getTilfoejelsesPris() {
+        return tilfoejelsesPris;
+    }
 }

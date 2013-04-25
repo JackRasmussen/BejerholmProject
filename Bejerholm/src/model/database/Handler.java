@@ -13,9 +13,7 @@ public class Handler {
 
     public ResultSet soegKunder(int tlfNr) throws SQLException {
         String command = ("select * from Kunde where tlfNr = " + tlfNr + ";");
-
         ResultSet rs = dBConnection.getResultSetWithCommand(command);
-
         return rs;
     }
 
@@ -34,6 +32,11 @@ public class Handler {
         String command = ("update Kunde set fNavn = '" + nyFNavn + "', eNavn = '"
                 + nyENavn + "', adresse = '" + nyAdresse + "', postNr = " + nyPostNr
                 + ", byNavn = '" + nyByNavn + "' where tlfNr = " + tlfNr + ";");
+        dBConnection.execute(command);
+    }
+    
+    public void redigerBedemand(int cvr, String firmaNavn, int tlfNr) throws SQLException{
+        String command = ("update Bedemand set firmaNavn = '" + firmaNavn + "', tlfNr = " + tlfNr + " where cvr = " + cvr + ";");
         dBConnection.execute(command);
     }
 
@@ -88,7 +91,7 @@ public class Handler {
         dBConnection.execute(command);
     }
 
-    public ResultSet findProduktIDViaNavn(String produktNavn) throws SQLException {
+    public ResultSet findProduktViaNavn(String produktNavn) throws SQLException {
         String command = ("select * from Produkt where produktNavn like '%" + produktNavn + "%';");
         ResultSet rs = dBConnection.getResultSetWithCommand(command);
         return rs;
@@ -135,29 +138,8 @@ public class Handler {
         dBConnection.execute(command);
     }
 
-    public int hentTilfoejelsesPrisFraDatabase(int tilfoejelsesID) throws SQLException {
-        String command = ("select *  from Tilfoejelse where tilfoejelsesID = " + tilfoejelsesID + ";");
-        ResultSet rs = dBConnection.getResultSetWithCommand(command);
-        int pris = 0;
-        if (rs.next()) {
-        pris = rs.getInt("pris");
-        }
-        
-        return pris;
-    }
-
-    public String hentTilfoejelsesTypeFraDatabase(int tilfoejelsesID) throws SQLException {
-        String command = ("select * from Tilfoejelse where tilfoejelsesID = " + tilfoejelsesID + ";");
-        ResultSet rs = dBConnection.getResultSetWithCommand(command);
-        String opgaveType = null;
-        if (rs.next()) {
-            opgaveType = rs.getString("opgaveType");
-        }
-        return opgaveType;
-    }
-
-    public ResultSet hentListeOverTilfoejelserFraDatabase() throws SQLException {
-        String command = ("select * from Tilfoejelse;");
+    public ResultSet hentTilfoejelseFraDatabase(String tilfoejelsesType) throws SQLException {
+        String command = ("select * from Tilfoejelse where tilfoejelsesType = '" + tilfoejelsesType + "';");
         ResultSet rs = dBConnection.getResultSetWithCommand(command);
 
         return rs;

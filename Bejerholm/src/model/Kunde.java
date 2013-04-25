@@ -19,27 +19,26 @@ public class Kunde {
     private int mobil;
     Handler handler;
 
-    //denne constructor skal checke om der er nogle kunder med det
-    //tlf nr, og returnere infoer på matches
-    public Kunde(int tlfNr) {
-        handler = new Handler();
+    public Kunde(int tlfNr) throws SQLException {
+        this.handler = new Handler();
         this.tlfNr = tlfNr;
+        hentMuligKundeFraDatabase();
     }
 
-    public void hentMuligeKunderFraDatabase() throws SQLException {
+    private void hentMuligKundeFraDatabase() throws SQLException {
         ResultSet rs = handler.soegKunder(tlfNr);
         if (rs.next()) {
-            fNavn = rs.getString("fNavn");
-            eNavn = rs.getString("eNavn");
-            adresse = rs.getString("adresse");
-            postNr = rs.getInt("postNr");
-            by = rs.getString("byNavn");
+            this.fNavn = rs.getString("fNavn");
+            this.eNavn = rs.getString("eNavn");
+            this.adresse = rs.getString("adresse");
+            this.postNr = rs.getInt("postNr");
+            this.by = rs.getString("byNavn");
         } else {
-            fNavn = "Kunde findes ikke";
-            eNavn = "Kunde findes ikke";
-            adresse = "Kunde findes ikke";
-            postNr = 0;
-            by = "Kunde findes ikke";
+            this.fNavn = "Kunde findes ikke";
+            this.eNavn = "Kunde findes ikke";
+            this.adresse = "Kunde findes ikke";
+            this.postNr = 0;
+            this.by = "Kunde findes ikke";
         }
         rs.close();
     }
@@ -50,7 +49,7 @@ public class Kunde {
         this.adresse = adresse;
         this.postNr = postNr;
         this.by = by;
-        handler.indsaetKunde(tlfNr, this.fNavn, this.eNavn, this.adresse, this.postNr, this.eNavn);
+        handler.indsaetKunde(tlfNr, fNavn, eNavn, adresse, postNr, eNavn);
     }
 
     public void sletKundeFraDatabase() throws SQLException {
@@ -58,23 +57,7 @@ public class Kunde {
     }
 
     public void redigerKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by) throws SQLException {
-        ResultSet rs = handler.soegKunder(tlfNr);
-        if (rs.next()) {
-            if (!rs.getString("fNavn").equals(fNavn)
-                    || !rs.getString("eNavn").equals(eNavn)
-                    || !rs.getString("adresse").equals(adresse)
-                    || rs.getInt("postNr") != postNr
-                    || !rs.getString("byNavn").equals(by)) {
-
-                handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by);
-            }
-        }
-
-        rs.close();
-    }
-    
-    public void finalizeThisKunde(){
-        handler.finalizeThisHandler();
+        handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by);
     }
 
     public String getfNavn() {
