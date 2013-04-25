@@ -179,6 +179,23 @@ public class Handler {
         String command = ("delete from Provisionsseddel where provisionsID = " + provisionsID + ";");
         dBConnection.execute(command);
     }
+    
+    public ResultSet hentKontoudtogFraDatabase(int kontoudtogsID) throws SQLException{
+        String command = ("select * from Kontoudtog where kontoudtogsID = " + kontoudtogsID + ";");
+        ResultSet rs = dBConnection.getResultSetWithCommand(command);
+        return rs;
+    }
+    
+    public void sletKontoudtogFraDatabase(int kontoudtogsID) throws SQLException{
+        String command = ("delete from Kontoudtog where kontoudtogsID = " + kontoudtogsID + ";");
+        dBConnection.execute(command);
+    }
+    
+    public void indsaetKontoudtogIDatabase(int kontoudtogsID, Date kontoudtogsDato, String vedroerende, String ordreLinjePris, String ordreLinjeProv) throws SQLException{
+        String command = ("insert into Kontoudtog(kontoudtogsID, kontoudtogsDato, vedroerende, ordreLinjePris, ordreLinjeProv) "
+                + "values (" + kontoudtogsID + ", " + kontoudtogsDato + ", '" + vedroerende + "', '" + ordreLinjePris + "', '" + ordreLinjeProv + "');");
+        dBConnection.execute(command);
+    }
 
     public void finalizeThisHandler() {
         dBConnection.closeConnection();
