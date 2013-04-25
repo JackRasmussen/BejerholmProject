@@ -2,6 +2,7 @@ package model.database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class Handler {
 
@@ -143,6 +144,40 @@ public class Handler {
         ResultSet rs = dBConnection.getResultSetWithCommand(command);
 
         return rs;
+    }
+    
+    public ResultSet hentFakturaFraDatabase(int fakturaNr) throws SQLException{
+        String command = ("select * from Faktura where fakturaNr = " + fakturaNr + ";");
+        ResultSet rs = dBConnection.getResultSetWithCommand(command);
+        return rs;
+    }
+    
+    public void indsaetFakturaIDatabase(int fakturaNr, Date fakturaDato, String vedroerende, String bankOplysninger) throws SQLException{
+        String command = ("insert into Faktura (faktureringsNr, faktureringsDato, vedroerende, bankOplysninger) "
+                + "values (" + fakturaNr + ", " + fakturaDato + ", '" + vedroerende + "', '" + bankOplysninger + "');");
+        dBConnection.execute(command);
+    }
+    
+    public void sletFakturaFraDatabase(int fakturaNr) throws SQLException{
+        String command = ("delete from Faktura where faktureringsNr = " + fakturaNr + ";");
+        dBConnection.execute(command);
+    }
+    
+    public ResultSet hentProvisionsseddelFraDatabase(int provisionsID) throws SQLException{
+        String command = ("select * from Provisionsseddel where provisionsID = " + provisionsID + ";");
+        ResultSet rs = dBConnection.getResultSetWithCommand(command);
+        return rs;
+    }
+    
+    public void indsaetProvisionsseddelIDatabase(int provisionsID, Date provisionsDato, String vedroerende, int provisionsProcent, String beskrivelse) throws SQLException{
+        String command = ("insert into Provisionsseddel (provisionsID, provisionsDato, vedroerende, provisionsProcent, beskrivelse) "
+                + "values (" + provisionsDato + ", " + provisionsDato + ", '" + vedroerende + "', " + provisionsProcent + ", '" + beskrivelse + "');");
+        dBConnection.execute(command);
+    }
+    
+    public void sletProvisionsseddelFraDatabase(int provisionsID) throws SQLException{
+        String command = ("delete from Provisionsseddel where provisionsID = " + provisionsID + ";");
+        dBConnection.execute(command);
     }
 
     public void finalizeThisHandler() {
