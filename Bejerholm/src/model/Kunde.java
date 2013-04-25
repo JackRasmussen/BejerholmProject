@@ -72,6 +72,10 @@ public class Kunde {
 
         rs.close();
     }
+    
+    public void finalizeThisKunde(){
+        handler.finalizeThisHandler();
+    }
 
     public String getfNavn() {
         return fNavn;

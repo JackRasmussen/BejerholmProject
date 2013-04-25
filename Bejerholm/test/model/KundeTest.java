@@ -23,7 +23,9 @@ public class KundeTest {
 
     @BeforeClass
     public static void setUpClass() throws SQLException {
-        Kunde before = new Kunde(21212121);
+        Kunde before = new Kunde(20202020);
+        before.indsaetKundeIDatabase("Hans", "Hansen", "Hansilandvej 23", 5555, "Hansaby");
+        before = new Kunde(21212121);
         before.sletKundeFraDatabase();
         before = new Kunde(22222222);
         before.sletKundeFraDatabase();
@@ -37,7 +39,9 @@ public class KundeTest {
 
     @AfterClass
     public static void tearDownClass() throws SQLException {
-        Kunde after = new Kunde(21212121);
+        Kunde after = new Kunde(20202020);
+        after.sletKundeFraDatabase();
+        after = new Kunde(21212121);
         after.sletKundeFraDatabase();
         after = new Kunde(22222222);
         after.sletKundeFraDatabase();
