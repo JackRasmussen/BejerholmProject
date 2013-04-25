@@ -17,7 +17,7 @@ public class DBConnection {
         //test
         connected = false;
         this.user = "root";
-        this.pass = "";
+        this.pass = "root";
         this.host = "localhost";
         this.port = "3306";
         this.database = "Bejerholm";
