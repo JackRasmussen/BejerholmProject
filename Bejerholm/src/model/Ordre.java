@@ -21,11 +21,11 @@ public class Ordre {
     private int skriftStil;
     private String bemærkninger;
     private double totalPris;
-    private double MILJØ_AFGIFT;
+    private final double MILJØ_AFGIFT = 2.5;
     private double moms;
     private double rabat;
 
-    public Ordre(int ordreID, int status, Date bestillingsDato, Date leveringsDato, String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger, double totalPris, double MILJØ_AFGIFT, double moms, double rabat) {
+    public Ordre(int ordreID, int status, Date bestillingsDato, Date leveringsDato, String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger, double totalPris, double moms, double rabat) {
         this.ordreID = ordreID;
         this.status = status;
         this.bestillingsDato = bestillingsDato;
@@ -35,7 +35,6 @@ public class Ordre {
         this.skriftStil = skriftStil;
         this.bemærkninger = bemærkninger;
         this.totalPris = totalPris;
-        this.MILJØ_AFGIFT = MILJØ_AFGIFT;
         this.moms = moms;
         this.rabat = rabat;
     }

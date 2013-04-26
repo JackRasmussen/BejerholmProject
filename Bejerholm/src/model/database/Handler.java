@@ -35,8 +35,8 @@ public class Handler {
                 + ", byNavn = '" + nyByNavn + "' where tlfNr = " + tlfNr + ";");
         dBConnection.execute(command);
     }
-    
-    public void redigerBedemand(int cvr, String firmaNavn, int tlfNr) throws SQLException{
+
+    public void redigerBedemand(int cvr, String firmaNavn, int tlfNr) throws SQLException {
         String command = ("update Bedemand set firmaNavn = '" + firmaNavn + "', tlfNr = " + tlfNr + " where cvr = " + cvr + ";");
         dBConnection.execute(command);
     }
@@ -145,55 +145,78 @@ public class Handler {
 
         return rs;
     }
-    
-    public ResultSet hentFakturaFraDatabase(int fakturaNr) throws SQLException{
+
+    public ResultSet hentFakturaFraDatabase(int fakturaNr) throws SQLException {
         String command = ("select * from Faktura where fakturaNr = " + fakturaNr + ";");
         ResultSet rs = dBConnection.getResultSetWithCommand(command);
         return rs;
     }
-    
-    public void indsaetFakturaIDatabase(int fakturaNr, Date fakturaDato, String vedroerende, String bankOplysninger) throws SQLException{
+
+    public void indsaetFakturaIDatabase(int fakturaNr, Date fakturaDato, String vedroerende, String bankOplysninger) throws SQLException {
         String command = ("insert into Faktura (faktureringsNr, faktureringsDato, vedroerende, bankOplysninger) "
                 + "values (" + fakturaNr + ", " + fakturaDato + ", '" + vedroerende + "', '" + bankOplysninger + "');");
         dBConnection.execute(command);
     }
-    
-    public void sletFakturaFraDatabase(int fakturaNr) throws SQLException{
+
+    public void sletFakturaFraDatabase(int fakturaNr) throws SQLException {
         String command = ("delete from Faktura where faktureringsNr = " + fakturaNr + ";");
         dBConnection.execute(command);
     }
-    
-    public ResultSet hentProvisionsseddelFraDatabase(int provisionsID) throws SQLException{
+
+    public ResultSet hentProvisionsseddelFraDatabase(int provisionsID) throws SQLException {
         String command = ("select * from Provisionsseddel where provisionsID = " + provisionsID + ";");
         ResultSet rs = dBConnection.getResultSetWithCommand(command);
         return rs;
     }
-    
-    public void indsaetProvisionsseddelIDatabase(int provisionsID, Date provisionsDato, String vedroerende, int provisionsProcent, String beskrivelse) throws SQLException{
+
+    public void indsaetProvisionsseddelIDatabase(int provisionsID, Date provisionsDato, String vedroerende, int provisionsProcent, String beskrivelse) throws SQLException {
         String command = ("insert into Provisionsseddel (provisionsID, provisionsDato, vedroerende, provisionsProcent, beskrivelse) "
                 + "values (" + provisionsDato + ", " + provisionsDato + ", '" + vedroerende + "', " + provisionsProcent + ", '" + beskrivelse + "');");
         dBConnection.execute(command);
     }
-    
-    public void sletProvisionsseddelFraDatabase(int provisionsID) throws SQLException{
+
+    public void sletProvisionsseddelFraDatabase(int provisionsID) throws SQLException {
         String command = ("delete from Provisionsseddel where provisionsID = " + provisionsID + ";");
         dBConnection.execute(command);
     }
-    
-    public ResultSet hentKontoudtogFraDatabase(int kontoudtogsID) throws SQLException{
+
+    public ResultSet hentKontoudtogFraDatabase(int kontoudtogsID) throws SQLException {
         String command = ("select * from Kontoudtog where kontoudtogsID = " + kontoudtogsID + ";");
         ResultSet rs = dBConnection.getResultSetWithCommand(command);
         return rs;
     }
-    
-    public void sletKontoudtogFraDatabase(int kontoudtogsID) throws SQLException{
+
+    public void sletKontoudtogFraDatabase(int kontoudtogsID) throws SQLException {
         String command = ("delete from Kontoudtog where kontoudtogsID = " + kontoudtogsID + ";");
         dBConnection.execute(command);
     }
-    
-    public void indsaetKontoudtogIDatabase(int kontoudtogsID, Date kontoudtogsDato, String vedroerende, String ordreLinjePris, String ordreLinjeProv) throws SQLException{
+
+    public void indsaetKontoudtogIDatabase(int kontoudtogsID, Date kontoudtogsDato, String vedroerende, String ordreLinjePris, String ordreLinjeProv) throws SQLException {
         String command = ("insert into Kontoudtog(kontoudtogsID, kontoudtogsDato, vedroerende, ordreLinjePris, ordreLinjeProv) "
                 + "values (" + kontoudtogsID + ", " + kontoudtogsDato + ", '" + vedroerende + "', '" + ordreLinjePris + "', '" + ordreLinjeProv + "');");
+        dBConnection.execute(command);
+    }
+
+    public ResultSet hentKirkegaardsOrdreFraDatabase(int kirkegaardsID) throws SQLException {
+        String command = ("select * from KirkegaardsOrdre where kirkegaardsID = " + kirkegaardsID + ";");
+        ResultSet rs = dBConnection.getResultSetWithCommand(command);
+        return rs;
+    }
+
+    public void indsaetKirkegaardsOrdreIDatabase(int kirkegaardsID, boolean urne_Kiste, int raekke, int nummer, String afdeling) throws SQLException {
+        String command = ("insert into KirkegaardsOrdre(kirkegaardsID, urne_Kiste, raekke, nummer, afdeling) "
+                + "values (" + kirkegaardsID + ", " + urne_Kiste + ", " + raekke + ", " + nummer + ", '" + afdeling + "');");
+        dBConnection.execute(command);
+    }
+
+    public void redigerKirkegaardsOrdreIDatabase(int kirkegaardsID, boolean urne_Kiste, int raekke, int nummer, String afdeling) throws SQLException {
+        String command = ("update KirkegaardsOrdre set urne_Kiste = " + urne_Kiste + ", raekke = " + raekke + ", nummer = "
+                + nummer + ", afdeling = '" + afdeling + "' where kirkegaardsID = " + kirkegaardsID + ";");
+        dBConnection.execute(command);
+    }
+    
+    public void sletKirkegaardsOrdreFraDatabase(int kirkegaardsID) throws SQLException{
+        String command = ("delete from kirkegaardsOrdre where kirkegaardsID = " + kirkegaardsID + ";");
         dBConnection.execute(command);
     }
 
