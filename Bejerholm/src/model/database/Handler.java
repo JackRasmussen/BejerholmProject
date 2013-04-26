@@ -216,8 +216,40 @@ public class Handler {
     }
     
     public void sletKirkegaardsOrdreFraDatabase(int kirkegaardsID) throws SQLException{
-        String command = ("delete from kirkegaardsOrdre where kirkegaardsID = " + kirkegaardsID + ";");
+        String command = ("delete from KirkegaardsOrdre where kirkegaardsID = " + kirkegaardsID + ";");
         dBConnection.execute(command);
+    }
+    
+    public void sletOrdreFraDatabase(int ordreID) throws SQLException{
+        String command = ("delete from Ordre where ordreID = " + ordreID + ";");
+        dBConnection.execute(command);
+    }
+    
+    public void redigerOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato, 
+            String skrifttype, int skriftstørroelse, int skriftStil, String bemaerkninger, double totalPris, 
+            double moms, double rabat, double miljoe_Afgift) throws SQLException{
+        String command = ("update Ordre set status = " + status + ", bestillingsDato = " + bestillingsDato +
+                ", leveringsDato = " + leveringsDato + ", skriftType = '" + skrifttype + "', skriftStil = '"
+                + skriftStil + "', bemaerkninger = '" + bemaerkninger + "', totalPris = " + totalPris +
+                ", moms = " + moms + ", rabat = " + rabat + ", miljoeAfgift = " + miljoe_Afgift + " where ordreID = " + ordreID + ";");
+        dBConnection.execute(command);
+    }
+    
+    public void indsaetOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato, 
+            String skrifttype, int skriftstoerrelse, int skriftStil, String bemaerkninger, double totalPris, 
+            double moms, double rabat, double miljoe_Afgift) throws SQLException{
+        String command = ("insert into Ordre (ordreID, status, bestillingsDato, leveringsDato, skriftType,"
+                + " skriftStoerrselse, skriftStil, bemaerkninger, totalPris, moms, rabat, miljoeAfgift) " 
+                + "values (" + ordreID + ", " + status + ", " + bestillingsDato + ", " + leveringsDato + ", '"
+                + skrifttype + "', " + skriftstoerrelse + ", " + skriftStil + ", '" + bemaerkninger + "', "
+                + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ");");
+        dBConnection.execute(command);
+    }
+    
+    public ResultSet hentOrdreFraDatabase(int ordreID) throws SQLException{
+        String command = ("select * from Ordre where ordreID = " + ordreID + ";");
+        ResultSet rs = dBConnection.getResultSetWithCommand(command);
+        return rs;
     }
 
     public void finalizeThisHandler() {
