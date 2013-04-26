@@ -9,38 +9,40 @@ import model.database.Handler;
  * @author Dan-Philip-N
  */
 public class Tilfoejelse {
-    
+
     private Handler handler;
     private int tilfoejelsesID;
     private String tilfoejelsesType;
     private double tilfoejelsesPris;
-    
-    public Tilfoejelse(String tilfoejelsesType) throws SQLException{
+
+    public Tilfoejelse(int tilfoejelsesID) throws SQLException {
         handler = new Handler();
-        this.tilfoejelsesType = tilfoejelsesType;
+        this.tilfoejelsesID = tilfoejelsesID;
         hentTilfoejelsesInfo();
     }
-    
-    private void hentTilfoejelsesInfo() throws SQLException{
-        ResultSet rs = handler.hentTilfoejelseFraDatabase(tilfoejelsesType);
+
+    private void hentTilfoejelsesInfo() throws SQLException {
+        ResultSet rs = handler.hentTilfoejelseFraDatabase(tilfoejelsesID);
         if (rs.next()) {
-            this.tilfoejelsesID = rs.getInt("tilfoejelsesID");
+            this.tilfoejelsesType = rs.getString("tilfoejelsesType");
             this.tilfoejelsesPris = rs.getDouble("pris");
         } else {
-            this.tilfoejelsesID = 0;
+            this.tilfoejelsesType = "Tilfoejelse findes ikke";
             this.tilfoejelsesPris = 0;
         }
     }
-    
-    public void indsaetTilfoejelseIDatabase(int tilfoejelsesID, double pris) throws SQLException{
+
+    public void indsaetTilfoejelseIDatabase(String tilfoejelsesType, double pris) throws SQLException {
+        this.tilfoejelsesType = tilfoejelsesType;
+        this.tilfoejelsesPris = pris;
         handler.indsaetTilfoejelseIDatabase(tilfoejelsesID, tilfoejelsesType, pris);
     }
-    
-    public void redigerTilfoejelse(String type, double pris) throws SQLException{
+
+    public void redigerTilfoejelse(String type, double pris) throws SQLException {
         handler.redigerTilfoejelseIDatabase(tilfoejelsesID, type, pris);
     }
-    
-    public void sletTilfoejelse() throws SQLException{
+
+    public void sletTilfoejelse() throws SQLException {
         handler.sletTilfoejelseFraDatabase(tilfoejelsesID);
     }
 

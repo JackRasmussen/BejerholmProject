@@ -25,6 +25,8 @@ public class Ordre {
     private String bemaerkninger;
     private double totalPris;
     private double rabat;
+    private int tlfNr;
+    private int bedemandCvr;
     private Handler handler;
     private final double MOMS = 25;
     private final double MILJOE_AFGIFT = 2.5;
@@ -47,12 +49,26 @@ public class Ordre {
             this.bemaerkninger = rs.getString("bemaerkninger");
             this.totalPris = rs.getDouble("totalPris");
             this.rabat = rs.getDouble("rabat");
+            this.tlfNr = rs.getInt("tlfNr");
+            this.bedemandCvr = rs.getInt("bedemandCvr");
+        } else {
+            this.status = 0;
+            this.bestillingsDato = null;
+            this.leveringsDato = null;
+            this.skrifttype = "Ordre findes ikke";
+            this.skriftStoerrelse = 0;
+            this.skriftStil = 0;
+            this.bemaerkninger = "Ordre findes ikke";
+            this.totalPris = 0;
+            this.rabat = 0;
+            this.tlfNr = 0;
+            this.bedemandCvr = 0;
         }
     }
 
     public void gemOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
             String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger,
-            double totalPris, double rabat) throws SQLException {
+            double totalPris, double rabat, int tlfNr, int bedemandCvr) throws SQLException {
         this.status = status;
         this.bestillingsDato = bestillingsDato;
         this.leveringsDato = leveringsDato;
@@ -62,8 +78,10 @@ public class Ordre {
         this.bemaerkninger = bemærkninger;
         this.totalPris = totalPris;
         this.rabat = rabat;
+        this.tlfNr = tlfNr;
+        this.bedemandCvr = bedemandCvr;
         handler.indsaetOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
-                skrifttype, skriftStoerrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT);
+                skrifttype, skriftStoerrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT, tlfNr, bedemandCvr);
     }
 
     public void redigerOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
@@ -79,7 +97,7 @@ public class Ordre {
 
     public void saetOrdreStatus(int status) throws SQLException {
         this.status = status;
-        handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato, 
+        handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
                 skrifttype, skriftStoerrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, totalPris);
     }
 
@@ -121,5 +139,21 @@ public class Ordre {
 
     public double getRabat() {
         return rabat;
+    }
+
+    public int getTlfNr() {
+        return tlfNr;
+    }
+
+    public int getBedemandCvr() {
+        return bedemandCvr;
+    }
+
+    public double getMOMS() {
+        return MOMS;
+    }
+
+    public double getMILJOE_AFGIFT() {
+        return MILJOE_AFGIFT;
     }
 }

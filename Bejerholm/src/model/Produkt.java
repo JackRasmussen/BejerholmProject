@@ -23,10 +23,10 @@ public class Produkt {
         this.produktNavn = produktNavn;
         findProduktViaNavn();
     }
-    
-    private void findProduktViaNavn() throws SQLException{
+
+    private void findProduktViaNavn() throws SQLException {
         ResultSet rs = handler.findProduktViaNavn(produktNavn);
-        
+
         if (rs.next()) {
             this.produktID = rs.getInt("produktID");
             this.produktType = rs.getString("type");
@@ -51,6 +51,11 @@ public class Produkt {
     }
 
     public void indsaetProduktIDatabase(int produktID, String produktType, int produktAntal, double salgsPris, double indkoebsPris) throws SQLException {
+        this.produktID = produktID;
+        this.produktType = produktType;
+        this.produktAntal = produktAntal;
+        this.salgsPris = salgsPris;
+        this.indkoebsPris = indkoebsPris;
         handler.tilfoejProdukt(produktID, produktType, produktNavn, produktAntal, salgsPris, indkoebsPris);
     }
 
@@ -58,7 +63,7 @@ public class Produkt {
         handler.sletProduktFraDatabase(produktID);
     }
 
-    public void redigerProduktIDatabase(String produktType, String produktNavn, int antal, 
+    public void redigerProduktIDatabase(String produktType, String produktNavn, int antal,
             double salgsPris, double indkoebsPris) throws SQLException {
         handler.redigerProduktIDatabase(produktID, produktType, produktNavn, antal, salgsPris, indkoebsPris);
     }
