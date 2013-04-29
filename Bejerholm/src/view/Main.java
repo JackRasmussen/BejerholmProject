@@ -6,6 +6,7 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,17 +14,7 @@ import javax.swing.JFrame;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        JFrame testFrame = new JFrame();
-        LogPaaGUI lpg = new LogPaaGUI();
-        testFrame.setSize(1280, 720);
-        testFrame.add(lpg);
-        testFrame.setVisible(true);
-        testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
+          control.ViewControl.LogPaaGUI();
     }
 }

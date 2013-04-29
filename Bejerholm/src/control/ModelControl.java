@@ -4,10 +4,17 @@
  */
 package control;
 
+import javax.swing.JFrame;
+import view.LogPaaGUI;
+
 /**
  *
  * @author TheToiletpaper
  */
 public class ModelControl {
     
+    public ModelControl(){
+    
 }
+
+    }

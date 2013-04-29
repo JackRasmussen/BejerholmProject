@@ -21,7 +21,6 @@ public LogPaaGUI() {
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         login1 = new javax.swing.JButton();
         topBillede = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -29,26 +28,43 @@ public LogPaaGUI() {
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(100, 100, 100));
+        setLayout(null);
 
         username.setText("root");
+        add(username);
+        username.setBounds(600, 240, 100, 20);
 
         password.setText("root");
+        add(password);
+        password.setBounds(600, 280, 100, 20);
 
         hostname.setText("localhost");
+        add(hostname);
+        hostname.setBounds(600, 320, 100, 20);
 
         port.setText("3306");
+        add(port);
+        port.setBounds(600, 360, 100, 20);
 
         database.setText("Bejerholm");
+        add(database);
+        database.setBounds(600, 400, 100, 20);
 
         jLabel7.setText("Brugernavn:");
+        add(jLabel7);
+        jLabel7.setBounds(490, 240, 80, 14);
 
         jLabel9.setText("Kodeord:");
+        add(jLabel9);
+        jLabel9.setBounds(490, 280, 80, 14);
 
         jLabel8.setText("Hostname:");
+        add(jLabel8);
+        jLabel8.setBounds(490, 320, 80, 14);
 
         jLabel6.setText("Port:");
-
-        jLabel10.setText("Database:");
+        add(jLabel6);
+        jLabel6.setBounds(490, 360, 80, 14);
 
         login1.setText("Log på!");
         login1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +72,8 @@ public LogPaaGUI() {
                 login1ActionPerformed(evt);
             }
         });
+        add(login1);
+        login1.setBounds(550, 470, 110, 23);
 
         topBillede.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -67,7 +85,7 @@ public LogPaaGUI() {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1266, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,96 +97,39 @@ public LogPaaGUI() {
         topBilledeLayout.setHorizontalGroup(
             topBilledeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topBilledeLayout.createSequentialGroup()
-                .addGap(198, 198, 198)
+                .addGap(84, 84, 84)
                 .addComponent(jLabel1)
-                .addContainerGap())
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        topBilledeLayout.setVerticalGroup(
-            topBilledeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(topBilledeLayout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+        topBilledeLayout.setVerticalGroup(
+            topBilledeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topBilledeLayout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        add(topBillede);
+        topBillede.setBounds(0, 0, 1266, 200);
 
         jLabel2.setText("Database:");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(topBillede, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(393, 393, 393)
-                .addComponent(jLabel10)
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel2))
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(database)
-                            .addComponent(port)
-                            .addComponent(hostname)
-                            .addComponent(password)
-                            .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(login1)))
-                .addContainerGap(536, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(topBillede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(hostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)))
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(port, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(database, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(41, 41, 41)
-                .addComponent(login1)
-                .addContainerGap(249, Short.MAX_VALUE))
-        );
+        add(jLabel2);
+        jLabel2.setBounds(490, 400, 80, 14);
     }// </editor-fold>//GEN-END:initComponents
 
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
-        dbconnect = new DBConnection(username.getText(), password.getText(),
-            hostname.getText(), port.getText(), database.getText());
-        if (dbconnect.connection()){
-        }
+        control.ViewControl.lukNuvaerendeGUI(control.ViewControl.lpg);
+        control.ViewControl.systemGUI();
     }//GEN-LAST:event_login1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField database;
     private javax.swing.JTextField hostname;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
