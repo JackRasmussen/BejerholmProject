@@ -163,3 +163,5 @@ pip-log.txt
 .DS_Store
 
 *.properties
+/Bejerholm_1-view/nbproject/private/
+/Bejerholm_1-Model/nbproject/private/
