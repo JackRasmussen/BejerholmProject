@@ -13,13 +13,14 @@ public class DBConnection {
     private String database;
     private boolean connected;
 
-    public DBConnection(String user, String pass, String host, String port, String database) {
+    public DBConnection() {
+        //test
         connected = false;
-        this.user = user;
-        this.pass = pass;
-        this.host = host;
-        this.port = port;
-        this.database = database;
+        this.user = "root";
+        this.pass = "root";
+        this.host = "localhost";
+        this.port = "3306";
+        this.database = "Bejerholm";
         connection();
     }
 
@@ -48,18 +49,23 @@ public class DBConnection {
         connected = result;
         return result;
     }
+    
+    public Connection getConn(){
+        return conn;
+    }
 
     public void execute(String sql) throws SQLException {
         state.execute(sql);
     }
 
-    public ResultSet getResult(String sql) throws SQLException {
+    public ResultSet getResultSetWithCommand(String sql) throws SQLException {
         ResultSet rs = state.executeQuery(sql);
         return rs;
     }
 
-    public void close() {
+    public void closeConnection() {
         try {
+            state.close();
             conn.close();
         } catch (SQLException ex) {
         }

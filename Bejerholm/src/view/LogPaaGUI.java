@@ -122,8 +122,15 @@ public LogPaaGUI() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
+<<<<<<< HEAD
         control.ViewControl.lukNuvaerendeGUI(control.ViewControl.lpg);
         control.ViewControl.systemGUI();
+=======
+//        dbconnect = new DBConnection(username.getText(), password.getText(),
+//            hostname.getText(), port.getText(), database.getText());
+//        if (dbconnect.connection()){
+//        }
+>>>>>>> origin/ModelDP
     }//GEN-LAST:event_login1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
