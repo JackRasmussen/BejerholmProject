@@ -30,7 +30,9 @@ public class ViewControl {
         frame.setSize(1280, 720);
         frame.add(jp);
         frame.setVisible(true);
+        frame.setTitle("Bejerholm");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
     public static void lukNuvaerendeGUI(JPanel jp) {
