@@ -4,35 +4,32 @@ import java.sql.*;
 
 public class DBConnection {
 
-    private Connection conn;
-    private Statement state;
-    private String user;
-    private String pass;
-    private String host;
-    private String port;
-    private String database;
-    private boolean connected;
+    private static Connection conn;
+    private static Statement state;
+    private static String user;
+    private static String pass;
+    private static String host;
+    private static String port;
+    private static String database;
+    private static boolean connected;
 
-    public DBConnection() {
+    private DBConnection() {
         //test
         connected = false;
-        this.user = "root";
-        this.pass = "root";
-        this.host = "localhost";
-        this.port = "3306";
-        this.database = "Bejerholm";
-        connection();
+        user = "root";
+        pass = "root";
+        host = "localhost";
+        port = "3306";
+        database = "Bejerholm";
     }
 
-    public final boolean connection() {
+    private static void connection() {
         boolean result = true;
         String conString = "jdbc:mysql://" + host + ":" + port + "/" + database;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(conString, user, pass);
             state = conn.createStatement();
-            System.out.println(this.getClass().getName() + " siger det fungerer!");
-
         } catch (SQLException ex) {
             result = false;
             System.out.println("Could not connect: " + conString + " , " + user + " , " + pass);
@@ -45,33 +42,29 @@ public class DBConnection {
             result = false;
             System.out.println("exception: " + ex.getClass().getName() + " = " + ex.getLocalizedMessage());
         }
-
         connected = result;
-        return result;
-    }
-    
-    public Connection getConn(){
-        return conn;
     }
 
-    public void execute(String sql) throws SQLException {
+    public static Connection getConn() {
+        if (connected) {
+            return conn;
+        } else {
+            connection();
+            return conn;
+        }
+    }
+
+    public static void execute(String sql) throws SQLException {
         state.execute(sql);
     }
 
-    public ResultSet getResultSetWithCommand(String sql) throws SQLException {
+    public static ResultSet getResultSetWithCommand(String sql) throws SQLException {
         ResultSet rs = state.executeQuery(sql);
         return rs;
     }
 
-    public void closeConnection() {
-        try {
-            state.close();
-            conn.close();
-        } catch (SQLException ex) {
-        }
-    }
-
-    public boolean isConnected() {
-        return connected;
+    public static void closeConnection() throws SQLException {
+        state.close();
+        conn.close();
     }
 }
