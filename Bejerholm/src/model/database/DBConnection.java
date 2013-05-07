@@ -44,6 +44,14 @@ public class DBConnection {
         }
         connected = result;
     }
+    
+    public static void setConnectionParameters(String user, String pass, String host, String port, String database){
+        DBConnection.user = user;
+        DBConnection.pass = pass;
+        DBConnection.host = host;
+        DBConnection.port = port;
+        DBConnection.database = database;
+    }
 
     public static Connection getConn() {
         if (connected) {
