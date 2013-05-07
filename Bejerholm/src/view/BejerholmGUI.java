@@ -11,7 +11,9 @@ public class BejerholmGUI extends javax.swing.JPanel {
     OrdreGUI org = new OrdreGUI();
     LogPaaGUI lpg = new LogPaaGUI(this);
     AdminGUI adg = new AdminGUI();
-    OptionGUI opg = new OptionGUI();
+    LagerGUI lag = new LagerGUI();
+    
+   
     
 
     public BejerholmGUI() {
@@ -19,14 +21,15 @@ public class BejerholmGUI extends javax.swing.JPanel {
         cards.add(org);
         cards.add(lpg);
         cards.add(adg);
-        cards.add(opg);
-
+        cards.add(lag);
+        
         
         ((CardLayout) cards.getLayout()).addLayoutComponent(org, "OrdreGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(lpg, "LogPaaGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(adg, "AdminGUI");
-        ((CardLayout) cards.getLayout()).addLayoutComponent(opg, "OptionGUI");
-         skiftPanel("LogPaaGUI");
+        ((CardLayout) cards.getLayout()).addLayoutComponent(lag, "LagerGUI");
+//         skiftPanel("LogPaaGUI");
+         skiftPanel("LagerGUI");
     }      
     
 
@@ -48,6 +51,8 @@ public class BejerholmGUI extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         cards = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(100, 100, 100));
@@ -59,27 +64,38 @@ public class BejerholmGUI extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(156, 23, 6));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Ordre");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jButton2.setText("Admin");
+
+        jButton3.setText("Log af!");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(jButton2)
+                .addGap(58, 58, 58)
+                .addComponent(jButton3)
+                .addGap(520, 520, 520))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -138,6 +154,8 @@ public class BejerholmGUI extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cards;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
