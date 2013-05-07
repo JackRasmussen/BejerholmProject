@@ -8,12 +8,18 @@ import javax.swing.JFrame;
  * @author TheToiletpaper
  */
 public class LogPaaGUI extends javax.swing.JPanel {
-    
+
     BejerholmGUI beg;
 
     public LogPaaGUI(BejerholmGUI beg) {
         this.beg = beg;
         initComponents();
+        hostname.setVisible(false);
+        hostnameLabel.setVisible(false);
+        port.setVisible(false);
+        portLabel.setVisible(false);
+        database.setVisible(false);
+        databaseLabel.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -31,7 +37,7 @@ public class LogPaaGUI extends javax.swing.JPanel {
         portLabel = new javax.swing.JLabel();
         login = new javax.swing.JButton();
         databaseLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setLayout(null);
@@ -45,6 +51,11 @@ public class LogPaaGUI extends javax.swing.JPanel {
         password.setBounds(570, 150, 100, 20);
 
         hostname.setText("localhost");
+        hostname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hostnameActionPerformed(evt);
+            }
+        });
         add(hostname);
         hostname.setBounds(570, 190, 100, 20);
 
@@ -79,27 +90,57 @@ public class LogPaaGUI extends javax.swing.JPanel {
             }
         });
         add(login);
-        login.setBounds(520, 340, 110, 23);
+        login.setBounds(570, 340, 90, 23);
 
         databaseLabel.setText("Database:");
         add(databaseLabel);
         databaseLabel.setBounds(460, 270, 80, 14);
 
-        jButton1.setText("Options!");
-        add(jButton1);
-        jButton1.setBounds(990, 350, 90, 23);
+        jCheckBox1.setBackground(new java.awt.Color(100, 100, 100));
+        jCheckBox1.setText("Avanceret");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        add(jCheckBox1);
+        jCheckBox1.setBounds(451, 340, 90, 23);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         beg.skiftPanel("OrdreGUI");
     }//GEN-LAST:event_loginActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        if (jCheckBox1.isSelected()) {
+            hostname.setVisible(true);
+            hostnameLabel.setVisible(true);
+            port.setVisible(true);
+            portLabel.setVisible(true);
+            database.setVisible(true);
+            databaseLabel.setVisible(true);
+        } else {
+            hostname.setVisible(false);
+            hostnameLabel.setVisible(false);
+            port.setVisible(false);
+            portLabel.setVisible(false);
+            database.setVisible(false);
+            databaseLabel.setVisible(false);
+        }
+
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void hostnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hostnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hostnameActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel brugernavnLabel;
     private javax.swing.JTextField database;
     private javax.swing.JLabel databaseLabel;
     private javax.swing.JTextField hostname;
     private javax.swing.JLabel hostnameLabel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JButton login;
     private javax.swing.JTextField password;
     private javax.swing.JLabel passwordLabel;
