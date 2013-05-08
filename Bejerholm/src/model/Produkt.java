@@ -17,6 +17,8 @@ public class Produkt {
     private int produktAntal;
     private double salgsPris;
     private double indkoebsPris;
+    private double maalX;
+    private double maalY;
     private Handler handler;
 
     public Produkt(String produktNavn) throws SQLException {
@@ -34,12 +36,16 @@ public class Produkt {
             this.produktAntal = rs.getInt("antal");
             this.salgsPris = rs.getDouble("salgsPris");
             this.indkoebsPris = rs.getDouble("indkoebsPris");
+            this.maalX = rs.getDouble("maalX");
+            this.maalY = rs.getDouble("maalY");
         } else {
             this.produktID = 0;
             this.produktType = "Produkt findes ikke";
             this.produktAntal = 0;
             this.salgsPris = 0;
             this.indkoebsPris = 0;
+            this.maalX = 0;
+            this.maalY = 0;
         }
     }
 
@@ -51,13 +57,15 @@ public class Produkt {
         handler.fjernProduktMaengdeFraDatabase(produktID, antal);
     }
 
-    public void indsaetProduktIDatabase(int produktID, String produktType, int produktAntal, double salgsPris, double indkoebsPris) throws SQLException {
+    public void indsaetProduktIDatabase(int produktID, String produktType, int produktAntal, double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException {
         this.produktID = produktID;
         this.produktType = produktType;
         this.produktAntal = produktAntal;
         this.salgsPris = salgsPris;
         this.indkoebsPris = indkoebsPris;
-        handler.tilfoejProdukt(produktID, produktType, produktNavn, produktAntal, salgsPris, indkoebsPris);
+        this.maalX = maalX;
+        this.maalY = maalY;
+        handler.tilfoejProdukt(produktID, produktType, produktNavn, produktAntal, salgsPris, indkoebsPris, maalX, maalY);
     }
 
     public void sletProduktFraDatabase() throws SQLException {
@@ -65,14 +73,20 @@ public class Produkt {
     }
 
     public void redigerProduktIDatabase(String produktType, String produktNavn, int antal,
-            double salgsPris, double indkoebsPris) throws SQLException {
-        handler.redigerProduktIDatabase(produktID, produktType, produktNavn, antal, salgsPris, indkoebsPris);
+            double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException {
+        this.produktType = produktType;
+        this.produktAntal = antal;
+        this.salgsPris = salgsPris;
+        this.indkoebsPris = indkoebsPris;
+        this.maalX = maalX;
+        this.maalY = maalY;
+        handler.redigerProduktIDatabase(produktID, produktType, produktNavn, antal, salgsPris, indkoebsPris, maalX, maalY);
     }
-    
-    public ArrayList<Produkt> hentListeAfProdukter() throws SQLException{
+
+    public ArrayList<Produkt> hentListeAfProdukter() throws SQLException {
         ArrayList<Produkt> produktListe = new ArrayList<>();
         ResultSet rs = handler.hentListeAfProdukterFraDatabase();
-        while(rs.next()){
+        while (rs.next()) {
             Produkt produkt = new Produkt(rs.getString("produktNavn"));
             produktListe.add(produkt);
         }
@@ -101,5 +115,13 @@ public class Produkt {
 
     public double getIndkoebsPris() {
         return indkoebsPris;
+    }
+
+    public double getMaalX() {
+        return maalX;
+    }
+
+    public double getMaalY() {
+        return maalY;
     }
 }

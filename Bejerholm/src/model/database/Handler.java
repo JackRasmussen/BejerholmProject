@@ -71,13 +71,6 @@ public class Handler {
         return rs;
     }
 
-    public ResultSet hentListeOverProdukter() throws SQLException {
-        String command = ("select * from Produkt");
-        ResultSet rs = DBConnection.getResultSetWithCommand(command);
-
-        return rs;
-    }
-
     public ResultSet findMaengdeAfProdukt(int produktID) throws SQLException {
         String command = ("select * from Produkt where produktID = " + produktID + ";");
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
@@ -86,10 +79,10 @@ public class Handler {
     }
 
     public void tilfoejProdukt(int produktID, String produktType,
-            String produktNavn, int antal, double salgsPris, double indkoebsPris) throws SQLException {
-        String command = ("insert into Produkt(produktID, produktType, produktNavn, antal, salgsPris, indkoebsPris)"
+            String produktNavn, int antal, double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException {
+        String command = ("insert into Produkt(produktID, produktType, produktNavn, antal, salgsPris, indkoebsPris, maalX, maalY)"
                 + "values (" + produktID + ", '" + produktType + "', '"
-                + produktNavn + "', " + antal + ", " + salgsPris + ", " + indkoebsPris + ");");
+                + produktNavn + "', " + antal + ", " + salgsPris + ", " + indkoebsPris + ", " + maalX + ", " + maalY + ");");
         DBConnection.execute(command);
     }
 
@@ -98,12 +91,18 @@ public class Handler {
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
+    
+    public ResultSet hentListeAfProdukterFraDatabase() throws SQLException {
+        String command = ("select * from Produkt");
+        ResultSet rs = DBConnection.getResultSetWithCommand(command);
+        return rs;
+    }
 
     public void redigerProduktIDatabase(int produktID, String produktType,
-            String produktNavn, int antal, double salgsPris, double indkoebsPris) throws SQLException {
+            String produktNavn, int antal, double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException {
         String command = ("update Produkt set produktType  = '" + produktType + "', produktNavn = '"
                 + produktNavn + "', antal = " + antal + ", salgsPris = " + salgsPris + ", indkoebsPris = "
-                + indkoebsPris + " where produktID = " + produktID + ";");
+                + indkoebsPris + ", maalX = " + maalX + ", maalY = " + maalY + " where produktID = " + produktID + ";");
 
         DBConnection.execute(command);
     }
@@ -249,12 +248,6 @@ public class Handler {
 
     public ResultSet hentOrdreFraDatabase(int ordreID) throws SQLException {
         String command = ("select * from Ordre where ordreID = " + ordreID + ";");
-        ResultSet rs = DBConnection.getResultSetWithCommand(command);
-        return rs;
-    }
-
-    public ResultSet hentListeAfProdukterFraDatabase() throws SQLException {
-        String command = ("select * from Produkt");
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
