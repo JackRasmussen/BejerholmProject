@@ -119,12 +119,19 @@ public class GravstenGUI extends javax.swing.JPanel {
         tableGravsten.setGridColor(new java.awt.Color(0, 0, 0));
         tableGravsten.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tableGravsten);
+        tableGravsten.getColumnModel().getColumn(0).setResizable(false);
         tableGravsten.getColumnModel().getColumn(0).setPreferredWidth(50);
+        tableGravsten.getColumnModel().getColumn(1).setResizable(false);
         tableGravsten.getColumnModel().getColumn(1).setPreferredWidth(75);
+        tableGravsten.getColumnModel().getColumn(2).setResizable(false);
         tableGravsten.getColumnModel().getColumn(2).setPreferredWidth(150);
+        tableGravsten.getColumnModel().getColumn(3).setResizable(false);
         tableGravsten.getColumnModel().getColumn(3).setPreferredWidth(75);
+        tableGravsten.getColumnModel().getColumn(4).setResizable(false);
         tableGravsten.getColumnModel().getColumn(4).setPreferredWidth(100);
+        tableGravsten.getColumnModel().getColumn(5).setResizable(false);
         tableGravsten.getColumnModel().getColumn(5).setPreferredWidth(65);
+        tableGravsten.getColumnModel().getColumn(6).setResizable(false);
         tableGravsten.getColumnModel().getColumn(6).setPreferredWidth(100);
 
         printGravsten.setText("Print");
@@ -146,7 +153,7 @@ public class GravstenGUI extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(printGravsten, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
