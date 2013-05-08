@@ -252,4 +252,10 @@ public class Handler {
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
+
+    public ResultSet hentListeAfProdukterFraDatabase() throws SQLException {
+        String command = ("select * from Produkt");
+        ResultSet rs = DBConnection.getResultSetWithCommand(command);
+        return rs;
+    }
 }

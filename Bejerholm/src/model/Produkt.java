@@ -2,6 +2,7 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import model.database.Handler;
 
 /**
@@ -66,6 +67,16 @@ public class Produkt {
     public void redigerProduktIDatabase(String produktType, String produktNavn, int antal,
             double salgsPris, double indkoebsPris) throws SQLException {
         handler.redigerProduktIDatabase(produktID, produktType, produktNavn, antal, salgsPris, indkoebsPris);
+    }
+    
+    public ArrayList<Produkt> hentListeAfProdukter() throws SQLException{
+        ArrayList<Produkt> produktListe = new ArrayList<>();
+        ResultSet rs = handler.hentListeAfProdukterFraDatabase();
+        while(rs.next()){
+            Produkt produkt = new Produkt(rs.getString("produktNavn"));
+            produktListe.add(produkt);
+        }
+        return produktListe;
     }
 
     public int getProduktID() {
