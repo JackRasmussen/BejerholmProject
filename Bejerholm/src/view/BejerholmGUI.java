@@ -53,6 +53,7 @@ public class BejerholmGUI extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        lager = new javax.swing.JButton();
         cards = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(100, 100, 100));
@@ -75,6 +76,8 @@ public class BejerholmGUI extends javax.swing.JPanel {
 
         jButton3.setText("Log af!");
 
+        lager.setText("Lager");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -82,11 +85,13 @@ public class BejerholmGUI extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(51, 51, 51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addGap(58, 58, 58)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lager)
+                .addGap(218, 218, 218)
                 .addComponent(jButton3)
-                .addGap(520, 520, 520))
+                .addGap(473, 473, 473))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,7 +100,8 @@ public class BejerholmGUI extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(lager))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -159,6 +165,7 @@ public class BejerholmGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton lager;
     private javax.swing.JPanel topBillede;
     // End of variables declaration//GEN-END:variables
 }
