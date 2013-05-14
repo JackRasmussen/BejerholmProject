@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.CardLayout;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -8,13 +9,11 @@ import javax.swing.JPanel;
  * @author TheToiletpaper
  */
 public class BejerholmGUI extends javax.swing.JPanel {
+
     OrdreGUI org = new OrdreGUI();
     LogPaaGUI lpg = new LogPaaGUI(this);
     AdminGUI adg = new AdminGUI();
     LagerGUI lag = new LagerGUI();
-    
-   
-    
 
     public BejerholmGUI() {
         initComponents();
@@ -22,16 +21,19 @@ public class BejerholmGUI extends javax.swing.JPanel {
         cards.add(lpg);
         cards.add(adg);
         cards.add(lag);
-        
-        
+        lager.setVisible(false);
+        admin.setVisible(false);
+        ordre.setVisible(false);
+        logaf.setVisible(false);
+
         ((CardLayout) cards.getLayout()).addLayoutComponent(org, "OrdreGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(lpg, "LogPaaGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(adg, "AdminGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(lag, "LagerGUI");
-//         skiftPanel("LogPaaGUI");
-         skiftPanel("LagerGUI");
-    }      
-    
+         skiftPanel("LogPaaGUI");
+//         skiftPanel("LagerGUI");
+//        skiftPanel("AdminGUI");
+    }
 
     public void skiftPanel(String jp) {
         ((CardLayout) cards.getLayout()).show(cards, jp);
@@ -50,9 +52,9 @@ public class BejerholmGUI extends javax.swing.JPanel {
         topBillede = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ordre = new javax.swing.JButton();
+        admin = new javax.swing.JButton();
+        logaf = new javax.swing.JButton();
         lager = new javax.swing.JButton();
         cards = new javax.swing.JPanel();
 
@@ -65,18 +67,33 @@ public class BejerholmGUI extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(156, 23, 6));
 
-        jButton1.setText("Ordre");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ordre.setText("Ordre");
+        ordre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ordreActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Admin");
+        admin.setText("Admin");
+        admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Log af!");
+        logaf.setText("Log af!");
+        logaf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logafActionPerformed(evt);
+            }
+        });
 
         lager.setText("Lager");
+        lager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lagerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -84,13 +101,13 @@ public class BejerholmGUI extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(ordre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(admin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lager)
                 .addGap(218, 218, 218)
-                .addComponent(jButton3)
+                .addComponent(logaf)
                 .addGap(473, 473, 473))
         );
         jPanel2Layout.setVerticalGroup(
@@ -98,9 +115,9 @@ public class BejerholmGUI extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
+                    .addComponent(ordre)
+                    .addComponent(admin)
+                    .addComponent(logaf)
                     .addComponent(lager))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -154,18 +171,55 @@ public class BejerholmGUI extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ((CardLayout) cards.getLayout()).next(cards);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void ordreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordreActionPerformed
+//        ((CardLayout) cards.getLayout()).show(cards, "OrdreGUI");
+        skiftPanel("OrdreGUI");
+
+    }//GEN-LAST:event_ordreActionPerformed
+
+    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
+        skiftPanel("AdminGUI");
+    }//GEN-LAST:event_adminActionPerformed
+
+    private void lagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lagerActionPerformed
+        skiftPanel("LagerGUI");
+    }//GEN-LAST:event_lagerActionPerformed
+
+    private void logafActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logafActionPerformed
+// Cutter forbindelsen fra databasen!
+        skiftPanel("LogPaaGUI");
+        lager.setVisible(false);
+        admin.setVisible(false);
+        ordre.setVisible(false);
+        logaf.setVisible(true);
+
+    }//GEN-LAST:event_logafActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton admin;
     private javax.swing.JPanel cards;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton lager;
+    private javax.swing.JButton logaf;
+    private javax.swing.JButton ordre;
     private javax.swing.JPanel topBillede;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getAdmin() {
+        return admin;
+    }
+
+    public JButton getLager() {
+        return lager;
+    }
+
+    public JButton getOrdre() {
+        return ordre;
+    }
+
+    public JButton getLogaf() {
+        return logaf;
+    }
+
 }
