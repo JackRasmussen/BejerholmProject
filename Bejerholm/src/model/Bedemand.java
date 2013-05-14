@@ -50,9 +50,10 @@ public class Bedemand {
         rs.close();
     }
 
-    public void tilfoejBedemandTilDatabase(int cvr, int tlfNr) throws SQLException {
+    public void tilfoejBedemandTilDatabase(int cvr, int tlfNr, String firmaNavn) throws SQLException {
         this.cvr = cvr;
         this.tlfNr = tlfNr;
+        this.firmaNavn = firmaNavn;
         handler.tilfoejBedemand(cvr, firmaNavn, tlfNr);
     }
 

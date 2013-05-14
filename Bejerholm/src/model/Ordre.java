@@ -83,6 +83,13 @@ public class Ordre {
         handler.indsaetOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
                 skrifttype, skriftStoerrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT, tlfNr, bedemandCvr);
     }
+    
+    public void indsaetProduktTilOrdre(int produktNr, int antal) throws SQLException{
+        if (ordreID != 0) {
+            
+        }
+        handler.indsaetProduktOrdreData(ordreID, produktNr, antal);
+    }
 
     public void redigerOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
             String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger,
@@ -147,13 +154,5 @@ public class Ordre {
 
     public int getBedemandCvr() {
         return bedemandCvr;
-    }
-
-    public double getMOMS() {
-        return MOMS;
-    }
-
-    public double getMILJOE_AFGIFT() {
-        return MILJOE_AFGIFT;
     }
 }
