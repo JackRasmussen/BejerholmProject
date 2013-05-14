@@ -245,6 +245,24 @@ public class Handler {
                 + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ", " + tlfNr + ", " + bedemandCvr + ");");
         DBConnection.execute(command);
     }
+    
+    public void indsaetProduktOrdreData(int ordreID, int produktID, int maengde) throws SQLException{
+        String command = ("insert into Produkt_Ordre (ordreID, produktID, maengde) values "
+                + "(" + ordreID + ", " + produktID + ", " + maengde + ");");
+        DBConnection.execute(command);
+    }
+    
+    public void indsaetKundeFakturaData(int tlfNr, int fakturaNr, boolean leveringFaktura) throws SQLException{
+        String command = ("insert into Kunde_Faktura (tlfNr, faktureringsNr, levering_faktura) values "
+                + "(" + tlfNr + ", " + fakturaNr + ", " + leveringFaktura + ");");
+        DBConnection.execute(command);
+    }
+    
+    public void indsaetOrdreTilfoejelseData(int ordreID, int tilfoejelsesID, int antal) throws SQLException{
+        String command = ("insert into Ordre_Tilfoejelse (ordreID, tilfoejelsesID, antal) values "
+                + "(" + ordreID + ", " + tilfoejelsesID + ", " + antal + ");");
+        DBConnection.execute(command);
+    }
 
     public ResultSet hentOrdreFraDatabase(int ordreID) throws SQLException {
         String command = ("select * from Ordre where ordreID = " + ordreID + ";");
