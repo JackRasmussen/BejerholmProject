@@ -22,6 +22,7 @@ public class Ordre {
     private String skrifttype;
     private int skriftStoerrelse;
     private int skriftStil;
+    private String inskriptionsLinje;
     private String bemaerkninger;
     private double totalPris;
     private double rabat;
@@ -54,6 +55,7 @@ public class Ordre {
             this.skrifttype = rs.getString("skriftType");
             this.skriftStoerrelse = rs.getInt("skriftStoerrelse");
             this.skriftStil = rs.getInt("skriftStil");
+            this.inskriptionsLinje = rs.getString("inskriptionsLinje");
             this.bemaerkninger = rs.getString("bemaerkninger");
             this.totalPris = rs.getDouble("totalPris");
             this.rabat = rs.getDouble("rabat");
@@ -66,6 +68,7 @@ public class Ordre {
             this.skrifttype = "Ordre findes ikke";
             this.skriftStoerrelse = 0;
             this.skriftStil = 0;
+            this.inskriptionsLinje = "Ordre findes ikke";
             this.bemaerkninger = "Ordre findes ikke";
             this.totalPris = 0;
             this.rabat = 0;
@@ -93,7 +96,7 @@ public class Ordre {
      * @throws SQLException
      */
     public void gemOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
-            String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger,
+            String skrifttype, int skriftstørrelse, int skriftStil, String inskriptionsLinje, String bemærkninger,
             double totalPris, double rabat, int tlfNr, int bedemandCvr) throws SQLException {
         this.status = status;
         this.bestillingsDato = bestillingsDato;
@@ -101,13 +104,14 @@ public class Ordre {
         this.skrifttype = skrifttype;
         this.skriftStoerrelse = skriftstørrelse;
         this.skriftStil = skriftStil;
+        this.inskriptionsLinje = inskriptionsLinje;
         this.bemaerkninger = bemærkninger;
         this.totalPris = totalPris;
         this.rabat = rabat;
         this.tlfNr = tlfNr;
         this.bedemandCvr = bedemandCvr;
         handler.indsaetOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
-                skrifttype, skriftStoerrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT, tlfNr, bedemandCvr);
+                skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT, tlfNr, bedemandCvr);
     }
 
     /**
@@ -141,10 +145,10 @@ public class Ordre {
      * @throws SQLException
      */
     public void redigerOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
-            String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger,
+            String skrifttype, int skriftstørrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger,
             double totalPris, double rabat) throws SQLException {
         handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
-                skrifttype, skriftstørrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT);
+                skrifttype, skriftstørrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT);
     }
 
     /**
@@ -167,7 +171,7 @@ public class Ordre {
     public void saetOrdreStatus(int status) throws SQLException {
         this.status = status;
         handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
-                skrifttype, skriftStoerrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, totalPris);
+                skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, totalPris);
     }
 
     public int getOrdreID() {
@@ -198,6 +202,10 @@ public class Ordre {
         return skriftStil;
     }
 
+    public String getInskriptionsLinje() {
+        return inskriptionsLinje;
+    }
+    
     public String getBemaerkninger() {
         return bemaerkninger;
     }

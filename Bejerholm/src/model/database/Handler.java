@@ -226,22 +226,22 @@ public class Handler {
     }
 
     public void redigerOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato,
-            String skrifttype, int skriftstørroelse, int skriftStil, String bemaerkninger, double totalPris,
+            String skrifttype, int skriftstørroelse, int skriftStil, String inskriptionsLinje, String bemaerkninger, double totalPris,
             double moms, double rabat, double miljoe_Afgift) throws SQLException {
         String command = ("update Ordre set status = " + status + ", bestillingsDato = " + bestillingsDato
                 + ", leveringsDato = " + leveringsDato + ", skriftType = '" + skrifttype + "', skriftStil = '"
-                + skriftStil + "', bemaerkninger = '" + bemaerkninger + "', totalPris = " + totalPris
+                + skriftStil +"', inskriptionsLinje = '" + inskriptionsLinje + "', bemaerkninger = '" + bemaerkninger + "', totalPris = " + totalPris
                 + ", moms = " + moms + ", rabat = " + rabat + ", miljoeAfgift = " + miljoe_Afgift + " where ordreID = " + ordreID + ";");
         DBConnection.execute(command);
     }
 
     public void indsaetOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato,
-            String skrifttype, int skriftstoerrelse, int skriftStil, String bemaerkninger, double totalPris,
+            String skrifttype, int skriftstoerrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger, double totalPris,
             double moms, double rabat, double miljoe_Afgift, int tlfNr, int bedemandCvr) throws SQLException {
         String command = ("insert into Ordre (ordreID, status, bestillingsDato, leveringsDato, skriftType,"
-                + " skriftStoerrselse, skriftStil, bemaerkninger, totalPris, moms, rabat, miljoeAfgift, tlfNr, bedemandCvr) "
+                + " skriftStoerrselse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, moms, rabat, miljoeAfgift, tlfNr, bedemandCvr) "
                 + "values (" + ordreID + ", " + status + ", " + bestillingsDato + ", " + leveringsDato + ", '"
-                + skrifttype + "', " + skriftstoerrelse + ", " + skriftStil + ", '" + bemaerkninger + "', "
+                + skrifttype + "', " + skriftstoerrelse + ", " + skriftStil +"', '" + inskriptionsLinje  + "', '" + bemaerkninger + "', "
                 + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ", " + tlfNr + ", " + bedemandCvr + ");");
         DBConnection.execute(command);
     }
