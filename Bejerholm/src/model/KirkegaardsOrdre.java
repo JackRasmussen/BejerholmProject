@@ -23,6 +23,14 @@ public class KirkegaardsOrdre {
         hentKirkegaardsOrdre();
     }
 
+    /**
+     * Denne metode kaldes fra constructoren, og forsøger at hente egenskaber ud
+     * fra databasen vha det givne id objektet af denne klasse har i øjeblikket.
+     * Hvis der ikke findes en record vil metoden indsætte tomme værdier i
+     * stedet.
+     *
+     * @throws SQLException
+     */
     private void hentKirkegaardsOrdre() throws SQLException {
         ResultSet rs = handler.hentKirkegaardsOrdreFraDatabase(kirkegaardsID);
         if (rs.next()) {
@@ -41,6 +49,18 @@ public class KirkegaardsOrdre {
         rs.close();
     }
 
+    /**
+     * Denne metode indsætter en record i databsen ud fra de givne input, og
+     * sætter egenskaberne for det nuværende objekt af denne klasse i samme
+     * omgang.
+     *
+     * @param urne_Kiste
+     * @param raekke
+     * @param nummer
+     * @param afdeling
+     * @param ordreID
+     * @throws SQLException
+     */
     public void indsaetKirkegaardsOrdreTilDatabase(boolean urne_Kiste, int raekke, int nummer, String afdeling, int ordreID) throws SQLException {
         this.urne_Kiste = urne_Kiste;
         this.raekke = raekke;
@@ -50,6 +70,16 @@ public class KirkegaardsOrdre {
         handler.indsaetKirkegaardsOrdreIDatabase(kirkegaardsID, urne_Kiste, raekke, nummer, afdeling, ordreID);
     }
 
+    /**
+     * Denne metode redigerer data i databasen ud fra input til metoden og det
+     * nuværende objekt af denne klasses egenskaber.
+     *
+     * @param urne_Kiste
+     * @param raekke
+     * @param nummer
+     * @param afdeling
+     * @throws SQLException
+     */
     public void redigerKirkegaardsOrdre(boolean urne_Kiste, int raekke, int nummer, String afdeling) throws SQLException {
         this.urne_Kiste = urne_Kiste;
         this.raekke = raekke;
@@ -58,6 +88,12 @@ public class KirkegaardsOrdre {
         handler.redigerKirkegaardsOrdreIDatabase(kirkegaardsID, urne_Kiste, raekke, nummer, afdeling);
     }
 
+    /**
+     * Denne metode sletter en record fra databasen gennem egenskaberne for det
+     * nuværende objekt af denne klasse.
+     *
+     * @throws SQLException
+     */
     public void sletKirkegaardsOrdreFraDatabase() throws SQLException {
         handler.sletKirkegaardsOrdreFraDatabase(kirkegaardsID);
     }

@@ -37,6 +37,14 @@ public class Ordre {
         hentOrdreFraDatabase();
     }
 
+    /**
+     * Denne metode kaldes fra constructoren og sætter hvis muligt egenskaberne
+     * for det nuværende objekt af denne klasse ud fra informationerne i
+     * databasen. Hvis ikke der findes en record i databasen vil metoden i
+     * stedet sætte egenskaberne til tomme værdier.
+     *
+     * @throws SQLException
+     */
     private void hentOrdreFraDatabase() throws SQLException {
         ResultSet rs = handler.hentOrdreFraDatabase(ordreID);
         if (rs.next()) {
@@ -66,6 +74,24 @@ public class Ordre {
         }
     }
 
+    /**
+     * Denne metode indsætter en ny record i databasen ud fra de givne input
+     * metoden modtager og sætter samtidig egenskaberne for det nuværende objekt
+     * af denne klasse.
+     *
+     * @param status
+     * @param bestillingsDato
+     * @param leveringsDato
+     * @param skrifttype
+     * @param skriftstørrelse
+     * @param skriftStil
+     * @param bemærkninger
+     * @param totalPris
+     * @param rabat
+     * @param tlfNr
+     * @param bedemandCvr
+     * @throws SQLException
+     */
     public void gemOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
             String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger,
             double totalPris, double rabat, int tlfNr, int bedemandCvr) throws SQLException {
@@ -83,14 +109,37 @@ public class Ordre {
         handler.indsaetOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
                 skrifttype, skriftStoerrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT, tlfNr, bedemandCvr);
     }
-    
-    public void indsaetProduktTilOrdre(int produktNr, int antal) throws SQLException{
+
+    /**
+     * Denne metode indsætter et produkt til ProduktOrdre tabellen i databasen
+     * ud fra det givne input. Den modtager i samme omgang et objekt af Produkt
+     * til at indsætte produktID fra.
+     *
+     * @param produktNr
+     * @param antal
+     * @throws SQLException
+     */
+    public void indsaetProduktTilOrdre(Produkt produktAtIndsaette, int antal) throws SQLException {
         if (ordreID != 0) {
-            
+            handler.indsaetProduktOrdreData(ordreID, produktAtIndsaette.getProduktID(), antal);
         }
-        handler.indsaetProduktOrdreData(ordreID, produktNr, antal);
     }
 
+    /**
+     * Denne metode redigerer en record i databasen ud fra dette objekts
+     * nuværende egenskaber samt det input metoden modtager.
+     *
+     * @param status
+     * @param bestillingsDato
+     * @param leveringsDato
+     * @param skrifttype
+     * @param skriftstørrelse
+     * @param skriftStil
+     * @param bemærkninger
+     * @param totalPris
+     * @param rabat
+     * @throws SQLException
+     */
     public void redigerOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
             String skrifttype, int skriftstørrelse, int skriftStil, String bemærkninger,
             double totalPris, double rabat) throws SQLException {
@@ -98,10 +147,23 @@ public class Ordre {
                 skrifttype, skriftstørrelse, skriftStil, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT);
     }
 
+    /**
+     * Denne metode sletter en record fra databasen ud fra de egenskaber det
+     * nuværende objekt af denne klasse har.
+     *
+     * @throws SQLException
+     */
     public void sletOrdreFraDatabase() throws SQLException {
         handler.sletOrdreFraDatabase(ordreID);
     }
 
+    /**
+     * Denne metode ændrer status variablen til det input metoden modtager, og
+     * ændrer det også i databasen.
+     *
+     * @param status
+     * @throws SQLException
+     */
     public void saetOrdreStatus(int status) throws SQLException {
         this.status = status;
         handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,

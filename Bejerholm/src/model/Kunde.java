@@ -25,6 +25,14 @@ public class Kunde {
         hentMuligKundeFraDatabase();
     }
 
+    /**
+     * Denne metode kaldes fra constructoren og sætter egenskaberne for det
+     * nuværende objekt af denne klasse, ud fra informationerne databasen har.
+     * Hvis der ikke findes en record der er gyldig, vil egenskaberne sættes til
+     * tomme værdier.
+     *
+     * @throws SQLException
+     */
     private void hentMuligKundeFraDatabase() throws SQLException {
         ResultSet rs = handler.soegKunder(tlfNr);
         if (rs.next()) {
@@ -43,6 +51,18 @@ public class Kunde {
         rs.close();
     }
 
+    /**
+     * Denne metode indsætter en ny record i databasen ud fra det givne input
+     * metoden modtager, og sætter samtidig også egenskaber for det nuværende
+     * objekt af denne klasse.
+     *
+     * @param fNavn
+     * @param eNavn
+     * @param adresse
+     * @param postNr
+     * @param by
+     * @throws SQLException
+     */
     public void indsaetKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by) throws SQLException {
         this.fNavn = fNavn;
         this.eNavn = eNavn;
@@ -52,10 +72,27 @@ public class Kunde {
         handler.indsaetKunde(tlfNr, fNavn, eNavn, adresse, postNr, eNavn);
     }
 
+    /**
+     * Denne metode sletter en record fra databasen ud fra egenskaberne det
+     * nuværende objekt af denne klasse har.
+     *
+     * @throws SQLException
+     */
     public void sletKundeFraDatabase() throws SQLException {
         handler.sletKunde(tlfNr);
     }
 
+    /**
+     * Denne metode ændrer en record i databasen ud fra telefonnummeret det
+     * nuværende objekt af denne klasse har, samt de input metoden modtager.
+     *
+     * @param fNavn
+     * @param eNavn
+     * @param adresse
+     * @param postNr
+     * @param by
+     * @throws SQLException
+     */
     public void redigerKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by) throws SQLException {
         handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by);
     }

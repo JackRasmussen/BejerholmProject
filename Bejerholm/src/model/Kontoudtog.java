@@ -24,6 +24,13 @@ public class Kontoudtog {
         hentKontoUdtog();
     }
 
+    /**
+     * Denne metode kaldes fra constructoren, og indsætter data til det
+     * nuværende objekt af denne klasse ud fra det givne input constructoren har
+     * modtaget.
+     *
+     * @throws SQLException
+     */
     private void hentKontoUdtog() throws SQLException {
         ResultSet rs = handler.hentKontoudtogFraDatabase(kontoudtogsID);
         if (rs.next()) {
@@ -40,6 +47,16 @@ public class Kontoudtog {
         rs.close();
     }
 
+    /**
+     * Denne metode indsætter et kontoudtog i databasen og sætter egenskaber for
+     * det nuværende objekt af denne klasse, ud fra inputtet metoden modtager.
+     *
+     * @param kontoudtogsDato
+     * @param ordreLinjePris
+     * @param ordreLinjeProv
+     * @param ordreID
+     * @throws SQLException
+     */
     public void indsaetKontoUdtogIDatabase(Date kontoudtogsDato, String ordreLinjePris, String ordreLinjeProv, int ordreID) throws SQLException {
         this.kontoudtogsDato = kontoudtogsDato;
         this.ordreLinjePris = ordreLinjePris;
@@ -48,6 +65,12 @@ public class Kontoudtog {
         handler.indsaetKontoudtogIDatabase(kontoudtogsID, kontoudtogsDato, vedroerende, ordreLinjePris, ordreLinjeProv, ordreID);
     }
 
+    /**
+     * Denne metode sletter en record fra databasen ud fra egenskaberne dette
+     * objekt af klassen har.
+     *
+     * @throws SQLException
+     */
     public void sletKontoUdtogFraDatabase() throws SQLException {
         handler.sletKontoudtogFraDatabase(kontoudtogsID);
     }

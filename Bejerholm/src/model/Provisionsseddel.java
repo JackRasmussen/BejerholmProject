@@ -24,6 +24,13 @@ public class Provisionsseddel {
         hentProvisionsseddelFraDatabase();
     }
 
+    /**
+     * Denne metode kaldes fra constructoren og prøver at sætte egenskaberne for
+     * det nuværende objekt af denne klasse. Hvis ikke der findes en record i
+     * databasen sættes egenskaberne til tomme værdier.
+     *
+     * @throws SQLException
+     */
     private void hentProvisionsseddelFraDatabase() throws SQLException {
         ResultSet rs = handler.hentProvisionsseddelFraDatabase(provisionsID);
         if (rs.next()) {
@@ -40,6 +47,16 @@ public class Provisionsseddel {
         rs.close();
     }
 
+    /**
+     * Denne metode indsætter en ny record i databasen ud fra inputtet til
+     * metoden, samt egenskaberne for det nuværende objekt af denne klasse.
+     *
+     * @param provisionsDato
+     * @param provisionsProcent
+     * @param beskrivelse
+     * @param ordreID
+     * @throws SQLException
+     */
     public void indsaetProvisionsSeddelIDatabase(Date provisionsDato, int provisionsProcent, String beskrivelse, int ordreID) throws SQLException {
         this.provisionsDato = provisionsDato;
         this.provisionsProcent = provisionsProcent;
@@ -48,6 +65,12 @@ public class Provisionsseddel {
         handler.indsaetProvisionsseddelIDatabase(provisionsID, provisionsDato, vedroerende, provisionsProcent, beskrivelse, ordreID);
     }
 
+    /**
+     * Denne metode sletter en record fra databasen ud fra egenskaberne for det
+     * nuværende objekt af denne klasse.
+     *
+     * @throws SQLException
+     */
     public void sletProvisionsSeddelFraDatabase() throws SQLException {
         handler.sletProvisionsseddelFraDatabase(provisionsID);
     }

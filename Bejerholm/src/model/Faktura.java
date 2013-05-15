@@ -23,6 +23,12 @@ public class Faktura {
         hentFaktura();
     }
 
+    /**
+     * Denne metode bliver kaldt fra constructoren, og forsøger at lede efter en
+     * ordre med dette objekts egenskaber
+     *
+     * @throws SQLException
+     */
     private void hentFaktura() throws SQLException {
         ResultSet rs = handler.hentFakturaFraDatabase(fakturaNr);
         if (rs.next()) {
@@ -37,6 +43,15 @@ public class Faktura {
         rs.close();
     }
 
+    /**
+     * Denne metode indsætter data i databasen ud fra metodens input, samt
+     * sætter dette objekts egenskaber.
+     *
+     * @param fakturaDato
+     * @param bankOplysninger
+     * @param ordreID
+     * @throws SQLException
+     */
     public void indsaetFakturaIDatabase(Date fakturaDato, String bankOplysninger, int ordreID) throws SQLException {
         this.fakturaDato = fakturaDato;
         this.bankOplysninger = bankOplysninger;
@@ -44,6 +59,12 @@ public class Faktura {
         handler.indsaetFakturaIDatabase(fakturaNr, fakturaDato, vedroerende, bankOplysninger, ordreID);
     }
 
+    /**
+     * Denne metode sletter en record fra databasen ud fra det nuværende objekt
+     * af denne klasse.
+     *
+     * @throws SQLException
+     */
     public void sletFakturaFraDatabase() throws SQLException {
         handler.sletFakturaFraDatabase(fakturaNr);
     }
