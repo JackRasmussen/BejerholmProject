@@ -51,17 +51,11 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
 
         jButton1.setText("Tilføj vare");
 
-        jTextField1.setText("jTextField1");
-
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sten nr:");
 
-        jTextField5.setText("jTextField5");
-
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Navn:");
-
-        jTextField3.setText("jTextField3");
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Dekoration:");
@@ -74,10 +68,6 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Bredde:");
-
-        jTextField6.setText("jTextField6");
-
-        jTextField7.setText("jTextField7");
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Størrelse:");
@@ -97,8 +87,6 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Ind.Pris u/moms:");
-
-        jTextField2.setText("jTextField2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

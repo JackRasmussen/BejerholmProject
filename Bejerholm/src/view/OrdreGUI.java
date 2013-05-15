@@ -20,7 +20,7 @@ import view.ordre.KundeGUI;
 public class OrdreGUI extends javax.swing.JPanel {
 
     private Kunde kunde;
-    KundeGUI kg = new KundeGUI();
+    KundeGUI kg = new KundeGUI(this);
     BestillingsOrdreGUI bog = new BestillingsOrdreGUI();
 
     public OrdreGUI() {
@@ -59,9 +59,14 @@ public class OrdreGUI extends javax.swing.JPanel {
 
         cardsOrdre.setLayout(new java.awt.CardLayout());
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Kunde Information!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Bestilling!");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -73,19 +78,22 @@ public class OrdreGUI extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cardsOrdre, javax.swing.GroupLayout.DEFAULT_SIZE, 1165, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
+                .addGap(32, 32, 32)
+                .addComponent(cardsOrdre, javax.swing.GroupLayout.DEFAULT_SIZE, 1113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(156, 156, 156)
+                .addGap(160, 160, 160)
                 .addComponent(jButton1)
-                .addGap(30, 30, 30)
+                .addGap(26, 26, 26)
                 .addComponent(jButton2)
                 .addContainerGap(288, Short.MAX_VALUE))
             .addComponent(cardsOrdre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -95,6 +103,11 @@ public class OrdreGUI extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         skiftOrdrePanel("BestillingsOrdreGUI");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        skiftOrdrePanel("KundeGUI");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardsOrdre;
     private javax.swing.JButton jButton1;

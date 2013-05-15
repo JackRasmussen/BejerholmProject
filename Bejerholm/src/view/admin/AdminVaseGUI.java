@@ -40,19 +40,11 @@ public class AdminVaseGUI extends javax.swing.JPanel {
 
         jButton1.setText("Tilføj vare");
 
-        jTextField1.setText("jTextField1");
-
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Vare nr:");
 
-        jTextField5.setText("jTextField5");
-
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Navn:");
-
-        jTextField4.setText("jTextField4");
-
-        jTextField3.setText("jTextField3");
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ind.Pris u/moms:");

@@ -4,6 +4,7 @@
  */
 package view.ordre;
 
+import java.awt.CardLayout;
 import view.AdminGUI;
 import view.OrdreGUI;
 
@@ -13,10 +14,9 @@ import view.OrdreGUI;
  */
 public class KundeGUI extends javax.swing.JPanel {
 
-    /**
-     * Creates new form KundeGUI
-     */
-    public KundeGUI() {
+    OrdreGUI org;
+
+    public KundeGUI(OrdreGUI org) {
         initComponents();
         adressFelt.setVisible(false);
         adressLabel.setVisible(false);
@@ -32,7 +32,8 @@ public class KundeGUI extends javax.swing.JPanel {
         postLabel.setVisible(false);
         videreKnap.setVisible(false);
         opretKundeKnap.setVisible(false);
-        
+        this.org = org;
+
     }
 
     /**
@@ -64,8 +65,6 @@ public class KundeGUI extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(100, 100, 100));
 
-        soegKundeFelt.setText("jTextField1");
-
         soegKundeKnap.setText("Søg kunde");
         soegKundeKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,8 +74,6 @@ public class KundeGUI extends javax.swing.JPanel {
 
         soegKundeLabel.setForeground(new java.awt.Color(255, 255, 255));
         soegKundeLabel.setText("Søg på kunde tlf. nr:");
-
-        fNavnFelt.setText("jTextField2");
 
         fNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
         fNavnLabel.setText("Fornavn:");
@@ -98,8 +95,6 @@ public class KundeGUI extends javax.swing.JPanel {
         eNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
         eNavnLabel.setText("Efternavn");
 
-        eNavnFelt.setText("jTextField3");
-
         adressLabel.setForeground(new java.awt.Color(255, 255, 255));
         adressLabel.setText("Adresse:");
 
@@ -109,16 +104,8 @@ public class KundeGUI extends javax.swing.JPanel {
         byLabel.setForeground(new java.awt.Color(255, 255, 255));
         byLabel.setText("By:");
 
-        adressFelt.setText("jTextField4");
-
-        postFelt.setText("jTextField5");
-
-        byFelt.setText("jTextField6");
-
         mobTlfLabel.setForeground(new java.awt.Color(255, 255, 255));
         mobTlfLabel.setText("Mobil tlf:");
-
-        mobTlfFelt.setText("jTextField7");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,25 +124,20 @@ public class KundeGUI extends javax.swing.JPanel {
                             .addComponent(postLabel)
                             .addComponent(byLabel)
                             .addComponent(mobTlfLabel))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(fNavnFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(soegKundeFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(eNavnFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(adressFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(postFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(mobTlfFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                                    .addComponent(byFelt))))
+                        .addGap(89, 89, 89)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fNavnFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(soegKundeFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(eNavnFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(adressFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(postFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(mobTlfFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(byFelt))
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(opretKundeKnap)
                             .addComponent(soegKundeKnap))))
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +180,7 @@ public class KundeGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void videreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_videreKnapActionPerformed
-        // TODO add your handling code here:
+        org.skiftOrdrePanel("BestillingsOrdreGUI");
     }//GEN-LAST:event_videreKnapActionPerformed
 
     private void soegKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegKundeKnapActionPerformed
@@ -208,7 +190,7 @@ public class KundeGUI extends javax.swing.JPanel {
         //hvis kunden er fundet skal opretKundeKnap ikke sættes til visible, 
         //og videreKnap skal sættes til visible.
         //og omvendt hvis kunden ikke er fundet.
-        
+
         adressFelt.setVisible(true);
         adressLabel.setVisible(true);
         byFelt.setVisible(true);
@@ -226,9 +208,15 @@ public class KundeGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_soegKundeKnapActionPerformed
 
     private void opretKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opretKundeKnapActionPerformed
-        
+        org.skiftOrdrePanel("BestillingsOrdreGUI");
+        fNavnFelt.setText("");
+        eNavnFelt.setText("");
+        adressFelt.setText("");
+        postFelt.setText("");
+        byFelt.setText("");
+        mobTlfFelt.setText("");
+        soegKundeFelt.setText("");
     }//GEN-LAST:event_opretKundeKnapActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
     private javax.swing.JLabel adressLabel;
@@ -248,4 +236,13 @@ public class KundeGUI extends javax.swing.JPanel {
     private javax.swing.JLabel soegKundeLabel;
     private javax.swing.JButton videreKnap;
     // End of variables declaration//GEN-END:variables
+
+    public void setFelter(String fNavnFelt, String eNavnFelt, String adresseFelt, int postFelt, String byFelt, int mobTlfFelt) {
+        this.fNavnFelt.setText(fNavnFelt);
+        this.eNavnFelt.setText(eNavnFelt);
+        this.adressFelt.setText(adresseFelt);
+        this.postFelt.setText(postFelt + "");
+        this.byFelt.setText(byFelt);
+        this.mobTlfFelt.setText(mobTlfFelt + "");
+    }
 }

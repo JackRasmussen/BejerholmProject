@@ -119,6 +119,7 @@ public class LogPaaGUI extends javax.swing.JPanel {
         beg.getOrdre().setVisible(true);
         beg.getLager().setVisible(true);
         beg.getLogaf().setVisible(true);
+        beg.getKunde().setVisible(true);
     }//GEN-LAST:event_loginActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed

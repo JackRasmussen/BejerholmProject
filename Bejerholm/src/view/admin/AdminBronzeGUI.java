@@ -15,6 +15,7 @@ public class AdminBronzeGUI extends javax.swing.JPanel {
      */
     public AdminBronzeGUI() {
         initComponents();
+        jTextField1.setToolTipText("Indtast vare nummer!"); //<-- Tip til hvad der skal indtastest hvor!
     }
 
     /**
@@ -53,19 +54,20 @@ public class AdminBronzeGUI extends javax.swing.JPanel {
         jLabel4.setText("Ind.Pris u/moms:");
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Salgspeis u/moms:");
+        jLabel5.setText("Salgspris u/moms:");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTextField1MouseEntered(evt);
+            }
+        });
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
-
-        jTextField5.setText("jTextField5");
-
-        jButton1.setText("Tilføj vare");
+        jButton1.setText("Tilføj vare!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -135,6 +137,15 @@ public class AdminBronzeGUI extends javax.swing.JPanel {
                 .addGap(41, 41, 41))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseEntered
+        
+    }//GEN-LAST:event_jTextField1MouseEntered
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

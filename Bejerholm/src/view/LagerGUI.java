@@ -77,7 +77,7 @@ public class LagerGUI extends javax.swing.JPanel {
         cardsLager.setPreferredSize(new java.awt.Dimension(1280, 480));
         cardsLager.setLayout(new java.awt.CardLayout());
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Skift!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -88,13 +88,13 @@ public class LagerGUI extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cardsLager, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(396, 396, 396)
+                .addGap(534, 534, 534)
                 .addComponent(varegruppe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap())
-            .addComponent(cardsLager, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

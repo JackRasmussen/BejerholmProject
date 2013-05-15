@@ -43,17 +43,11 @@ public class AdminPlanGUI extends javax.swing.JPanel {
 
         jButton1.setText("Tilføj vare");
 
-        jTextField1.setText("jTextField1");
-
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Vare nr:");
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Navn:");
-
-        jTextField4.setText("jTextField4");
-
-        jTextField3.setText("jTextField3");
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ind.Pris u/moms:");
@@ -63,10 +57,6 @@ public class AdminPlanGUI extends javax.swing.JPanel {
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Bredde:");
-
-        jTextField6.setText("jTextField6");
-
-        jTextField7.setText("jTextField7");
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Størrelse:");

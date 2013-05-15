@@ -35,24 +35,15 @@
                           <Component id="byLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="mobTlfLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="fNavnFelt" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                  <Component id="soegKundeFelt" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                  <Component id="eNavnFelt" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                  <Component id="adressFelt" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                  <Component id="postFelt" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="mobTlfFelt" pref="110" max="32767" attributes="0"/>
-                                  <Component id="byFelt" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="fNavnFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                          <Component id="soegKundeFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                          <Component id="eNavnFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                          <Component id="adressFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                          <Component id="postFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                          <Component id="mobTlfFelt" pref="110" max="32767" attributes="0"/>
+                          <Component id="byFelt" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -61,7 +52,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="400" max="32767" attributes="0"/>
+              <EmptySpace pref="391" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,9 +106,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="soegKundeFelt">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="soegKundeKnap">
       <Properties>
@@ -136,9 +124,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="fNavnFelt">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="fNavnLabel">
       <Properties>
@@ -173,9 +158,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="eNavnFelt">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="adressLabel">
       <Properties>
@@ -202,19 +184,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="adressFelt">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="postFelt">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField5"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="byFelt">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField6"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mobTlfLabel">
       <Properties>
@@ -225,9 +198,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="mobTlfFelt">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField7"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
