@@ -191,7 +191,7 @@ public class BejerholmGUI extends javax.swing.JPanel {
         lager.setVisible(false);
         admin.setVisible(false);
         ordre.setVisible(false);
-        logaf.setVisible(true);
+        logaf.setVisible(false);
 
     }//GEN-LAST:event_logafActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
