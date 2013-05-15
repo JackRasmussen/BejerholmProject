@@ -40,14 +40,19 @@ public class AdminBronzeGUI extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(100, 100, 100));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Vare nr:");
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Type:");
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Navn:");
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ind.Pris u/moms:");
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Salgspeis u/moms:");
 
         jTextField1.setText("jTextField1");

@@ -8,12 +8,12 @@ package view.ordre;
  *
  * @author TheToiletpaper
  */
-public class OrdreGUI extends javax.swing.JPanel {
+public class BestillingsOrdreGUI extends javax.swing.JPanel {
 
     /**
-     * Creates new form OrdreGUI
+     * Creates new form BestillingsOrdreGUI
      */
-    public OrdreGUI() {
+    public BestillingsOrdreGUI() {
         initComponents();
     }
 
@@ -40,30 +40,42 @@ public class OrdreGUI extends javax.swing.JPanel {
         jTextField4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(100, 100, 100));
+
+        jCheckBox1.setBackground(new java.awt.Color(100, 100, 100));
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Urne");
 
+        jCheckBox2.setBackground(new java.awt.Color(100, 100, 100));
+        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox2.setText("Kiste");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jTextField1.setText("jTextField1");
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Inskription:");
 
+        jCheckBox3.setBackground(new java.awt.Color(100, 100, 100));
+        jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox3.setText("Flere navne");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jTextField2.setText("jTextField2");
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Pris:");
 
         jTextField3.setText("jTextField3");
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Opdateret pris:");
 
         jTextField4.setText("jTextField4");
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Antal bogstaver:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

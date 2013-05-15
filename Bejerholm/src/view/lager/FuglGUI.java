@@ -31,7 +31,6 @@ public class FuglGUI extends javax.swing.JPanel {
         printFugle = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(100, 100, 100));
-        setLayout(null);
 
         jTable1.setBackground(new java.awt.Color(100, 100, 100));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -90,17 +89,35 @@ public class FuglGUI extends javax.swing.JPanel {
         jTable1.getColumnModel().getColumn(4).setResizable(false);
         jTable1.getColumnModel().getColumn(4).setPreferredWidth(100);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(240, 20, 600, 340);
-
         printFugle.setText("Print!");
         printFugle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printFugleActionPerformed(evt);
             }
         });
-        add(printFugle);
-        printFugle.setBounds(990, 350, 59, 23);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(printFugle)
+                .addContainerGap(307, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(printFugle)
+                        .addGap(18, 18, 18)))
+                .addGap(80, 80, 80))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void printFugleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printFugleActionPerformed

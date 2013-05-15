@@ -31,7 +31,6 @@ public class BronzeGUI extends javax.swing.JPanel {
         printBronze = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(100, 100, 100));
-        setLayout(null);
 
         jTable1.setBackground(new java.awt.Color(100, 100, 100));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -98,12 +97,30 @@ public class BronzeGUI extends javax.swing.JPanel {
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(100);
         jTable1.getColumnModel().getColumn(4).setPreferredWidth(100);
 
-        add(jScrollPane2);
-        jScrollPane2.setBounds(92, 20, 730, 402);
-
         printBronze.setText("Print!");
-        add(printBronze);
-        printBronze.setBounds(980, 400, 59, 23);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96)
+                .addComponent(printBronze)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(printBronze)
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane2;

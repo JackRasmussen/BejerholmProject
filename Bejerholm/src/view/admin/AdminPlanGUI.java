@@ -45,24 +45,30 @@ public class AdminPlanGUI extends javax.swing.JPanel {
 
         jTextField1.setText("jTextField1");
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Vare nr:");
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Navn:");
 
         jTextField4.setText("jTextField4");
 
         jTextField3.setText("jTextField3");
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ind.Pris u/moms:");
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Længde:");
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Bredde:");
 
         jTextField6.setText("jTextField6");
 
         jTextField7.setText("jTextField7");
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Størrelse:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -89,9 +95,7 @@ public class AdminPlanGUI extends javax.swing.JPanel {
                         .addComponent(jLabel6)
                         .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(5, 5, 5))
+                            .addComponent(jLabel8)
                             .addComponent(jLabel7))
                         .addGap(122, 122, 122)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)

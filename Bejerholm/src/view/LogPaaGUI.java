@@ -67,18 +67,22 @@ public class LogPaaGUI extends javax.swing.JPanel {
         add(database);
         database.setBounds(570, 270, 100, 20);
 
+        brugernavnLabel.setForeground(new java.awt.Color(255, 255, 255));
         brugernavnLabel.setText("Brugernavn:");
         add(brugernavnLabel);
         brugernavnLabel.setBounds(460, 110, 80, 14);
 
+        passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
         passwordLabel.setText("Kodeord:");
         add(passwordLabel);
         passwordLabel.setBounds(460, 150, 80, 14);
 
+        hostnameLabel.setForeground(new java.awt.Color(255, 255, 255));
         hostnameLabel.setText("Hostname:");
         add(hostnameLabel);
         hostnameLabel.setBounds(460, 190, 80, 14);
 
+        portLabel.setForeground(new java.awt.Color(255, 255, 255));
         portLabel.setText("Port:");
         add(portLabel);
         portLabel.setBounds(460, 230, 80, 14);
@@ -92,11 +96,13 @@ public class LogPaaGUI extends javax.swing.JPanel {
         add(login);
         login.setBounds(570, 340, 90, 23);
 
+        databaseLabel.setForeground(new java.awt.Color(255, 255, 255));
         databaseLabel.setText("Database:");
         add(databaseLabel);
         databaseLabel.setBounds(460, 270, 80, 14);
 
         jCheckBox1.setBackground(new java.awt.Color(100, 100, 100));
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Avanceret");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -35,7 +35,7 @@ public class AdminGUI extends javax.swing.JPanel {
         lagervare.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
                     "Admin Gravsten", "Admin Bronze Dekorationer", "Admin Granitplaner", "Admin Fuglebade", "Admin Granitvaser"
                 }));
-        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(abg, "Amin Bronze Dekorationer");
+        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(abg, "Admin Bronze Dekorationer");
         ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(agg, "Admin Gravsten");
         ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(apg, "Admin Granitplaner");
         ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(afg, "Admin Fuglebade");

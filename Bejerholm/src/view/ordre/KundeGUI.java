@@ -4,6 +4,9 @@
  */
 package view.ordre;
 
+import view.AdminGUI;
+import view.OrdreGUI;
+
 /**
  *
  * @author TheToiletpaper
@@ -15,6 +18,21 @@ public class KundeGUI extends javax.swing.JPanel {
      */
     public KundeGUI() {
         initComponents();
+        adressFelt.setVisible(false);
+        adressLabel.setVisible(false);
+        byFelt.setVisible(false);
+        byLabel.setVisible(false);
+        eNavnFelt.setVisible(false);
+        eNavnLabel.setVisible(false);
+        fNavnFelt.setVisible(false);
+        fNavnLabel.setVisible(false);
+        mobTlfFelt.setVisible(false);
+        mobTlfLabel.setVisible(false);
+        postFelt.setVisible(false);
+        postLabel.setVisible(false);
+        videreKnap.setVisible(false);
+        opretKundeKnap.setVisible(false);
+        
     }
 
     /**
@@ -26,155 +44,208 @@ public class KundeGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        soegKundeFelt = new javax.swing.JTextField();
+        soegKundeKnap = new javax.swing.JButton();
+        soegKundeLabel = new javax.swing.JLabel();
+        fNavnFelt = new javax.swing.JTextField();
+        fNavnLabel = new javax.swing.JLabel();
+        opretKundeKnap = new javax.swing.JButton();
+        videreKnap = new javax.swing.JButton();
+        eNavnLabel = new javax.swing.JLabel();
+        eNavnFelt = new javax.swing.JTextField();
+        adressLabel = new javax.swing.JLabel();
+        postLabel = new javax.swing.JLabel();
+        byLabel = new javax.swing.JLabel();
+        adressFelt = new javax.swing.JTextField();
+        postFelt = new javax.swing.JTextField();
+        byFelt = new javax.swing.JTextField();
+        mobTlfLabel = new javax.swing.JLabel();
+        mobTlfFelt = new javax.swing.JTextField();
 
-        jTextField1.setText("jTextField1");
+        setBackground(new java.awt.Color(100, 100, 100));
 
-        jButton1.setText("Søg kunde");
+        soegKundeFelt.setText("jTextField1");
 
-        jLabel1.setText("Søg på kunde tlf. nr:");
-
-        jTextField2.setText("jTextField2");
-
-        jLabel2.setText("Fornavn:");
-
-        jButton2.setText("Opret kunde");
-
-        jButton3.setText("Videre");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        soegKundeKnap.setText("Søg kunde");
+        soegKundeKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                soegKundeKnapActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Efternavn");
+        soegKundeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        soegKundeLabel.setText("Søg på kunde tlf. nr:");
 
-        jTextField3.setText("jTextField3");
+        fNavnFelt.setText("jTextField2");
 
-        jLabel4.setText("Adresse:");
+        fNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
+        fNavnLabel.setText("Fornavn:");
 
-        jLabel5.setText("Postnummer:");
+        opretKundeKnap.setText("Opret kunde");
+        opretKundeKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opretKundeKnapActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setText("By:");
+        videreKnap.setText("Videre");
+        videreKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                videreKnapActionPerformed(evt);
+            }
+        });
 
-        jTextField4.setText("jTextField4");
+        eNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
+        eNavnLabel.setText("Efternavn");
 
-        jTextField5.setText("jTextField5");
+        eNavnFelt.setText("jTextField3");
 
-        jTextField6.setText("jTextField6");
+        adressLabel.setForeground(new java.awt.Color(255, 255, 255));
+        adressLabel.setText("Adresse:");
 
-        jLabel7.setText("Mobil tlf:");
+        postLabel.setForeground(new java.awt.Color(255, 255, 255));
+        postLabel.setText("Postnummer:");
 
-        jTextField7.setText("jTextField7");
+        byLabel.setForeground(new java.awt.Color(255, 255, 255));
+        byLabel.setText("By:");
+
+        adressFelt.setText("jTextField4");
+
+        postFelt.setText("jTextField5");
+
+        byFelt.setText("jTextField6");
+
+        mobTlfLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mobTlfLabel.setText("Mobil tlf:");
+
+        mobTlfFelt.setText("jTextField7");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(347, 347, 347)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
+                    .addComponent(videreKnap)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(97, 97, 97)
-                        .addComponent(jButton1)))
-                .addContainerGap(720, Short.MAX_VALUE))
+                            .addComponent(fNavnLabel)
+                            .addComponent(soegKundeLabel)
+                            .addComponent(eNavnLabel)
+                            .addComponent(adressLabel)
+                            .addComponent(postLabel)
+                            .addComponent(byLabel)
+                            .addComponent(mobTlfLabel))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(fNavnFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(soegKundeFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(eNavnFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(adressFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(postFelt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(mobTlfFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                                    .addComponent(byFelt))))
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(opretKundeKnap)
+                            .addComponent(soegKundeKnap))))
+                .addContainerGap(400, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1))
+                    .addComponent(soegKundeFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soegKundeKnap)
+                    .addComponent(soegKundeLabel))
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(fNavnFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fNavnLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eNavnLabel)
+                    .addComponent(eNavnFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(adressLabel)
+                    .addComponent(adressFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(postLabel)
+                    .addComponent(postFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(byLabel)
+                    .addComponent(byFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                    .addComponent(mobTlfLabel)
+                    .addComponent(mobTlfFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addGap(28, 28, 28))
+                .addComponent(opretKundeKnap)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(videreKnap)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void videreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_videreKnapActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_videreKnapActionPerformed
+
+    private void soegKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegKundeKnapActionPerformed
+        // hvis kunde er fundet i databasen skal felterne udfyldes, 
+        //hvis ikke kunden er fundet, skal Bejerholm blive bedt om at udfylde 
+        //oplysningerne selv.
+        //hvis kunden er fundet skal opretKundeKnap ikke sættes til visible, 
+        //og videreKnap skal sættes til visible.
+        //og omvendt hvis kunden ikke er fundet.
+        
+        adressFelt.setVisible(true);
+        adressLabel.setVisible(true);
+        byFelt.setVisible(true);
+        byLabel.setVisible(true);
+        eNavnFelt.setVisible(true);
+        eNavnLabel.setVisible(true);
+        fNavnFelt.setVisible(true);
+        fNavnLabel.setVisible(true);
+        mobTlfFelt.setVisible(true);
+        mobTlfLabel.setVisible(true);
+        postFelt.setVisible(true);
+        postLabel.setVisible(true);
+        videreKnap.setVisible(false);
+        opretKundeKnap.setVisible(true);
+    }//GEN-LAST:event_soegKundeKnapActionPerformed
+
+    private void opretKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opretKundeKnapActionPerformed
+        
+    }//GEN-LAST:event_opretKundeKnapActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField adressFelt;
+    private javax.swing.JLabel adressLabel;
+    private javax.swing.JTextField byFelt;
+    private javax.swing.JLabel byLabel;
+    private javax.swing.JTextField eNavnFelt;
+    private javax.swing.JLabel eNavnLabel;
+    private javax.swing.JTextField fNavnFelt;
+    private javax.swing.JLabel fNavnLabel;
+    private javax.swing.JTextField mobTlfFelt;
+    private javax.swing.JLabel mobTlfLabel;
+    private javax.swing.JButton opretKundeKnap;
+    private javax.swing.JTextField postFelt;
+    private javax.swing.JLabel postLabel;
+    private javax.swing.JTextField soegKundeFelt;
+    private javax.swing.JButton soegKundeKnap;
+    private javax.swing.JLabel soegKundeLabel;
+    private javax.swing.JButton videreKnap;
     // End of variables declaration//GEN-END:variables
 }

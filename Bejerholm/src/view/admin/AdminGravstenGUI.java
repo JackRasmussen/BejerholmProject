@@ -53,28 +53,36 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
 
         jTextField1.setText("jTextField1");
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sten nr:");
 
         jTextField5.setText("jTextField5");
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Navn:");
 
         jTextField3.setText("jTextField3");
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Dekoration:");
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Salgspeis u/moms:");
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Længde:");
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Bredde:");
 
         jTextField6.setText("jTextField6");
 
         jTextField7.setText("jTextField7");
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Størrelse:");
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Overflade:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -84,8 +92,10 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox1.setBackground(new java.awt.Color(100, 100, 100));
         jCheckBox1.setText("Dekoration");
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Ind.Pris u/moms:");
 
         jTextField2.setText("jTextField2");
@@ -103,12 +113,9 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(197, 197, 197))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(251, 251, 251)))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGap(219, 219, 219)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox1)))
@@ -125,15 +132,14 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
                                     .addComponent(jLabel6)
                                     .addGap(73, 73, 73)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel8)
-                                            .addGap(5, 5, 5))
+                                        .addComponent(jLabel8)
                                         .addComponent(jLabel7))
                                     .addGap(122, 122, 122)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(251, 251, 251))
-                            .addComponent(jLabel9))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel9))
+                                .addGap(222, 222, 222)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jTextField7)
                             .addComponent(jTextField6)

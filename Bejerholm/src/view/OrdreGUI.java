@@ -4,24 +4,42 @@
  */
 package view;
 
+import java.awt.CardLayout;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.*;
 import model.database.*;
+import view.ordre.BestillingsOrdreGUI;
+import view.ordre.KundeGUI;
 
 /**
  *
  * @author TheToiletpaper
  */
-
 public class OrdreGUI extends javax.swing.JPanel {
 
     private Kunde kunde;
+    KundeGUI kg = new KundeGUI();
+    BestillingsOrdreGUI bog = new BestillingsOrdreGUI();
 
     public OrdreGUI() {
 
         initComponents();
+        cardsOrdre.add(kg);
+        cardsOrdre.add(bog);
+
+
+
+        ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(kg, "KundeGUI");
+        ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(bog, "BestillingsOrdreGUI");
+
+        skiftOrdrePanel("KundeGUI");
+    }
+
+    public void skiftOrdrePanel(String jp) {
+        ((CardLayout) cardsOrdre.getLayout()).show(cardsOrdre, jp);
+
     }
 
     /**
@@ -33,26 +51,22 @@ public class OrdreGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        cardsOrdre = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(100, 100, 100));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1165, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        cardsOrdre.setLayout(new java.awt.CardLayout());
 
         jButton1.setText("jButton1");
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -64,7 +78,7 @@ public class OrdreGUI extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cardsOrdre, javax.swing.GroupLayout.DEFAULT_SIZE, 1165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,13 +88,16 @@ public class OrdreGUI extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(jButton2)
                 .addContainerGap(288, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cardsOrdre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        skiftOrdrePanel("BestillingsOrdreGUI");
+    }//GEN-LAST:event_jButton2ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel cardsOrdre;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
