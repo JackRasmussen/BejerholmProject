@@ -11,8 +11,10 @@ public class Bedemand {
 
     private Handler handler;
     private String firmaNavn;
-    private int cvr;
     private int tlfNr;
+    private String adresse;
+    private int postNr;
+    private String byNavn;
 
     public Bedemand(int tlfNr) throws SQLException {
         this.handler = new Handler();
@@ -37,11 +39,15 @@ public class Bedemand {
     private void findBedemandViaTlf(int tlfNr) throws SQLException {
         ResultSet rs = handler.soegBedemandViaTlf(tlfNr);
         if (rs.next()) {
-            cvr = rs.getInt("cvr");
-            firmaNavn = rs.getString("firmaNavn");
+            this.adresse = rs.getString("adresse");
+            this.byNavn = rs.getString("byNavn");
+            this.postNr = rs.getInt("postNr");
+            this.firmaNavn = rs.getString("firmaNavn");
         } else {
-            cvr = 0;
-            firmaNavn = "Bedemand findes ikke";
+            this.adresse = "Bedemand findes ikke";
+            this.byNavn = "Bedemand findes ikke";
+            this.postNr = 0;
+            this.firmaNavn = "Bedemand findes ikke";
         }
         rs.close();
     }
@@ -57,11 +63,15 @@ public class Bedemand {
     private void findBedemandViaNavn(String firmaNavn) throws SQLException {
         ResultSet rs = handler.soegBedemandViaNavn(firmaNavn);
         if (rs.next()) {
-            cvr = rs.getInt("cvr");
-            tlfNr = rs.getInt("tlfNr");
+            this.adresse = rs.getString("adresse");
+            this.byNavn = rs.getString("byNavn");
+            this.postNr = rs.getInt("postNr");
+            this.tlfNr = rs.getInt("tlfNr");
         } else {
-            cvr = 0;
-            tlfNr = 0;
+            this.adresse = "Bedemand findes ikke";
+            this.byNavn = "Bedemand findes ikke";
+            this.postNr = 0;
+            this.tlfNr = 0;
         }
         rs.close();
     }
@@ -75,11 +85,13 @@ public class Bedemand {
      * @param firmaNavn
      * @throws SQLException
      */
-    public void tilfoejBedemandTilDatabase(int cvr, int tlfNr, String firmaNavn) throws SQLException {
-        this.cvr = cvr;
+    public void tilfoejBedemandTilDatabase(int tlfNr, String firmaNavn, String adresse, String byNavn, int postNr) throws SQLException {
+        this.adresse = adresse;
+        this.byNavn = byNavn;
+        this.postNr = postNr;
         this.tlfNr = tlfNr;
         this.firmaNavn = firmaNavn;
-        handler.tilfoejBedemand(cvr, firmaNavn, tlfNr);
+        handler.tilfoejBedemand(tlfNr, firmaNavn, adresse, postNr, byNavn);
     }
 
     /**
@@ -89,28 +101,36 @@ public class Bedemand {
      * @throws SQLException
      */
     public void sletBedemandFraDatabase() throws SQLException {
-        handler.sletBedemand(cvr);
+        handler.sletBedemand(tlfNr);
     }
 
     /**
      * Denne metode redigerer i en bedemand i databasen ud fra de givne input og
      * det aktive objekt af denne klasse.
      *
-     * @param cvr 
+     * @param cvr
      * @param firmaNavn
      * @param tlfNr
      * @throws SQLException
      */
-    public void redigerBedemandIDatabase(int cvr, String firmaNavn, int tlfNr) throws SQLException {
-        handler.redigerBedemand(cvr, firmaNavn, tlfNr);
+    public void redigerBedemandIDatabase(int tlfNr, String firmaNavn, String adresse, String byNavn, int postNr) throws SQLException {
+        handler.redigerBedemand(tlfNr, firmaNavn, adresse, postNr, byNavn);
     }
 
     public String getFirmaNavn() {
         return firmaNavn;
     }
 
-    public int getCvr() {
-        return cvr;
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public int getPostNr() {
+        return postNr;
+    }
+
+    public String getByNavn() {
+        return byNavn;
     }
 
     public int getTlfNr() {

@@ -37,14 +37,15 @@ public class Handler {
         DBConnection.execute(command);
     }
 
-    public void redigerBedemand(int cvr, String firmaNavn, int tlfNr) throws SQLException {
-        String command = ("update Bedemand set firmaNavn = '" + firmaNavn + "', tlfNr = " + tlfNr + " where cvr = " + cvr + ";");
+    public void redigerBedemand(int tlfNr, String firmaNavn, String adresse, int postNr, String byNavn) throws SQLException {
+        String command = ("update Bedemand set firmaNavn = '" + firmaNavn + "', adresse = '" + adresse + "', "
+                + "postNr = " + postNr + ", byNavn = '" + byNavn + "' where tlfNr = " + tlfNr + ";");
         DBConnection.execute(command);
     }
 
-    public void tilfoejBedemand(int cvr, String firmaNavn, int tlfNr) throws SQLException {
-        String command = ("insert into Bedemand(cvr, firmaNavn, tlfNr) "
-                + "values (" + cvr + ", '" + firmaNavn + "', " + tlfNr + ");");
+    public void tilfoejBedemand(int tlfNr, String firmaNavn, String adresse, int postNr, String byNavn) throws SQLException {
+        String command = ("insert into Bedemand(tlfNr, firmaNavn, adresse, postNr, byNavn) "
+                + "values (" + tlfNr + ", '" + firmaNavn + "', '" + adresse + "', " + postNr + ", '" + byNavn + ");");
         DBConnection.execute(command);
     }
 
@@ -61,12 +62,6 @@ public class Handler {
 
     public ResultSet soegBedemandViaNavn(String firmaNavn) throws SQLException {
         String command = ("select * from Bedemand where firmaNavn = '" + firmaNavn + "';");
-        ResultSet rs = DBConnection.getResultSetWithCommand(command);
-        return rs;
-    }
-
-    public ResultSet hentListeOverBedemaend() throws SQLException {
-        String command = ("select * from Bedemand;");
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
@@ -91,7 +86,7 @@ public class Handler {
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
-    
+
     public ResultSet hentListeAfProdukterFraDatabase() throws SQLException {
         String command = ("select * from Produkt");
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
@@ -230,7 +225,7 @@ public class Handler {
             double moms, double rabat, double miljoe_Afgift) throws SQLException {
         String command = ("update Ordre set status = " + status + ", bestillingsDato = " + bestillingsDato
                 + ", leveringsDato = " + leveringsDato + ", skriftType = '" + skrifttype + "', skriftStil = '"
-                + skriftStil +"', inskriptionsLinje = '" + inskriptionsLinje + "', bemaerkninger = '" + bemaerkninger + "', totalPris = " + totalPris
+                + skriftStil + "', inskriptionsLinje = '" + inskriptionsLinje + "', bemaerkninger = '" + bemaerkninger + "', totalPris = " + totalPris
                 + ", moms = " + moms + ", rabat = " + rabat + ", miljoeAfgift = " + miljoe_Afgift + " where ordreID = " + ordreID + ";");
         DBConnection.execute(command);
     }
@@ -241,24 +236,24 @@ public class Handler {
         String command = ("insert into Ordre (ordreID, status, bestillingsDato, leveringsDato, skriftType,"
                 + " skriftStoerrselse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, moms, rabat, miljoeAfgift, tlfNr, bedemandCvr) "
                 + "values (" + ordreID + ", " + status + ", " + bestillingsDato + ", " + leveringsDato + ", '"
-                + skrifttype + "', " + skriftstoerrelse + ", " + skriftStil +"', '" + inskriptionsLinje  + "', '" + bemaerkninger + "', "
+                + skrifttype + "', " + skriftstoerrelse + ", " + skriftStil + "', '" + inskriptionsLinje + "', '" + bemaerkninger + "', "
                 + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ", " + tlfNr + ", " + bedemandCvr + ");");
         DBConnection.execute(command);
     }
-    
-    public void indsaetProduktOrdreData(int ordreID, int produktID, int maengde) throws SQLException{
+
+    public void indsaetProduktOrdreData(int ordreID, int produktID, int maengde) throws SQLException {
         String command = ("insert into Produkt_Ordre (ordreID, produktID, maengde) values "
                 + "(" + ordreID + ", " + produktID + ", " + maengde + ");");
         DBConnection.execute(command);
     }
-    
-    public void indsaetKundeFakturaData(int tlfNr, int fakturaNr, boolean leveringFaktura) throws SQLException{
+
+    public void indsaetKundeFakturaData(int tlfNr, int fakturaNr, boolean leveringFaktura) throws SQLException {
         String command = ("insert into Kunde_Faktura (tlfNr, faktureringsNr, levering_faktura) values "
                 + "(" + tlfNr + ", " + fakturaNr + ", " + leveringFaktura + ");");
         DBConnection.execute(command);
     }
-    
-    public void indsaetOrdreTilfoejelseData(int ordreID, int tilfoejelsesID, int antal) throws SQLException{
+
+    public void indsaetOrdreTilfoejelseData(int ordreID, int tilfoejelsesID, int antal) throws SQLException {
         String command = ("insert into Ordre_Tilfoejelse (ordreID, tilfoejelsesID, antal) values "
                 + "(" + ordreID + ", " + tilfoejelsesID + ", " + antal + ");");
         DBConnection.execute(command);
