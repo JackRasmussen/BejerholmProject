@@ -96,11 +96,12 @@ public class Bedemand {
      * Denne metode redigerer i en bedemand i databasen ud fra de givne input og
      * det aktive objekt af denne klasse.
      *
+     * @param cvr 
      * @param firmaNavn
      * @param tlfNr
      * @throws SQLException
      */
-    public void redigerBedemandIDatabase(String firmaNavn, int tlfNr) throws SQLException {
+    public void redigerBedemandIDatabase(int cvr, String firmaNavn, int tlfNr) throws SQLException {
         handler.redigerBedemand(cvr, firmaNavn, tlfNr);
     }
 
