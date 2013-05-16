@@ -7,6 +7,8 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Graphics2D;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import javax.swing.JPanel;
 
@@ -17,12 +19,27 @@ public class PDFWriter {
 
     JPanel panelToPrint;
     FileOutputStream destination;
+    File file;
 
-    public PDFWriter(JPanel panelToPrint, FileOutputStream destination) {
+    public PDFWriter(JPanel panelToPrint, String fileName) throws FileNotFoundException {
         this.panelToPrint = panelToPrint;
-        this.destination = destination;
+        this.file = new File(this.getClass().getCanonicalName() + "/" + fileName);
+        this.destination = new FileOutputStream(file);
     }
 
+    public PDFWriter(JPanel panelToPrint, File destinationFile) throws FileNotFoundException {
+        this.panelToPrint = panelToPrint;
+        this.file = destinationFile;
+        this.destination = new FileOutputStream(file);
+    }
+
+    /**
+     * Denne metode skriver pdf data til en fil. Den pågældende fil skal være
+     * defineret i constructoren for denne klasse. Dette kan enten være
+     * constructoren der modtager en fil (f.eks fra file chooser) eller en der
+     * modtager en String til filnavn, hvorefter den ligger den i mappen for
+     * denne klasse.
+     */
     public void writePDF() {
         try {
             FileOutputStream fIO = destination;
