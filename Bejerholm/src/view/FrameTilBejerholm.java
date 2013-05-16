@@ -1,6 +1,9 @@
 package view;
 
 import java.awt.CardLayout;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import model.pdfWriter.PDFWriter;
@@ -23,7 +26,11 @@ public class FrameTilBejerholm {
         frame.setFocusable(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         OrdreForm ordform = new OrdreForm();
-        PDFWriter pdw = new PDFWriter(ordform, "Ordre1");
+        try {
+            PDFWriter pdw = new PDFWriter(ordform, "Ordre");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(FrameTilBejerholm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 
