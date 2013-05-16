@@ -3,6 +3,8 @@ package view;
 import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import model.pdfWriter.PDFWriter;
+import view.faktura.OrdreForm;
 
 /**
  *
@@ -20,6 +22,8 @@ public class FrameTilBejerholm {
         frame.setResizable(false);
         frame.setFocusable(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        OrdreForm ordform = new OrdreForm();
+        PDFWriter pdw = new PDFWriter(ordform, "Ordre1");
         
     }
 

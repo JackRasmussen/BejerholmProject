@@ -15,6 +15,7 @@ public class OrdreForm extends javax.swing.JPanel {
      */
     public OrdreForm() {
         initComponents();
+        bemærkningerTextArea.setEditable(false);
     }
 
     /**
@@ -26,680 +27,611 @@ public class OrdreForm extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
+        billedeLabel = new javax.swing.JLabel();
+        infoEtLabel = new javax.swing.JLabel();
+        infoToLabel = new javax.swing.JLabel();
+        infoTreLabel = new javax.swing.JLabel();
+        infoFireLabel = new javax.swing.JLabel();
+        infoFemLabel = new javax.swing.JLabel();
+        infoSeksLabel = new javax.swing.JLabel();
+        infoSyvLabel = new javax.swing.JLabel();
+        infoOtteLabel = new javax.swing.JLabel();
+        infoNiLabel = new javax.swing.JLabel();
+        KundeInformationLabelNoChange = new javax.swing.JLabel();
+        ordrebekræftelseLabelNoChange = new javax.swing.JLabel();
+        datoLabelNoChange = new javax.swing.JLabel();
+        telefonLabelNoChange = new javax.swing.JLabel();
+        ordreNrLabelNoChange = new javax.swing.JLabel();
+        datoLabelTilOrdrebekræftelse = new javax.swing.JLabel();
+        telefonLabelTilOrdrebekræftelse = new javax.swing.JLabel();
+        ordreNrLabelTilOrdrebekræftelse = new javax.swing.JLabel();
+        nyStenNrLabelNoChange = new javax.swing.JLabel();
+        tilfoejelseLabelNoChange = new javax.swing.JLabel();
+        kisteUrneLabelNoChange = new javax.swing.JLabel();
+        afhDatoLabelNoChange = new javax.swing.JLabel();
+        levDatoLabelNoChange = new javax.swing.JLabel();
+        kirkegaardLabelNoChange = new javax.swing.JLabel();
+        afdelingLabelNoChange = new javax.swing.JLabel();
+        raekkeOgNrLabelNoChange = new javax.swing.JLabel();
+        kundeNavnLabel = new javax.swing.JLabel();
+        kundeAdresseLabel = new javax.swing.JLabel();
+        kundePostOgByLabel = new javax.swing.JLabel();
+        nyStenNrLabel = new javax.swing.JLabel();
+        tilfoejelseLabel = new javax.swing.JLabel();
+        kisteUrneLabel = new javax.swing.JLabel();
+        afhDatoLabel = new javax.swing.JLabel();
+        levDatoLabel = new javax.swing.JLabel();
+        kirkegaardLabel = new javax.swing.JLabel();
+        afdelingLabel = new javax.swing.JLabel();
+        raekkeNrLabel = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        jLabel70 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
+        inskriptionFørsteLinie = new javax.swing.JLabel();
+        inskriptionAndenLinie = new javax.swing.JLabel();
+        inskriptionTredjeLinie = new javax.swing.JLabel();
+        inskriptionFjerdeLinie = new javax.swing.JLabel();
+        inskriptionFemteLinie = new javax.swing.JLabel();
+        pladsTilLabelNoChange = new javax.swing.JLabel();
+        antalNavneLabel = new javax.swing.JLabel();
+        navneLabelNoChange = new javax.swing.JLabel();
+        skrifttypeLabelNoChange = new javax.swing.JLabel();
+        skriftTypeLabel = new javax.swing.JLabel();
+        antalLabelNoChange = new javax.swing.JLabel();
+        vareLabelNoChange = new javax.swing.JLabel();
+        prisLabelNoChange = new javax.swing.JLabel();
+        antaEtLabel = new javax.swing.JLabel();
+        antaToLabel = new javax.swing.JLabel();
+        antaTreLabel = new javax.swing.JLabel();
+        antaFireLabel = new javax.swing.JLabel();
+        antaFemLabel = new javax.swing.JLabel();
+        antaSeksLabel = new javax.swing.JLabel();
+        antaSyvLabel = new javax.swing.JLabel();
+        miljøAfgiftAntalLabelNoChange = new javax.swing.JLabel();
+        vareEtLabel = new javax.swing.JLabel();
+        vareToLabel = new javax.swing.JLabel();
+        varetreLabel = new javax.swing.JLabel();
+        vareFireLabel = new javax.swing.JLabel();
+        vareFemLabel = new javax.swing.JLabel();
+        vareSeksLabel = new javax.swing.JLabel();
+        vareSyvLabel = new javax.swing.JLabel();
+        miljøAfgiftVareLavbelNoChange = new javax.swing.JLabel();
+        prisEtLabel = new javax.swing.JLabel();
+        prisToLabel = new javax.swing.JLabel();
+        prisTreLabel = new javax.swing.JLabel();
+        prisFireLabel = new javax.swing.JLabel();
+        prisFemLabel = new javax.swing.JLabel();
+        prisSeksLabel = new javax.swing.JLabel();
+        prisSyvLabel = new javax.swing.JLabel();
+        prisMiljøafgift = new javax.swing.JLabel();
+        samletPrisUMomsLabelNoChange = new javax.swing.JLabel();
+        momsLabelNoChange = new javax.swing.JLabel();
+        totalPrisLabelNoChange = new javax.swing.JLabel();
+        samletPrisUMomsLabel = new javax.swing.JLabel();
+        momsLabel = new javax.swing.JLabel();
+        totalPrisLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        bemærkningerTextArea = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bejerholm Faktura.png"))); // NOI18N
+        billedeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bejerholm Faktura.png"))); // NOI18N
+        add(billedeLabel);
+        billedeLabel.setBounds(10, 19, 217, 162);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jLabel2.setText("Bejerholms Stenhuggeri v/René Bejerholm Poulsen");
+        infoEtLabel.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
+        infoEtLabel.setText("Bejerholms Stenhuggeri v/René Bejerholm Poulsen");
+        add(infoEtLabel);
+        infoEtLabel.setBounds(314, 19, 271, 13);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jLabel3.setText("Fægangen 8, 4220 Korsør, Tlf. 58 35 00 04");
+        infoToLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoToLabel.setText("Fægangen 8, 4220 Korsør, Tlf. 58 35 00 04");
+        add(infoToLabel);
+        infoToLabel.setBounds(381, 38, 204, 13);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jLabel4.setText("Nørre Allé, 440 Kalundborg, Tlf. 42 76 00 04");
+        infoTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoTreLabel.setText("Nørre Allé, 440 Kalundborg, Tlf. 42 76 00 04");
+        add(infoTreLabel);
+        infoTreLabel.setBounds(373, 57, 212, 10);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jLabel5.setText("Fax 58 35 00 33");
+        infoFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoFireLabel.setText("Fax 58 35 00 33");
+        add(infoFireLabel);
+        infoFireLabel.setBounds(508, 76, 77, 13);
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jLabel6.setText("bejerholm.stenhuggeri@gmail.com");
+        infoFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoFemLabel.setText("bejerholm.stenhuggeri@gmail.com");
+        add(infoFemLabel);
+        infoFemLabel.setBounds(426, 95, 159, 13);
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jLabel7.setText("www.bejerholms-stenhuggeri.dk");
+        infoSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoSeksLabel.setText("www.bejerholms-stenhuggeri.dk");
+        add(infoSeksLabel);
+        infoSeksLabel.setBounds(441, 114, 144, 13);
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jLabel8.setText("CVR-NR: 32931898");
+        infoSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoSyvLabel.setText("CVR-NR: 32931898");
+        add(infoSyvLabel);
+        infoSyvLabel.setBounds(491, 133, 94, 13);
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel9.setText("Sydbank - Reg. nr. 6821");
+        infoOtteLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        infoOtteLabel.setText("Sydbank - Reg. nr. 6821");
+        add(infoOtteLabel);
+        infoOtteLabel.setBounds(461, 152, 124, 14);
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel10.setText("Konto 1021974");
+        infoNiLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        infoNiLabel.setText("Konto 1021974");
+        add(infoNiLabel);
+        infoNiLabel.setBounds(508, 172, 77, 14);
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel11.setText("Kundeinformation:");
+        KundeInformationLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        KundeInformationLabelNoChange.setText("Kundeinformation:");
+        add(KundeInformationLabelNoChange);
+        KundeInformationLabelNoChange.setBounds(10, 196, 102, 14);
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel12.setText("Ordrebekræftelse:");
+        ordrebekræftelseLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        ordrebekræftelseLabelNoChange.setForeground(new java.awt.Color(255, 0, 0));
+        ordrebekræftelseLabelNoChange.setText("Ordrebekræftelse:");
+        add(ordrebekræftelseLabelNoChange);
+        ordrebekræftelseLabelNoChange.setBounds(373, 192, 125, 19);
 
-        jLabel13.setText("Dato:");
+        datoLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        datoLabelNoChange.setText("Dato:");
+        add(datoLabelNoChange);
+        datoLabelNoChange.setBounds(380, 220, 30, 14);
 
-        jLabel14.setText("Telefon:");
+        telefonLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        telefonLabelNoChange.setText("Telefon:");
+        add(telefonLabelNoChange);
+        telefonLabelNoChange.setBounds(380, 240, 45, 14);
 
-        jLabel15.setText("Ordrenr:");
+        ordreNrLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        ordreNrLabelNoChange.setText("Ordrenr:");
+        add(ordreNrLabelNoChange);
+        ordreNrLabelNoChange.setBounds(380, 260, 48, 14);
 
-        jLabel16.setPreferredSize(new java.awt.Dimension(100, 16));
+        datoLabelTilOrdrebekræftelse.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        datoLabelTilOrdrebekræftelse.setPreferredSize(new java.awt.Dimension(100, 16));
+        add(datoLabelTilOrdrebekræftelse);
+        datoLabelTilOrdrebekræftelse.setBounds(420, 220, 167, 20);
 
-        jLabel17.setPreferredSize(new java.awt.Dimension(100, 16));
+        telefonLabelTilOrdrebekræftelse.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        telefonLabelTilOrdrebekræftelse.setPreferredSize(new java.awt.Dimension(100, 16));
+        add(telefonLabelTilOrdrebekræftelse);
+        telefonLabelTilOrdrebekræftelse.setBounds(430, 240, 150, 16);
 
-        jLabel18.setPreferredSize(new java.awt.Dimension(100, 16));
+        ordreNrLabelTilOrdrebekræftelse.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        ordreNrLabelTilOrdrebekræftelse.setPreferredSize(new java.awt.Dimension(100, 16));
+        add(ordreNrLabelTilOrdrebekræftelse);
+        ordreNrLabelTilOrdrebekræftelse.setBounds(430, 260, 150, 16);
 
-        jLabel19.setText("Ny sten (nr.)     ");
-        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        nyStenNrLabelNoChange.setText("Ny sten (nr.)     ");
+        nyStenNrLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(nyStenNrLabelNoChange);
+        nyStenNrLabelNoChange.setBounds(10, 299, 79, 16);
 
-        jLabel20.setText("Tilføjelse            ");
-        jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tilfoejelseLabelNoChange.setText("Tilføjelse            ");
+        tilfoejelseLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(tilfoejelseLabelNoChange);
+        tilfoejelseLabelNoChange.setBounds(10, 326, 80, 16);
 
-        jLabel21.setText("Kiste / Urne       ");
-        jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kisteUrneLabelNoChange.setText("Kiste / Urne       ");
+        kisteUrneLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(kisteUrneLabelNoChange);
+        kisteUrneLabelNoChange.setBounds(10, 353, 79, 16);
 
-        jLabel22.setText("Afh. dato     ");
-        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        afhDatoLabelNoChange.setText("Afh. dato     ");
+        afhDatoLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(afhDatoLabelNoChange);
+        afhDatoLabelNoChange.setBounds(183, 299, 63, 16);
 
-        jLabel23.setText("Lev. dato     ");
-        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        levDatoLabelNoChange.setText("Lev. dato     ");
+        levDatoLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(levDatoLabelNoChange);
+        levDatoLabelNoChange.setBounds(183, 326, 63, 16);
 
-        jLabel24.setText("Kirkegård:         ");
-        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kirkegaardLabelNoChange.setText("Kirkegård:         ");
+        kirkegaardLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(kirkegaardLabelNoChange);
+        kirkegaardLabelNoChange.setBounds(373, 299, 78, 16);
 
-        jLabel25.setText("Afdeling:           ");
-        jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        afdelingLabelNoChange.setText("Afdeling:           ");
+        afdelingLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(afdelingLabelNoChange);
+        afdelingLabelNoChange.setBounds(373, 326, 78, 16);
 
-        jLabel26.setText("Række + Nr.:   ");
-        jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        raekkeOgNrLabelNoChange.setText("Række + Nr.:   ");
+        raekkeOgNrLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(raekkeOgNrLabelNoChange);
+        raekkeOgNrLabelNoChange.setBounds(373, 353, 77, 16);
 
-        jLabel27.setText("jLabel27");
+        kundeNavnLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        kundeNavnLabel.setText(" ");
+        kundeNavnLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kundeNavnLabel.setPreferredSize(new java.awt.Dimension(250, 16));
+        add(kundeNavnLabel);
+        kundeNavnLabel.setBounds(10, 217, 310, 16);
 
-        jLabel28.setText("jLabel28");
+        kundeAdresseLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        kundeAdresseLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kundeAdresseLabel.setPreferredSize(new java.awt.Dimension(250, 16));
+        add(kundeAdresseLabel);
+        kundeAdresseLabel.setBounds(10, 240, 310, 16);
 
-        jLabel29.setText("jLabel29");
+        kundePostOgByLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        kundePostOgByLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kundePostOgByLabel.setPreferredSize(new java.awt.Dimension(250, 16));
+        add(kundePostOgByLabel);
+        kundePostOgByLabel.setBounds(10, 260, 310, 16);
 
-        jLabel30.setText("jLabel30");
+        nyStenNrLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(nyStenNrLabel);
+        nyStenNrLabel.setBounds(95, 301, 80, 16);
 
-        jLabel31.setText("jLabel31");
+        tilfoejelseLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(tilfoejelseLabel);
+        tilfoejelseLabel.setBounds(96, 327, 80, 16);
 
-        jLabel32.setText("jLabel32");
+        kisteUrneLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(kisteUrneLabel);
+        kisteUrneLabel.setBounds(95, 354, 80, 16);
 
-        jLabel33.setText("jLabel33");
+        afhDatoLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(afhDatoLabel);
+        afhDatoLabel.setBounds(252, 300, 110, 16);
 
-        jLabel34.setText("jLabel34");
+        levDatoLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(levDatoLabel);
+        levDatoLabel.setBounds(252, 327, 110, 16);
 
-        jLabel35.setText("jLabel35");
+        kirkegaardLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(kirkegaardLabel);
+        kirkegaardLabel.setBounds(457, 300, 110, 16);
 
-        jLabel36.setText("jLabel36");
+        afdelingLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(afdelingLabel);
+        afdelingLabel.setBounds(457, 327, 110, 16);
 
-        jLabel37.setText("jLabel37");
+        raekkeNrLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(raekkeNrLabel);
+        raekkeNrLabel.setBounds(456, 354, 110, 16);
 
+        jLabel38.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel38.setText("Inskription");
+        add(jLabel38);
+        jLabel38.setBounds(242, 387, 70, 14);
 
-        jLabel39.setText("jLabel39");
+        inskriptionFørsteLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        inskriptionFørsteLinie.setText("jLabel39");
+        add(inskriptionFørsteLinie);
+        inskriptionFørsteLinie.setBounds(242, 419, 54, 19);
 
-        jLabel40.setText("jLabel40");
+        inskriptionAndenLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        inskriptionAndenLinie.setText("jLabel40");
+        add(inskriptionAndenLinie);
+        inskriptionAndenLinie.setBounds(242, 439, 54, 19);
 
-        jLabel41.setText("jLabel41");
+        inskriptionTredjeLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        inskriptionTredjeLinie.setText("jLabel41");
+        add(inskriptionTredjeLinie);
+        inskriptionTredjeLinie.setBounds(242, 459, 54, 19);
 
-        jLabel42.setText("jLabel42");
+        inskriptionFjerdeLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        inskriptionFjerdeLinie.setText("jLabel42");
+        add(inskriptionFjerdeLinie);
+        inskriptionFjerdeLinie.setBounds(242, 479, 54, 19);
 
-        jLabel43.setText("jLabel43");
+        inskriptionFemteLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        inskriptionFemteLinie.setText("jLabel43");
+        add(inskriptionFemteLinie);
+        inskriptionFemteLinie.setBounds(242, 499, 54, 19);
 
-        jLabel44.setText("Plads til");
+        pladsTilLabelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        pladsTilLabelNoChange.setText("Plads til");
+        add(pladsTilLabelNoChange);
+        pladsTilLabelNoChange.setBounds(10, 531, 39, 14);
 
-        jLabel45.setText("jLabel45");
+        antalNavneLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        add(antalNavneLabel);
+        antalNavneLabel.setBounds(60, 530, 19, 14);
 
-        jLabel46.setText("navn(e)");
+        navneLabelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        navneLabelNoChange.setText("navn(e)");
+        add(navneLabelNoChange);
+        navneLabelNoChange.setBounds(90, 530, 38, 14);
 
-        jLabel47.setText("Skrifttype:");
+        skrifttypeLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        skrifttypeLabelNoChange.setText("Skrifttype:");
+        add(skrifttypeLabelNoChange);
+        skrifttypeLabelNoChange.setBounds(350, 531, 60, 14);
 
-        jLabel48.setText("jLabel48");
+        skriftTypeLabel.setText("jLabel48");
+        add(skriftTypeLabel);
+        skriftTypeLabel.setBounds(456, 531, 40, 14);
 
-        jLabel49.setText("Antal:                            ");
-        jLabel49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        antalLabelNoChange.setText("Antal:                            ");
+        antalLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(antalLabelNoChange);
+        antalLabelNoChange.setBounds(10, 560, 119, 16);
 
-        jLabel50.setText("Vare:                                                                                                 ");
-        jLabel50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        vareLabelNoChange.setText("Vare:                                                                                                 ");
+        vareLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(vareLabelNoChange);
+        vareLabelNoChange.setBounds(130, 560, 322, 16);
 
-        jLabel51.setText("Pris:                                  ");
-        jLabel51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        prisLabelNoChange.setText("Pris:                                  ");
+        prisLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(prisLabelNoChange);
+        prisLabelNoChange.setBounds(450, 560, 129, 16);
 
-        jLabel52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel52.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaEtLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(antaEtLabel);
+        antaEtLabel.setBounds(10, 580, 115, 16);
 
-        jLabel53.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel53.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaToLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(antaToLabel);
+        antaToLabel.setBounds(10, 600, 115, 16);
 
-        jLabel54.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel54.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaTreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaTreLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(antaTreLabel);
+        antaTreLabel.setBounds(10, 620, 115, 16);
 
-        jLabel55.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel55.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaFireLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaFireLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(antaFireLabel);
+        antaFireLabel.setBounds(10, 640, 115, 16);
 
-        jLabel56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel56.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaFemLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaFemLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(antaFemLabel);
+        antaFemLabel.setBounds(10, 660, 115, 16);
 
-        jLabel57.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel57.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaSeksLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(antaSeksLabel);
+        antaSeksLabel.setBounds(10, 680, 115, 16);
 
-        jLabel58.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel58.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaSyvLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(antaSyvLabel);
+        antaSyvLabel.setBounds(10, 700, 115, 16);
 
-        jLabel59.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel59.setPreferredSize(new java.awt.Dimension(115, 16));
+        miljøAfgiftAntalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        miljøAfgiftAntalLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        miljøAfgiftAntalLabelNoChange.setPreferredSize(new java.awt.Dimension(115, 16));
+        add(miljøAfgiftAntalLabelNoChange);
+        miljøAfgiftAntalLabelNoChange.setBounds(10, 720, 115, 16);
 
-        jLabel60.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel60.setPreferredSize(new java.awt.Dimension(319, 16));
+        vareEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareEtLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(vareEtLabel);
+        vareEtLabel.setBounds(130, 580, 319, 16);
 
-        jLabel61.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel61.setPreferredSize(new java.awt.Dimension(319, 16));
+        vareToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareToLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(vareToLabel);
+        vareToLabel.setBounds(130, 600, 319, 16);
 
-        jLabel62.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel62.setPreferredSize(new java.awt.Dimension(319, 16));
+        varetreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        varetreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        varetreLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(varetreLabel);
+        varetreLabel.setBounds(130, 620, 319, 16);
 
-        jLabel63.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel63.setPreferredSize(new java.awt.Dimension(319, 16));
+        vareFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareFireLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareFireLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(vareFireLabel);
+        vareFireLabel.setBounds(130, 640, 319, 16);
 
-        jLabel64.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel64.setPreferredSize(new java.awt.Dimension(319, 16));
+        vareFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareFemLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareFemLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(vareFemLabel);
+        vareFemLabel.setBounds(130, 660, 319, 16);
 
-        jLabel65.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel65.setPreferredSize(new java.awt.Dimension(319, 16));
+        vareSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareSeksLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(vareSeksLabel);
+        vareSeksLabel.setBounds(130, 680, 319, 16);
 
-        jLabel66.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel66.setPreferredSize(new java.awt.Dimension(319, 16));
+        vareSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareSyvLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(vareSyvLabel);
+        vareSyvLabel.setBounds(130, 700, 319, 16);
 
-        jLabel67.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel67.setPreferredSize(new java.awt.Dimension(319, 16));
+        miljøAfgiftVareLavbelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        miljøAfgiftVareLavbelNoChange.setText("Miljøafgift (2,5%)");
+        miljøAfgiftVareLavbelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        miljøAfgiftVareLavbelNoChange.setPreferredSize(new java.awt.Dimension(319, 16));
+        add(miljøAfgiftVareLavbelNoChange);
+        miljøAfgiftVareLavbelNoChange.setBounds(130, 720, 319, 16);
 
-        jLabel68.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel68.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisEtLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisEtLabel);
+        prisEtLabel.setBounds(450, 580, 125, 16);
 
-        jLabel69.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel69.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisToLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisToLabel);
+        prisToLabel.setBounds(450, 600, 125, 16);
 
-        jLabel70.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel70.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisTreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisTreLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisTreLabel);
+        prisTreLabel.setBounds(450, 620, 125, 16);
 
-        jLabel71.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel71.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisFireLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisFireLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisFireLabel);
+        prisFireLabel.setBounds(450, 640, 125, 16);
 
-        jLabel72.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel72.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisFemLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisFemLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisFemLabel);
+        prisFemLabel.setBounds(450, 660, 125, 16);
 
-        jLabel73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel73.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisSeksLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisSeksLabel);
+        prisSeksLabel.setBounds(450, 680, 125, 16);
 
-        jLabel74.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel74.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisSyvLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisSyvLabel);
+        prisSyvLabel.setBounds(450, 700, 125, 16);
 
-        jLabel75.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel75.setPreferredSize(new java.awt.Dimension(125, 16));
+        prisMiljøafgift.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisMiljøafgift.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisMiljøafgift.setPreferredSize(new java.awt.Dimension(125, 16));
+        add(prisMiljøafgift);
+        prisMiljøafgift.setBounds(450, 720, 125, 16);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel29))
-                                .addGap(87, 87, 87)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(67, 67, 67)
-                                        .addComponent(jLabel3))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(194, 194, 194)
-                                        .addComponent(jLabel5))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(112, 112, 112)
-                                        .addComponent(jLabel6))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(127, 127, 127)
-                                        .addComponent(jLabel7))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(177, 177, 177)
-                                        .addComponent(jLabel8))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(147, 147, 147)
-                                        .addComponent(jLabel9))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(59, 59, 59)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel4)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel13)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel14)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel15)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel24)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel35))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel25)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel36))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel26)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel48)
-                                                    .addComponent(jLabel37)))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(194, 194, 194)
-                                        .addComponent(jLabel10))))
-                            .addComponent(jLabel11)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel32))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel19)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel30))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel20)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel31)))
-                                    .addGap(47, 47, 47)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel23)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel34))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel22)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel33))))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel39)
-                                    .addComponent(jLabel38)
-                                    .addComponent(jLabel40)
-                                    .addComponent(jLabel41)
-                                    .addComponent(jLabel42)
-                                    .addComponent(jLabel43)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel49)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel50)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel44)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel47)
-                        .addGap(199, 199, 199))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel3)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel5)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel6)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel7)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel8)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel9)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel10)))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel15)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel19)
-                        .addComponent(jLabel22)
-                        .addComponent(jLabel24)
-                        .addComponent(jLabel33)
-                        .addComponent(jLabel35))
-                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel31)
-                    .addComponent(jLabel34)
-                    .addComponent(jLabel36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel37))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel38)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel39)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel41)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel42)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel43)
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel44)
-                                    .addComponent(jLabel45)
-                                    .addComponent(jLabel46)
-                                    .addComponent(jLabel47)
-                                    .addComponent(jLabel48))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                            .addComponent(jLabel49)
-                                                            .addComponent(jLabel50)
-                                                            .addComponent(jLabel51))
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addGroup(layout.createSequentialGroup()
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                            .addGroup(layout.createSequentialGroup()
-                                                                .addGap(6, 6, 6)
-                                                                .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel69, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel73, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        samletPrisUMomsLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        samletPrisUMomsLabelNoChange.setText("Pris:");
+        add(samletPrisUMomsLabelNoChange);
+        samletPrisUMomsLabelNoChange.setBounds(401, 740, 30, 14);
+
+        momsLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        momsLabelNoChange.setText("Moms (25%):");
+        add(momsLabelNoChange);
+        momsLabelNoChange.setBounds(360, 760, 80, 14);
+
+        totalPrisLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        totalPrisLabelNoChange.setText("Total:");
+        add(totalPrisLabelNoChange);
+        totalPrisLabelNoChange.setBounds(388, 780, 40, 14);
+
+        samletPrisUMomsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        samletPrisUMomsLabel.setText("jLabel79");
+        add(samletPrisUMomsLabel);
+        samletPrisUMomsLabel.setBounds(450, 740, 120, 14);
+
+        momsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        momsLabel.setText("jLabel80");
+        add(momsLabel);
+        momsLabel.setBounds(450, 760, 120, 14);
+
+        totalPrisLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        totalPrisLabel.setText("jLabel81");
+        add(totalPrisLabel);
+        totalPrisLabel.setBounds(450, 780, 120, 14);
+
+        bemærkningerTextArea.setColumns(20);
+        bemærkningerTextArea.setRows(5);
+        jScrollPane1.setViewportView(bemærkningerTextArea);
+
+        add(jScrollPane1);
+        jScrollPane1.setBounds(10, 740, 330, 96);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel KundeInformationLabelNoChange;
+    private javax.swing.JLabel afdelingLabel;
+    private javax.swing.JLabel afdelingLabelNoChange;
+    private javax.swing.JLabel afhDatoLabel;
+    private javax.swing.JLabel afhDatoLabelNoChange;
+    private javax.swing.JLabel antaEtLabel;
+    private javax.swing.JLabel antaFemLabel;
+    private javax.swing.JLabel antaFireLabel;
+    private javax.swing.JLabel antaSeksLabel;
+    private javax.swing.JLabel antaSyvLabel;
+    private javax.swing.JLabel antaToLabel;
+    private javax.swing.JLabel antaTreLabel;
+    private javax.swing.JLabel antalLabelNoChange;
+    private javax.swing.JLabel antalNavneLabel;
+    private javax.swing.JTextArea bemærkningerTextArea;
+    private javax.swing.JLabel billedeLabel;
+    private javax.swing.JLabel datoLabelNoChange;
+    private javax.swing.JLabel datoLabelTilOrdrebekræftelse;
+    private javax.swing.JLabel infoEtLabel;
+    private javax.swing.JLabel infoFemLabel;
+    private javax.swing.JLabel infoFireLabel;
+    private javax.swing.JLabel infoNiLabel;
+    private javax.swing.JLabel infoOtteLabel;
+    private javax.swing.JLabel infoSeksLabel;
+    private javax.swing.JLabel infoSyvLabel;
+    private javax.swing.JLabel infoToLabel;
+    private javax.swing.JLabel infoTreLabel;
+    private javax.swing.JLabel inskriptionAndenLinie;
+    private javax.swing.JLabel inskriptionFemteLinie;
+    private javax.swing.JLabel inskriptionFjerdeLinie;
+    private javax.swing.JLabel inskriptionFørsteLinie;
+    private javax.swing.JLabel inskriptionTredjeLinie;
     private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel kirkegaardLabel;
+    private javax.swing.JLabel kirkegaardLabelNoChange;
+    private javax.swing.JLabel kisteUrneLabel;
+    private javax.swing.JLabel kisteUrneLabelNoChange;
+    private javax.swing.JLabel kundeAdresseLabel;
+    private javax.swing.JLabel kundeNavnLabel;
+    private javax.swing.JLabel kundePostOgByLabel;
+    private javax.swing.JLabel levDatoLabel;
+    private javax.swing.JLabel levDatoLabelNoChange;
+    private javax.swing.JLabel miljøAfgiftAntalLabelNoChange;
+    private javax.swing.JLabel miljøAfgiftVareLavbelNoChange;
+    private javax.swing.JLabel momsLabel;
+    private javax.swing.JLabel momsLabelNoChange;
+    private javax.swing.JLabel navneLabelNoChange;
+    private javax.swing.JLabel nyStenNrLabel;
+    private javax.swing.JLabel nyStenNrLabelNoChange;
+    private javax.swing.JLabel ordreNrLabelNoChange;
+    private javax.swing.JLabel ordreNrLabelTilOrdrebekræftelse;
+    private javax.swing.JLabel ordrebekræftelseLabelNoChange;
+    private javax.swing.JLabel pladsTilLabelNoChange;
+    private javax.swing.JLabel prisEtLabel;
+    private javax.swing.JLabel prisFemLabel;
+    private javax.swing.JLabel prisFireLabel;
+    private javax.swing.JLabel prisLabelNoChange;
+    private javax.swing.JLabel prisMiljøafgift;
+    private javax.swing.JLabel prisSeksLabel;
+    private javax.swing.JLabel prisSyvLabel;
+    private javax.swing.JLabel prisToLabel;
+    private javax.swing.JLabel prisTreLabel;
+    private javax.swing.JLabel raekkeNrLabel;
+    private javax.swing.JLabel raekkeOgNrLabelNoChange;
+    private javax.swing.JLabel samletPrisUMomsLabel;
+    private javax.swing.JLabel samletPrisUMomsLabelNoChange;
+    private javax.swing.JLabel skriftTypeLabel;
+    private javax.swing.JLabel skrifttypeLabelNoChange;
+    private javax.swing.JLabel telefonLabelNoChange;
+    private javax.swing.JLabel telefonLabelTilOrdrebekræftelse;
+    private javax.swing.JLabel tilfoejelseLabel;
+    private javax.swing.JLabel tilfoejelseLabelNoChange;
+    private javax.swing.JLabel totalPrisLabel;
+    private javax.swing.JLabel totalPrisLabelNoChange;
+    private javax.swing.JLabel vareEtLabel;
+    private javax.swing.JLabel vareFemLabel;
+    private javax.swing.JLabel vareFireLabel;
+    private javax.swing.JLabel vareLabelNoChange;
+    private javax.swing.JLabel vareSeksLabel;
+    private javax.swing.JLabel vareSyvLabel;
+    private javax.swing.JLabel vareToLabel;
+    private javax.swing.JLabel varetreLabel;
     // End of variables declaration//GEN-END:variables
 }
