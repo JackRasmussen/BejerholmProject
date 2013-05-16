@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -23,7 +24,8 @@ public class PDFWriter {
 
     public PDFWriter(JPanel panelToPrint, String fileName) throws FileNotFoundException {
         this.panelToPrint = panelToPrint;
-        this.file = new File(this.getClass().getCanonicalName() + "/" + fileName);
+        this.file = new File(this.getClass().getResource("").getPath() + fileName + ".pdf");
+        System.out.println(this.getClass().getResource("").getPath() + fileName + ".pdf");
         this.destination = new FileOutputStream(file);
     }
 
