@@ -8,12 +8,12 @@ package view.faktura;
  *
  * @author Jackson
  */
-public class ProvisionForm extends javax.swing.JPanel {
+public class KontoudtogForm extends javax.swing.JPanel {
 
     /**
-     * Creates new form ProvisionForm
+     * Creates new form KontoudtogForm
      */
-    public ProvisionForm() {
+    public KontoudtogForm() {
         initComponents();
     }
 
@@ -26,209 +26,102 @@ public class ProvisionForm extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        kundePostOgByLabel = new javax.swing.JLabel();
-        kundeNavnLabel = new javax.swing.JLabel();
-        kundeAdresseLabel = new javax.swing.JLabel();
-        betalingsInfoFireNoChange = new javax.swing.JLabel();
-        betalingaInfoTreNoChange = new javax.swing.JLabel();
-        prisSyvLabel = new javax.swing.JLabel();
-        prisSeksLabel = new javax.swing.JLabel();
-        betalingsBetingelser = new javax.swing.JLabel();
-        prisFemLabel = new javax.swing.JLabel();
-        betalingsBetingelserLabelNoChange = new javax.swing.JLabel();
-        prisFireLabel = new javax.swing.JLabel();
-        prisTreLabel = new javax.swing.JLabel();
-        betalingsInfoNoChange = new javax.swing.JLabel();
-        prisToLabel = new javax.swing.JLabel();
-        miljøAfgiftVareLavbelNoChange = new javax.swing.JLabel();
-        prisEtLabel = new javax.swing.JLabel();
-        vareSeksLabel = new javax.swing.JLabel();
-        vareSyvLabel = new javax.swing.JLabel();
-        billedeLabel = new javax.swing.JLabel();
-        infoEtLabel = new javax.swing.JLabel();
-        salgsmomsLabel = new javax.swing.JLabel();
-        momsLabel = new javax.swing.JLabel();
-        subtotalLabelNoChange = new javax.swing.JLabel();
-        momsLabelNoChange = new javax.swing.JLabel();
-        salgsmomsLabelNoChange = new javax.swing.JLabel();
-        subtotalLabel = new javax.swing.JLabel();
-        prisMiljøafgift = new javax.swing.JLabel();
-        antalLabelNoChange = new javax.swing.JLabel();
-        vareLabelNoChange = new javax.swing.JLabel();
-        antaToLabel = new javax.swing.JLabel();
-        antaTreLabel = new javax.swing.JLabel();
-        prisLabelNoChange = new javax.swing.JLabel();
-        antaEtLabel = new javax.swing.JLabel();
-        enhedsprisLabelTre = new javax.swing.JLabel();
-        enhedsprisLabelTo = new javax.swing.JLabel();
-        enhedsprisLabelEt = new javax.swing.JLabel();
-        enhedsprisLabelNoChange = new javax.swing.JLabel();
-        vedrørendeLabelNoChange = new javax.swing.JLabel();
-        provisionsNrLabel = new javax.swing.JLabel();
         datoLabelTilOrdrebekræftelse = new javax.swing.JLabel();
         provisionsNrLabelNoChange = new javax.swing.JLabel();
+        kundeAdresseLabel = new javax.swing.JLabel();
+        vedrørendeLabelNoChange = new javax.swing.JLabel();
+        kundeNavnLabel = new javax.swing.JLabel();
+        provisionsNrLabel = new javax.swing.JLabel();
+        kundePostOgByLabel = new javax.swing.JLabel();
+        enhedsprisLabelEt = new javax.swing.JLabel();
+        enhedsprisLabelNoChange = new javax.swing.JLabel();
+        enhedsprisLabelTre = new javax.swing.JLabel();
+        enhedsprisLabelTo = new javax.swing.JLabel();
         antaSyvLabel = new javax.swing.JLabel();
         datoLabelNoChange = new javax.swing.JLabel();
-        miljøAfgiftAntalLabelNoChange = new javax.swing.JLabel();
-        vareEtLabel = new javax.swing.JLabel();
-        faktureresTilLabelNoChange = new javax.swing.JLabel();
-        vareToLabel = new javax.swing.JLabel();
-        infoNiLabel = new javax.swing.JLabel();
+        prisSyvLabel = new javax.swing.JLabel();
+        prisSeksLabel = new javax.swing.JLabel();
+        betalingsInfoFireNoChange = new javax.swing.JLabel();
+        betalingaInfoTreNoChange = new javax.swing.JLabel();
+        betalingsBetingelserLabelNoChange = new javax.swing.JLabel();
+        prisFireLabel = new javax.swing.JLabel();
+        betalingsBetingelser = new javax.swing.JLabel();
+        prisFemLabel = new javax.swing.JLabel();
         varetreLabel = new javax.swing.JLabel();
         infoOtteLabel = new javax.swing.JLabel();
         vareFireLabel = new javax.swing.JLabel();
         infoSyvLabel = new javax.swing.JLabel();
+        vareEtLabel = new javax.swing.JLabel();
+        faktureresTilLabelNoChange = new javax.swing.JLabel();
+        vareToLabel = new javax.swing.JLabel();
+        infoNiLabel = new javax.swing.JLabel();
         vareFemLabel = new javax.swing.JLabel();
-        infoSeksLabel = new javax.swing.JLabel();
-        infoFemLabel = new javax.swing.JLabel();
-        iAltLabel = new javax.swing.JLabel();
-        infoFireLabel = new javax.swing.JLabel();
+        miljøAfgiftAntalLabelNoChange = new javax.swing.JLabel();
         iAltLabelNoChange = new javax.swing.JLabel();
         enhedsprisLabelFem = new javax.swing.JLabel();
-        enhedsprisLabelSeks = new javax.swing.JLabel();
-        enhedsprisLabelSyv = new javax.swing.JLabel();
+        iAltLabel = new javax.swing.JLabel();
+        infoFireLabel = new javax.swing.JLabel();
         enhedsprisLabelOtteNoChange = new javax.swing.JLabel();
         enhedsprisLabelFire = new javax.swing.JLabel();
-        fakturaLabelNoChange = new javax.swing.JLabel();
-        antaFireLabel = new javax.swing.JLabel();
-        antaSeksLabel = new javax.swing.JLabel();
+        enhedsprisLabelSeks = new javax.swing.JLabel();
+        enhedsprisLabelSyv = new javax.swing.JLabel();
+        antaEtLabel = new javax.swing.JLabel();
+        prisLabelNoChange = new javax.swing.JLabel();
+        antaTreLabel = new javax.swing.JLabel();
+        antaToLabel = new javax.swing.JLabel();
+        vareLabelNoChange = new javax.swing.JLabel();
+        antalLabelNoChange = new javax.swing.JLabel();
+        prisMiljøafgift = new javax.swing.JLabel();
+        infoFemLabel = new javax.swing.JLabel();
+        subtotalLabel = new javax.swing.JLabel();
+        subtotalLabelNoChange = new javax.swing.JLabel();
+        infoSeksLabel = new javax.swing.JLabel();
+        salgsmomsLabelNoChange = new javax.swing.JLabel();
+        momsLabelNoChange = new javax.swing.JLabel();
         infoToLabel = new javax.swing.JLabel();
+        momsLabel = new javax.swing.JLabel();
         antaFemLabel = new javax.swing.JLabel();
+        salgsmomsLabel = new javax.swing.JLabel();
         infoTreLabel = new javax.swing.JLabel();
+        infoEtLabel = new javax.swing.JLabel();
         vedrLabelNoChange = new javax.swing.JLabel();
+        billedeLabel = new javax.swing.JLabel();
         infoLabelNoChange = new javax.swing.JLabel();
+        vareSyvLabel = new javax.swing.JLabel();
+        vareSeksLabel = new javax.swing.JLabel();
+        prisEtLabel = new javax.swing.JLabel();
+        miljøAfgiftVareLavbelNoChange = new javax.swing.JLabel();
+        prisToLabel = new javax.swing.JLabel();
+        fakturaLabelNoChange = new javax.swing.JLabel();
+        antaSeksLabel = new javax.swing.JLabel();
+        prisTreLabel = new javax.swing.JLabel();
+        antaFireLabel = new javax.swing.JLabel();
+        betalingsInfoNoChange = new javax.swing.JLabel();
 
-        kundePostOgByLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        kundePostOgByLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        kundePostOgByLabel.setPreferredSize(new java.awt.Dimension(250, 16));
+        datoLabelTilOrdrebekræftelse.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        datoLabelTilOrdrebekræftelse.setPreferredSize(new java.awt.Dimension(100, 16));
+
+        provisionsNrLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        provisionsNrLabelNoChange.setText("PROVIOSIONSNR:");
+
+        kundeAdresseLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        kundeAdresseLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kundeAdresseLabel.setPreferredSize(new java.awt.Dimension(250, 16));
+
+        vedrørendeLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        vedrørendeLabelNoChange.setText("Vedrørende:");
 
         kundeNavnLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         kundeNavnLabel.setText(" ");
         kundeNavnLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         kundeNavnLabel.setPreferredSize(new java.awt.Dimension(250, 16));
 
-        kundeAdresseLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        kundeAdresseLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        kundeAdresseLabel.setPreferredSize(new java.awt.Dimension(250, 16));
+        provisionsNrLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        provisionsNrLabel.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        betalingsInfoFireNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        betalingsInfoFireNoChange.setText("René Bejerholm Poulsen, 58 35 00 04, bejerholm@bejerholms-stenhuggeri.dk");
-
-        betalingaInfoTreNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        betalingaInfoTreNoChange.setText("Hvis der er spørgsmål til denne faktura, bedes De venligst kontakte");
-
-        prisSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisSyvLabel.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        prisSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisSeksLabel.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        betalingsBetingelser.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        betalingsBetingelser.setText("Dags dato");
-        betalingsBetingelser.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        prisFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisFemLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisFemLabel.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        betalingsBetingelserLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        betalingsBetingelserLabelNoChange.setText("Overførselsbetingelser:");
-
-        prisFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisFireLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisFireLabel.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        prisTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisTreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisTreLabel.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        betalingsInfoNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        betalingsInfoNoChange.setText("Bankoverførsel");
-
-        prisToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisToLabel.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        miljøAfgiftVareLavbelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        miljøAfgiftVareLavbelNoChange.setText("Miljøafgift (2,5%)");
-        miljøAfgiftVareLavbelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        miljøAfgiftVareLavbelNoChange.setPreferredSize(new java.awt.Dimension(319, 16));
-
-        prisEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisEtLabel.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        vareSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        vareSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        vareSeksLabel.setPreferredSize(new java.awt.Dimension(319, 16));
-
-        vareSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        vareSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        vareSyvLabel.setPreferredSize(new java.awt.Dimension(319, 16));
-
-        billedeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bejerholm Faktura.png"))); // NOI18N
-
-        infoEtLabel.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        infoEtLabel.setText("Bejerholms Stenhuggeri v/René Bejerholm Poulsen");
-
-        salgsmomsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        salgsmomsLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        salgsmomsLabel.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        momsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        momsLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        momsLabel.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        subtotalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        subtotalLabelNoChange.setText("SUBTOTAL:");
-
-        momsLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        momsLabelNoChange.setText("MOMS:");
-
-        salgsmomsLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        salgsmomsLabelNoChange.setText("SALGSMOMS:");
-
-        subtotalLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        subtotalLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        subtotalLabel.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        prisMiljøafgift.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        prisMiljøafgift.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        prisMiljøafgift.setPreferredSize(new java.awt.Dimension(125, 16));
-
-        antalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        antalLabelNoChange.setText("Antal                 ");
-        antalLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        vareLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        vareLabelNoChange.setText("BESKRIVELSE");
-        vareLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        antaToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        antaToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        antaToLabel.setPreferredSize(new java.awt.Dimension(115, 16));
-
-        antaTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        antaTreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        antaTreLabel.setPreferredSize(new java.awt.Dimension(115, 16));
-
-        prisLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        prisLabelNoChange.setText("BELØB");
-        prisLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        antaEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        antaEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        antaEtLabel.setPreferredSize(new java.awt.Dimension(115, 16));
-
-        enhedsprisLabelTre.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        enhedsprisLabelTre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        enhedsprisLabelTre.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        enhedsprisLabelTo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        enhedsprisLabelTo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        enhedsprisLabelTo.setPreferredSize(new java.awt.Dimension(100, 16));
+        kundePostOgByLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        kundePostOgByLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kundePostOgByLabel.setPreferredSize(new java.awt.Dimension(250, 16));
 
         enhedsprisLabelEt.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         enhedsprisLabelEt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -239,17 +132,13 @@ public class ProvisionForm extends javax.swing.JPanel {
         enhedsprisLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         enhedsprisLabelNoChange.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        vedrørendeLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        vedrørendeLabelNoChange.setText("Vedrørende:");
+        enhedsprisLabelTre.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        enhedsprisLabelTre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        enhedsprisLabelTre.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        provisionsNrLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        provisionsNrLabel.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        datoLabelTilOrdrebekræftelse.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        datoLabelTilOrdrebekræftelse.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        provisionsNrLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        provisionsNrLabelNoChange.setText("PROVIOSIONSNR:");
+        enhedsprisLabelTo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        enhedsprisLabelTo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        enhedsprisLabelTo.setPreferredSize(new java.awt.Dimension(100, 16));
 
         antaSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         antaSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -258,23 +147,34 @@ public class ProvisionForm extends javax.swing.JPanel {
         datoLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         datoLabelNoChange.setText("DATO:");
 
-        miljøAfgiftAntalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        miljøAfgiftAntalLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        miljøAfgiftAntalLabelNoChange.setPreferredSize(new java.awt.Dimension(115, 16));
+        prisSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisSyvLabel.setPreferredSize(new java.awt.Dimension(125, 16));
 
-        vareEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        vareEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        vareEtLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        prisSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisSeksLabel.setPreferredSize(new java.awt.Dimension(125, 16));
 
-        faktureresTilLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        faktureresTilLabelNoChange.setText("Faktureres til:");
+        betalingsInfoFireNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        betalingsInfoFireNoChange.setText("René Bejerholm Poulsen, 58 35 00 04, bejerholm@bejerholms-stenhuggeri.dk");
 
-        vareToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        vareToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        vareToLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+        betalingaInfoTreNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        betalingaInfoTreNoChange.setText("Hvis der er spørgsmål til denne faktura, bedes De venligst kontakte");
 
-        infoNiLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        infoNiLabel.setText("Konto 0754977361");
+        betalingsBetingelserLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        betalingsBetingelserLabelNoChange.setText("Betalingsbetingelser:");
+
+        prisFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisFireLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisFireLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+
+        betalingsBetingelser.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        betalingsBetingelser.setText("Netto 14 dage");
+        betalingsBetingelser.setPreferredSize(new java.awt.Dimension(100, 16));
+
+        prisFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisFemLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisFemLabel.setPreferredSize(new java.awt.Dimension(125, 16));
 
         varetreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         varetreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -290,22 +190,27 @@ public class ProvisionForm extends javax.swing.JPanel {
         infoSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         infoSyvLabel.setText("CVR-NR: 32931898");
 
+        vareEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareEtLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+
+        faktureresTilLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        faktureresTilLabelNoChange.setText("Faktureres til:");
+
+        vareToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareToLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+
+        infoNiLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        infoNiLabel.setText("Konto 0754977361");
+
         vareFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         vareFemLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         vareFemLabel.setPreferredSize(new java.awt.Dimension(319, 16));
 
-        infoSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        infoSeksLabel.setText("www.bejerholms-stenhuggeri.dk");
-
-        infoFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        infoFemLabel.setText("bejerholm.stenhuggeri@gmail.com");
-
-        iAltLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        iAltLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        iAltLabel.setPreferredSize(new java.awt.Dimension(100, 16));
-
-        infoFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        infoFireLabel.setText("Fax 58 35 00 33");
+        miljøAfgiftAntalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        miljøAfgiftAntalLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        miljøAfgiftAntalLabelNoChange.setPreferredSize(new java.awt.Dimension(115, 16));
 
         iAltLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         iAltLabelNoChange.setText("I ALT");
@@ -314,13 +219,12 @@ public class ProvisionForm extends javax.swing.JPanel {
         enhedsprisLabelFem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         enhedsprisLabelFem.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        enhedsprisLabelSeks.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        enhedsprisLabelSeks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        enhedsprisLabelSeks.setPreferredSize(new java.awt.Dimension(100, 16));
+        iAltLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        iAltLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        iAltLabel.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        enhedsprisLabelSyv.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        enhedsprisLabelSyv.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        enhedsprisLabelSyv.setPreferredSize(new java.awt.Dimension(100, 16));
+        infoFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoFireLabel.setText("Fax 58 35 00 33");
 
         enhedsprisLabelOtteNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         enhedsprisLabelOtteNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -330,32 +234,128 @@ public class ProvisionForm extends javax.swing.JPanel {
         enhedsprisLabelFire.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         enhedsprisLabelFire.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        fakturaLabelNoChange.setFont(new java.awt.Font("Arial Black", 0, 28)); // NOI18N
-        fakturaLabelNoChange.setForeground(new java.awt.Color(51, 153, 255));
-        fakturaLabelNoChange.setText("PROVISION");
+        enhedsprisLabelSeks.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        enhedsprisLabelSeks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        enhedsprisLabelSeks.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        antaFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        antaFireLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        antaFireLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        enhedsprisLabelSyv.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        enhedsprisLabelSyv.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        enhedsprisLabelSyv.setPreferredSize(new java.awt.Dimension(100, 16));
 
-        antaSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        antaSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        antaSeksLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+        antaEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaEtLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+
+        prisLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        prisLabelNoChange.setText("BELØB");
+        prisLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        antaTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaTreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaTreLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+
+        antaToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaToLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+
+        vareLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        vareLabelNoChange.setText("BESKRIVELSE");
+        vareLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        antalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        antalLabelNoChange.setText("Antal                 ");
+        antalLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        prisMiljøafgift.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisMiljøafgift.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisMiljøafgift.setPreferredSize(new java.awt.Dimension(125, 16));
+
+        infoFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoFemLabel.setText("bejerholm.stenhuggeri@gmail.com");
+
+        subtotalLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        subtotalLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        subtotalLabel.setPreferredSize(new java.awt.Dimension(100, 16));
+
+        subtotalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        subtotalLabelNoChange.setText("SUBTOTAL:");
+
+        infoSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        infoSeksLabel.setText("www.bejerholms-stenhuggeri.dk");
+
+        salgsmomsLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        salgsmomsLabelNoChange.setText("SALGSMOMS:");
+
+        momsLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        momsLabelNoChange.setText("MOMS:");
 
         infoToLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         infoToLabel.setText("Fægangen 8, 4220 Korsør, Tlf. 58 35 00 04");
+
+        momsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        momsLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        momsLabel.setPreferredSize(new java.awt.Dimension(100, 16));
 
         antaFemLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         antaFemLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         antaFemLabel.setPreferredSize(new java.awt.Dimension(115, 16));
 
+        salgsmomsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        salgsmomsLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        salgsmomsLabel.setPreferredSize(new java.awt.Dimension(100, 16));
+
         infoTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         infoTreLabel.setText("Nørre Allé, 440 Kalundborg, Tlf. 42 76 00 04");
 
-        vedrLabelNoChange.setText("Tilgodehavende hos Bejerholm Stenhuggeri");
+        infoEtLabel.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
+        infoEtLabel.setText("Bejerholms Stenhuggeri v/René Bejerholm Poulsen");
+
+        vedrLabelNoChange.setText("Bejerholms Stenhuggeri ApS tilgodehavende");
+
+        billedeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bejerholm Faktura.png"))); // NOI18N
 
         infoLabelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        infoLabelNoChange.setText("Overføres til følgende konto: 5040 - 001122820");
+        infoLabelNoChange.setText("\"Ordrenummer og navn\" bedes anført ved bankoverførsel");
+
+        vareSyvLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareSyvLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareSyvLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+
+        vareSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        vareSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vareSeksLabel.setPreferredSize(new java.awt.Dimension(319, 16));
+
+        prisEtLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisEtLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisEtLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+
+        miljøAfgiftVareLavbelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        miljøAfgiftVareLavbelNoChange.setText("Miljøafgift (2,5%)");
+        miljøAfgiftVareLavbelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        miljøAfgiftVareLavbelNoChange.setPreferredSize(new java.awt.Dimension(319, 16));
+
+        prisToLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisToLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisToLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+
+        fakturaLabelNoChange.setFont(new java.awt.Font("Arial Black", 0, 28)); // NOI18N
+        fakturaLabelNoChange.setForeground(new java.awt.Color(51, 153, 255));
+        fakturaLabelNoChange.setText("KONTOUDTOG");
+
+        antaSeksLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaSeksLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaSeksLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+
+        prisTreLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        prisTreLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        prisTreLabel.setPreferredSize(new java.awt.Dimension(125, 16));
+
+        antaFireLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        antaFireLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        antaFireLabel.setPreferredSize(new java.awt.Dimension(115, 16));
+
+        betalingsInfoNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        betalingsInfoNoChange.setText("Nordea: 2190 - 0754977361");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -535,7 +535,7 @@ public class ProvisionForm extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(fakturaLabelNoChange)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(faktureresTilLabelNoChange)
