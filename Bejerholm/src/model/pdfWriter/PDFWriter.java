@@ -14,6 +14,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
+ * Denne klasse har 2 constructorer, den ene tager et input af en String og et
+ * jPanel. Den laver en fil i klassemappen. Den anden constructor har et input
+ * af en File og et JPanel. Den kan bruges med eksempelvis en jFileChooser.
+ *
  * @author Dan-Philip Christensen
  */
 public class PDFWriter {
