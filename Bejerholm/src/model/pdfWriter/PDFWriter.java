@@ -10,7 +10,6 @@ import java.awt.Graphics2D;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
