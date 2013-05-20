@@ -5,7 +5,10 @@
 package control;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Bedemand;
 import model.Faktura;
 import model.KirkegaardsOrdre;
@@ -63,11 +66,11 @@ public class Controller {
 
         }
     }
-    // mangler rigtig input
 
-    public void redigerBedemand(int TlfNr) {
+    public void redigerBedemand(int tlfNr, String firmaNavn, String adresse, String byNavn, int postNr) {
         try {
-            Bedemand bedemand = new Bedemand(TlfNr);
+            Bedemand bedemand = new Bedemand(tlfNr);
+            bedemand.redigerBedemandIDatabase(tlfNr, firmaNavn, adresse, byNavn, postNr);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
@@ -127,7 +130,19 @@ public class Controller {
             System.out.println(ex);
         }
     }
-    // Mangler hentListeAfProdukter()
+
+    public void connHentListeAfProdukter(String produktType) {
+        try {
+            Produkt produkt = new Produkt();
+            for (Produkt produktIListe : produkt.hentListeAfProdukter()) {
+                if (produktType.equalsIgnoreCase(produktIListe.getProduktType())) {
+                    //INDSÆT LOGIK HER EFTER VIEW.LAGER ER RYDDET OP
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
 
     // Begynder connect til Ordre
     public void connHentOrdreFraDatabase(int ordreID) {

@@ -6,6 +6,13 @@ import java.util.ArrayList;
 import model.database.Handler;
 
 /**
+ * Denne klasse har 2 constructorer, en som skal bruges i de fleste tilfælde, og
+ * en som KUN bruges i sammenhæng med metoden kaldet hentListeAfProdukter.
+ *
+ * <p>
+ *
+ * <strong> WARNING: Brug kun tom constructor input når produktliste skal
+ * hentes!<strong>
  *
  * @author jack
  */
@@ -21,10 +28,24 @@ public class Produkt {
     private double maalY;
     private Handler handler;
 
+    /**
+     * Denne constructor skaber et nyt objekt af denne klasse og parametre fra
+     * databasen efter inputtet denne constructor modtager.
+     *
+     * @param produktNavn
+     * @throws SQLException
+     */
     public Produkt(String produktNavn) throws SQLException {
         this.handler = new Handler();
         this.produktNavn = produktNavn;
         findProduktViaNavn();
+    }
+
+    /**
+     * <strong> Warning: BRUG KUN DENNE CONSTRUCTOR TIL HENTLISTE!! <strong>
+     */
+    public Produkt() {
+        this.handler = new Handler();
     }
 
     /**
