@@ -17,7 +17,7 @@ public class KirkegaardsOrdre {
     private String afdeling;
     private Handler handler;
 
-    public KirkegaardsOrdre(int kirkegaardsID) throws SQLException {
+    public KirkegaardsOrdre(int kirkegaardsID) throws SQLException, ClassNotFoundException, Exception {
         this.kirkegaardsID = kirkegaardsID;
         this.handler = new Handler();
         hentKirkegaardsOrdre();

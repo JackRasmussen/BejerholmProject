@@ -1,8 +1,8 @@
 package view;
 
+import control.Controller;
 import java.awt.CardLayout;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 /**
  *
@@ -32,8 +32,6 @@ public class BejerholmGUI extends javax.swing.JPanel {
         ((CardLayout) cards.getLayout()).addLayoutComponent(adg, "AdminGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(lag, "LagerGUI");
         skiftPanel("LogPaaGUI");
-//         skiftPanel("LagerGUI");
-//        skiftPanel("AdminGUI");
     }
 
     public void skiftPanel(String jp) {
@@ -198,14 +196,8 @@ public class BejerholmGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_lagerActionPerformed
 
     private void logafActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logafActionPerformed
-// Cutter forbindelsen fra databasen!
-        skiftPanel("LogPaaGUI");
-        lager.setVisible(false);
-        admin.setVisible(false);
-        ordre.setVisible(false);
-        logaf.setVisible(false);
-        kunde.setVisible(false);
-
+        Controller controller = new Controller();
+        controller.closeDBConnection(this);
     }//GEN-LAST:event_logafActionPerformed
 
     private void kundeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kundeActionPerformed

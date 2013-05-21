@@ -165,3 +165,4 @@ pip-log.txt
 *.properties
 /Bejerholm_1-view/nbproject/private/
 /Bejerholm_1-Model/nbproject/private/
+Bejerholm/nbproject/private/private.properties

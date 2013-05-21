@@ -16,13 +16,13 @@ public class Bedemand {
     private int postNr;
     private String byNavn;
 
-    public Bedemand(int tlfNr) throws SQLException {
+    public Bedemand(int tlfNr) throws SQLException, ClassNotFoundException, Exception {
         this.handler = new Handler();
         this.tlfNr = tlfNr;
         findBedemandViaTlf(tlfNr);
     }
 
-    public Bedemand(String firmaNavn) throws SQLException {
+    public Bedemand(String firmaNavn) throws SQLException, ClassNotFoundException, Exception {
         this.handler = new Handler();
         this.firmaNavn = firmaNavn;
         findBedemandViaNavn(firmaNavn);

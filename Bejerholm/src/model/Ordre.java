@@ -32,7 +32,7 @@ public class Ordre {
     private final double MOMS = 25;
     private final double MILJOE_AFGIFT = 2.5;
 
-    public Ordre(int ordreID) throws SQLException {
+    public Ordre(int ordreID) throws SQLException, ClassNotFoundException, Exception {
         this.ordreID = ordreID;
         handler = new Handler();
         hentOrdreFraDatabase();

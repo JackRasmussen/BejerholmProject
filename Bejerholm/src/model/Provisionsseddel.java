@@ -18,7 +18,7 @@ public class Provisionsseddel {
     private int ordreID;
     private Handler handler;
 
-    public Provisionsseddel(int provisionsID) throws SQLException {
+    public Provisionsseddel(int provisionsID) throws SQLException, ClassNotFoundException, Exception {
         this.provisionsID = provisionsID;
         handler = new Handler();
         hentProvisionsseddelFraDatabase();

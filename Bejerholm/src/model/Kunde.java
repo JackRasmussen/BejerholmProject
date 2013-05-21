@@ -19,7 +19,7 @@ public class Kunde {
     private int mobil;
     Handler handler;
 
-    public Kunde(int tlfNr) throws SQLException {
+    public Kunde(int tlfNr) throws SQLException, ClassNotFoundException, Exception {
         this.handler = new Handler();
         this.tlfNr = tlfNr;
         hentMuligKundeFraDatabase();
@@ -41,12 +41,14 @@ public class Kunde {
             this.adresse = rs.getString("adresse");
             this.postNr = rs.getInt("postNr");
             this.by = rs.getString("byNavn");
+            this.mobil = rs.getInt("mobilNr");
         } else {
             this.fNavn = "Kunde findes ikke";
             this.eNavn = "Kunde findes ikke";
             this.adresse = "Kunde findes ikke";
             this.postNr = 0;
             this.by = "Kunde findes ikke";
+            this.mobil = 0;
         }
         rs.close();
     }
@@ -63,23 +65,13 @@ public class Kunde {
      * @param by
      * @throws SQLException
      */
-    public void indsaetKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by) throws SQLException {
+    public void indsaetKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by, int mobil) throws SQLException {
         this.fNavn = fNavn;
         this.eNavn = eNavn;
         this.adresse = adresse;
         this.postNr = postNr;
         this.by = by;
-        handler.indsaetKunde(tlfNr, fNavn, eNavn, adresse, postNr, eNavn);
-    }
-
-    /**
-     * Denne metode sletter en record fra databasen ud fra egenskaberne det
-     * nuværende objekt af denne klasse har.
-     *
-     * @throws SQLException
-     */
-    public void sletKundeFraDatabase() throws SQLException {
-        handler.sletKunde(tlfNr);
+        handler.indsaetKunde(tlfNr, fNavn, eNavn, adresse, postNr, eNavn, mobil);
     }
 
     /**
@@ -93,8 +85,8 @@ public class Kunde {
      * @param by
      * @throws SQLException
      */
-    public void redigerKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by) throws SQLException {
-        handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by);
+    public void redigerKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by, int mobil) throws SQLException {
+        handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by, mobil);
     }
 
     public String getfNavn() {

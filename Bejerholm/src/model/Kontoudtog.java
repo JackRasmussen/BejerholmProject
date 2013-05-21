@@ -18,7 +18,7 @@ public class Kontoudtog {
     private int ordreID;
     private Handler handler;
 
-    public Kontoudtog(int kontoudtogsID) throws SQLException {
+    public Kontoudtog(int kontoudtogsID) throws SQLException, ClassNotFoundException, Exception {
         this.kontoudtogsID = kontoudtogsID;
         handler = new Handler();
         hentKontoUdtog();

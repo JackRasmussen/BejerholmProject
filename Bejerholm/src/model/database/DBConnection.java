@@ -1,6 +1,8 @@
 package model.database;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DBConnection {
 
@@ -23,7 +25,7 @@ public class DBConnection {
         database = "Bejerholm";
     }
 
-    private static void connection() {
+    private static void connection() throws SQLException, ClassNotFoundException, Exception{
         boolean result = true;
         String conString = "jdbc:mysql://" + host + ":" + port + "/" + database;
         try {
@@ -45,15 +47,16 @@ public class DBConnection {
         connected = result;
     }
     
-    public static void setConnectionParameters(String user, String pass, String host, String port, String database){
+    public static void setConnectionParameters(String user, String pass, String host, String port, String database) throws SQLException, ClassNotFoundException, Exception{
         DBConnection.user = user;
         DBConnection.pass = pass;
         DBConnection.host = host;
         DBConnection.port = port;
         DBConnection.database = database;
+        connection();
     }
 
-    public static Connection getConn() {
+    public static Connection getConn() throws SQLException, ClassNotFoundException, Exception{
         if (connected) {
             return conn;
         } else {
@@ -71,8 +74,19 @@ public class DBConnection {
         return rs;
     }
 
-    public static void closeConnection() throws SQLException {
-        state.close();
-        conn.close();
+    public static void closeConnection() {
+        boolean result = false;
+        try {
+            state.close();
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            result = true;
+        }
+        connected = result;
+    }
+
+    public static boolean isConnected() {
+        return connected;
     }
 }

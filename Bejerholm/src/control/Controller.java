@@ -5,10 +5,10 @@
 package control;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import model.Bedemand;
 import model.Faktura;
 import model.KirkegaardsOrdre;
@@ -19,6 +19,8 @@ import model.Produkt;
 import model.Provisionsseddel;
 import model.Tilfoejelse;
 import model.database.DBConnection;
+import view.BejerholmGUI;
+import view.ordre.KundeGUI;
 
 /**
  *
@@ -29,24 +31,69 @@ public class Controller {
     public Controller() {
     }
 
-    public void connectDB(String user, String pass, String host, String port, String database) {
-        DBConnection.setConnectionParameters(user, pass, host, port, database);
+    public void connectDB(String user, String pass, String host, String port, String database, BejerholmGUI beg) {
+        try {
+            DBConnection.setConnectionParameters(user, pass, host, port, database);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (DBConnection.isConnected()) {
+            beg.skiftPanel("OrdreGUI");
+            beg.getAdmin().setVisible(true);
+            beg.getOrdre().setVisible(true);
+            beg.getLager().setVisible(true);
+            beg.getLogaf().setVisible(true);
+            beg.getKunde().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(beg, "Forkert password eller forkerte "
+                    + "indstillinger", "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    public void closeDBConnection(BejerholmGUI beg) {
+        if (DBConnection.isConnected()) {
+            DBConnection.closeConnection();
+        }
+        if (!DBConnection.isConnected()) {
+            System.out.println("Succesfuldt logget af");
+            beg.skiftPanel("LogPaaGUI");
+            beg.getLager().setVisible(false);
+            beg.getAdmin().setVisible(false);
+            beg.getOrdre().setVisible(false);
+            beg.getLogaf().setVisible(false);
+            beg.getKunde().setVisible(false);
+        }
     }
 
     public void hentBedemandViaNavn(String firmaNavn) {
         try {
             Bedemand bedemand = new Bedemand(firmaNavn);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     public void hentBedemandViaTlfNr(int tlfNr) {
         try {
             Bedemand bedemand = new Bedemand(tlfNr);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     public void gemBedemandTilDatabase(int tlfNr, String firmaNavn, String adresse, String byNavn, int postNr) {
@@ -54,7 +101,11 @@ public class Controller {
             Bedemand bedemand = new Bedemand(tlfNr);
             bedemand.tilfoejBedemandTilDatabase(tlfNr, firmaNavn, adresse, byNavn, postNr);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -62,8 +113,11 @@ public class Controller {
         try {
             Bedemand bedemand = new Bedemand(TlfNr);
         } catch (SQLException ex) {
-            System.out.println(ex);
-
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -72,7 +126,11 @@ public class Controller {
             Bedemand bedemand = new Bedemand(tlfNr);
             bedemand.redigerBedemandIDatabase(tlfNr, firmaNavn, adresse, byNavn, postNr);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -81,16 +139,25 @@ public class Controller {
         try {
             Produkt produkt = new Produkt(produktNavn);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public void connTilfoejMaengdeTilProdukt(String produktNavn, int antal) {
+        Produkt produkt;
         try {
-            Produkt produkt = new Produkt(produktNavn);
+            produkt = new Produkt(produktNavn);
             produkt.tilfoejMaengdeTilProdukt(antal);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -99,7 +166,11 @@ public class Controller {
             Produkt produkt = new Produkt(produktNavn);
             produkt.fjernMaengdeFraDatabase(antal);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -108,7 +179,11 @@ public class Controller {
             Produkt produkt = new Produkt(produktNavn);
             produkt.indsaetProduktIDatabase(produktID, produktType, produktAntal, salgsPris, indkoebsPris, maalX, maalY);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -117,7 +192,11 @@ public class Controller {
             Produkt produkt = new Produkt(produktNavn);
             produkt.sletProduktFraDatabase();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -127,7 +206,11 @@ public class Controller {
             Produkt produkt = new Produkt(produktNavn);
             produkt.redigerProduktIDatabase(produktType, produktNavn, antal, salgsPris, indkoebsPris, maalX, maalY);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -140,7 +223,11 @@ public class Controller {
                 }
             }
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -149,7 +236,11 @@ public class Controller {
         try {
             Ordre ordre = new Ordre(ordreID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -160,7 +251,11 @@ public class Controller {
             Ordre ordre = new Ordre(ordreID);
             ordre.gemOrdreIDatabase(status, bestillingsDato, leveringsDato, skrifttype, skriftstørrelse, skriftStil, inskriptionsLinje, bemærkninger, totalPris, rabat, tlfNr, bedemandCvr);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -169,7 +264,11 @@ public class Controller {
             Ordre ordre = new Ordre(ordreID);
             ordre.indsaetProduktTilOrdre(produktAtIndsaette, antal);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -180,7 +279,11 @@ public class Controller {
             Ordre ordre = new Ordre(ordreID);
             ordre.redigerOrdreIDatabase(status, bestillingsDato, leveringsDato, skrifttype, skriftstørrelse, skriftStil, inskriptionsLinje, bemærkninger, totalPris, rabat);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -189,7 +292,11 @@ public class Controller {
             Ordre ordre = new Ordre(ordreID);
             ordre.sletOrdreFraDatabase();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -198,43 +305,72 @@ public class Controller {
             Ordre ordre = new Ordre(ordreID);
             ordre.sletOrdreFraDatabase();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     // Begynder connect til Kunde
-    public void connHentMuligKundeFraDatabase(int tlfNr) {
+    public void connHentMuligKundeFraDatabase(int tlfNr, KundeGUI kgui) {
         try {
             Kunde kunde = new Kunde(tlfNr);
+            String kundeFNavn = kunde.getfNavn();
+            String kundeENavn = kunde.geteNavn();
+            String kundeBy = kunde.getBy();
+            String kundeAdresse = kunde.getAdresse();
+            String kundePostNr = kunde.getPostNr() + "";
+            String kundeMobil = kunde.getMobil() + "";
+            kgui.setFelter(kundeFNavn, kundeENavn, kundeAdresse, kundePostNr, kundeBy, kundeMobil);
+
+            kgui.getAdressFelt().setVisible(true);
+            kgui.getByFelt().setVisible(true);
+            kgui.getfNavnFelt().setVisible(true);
+            kgui.geteNavnFelt().setVisible(true);
+            kgui.getPostFelt().setVisible(true);
+            kgui.getMobTlfFelt().setVisible(true);
+
+            if (kundeFNavn.equals("Kunde findes ikke")) {
+                kgui.getOpretKundeKnap().setVisible(true);
+                kgui.getVidereKnap().setVisible(false);
+            } else {
+                kgui.getVidereKnap().setVisible(true);
+                kgui.getOpretKundeKnap().setVisible(false);
+            }
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void connIndsaetKundeIDatabase(int tlfNr, String fNavn, String eNavn, String adresse, int postNr, String by) {
+    public void connIndsaetKundeIDatabase(int tlfNr, String fNavn, String eNavn, String adresse, int postNr, String by, int mobilNr) {
         try {
             Kunde kunde = new Kunde(tlfNr);
-            kunde.indsaetKundeIDatabase(fNavn, eNavn, adresse, postNr, by);
+            kunde.indsaetKundeIDatabase(fNavn, eNavn, adresse, postNr, by, mobilNr);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void connSletKundeFraDatabase(int tlfNr) {
+    public void connRedigerKundeIDatabase(int tlfNr, String fNavn, String eNavn, String adresse, int postNr, String by, int mobilNr) {
         try {
             Kunde kunde = new Kunde(tlfNr);
-            kunde.sletKundeFraDatabase();
+            kunde.redigerKundeIDatabase(fNavn, eNavn, adresse, postNr, by, mobilNr);
         } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-    }
-
-    public void connRedigerKundeIDatabase(int tlfNr, String fNavn, String eNavn, String adresse, int postNr, String by) {
-        try {
-            Kunde kunde = new Kunde(tlfNr);
-            kunde.redigerKundeIDatabase(fNavn, eNavn, adresse, postNr, by);
-        } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -243,7 +379,11 @@ public class Controller {
         try {
             KirkegaardsOrdre ordre = new KirkegaardsOrdre(kirkegaardsID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -252,7 +392,11 @@ public class Controller {
             KirkegaardsOrdre ordre = new KirkegaardsOrdre(kirkegaardsID);
             ordre.indsaetKirkegaardsOrdreTilDatabase(urne_Kiste, raekke, nummer, afdeling, ordreID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -261,7 +405,11 @@ public class Controller {
             KirkegaardsOrdre ordre = new KirkegaardsOrdre(kirkegaardsID);
             ordre.redigerKirkegaardsOrdre(urne_Kiste, raekke, nummer, afdeling);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -270,7 +418,11 @@ public class Controller {
             KirkegaardsOrdre ordre = new KirkegaardsOrdre(kirkegaardsID);
             ordre.sletKirkegaardsOrdreFraDatabase();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -279,7 +431,11 @@ public class Controller {
         try {
             Tilfoejelse tilfoejelse = new Tilfoejelse(tilfoejelsesID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -288,7 +444,11 @@ public class Controller {
             Tilfoejelse tilfoejelse = new Tilfoejelse(tilfoejelsesID);
             tilfoejelse.indsaetTilfoejelseIDatabase(tilfoejelsesType, pris);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -297,7 +457,11 @@ public class Controller {
             Tilfoejelse tilfoejelse = new Tilfoejelse(tilfoejelsesID);
             tilfoejelse.redigerTilfoejelse(type, pris);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -306,7 +470,11 @@ public class Controller {
             Tilfoejelse tilfoejelse = new Tilfoejelse(tilfoejelsesID);
             tilfoejelse.sletTilfoejelse();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -315,7 +483,11 @@ public class Controller {
         try {
             Provisionsseddel seddel = new Provisionsseddel(provisionsID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -324,7 +496,11 @@ public class Controller {
             Provisionsseddel seddel = new Provisionsseddel(provisionsID);
             seddel.indsaetProvisionsSeddelIDatabase(provisionsDato, provisionsProcent, beskrivelse, ordreID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -333,7 +509,11 @@ public class Controller {
             Provisionsseddel seddel = new Provisionsseddel(provisionsID);
             seddel.sletProvisionsSeddelFraDatabase();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -342,7 +522,11 @@ public class Controller {
         try {
             Kontoudtog konto = new Kontoudtog(kontoudtogsID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -351,7 +535,11 @@ public class Controller {
             Kontoudtog konto = new Kontoudtog(kontoudtogsID);
             konto.indsaetKontoUdtogIDatabase(kontoudtogsDato, ordreLinjePris, ordreLinjeProv, ordreID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -360,7 +548,11 @@ public class Controller {
             Kontoudtog konto = new Kontoudtog(kontoudtogsID);
             konto.sletKontoUdtogFraDatabase();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -369,7 +561,11 @@ public class Controller {
         try {
             Faktura faktura = new Faktura(fakturaNr);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -378,7 +574,11 @@ public class Controller {
             Faktura faktura = new Faktura(fakturaNr);
             faktura.indsaetFakturaIDatabase(fakturaDato, bankOplysninger, ordreID);
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -387,7 +587,11 @@ public class Controller {
             Faktura faktura = new Faktura(fakturaNr);
             faktura.sletFakturaFraDatabase();
         } catch (SQLException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

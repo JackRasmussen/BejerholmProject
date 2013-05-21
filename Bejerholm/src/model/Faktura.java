@@ -17,7 +17,7 @@ public class Faktura {
     private int ordreID;
     private Handler handler;
 
-    public Faktura(int fakturaNr) throws SQLException {
+    public Faktura(int fakturaNr) throws SQLException, ClassNotFoundException, Exception {
         this.fakturaNr = fakturaNr;
         handler = new Handler();
         hentFaktura();

@@ -35,7 +35,7 @@ public class Produkt {
      * @param produktNavn
      * @throws SQLException
      */
-    public Produkt(String produktNavn) throws SQLException {
+    public Produkt(String produktNavn) throws SQLException, ClassNotFoundException, Exception {
         this.handler = new Handler();
         this.produktNavn = produktNavn;
         findProduktViaNavn();
@@ -44,7 +44,7 @@ public class Produkt {
     /**
      * <strong> Warning: BRUG KUN DENNE CONSTRUCTOR TIL HENTLISTE!! <strong>
      */
-    public Produkt() {
+    public Produkt() throws SQLException, ClassNotFoundException, Exception {
         this.handler = new Handler();
     }
 
@@ -167,7 +167,7 @@ public class Produkt {
      * @return
      * @throws SQLException
      */
-    public ArrayList<Produkt> hentListeAfProdukter() throws SQLException {
+    public ArrayList<Produkt> hentListeAfProdukter() throws SQLException, ClassNotFoundException, Exception {
         ArrayList<Produkt> produktListe = new ArrayList<>();
         ResultSet rs = handler.hentListeAfProdukterFraDatabase();
         while (rs.next()) {

@@ -4,8 +4,11 @@
  */
 package view.ordre;
 
-import java.awt.CardLayout;
-import view.AdminGUI;
+import control.Controller;
+import java.util.regex.Pattern;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import view.OrdreGUI;
 
 /**
@@ -33,7 +36,6 @@ public class KundeGUI extends javax.swing.JPanel {
         videreKnap.setVisible(false);
         opretKundeKnap.setVisible(false);
         this.org = org;
-
     }
 
     /**
@@ -65,7 +67,7 @@ public class KundeGUI extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(100, 100, 100));
 
-        soegKundeKnap.setText("Søg kunde");
+        soegKundeKnap.setText("S��g kunde");
         soegKundeKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 soegKundeKnapActionPerformed(evt);
@@ -73,7 +75,7 @@ public class KundeGUI extends javax.swing.JPanel {
         });
 
         soegKundeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        soegKundeLabel.setText("Søg på kunde tlf. nr:");
+        soegKundeLabel.setText("S��g p�� kunde tlf. nr:");
 
         fNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
         fNavnLabel.setText("Fornavn:");
@@ -184,30 +186,31 @@ public class KundeGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_videreKnapActionPerformed
 
     private void soegKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegKundeKnapActionPerformed
-        // hvis kunde er fundet i databasen skal felterne udfyldes, 
-        //hvis ikke kunden er fundet, skal Bejerholm blive bedt om at udfylde 
-        //oplysningerne selv.
-        //hvis kunden er fundet skal opretKundeKnap ikke sættes til visible, 
-        //og videreKnap skal sættes til visible.
+        //hvis kunden er fundet skal opretKundeKnap ikke s��ttes til visible, 
+        //og videreKnap skal s��ttes til visible.
         //og omvendt hvis kunden ikke er fundet.
 
-        adressFelt.setVisible(true);
-        adressLabel.setVisible(true);
-        byFelt.setVisible(true);
-        byLabel.setVisible(true);
-        eNavnFelt.setVisible(true);
-        eNavnLabel.setVisible(true);
-        fNavnFelt.setVisible(true);
-        fNavnLabel.setVisible(true);
-        mobTlfFelt.setVisible(true);
-        mobTlfLabel.setVisible(true);
-        postFelt.setVisible(true);
-        postLabel.setVisible(true);
-        videreKnap.setVisible(false);
-        opretKundeKnap.setVisible(true);
+        if (!Pattern.matches("[a-zA-Z]+", soegKundeFelt.getText()) && soegKundeFelt.getText().length() == 8) {
+            Controller controller = new Controller();
+            int telefonNr = Integer.parseInt(soegKundeFelt.getText());
+            controller.connHentMuligKundeFraDatabase(telefonNr, this);
+        } else {
+            JOptionPane.showMessageDialog(this, "Telefonnummer felt m�� ikke indeholde bogstaver og skal v��re 8 cifre", 
+                    "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_soegKundeKnapActionPerformed
 
     private void opretKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opretKundeKnapActionPerformed
+        Controller controller = new Controller();
+        int tlfNr = Integer.parseInt(soegKundeFelt.getText());
+        String fNavn = fNavnFelt.getText();
+        String eNavn = eNavnFelt.getText();
+        String adresse = adressFelt.getText();
+        int postNr = Integer.parseInt(postFelt.getText());
+        String byNavn = byFelt.getText();
+        int mobilNr = Integer.parseInt(mobTlfFelt.getText());
+        controller.connIndsaetKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
+        
         org.skiftOrdrePanel("BestillingsOrdreGUI");
         fNavnFelt.setText("");
         eNavnFelt.setText("");
@@ -237,12 +240,44 @@ public class KundeGUI extends javax.swing.JPanel {
     private javax.swing.JButton videreKnap;
     // End of variables declaration//GEN-END:variables
 
-    public void setFelter(String fNavnFelt, String eNavnFelt, String adresseFelt, int postFelt, String byFelt, int mobTlfFelt) {
+    public void setFelter(String fNavnFelt, String eNavnFelt, String adresseFelt, String postFelt, String byFelt, String mobTlfFelt) {
         this.fNavnFelt.setText(fNavnFelt);
         this.eNavnFelt.setText(eNavnFelt);
         this.adressFelt.setText(adresseFelt);
-        this.postFelt.setText(postFelt + "");
+        this.postFelt.setText(postFelt);
         this.byFelt.setText(byFelt);
-        this.mobTlfFelt.setText(mobTlfFelt + "");
+        this.mobTlfFelt.setText(mobTlfFelt);
+    }
+
+    public JButton getOpretKundeKnap() {
+        return opretKundeKnap;
+    }
+
+    public JButton getVidereKnap() {
+        return videreKnap;
+    }
+
+    public JTextField getAdressFelt() {
+        return adressFelt;
+    }
+
+    public JTextField getByFelt() {
+        return byFelt;
+    }
+
+    public JTextField geteNavnFelt() {
+        return eNavnFelt;
+    }
+
+    public JTextField getfNavnFelt() {
+        return fNavnFelt;
+    }
+
+    public JTextField getMobTlfFelt() {
+        return mobTlfFelt;
+    }
+
+    public JTextField getPostFelt() {
+        return postFelt;
     }
 }

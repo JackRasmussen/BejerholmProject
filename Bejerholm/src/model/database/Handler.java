@@ -9,7 +9,7 @@ public class Handler {
 
     private Connection dbConn;
 
-    public Handler() {
+    public Handler() throws SQLException, ClassNotFoundException, Exception {
         DBConnection.getConn();
     }
 
@@ -19,21 +19,16 @@ public class Handler {
         return rs;
     }
 
-    public void indsaetKunde(int tlfNr, String fNavn, String eNavn, String adresse, int postNr, String byNavn) throws SQLException {
-        String command = ("insert into Kunde(tlfNr, fNavn, eNavn, adresse, postNr, byNavn) "
-                + "values (" + tlfNr + ", '" + fNavn + "', '" + eNavn + "', '" + adresse + "', " + postNr + ", '" + "');");
+    public void indsaetKunde(int tlfNr, String fNavn, String eNavn, String adresse, int postNr, String byNavn, int mobilNr) throws SQLException {
+        String command = ("insert into Kunde(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr) "
+                + "values (" + tlfNr + ", '" + fNavn + "', '" + eNavn + "', '" + adresse + "', " + postNr + ", '" + byNavn + "', " + mobilNr + ");");
         DBConnection.execute(command);
     }
 
-    public void sletKunde(int tlfNr) throws SQLException {
-        String command = ("delete from Kunde where tlfNr = " + tlfNr + ";");
-        DBConnection.execute(command);
-    }
-
-    public void redigerKunde(int tlfNr, String nyFNavn, String nyENavn, String nyAdresse, int nyPostNr, String nyByNavn) throws SQLException {
+    public void redigerKunde(int tlfNr, String nyFNavn, String nyENavn, String nyAdresse, int nyPostNr, String nyByNavn, int nyMobilNr) throws SQLException {
         String command = ("update Kunde set fNavn = '" + nyFNavn + "', eNavn = '"
                 + nyENavn + "', adresse = '" + nyAdresse + "', postNr = " + nyPostNr
-                + ", byNavn = '" + nyByNavn + "' where tlfNr = " + tlfNr + ";");
+                + ", byNavn = '" + nyByNavn + "', mobilNr = " + nyMobilNr + " where tlfNr = " + tlfNr + ";");
         DBConnection.execute(command);
     }
 

@@ -15,7 +15,7 @@ public class Tilfoejelse {
     private String tilfoejelsesType;
     private double tilfoejelsesPris;
 
-    public Tilfoejelse(int tilfoejelsesID) throws SQLException {
+    public Tilfoejelse(int tilfoejelsesID) throws SQLException, ClassNotFoundException, Exception {
         handler = new Handler();
         this.tilfoejelsesID = tilfoejelsesID;
         hentTilfoejelsesInfo();
