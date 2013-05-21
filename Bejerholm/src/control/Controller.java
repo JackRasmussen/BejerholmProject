@@ -556,7 +556,7 @@ public class Controller {
         }
     }
 
-    // Begynder connect til Kontoudtog
+    // Begynder connect til Faktura
     public void connHentFaktura(int fakturaNr) {
         try {
             Faktura faktura = new Faktura(fakturaNr);
