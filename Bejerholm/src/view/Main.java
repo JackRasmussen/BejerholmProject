@@ -1,6 +1,5 @@
 package view;
 
-import control.ViewControl;
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JFrame;
