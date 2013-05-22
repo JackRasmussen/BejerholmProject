@@ -176,6 +176,8 @@ public class Controller {
         try {
             Produkt produkt = new Produkt(produktNavn);
             produkt.indsaetProduktIDatabase(produktID, produktType, produktAntal, salgsPris, indkoebsPris, maalX, maalY);
+        } catch (SQLException ex) {
+            throw new SQLException();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
