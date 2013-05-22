@@ -4,6 +4,10 @@
  */
 package view.admin;
 
+import control.Controller;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author TheToiletpaper
@@ -39,6 +43,11 @@ public class AdminVaseGUI extends javax.swing.JPanel {
         setBackground(new java.awt.Color(100, 100, 100));
 
         jButton1.setText("Tilføj vare");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Vare nr:");
@@ -106,6 +115,25 @@ public class AdminVaseGUI extends javax.swing.JPanel {
                 .addGap(41, 41, 41))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (!Pattern.matches("[a-zA-Z]+", jTextField1.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField4.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField5.getText())) {
+            if (!"".equals(jTextField1.getText())
+                    && !"".equals(jTextField3.getText())
+                    && !"".equals(jTextField4.getText())
+                    && !"".equals(jTextField5.getText())) {
+                indsaetViaController();
+            } else {
+                JOptionPane.showMessageDialog(this, "En eller flere felter er tomme",
+                        "Advarsel", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "En eller flere nummer felter indeholder bogstaver",
+                    "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -117,4 +145,15 @@ public class AdminVaseGUI extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    private void indsaetViaController() throws NumberFormatException {
+        Controller controller = new Controller();
+        int produktID = Integer.parseInt(jTextField1.getText());
+        String produktNavn = jTextField3.getText();
+        double indkoebsPris = Double.parseDouble(jTextField4.getText());
+        double salgsPris = Double.parseDouble(jTextField5.getText());
+        String produktType = "Vase";
+
+        controller.connIndsaetProduktIDatabase(produktNavn, produktID, produktType, 1, salgsPris, indkoebsPris, 0, 0);
+    }
 }

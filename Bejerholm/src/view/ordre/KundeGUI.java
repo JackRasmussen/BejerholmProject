@@ -186,16 +186,12 @@ public class KundeGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_videreKnapActionPerformed
 
     private void soegKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegKundeKnapActionPerformed
-        //hvis kunden er fundet skal opretKundeKnap ikke s��ttes til visible, 
-        //og videreKnap skal s��ttes til visible.
-        //og omvendt hvis kunden ikke er fundet.
-
         if (!Pattern.matches("[a-zA-Z]+", soegKundeFelt.getText()) && soegKundeFelt.getText().length() == 8) {
             Controller controller = new Controller();
             int telefonNr = Integer.parseInt(soegKundeFelt.getText());
             controller.connHentMuligKundeFraDatabase(telefonNr, this);
         } else {
-            JOptionPane.showMessageDialog(this, "Telefonnummer felt må ikke indeholde bogstaver og skal være 8 cifre", 
+            JOptionPane.showMessageDialog(this, "Telefonnummer felt må ikke indeholde bogstaver og skal være 8 cifre",
                     "Advarsel", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_soegKundeKnapActionPerformed
@@ -210,7 +206,7 @@ public class KundeGUI extends javax.swing.JPanel {
         String byNavn = byFelt.getText();
         int mobilNr = Integer.parseInt(mobTlfFelt.getText());
         controller.connIndsaetKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
-        
+
         org.skiftOrdrePanel("BestillingsOrdreGUI");
         fNavnFelt.setText("");
         eNavnFelt.setText("");

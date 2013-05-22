@@ -1,8 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.admin;
+
+import control.Controller;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -10,9 +10,6 @@ package view.admin;
  */
 public class AdminGravstenGUI extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AdminGravstenGUI
-     */
     public AdminGravstenGUI() {
         initComponents();
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
@@ -50,6 +47,11 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
         setBackground(new java.awt.Color(100, 100, 100));
 
         jButton1.setText("Tilføj vare");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sten nr:");
@@ -61,7 +63,7 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
         jLabel4.setText("Dekoration:");
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Salgspeis u/moms:");
+        jLabel5.setText("Salgspris u/moms:");
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Længde:");
@@ -97,7 +99,7 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(422, Short.MAX_VALUE)
+                .addContainerGap(424, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,6 +185,28 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (!Pattern.matches("[a-zA-Z]+", jTextField1.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField2.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField5.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField6.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField7.getText())) {
+            if (!"".equals(jTextField1.getText())
+                    && !"".equals(jTextField2.getText())
+                    && !"".equals(jTextField3.getText())
+                    && !"".equals(jTextField5.getText())
+                    && !"".equals(jTextField6.getText())
+                    && !"".equals(jTextField7.getText())) {
+                indsaetViaController();
+            } else {
+                JOptionPane.showMessageDialog(this, "En eller flere felter er tomme",
+                        "Advarsel", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "En eller flere nummer felter indeholder bogstaver",
+                    "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
@@ -203,4 +227,20 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
+
+    private void indsaetViaController() throws NumberFormatException {
+        Controller controller = new Controller();
+        int produktID = Integer.parseInt(jTextField1.getText());
+        double maalY = Double.parseDouble(jTextField7.getText());
+        double maalX = Double.parseDouble(jTextField6.getText());
+        double salgsPris = Double.parseDouble(jTextField5.getText());
+        double indkoebsPris = Double.parseDouble(jTextField2.getText());
+        String produktType = "Gravsten";
+        String produktNavn = jTextField3.getText() + ", " + jComboBox1.getSelectedItem().toString() + " overflade";
+        if (jCheckBox1.isSelected()) {
+            produktNavn = produktNavn + " med dekoration";
+        }
+
+        controller.connIndsaetProduktIDatabase(produktNavn, produktID, produktType, 1, salgsPris, indkoebsPris, maalX, maalY);
+    }
 }

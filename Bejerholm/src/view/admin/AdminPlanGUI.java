@@ -1,8 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.admin;
+
+import control.Controller;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -10,9 +10,6 @@ package view.admin;
  */
 public class AdminPlanGUI extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AdminPlanGUI
-     */
     public AdminPlanGUI() {
         initComponents();
     }
@@ -42,6 +39,11 @@ public class AdminPlanGUI extends javax.swing.JPanel {
         setBackground(new java.awt.Color(100, 100, 100));
 
         jButton1.setText("Tilføj vare");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Vare nr:");
@@ -125,6 +127,27 @@ public class AdminPlanGUI extends javax.swing.JPanel {
                 .addGap(41, 41, 41))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (!Pattern.matches("[a-zA-Z]+", jTextField1.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField4.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField6.getText())
+                && !Pattern.matches("[a-zA-Z]+", jTextField7.getText())) {
+            if (!"".equals(jTextField1.getText())
+                    && !"".equals(jTextField3.getText())
+                    && !"".equals(jTextField4.getText())
+                    && !"".equals(jTextField6.getText())
+                    && !"".equals(jTextField7.getText())) {
+                indsaetViaController();
+            } else {
+                JOptionPane.showMessageDialog(this, "En eller flere felter er tomme",
+                        "Advarsel", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "En eller flere nummer felter indeholder bogstaver",
+                    "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -139,4 +162,16 @@ public class AdminPlanGUI extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
+
+    private void indsaetViaController() throws NumberFormatException {
+        Controller controller = new Controller();
+        String produktNavn = jTextField3.getText();
+        int produktID = Integer.parseInt(jTextField1.getText());
+        double maalY = Double.parseDouble(jTextField6.getText());
+        double maalX = Double.parseDouble(jTextField7.getText());
+        double indkoebsPris = Double.parseDouble(jTextField4.getText());
+        String produktType = "Plan";
+
+        controller.connIndsaetProduktIDatabase(produktNavn, produktID, produktType, 1, 0, indkoebsPris, maalX, maalY);
+    }
 }
