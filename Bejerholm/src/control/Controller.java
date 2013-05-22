@@ -31,7 +31,7 @@ public class Controller {
     public Controller() {
     }
 
-    public void connectDB(String user, String pass, String host, String port, String database, BejerholmGUI beg) {
+    public void connectDB(String user, String pass, String host, String port, String database, BejerholmGUI beg) throws SQLException {
         try {
             DBConnection.setConnectionParameters(user, pass, host, port, database);
         } catch (SQLException ex) {
@@ -50,8 +50,7 @@ public class Controller {
             beg.getLogaf().setVisible(true);
             beg.getKunde().setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(beg, "Forkert password eller forkerte "
-                    + "indstillinger", "Advarsel", JOptionPane.WARNING_MESSAGE);
+            throw new SQLException("Kunne ikke logge paa db", "Bad password or settings");
         }
     }
 

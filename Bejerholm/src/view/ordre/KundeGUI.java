@@ -67,7 +67,7 @@ public class KundeGUI extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(100, 100, 100));
 
-        soegKundeKnap.setText("S��g kunde");
+        soegKundeKnap.setText("Søg kunde");
         soegKundeKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 soegKundeKnapActionPerformed(evt);
@@ -75,7 +75,7 @@ public class KundeGUI extends javax.swing.JPanel {
         });
 
         soegKundeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        soegKundeLabel.setText("S��g p�� kunde tlf. nr:");
+        soegKundeLabel.setText("Søg på kunde tlf nr.");
 
         fNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
         fNavnLabel.setText("Fornavn:");
@@ -139,7 +139,7 @@ public class KundeGUI extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(opretKundeKnap)
                             .addComponent(soegKundeKnap))))
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +195,7 @@ public class KundeGUI extends javax.swing.JPanel {
             int telefonNr = Integer.parseInt(soegKundeFelt.getText());
             controller.connHentMuligKundeFraDatabase(telefonNr, this);
         } else {
-            JOptionPane.showMessageDialog(this, "Telefonnummer felt m�� ikke indeholde bogstaver og skal v��re 8 cifre", 
+            JOptionPane.showMessageDialog(this, "Telefonnummer felt må ikke indeholde bogstaver og skal være 8 cifre", 
                     "Advarsel", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_soegKundeKnapActionPerformed

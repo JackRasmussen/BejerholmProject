@@ -1,6 +1,10 @@
 package view;
 
 import control.Controller;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -119,8 +123,13 @@ public class LogPaaGUI extends javax.swing.JPanel {
         for (int i = 0; i < password.getPassword().length; i++) {
             passwordString = passwordString + password.getPassword()[i];
         }
-        controller.connectDB(username.getText(), passwordString,
-                hostname.getText(), port.getText(), database.getText(), beg);
+        try {
+            controller.connectDB(username.getText(), passwordString,
+                    hostname.getText(), port.getText(), database.getText(), beg);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Forkerte indstillinger eller forkert password, prøv venligst igen.", 
+                    "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_loginActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed

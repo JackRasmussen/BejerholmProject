@@ -33,14 +33,14 @@ public class AdminGUI extends javax.swing.JPanel {
         cardsAdmin.add(avg);
 
         lagervare.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
-                    "Admin Gravsten", "Admin Bronze Dekorationer", "Admin Granitplaner", "Admin Fuglebade", "Admin Granitvaser"
+                    "Gravsten", "Bronze Dekorationer", "Granitplaner", "Fuglebade", "Granitvaser"
                 }));
-        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(abg, "Admin Bronze Dekorationer");
-        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(agg, "Admin Gravsten");
-        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(apg, "Admin Granitplaner");
-        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(afg, "Admin Fuglebade");
-        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(avg, "Admin Granitvaser");
-        skiftLagerPanel("Admin Gravsten");
+        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(abg, "Bronze Dekorationer");
+        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(agg, "Gravsten");
+        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(apg, "Granitplaner");
+        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(afg, "Fuglebade");
+        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(avg, "Granitvaser");
+        skiftLagerPanel("Gravsten");
     }
 
     public void skiftLagerPanel(String jp) {
