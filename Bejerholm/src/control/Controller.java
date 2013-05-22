@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import model.Bedemand;
 import model.Faktura;
 import model.KirkegaardsOrdre;
@@ -173,12 +172,10 @@ public class Controller {
         }
     }
 
-    public void connIndsaetProduktIDatabase(String produktNavn, int produktID, String produktType, int produktAntal, double salgsPris, double indkoebsPris, double maalX, double maalY) {
+    public void connIndsaetProduktIDatabase(String produktNavn, int produktID, String produktType, int produktAntal, double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException {
         try {
             Produkt produkt = new Produkt(produktNavn);
             produkt.indsaetProduktIDatabase(produktID, produktType, produktAntal, salgsPris, indkoebsPris, maalX, maalY);
-        } catch (SQLException ex) {
-            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {

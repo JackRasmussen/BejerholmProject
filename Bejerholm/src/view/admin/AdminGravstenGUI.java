@@ -1,6 +1,9 @@
 package view.admin;
 
 import control.Controller;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -240,7 +243,10 @@ public class AdminGravstenGUI extends javax.swing.JPanel {
         if (jCheckBox1.isSelected()) {
             produktNavn = produktNavn + " med dekoration";
         }
-
-        controller.connIndsaetProduktIDatabase(produktNavn, produktID, produktType, 1, salgsPris, indkoebsPris, maalX, maalY);
+        try {
+            controller.connIndsaetProduktIDatabase(produktNavn, produktID, produktType, 1, salgsPris, indkoebsPris, maalX, maalY);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Produkt eksisterer allerede i database!", "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
     }
 }

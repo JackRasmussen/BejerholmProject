@@ -1,6 +1,9 @@
 package view.admin;
 
 import control.Controller;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -171,7 +174,10 @@ public class AdminPlanGUI extends javax.swing.JPanel {
         double maalX = Double.parseDouble(jTextField7.getText());
         double indkoebsPris = Double.parseDouble(jTextField4.getText());
         String produktType = "Plan";
-
-        controller.connIndsaetProduktIDatabase(produktNavn, produktID, produktType, 1, 0, indkoebsPris, maalX, maalY);
+        try {
+            controller.connIndsaetProduktIDatabase(produktNavn, produktID, produktType, 1, 0, indkoebsPris, maalX, maalY);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Produkt eksisterer allerede i database!", "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
     }
 }

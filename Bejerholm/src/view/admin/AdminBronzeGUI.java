@@ -5,6 +5,9 @@
 package view.admin;
 
 import control.Controller;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -196,7 +199,10 @@ public class AdminBronzeGUI extends javax.swing.JPanel {
         int antalVarer = Integer.parseInt(jTextField2.getText());
         double indkoebsPris = Double.parseDouble(jTextField4.getText());
         double salgsPris = Double.parseDouble(jTextField5.getText());
-
-        controller.connIndsaetProduktIDatabase(produktNavn, produktID, vareType, antalVarer, salgsPris, indkoebsPris, 0, 0);
+        try {
+            controller.connIndsaetProduktIDatabase(produktNavn, produktID, vareType, antalVarer, salgsPris, indkoebsPris, 0, 0);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Produkt eksisterer allerede i database!", "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
     }
 }
