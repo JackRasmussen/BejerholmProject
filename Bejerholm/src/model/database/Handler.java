@@ -20,7 +20,7 @@ public class Handler {
     }
 
     public void indsaetKunde(int tlfNr, String fNavn, String eNavn, String adresse, int postNr, String byNavn, int mobilNr) throws SQLException {
-        String command = ("insert into Kunde(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr) "
+        String command = ("insert into Kunde(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, ekstraTlfNr) "
                 + "values (" + tlfNr + ", '" + fNavn + "', '" + eNavn + "', '" + adresse + "', " + postNr + ", '" + byNavn + "', " + mobilNr + ");");
         DBConnection.execute(command);
     }
@@ -28,7 +28,7 @@ public class Handler {
     public void redigerKunde(int tlfNr, String nyFNavn, String nyENavn, String nyAdresse, int nyPostNr, String nyByNavn, int nyMobilNr) throws SQLException {
         String command = ("update Kunde set fNavn = '" + nyFNavn + "', eNavn = '"
                 + nyENavn + "', adresse = '" + nyAdresse + "', postNr = " + nyPostNr
-                + ", byNavn = '" + nyByNavn + "', mobilNr = " + nyMobilNr + " where tlfNr = " + tlfNr + ";");
+                + ", byNavn = '" + nyByNavn + "', ekstraTlfNr = " + nyMobilNr + " where tlfNr = " + tlfNr + ";");
         DBConnection.execute(command);
     }
 

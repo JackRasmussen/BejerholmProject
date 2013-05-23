@@ -190,6 +190,27 @@ public class KundeGUI extends javax.swing.JPanel {
             Controller controller = new Controller();
             int telefonNr = Integer.parseInt(soegKundeFelt.getText());
             controller.connHentMuligKundeFraDatabase(telefonNr, this);
+            adressFelt.setVisible(true);
+            adressLabel.setVisible(true);
+            byFelt.setVisible(true);
+            byLabel.setVisible(true);
+            eNavnFelt.setVisible(true);
+            eNavnLabel.setVisible(true);
+            fNavnFelt.setVisible(true);
+            fNavnLabel.setVisible(true);
+            mobTlfFelt.setVisible(true);
+            mobTlfLabel.setVisible(true);
+            postFelt.setVisible(true);
+            postLabel.setVisible(true);
+
+            if (fNavnFelt.getText().equals("Kunde findes ikke")) {
+                opretKundeKnap.setVisible(true);
+                videreKnap.setVisible(false);
+            } else {
+                videreKnap.setVisible(true);
+                opretKundeKnap.setVisible(false);
+            }
+
         } else {
             JOptionPane.showMessageDialog(this, "Telefonnummer felt må ikke indeholde bogstaver og skal være 8 cifre",
                     "Advarsel", JOptionPane.WARNING_MESSAGE);

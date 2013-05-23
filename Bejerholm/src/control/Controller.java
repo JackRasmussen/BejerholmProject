@@ -322,21 +322,6 @@ public class Controller {
             String kundePostNr = kunde.getPostNr() + "";
             String kundeMobil = kunde.getMobil() + "";
             kgui.setFelter(kundeFNavn, kundeENavn, kundeAdresse, kundePostNr, kundeBy, kundeMobil);
-
-            kgui.getAdressFelt().setVisible(true);
-            kgui.getByFelt().setVisible(true);
-            kgui.getfNavnFelt().setVisible(true);
-            kgui.geteNavnFelt().setVisible(true);
-            kgui.getPostFelt().setVisible(true);
-            kgui.getMobTlfFelt().setVisible(true);
-
-            if (kundeFNavn.equals("Kunde findes ikke")) {
-                kgui.getOpretKundeKnap().setVisible(true);
-                kgui.getVidereKnap().setVisible(false);
-            } else {
-                kgui.getVidereKnap().setVisible(true);
-                kgui.getOpretKundeKnap().setVisible(false);
-            }
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

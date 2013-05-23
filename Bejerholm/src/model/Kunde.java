@@ -41,7 +41,7 @@ public class Kunde {
             this.adresse = rs.getString("adresse");
             this.postNr = rs.getInt("postNr");
             this.by = rs.getString("byNavn");
-            this.mobil = rs.getInt("mobilNr");
+            this.mobil = rs.getInt("ekstraTlfNr");
         } else {
             this.fNavn = "Kunde findes ikke";
             this.eNavn = "Kunde findes ikke";
