@@ -1,0 +1,738 @@
+user:Jack Rasmussen
+1365065283
+:000000 100644 0000000... 412eeda... A	.gitattributes
+:000000 100644 0000000... 5ebd21a... A	.gitignore
+
+user:Jack Rasmussen
+1365066307
+:000000 100644 0000000... 9c31148... A	Bejerholm/build.xml
+:000000 100644 0000000... 328e8e5... A	Bejerholm/manifest.mf
+:000000 100644 0000000... f97edad... A	Bejerholm/nbproject/build-impl.xml
+:000000 100644 0000000... a01b2d8... A	Bejerholm/nbproject/genfiles.properties
+:000000 100644 0000000... fe25751... A	Bejerholm/nbproject/private/private.properties
+:000000 100644 0000000... 0ab5e62... A	Bejerholm/nbproject/project.properties
+:000000 100644 0000000... 1c5c2ed... A	Bejerholm/nbproject/project.xml
+:000000 100644 0000000... a9605c0... A	Bejerholm/src/Control/NewClass.java
+:000000 100644 0000000... 5a3286a... A	Bejerholm/src/GUI/Main.form
+:000000 100644 0000000... 63319f7... A	Bejerholm/src/GUI/Main.java
+:000000 100644 0000000... 6803b28... A	Bejerholm/src/bejerholm/Bejerholm.java
+
+user:Jack Rasmussen
+1365069628
+:000000 100644 0000000... e69de29... A	Bejerholm/nbproject/private/config.properties
+:100644 100644 fe25751... dd79ff0... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 0ab5e62... 2925093... M	Bejerholm/nbproject/project.properties
+
+user:Jack Rasmussen
+1366096140
+:000000 100644 0000000... 8541abb... A	Bejerholm/src/Model/Kunde.java
+:000000 100644 0000000... 78da327... A	Bejerholm/src/Model/Ordre.java
+
+user:Jack Rasmussen
+1366096463
+:000000 100644 0000000... 4750962... A	Bejerholm/nbproject/private/private.xml
+:100644 100644 8541abb... 105ee12... M	Bejerholm/src/Model/Kunde.java
+:000000 100644 0000000... 43ea709... A	Bejerholm/src/Model/Produkt.java
+:000000 100644 0000000... 4ad1f97... A	"Bejerholm/src/Model/Tilf\303\270jelse.java"
+
+user:Jack Rasmussen
+1366105010
+:100644 100644 78da327... d336786... M	Bejerholm/src/Model/Ordre.java
+:100644 100644 43ea709... 1865286... M	Bejerholm/src/Model/Produkt.java
+:100644 100644 4ad1f97... 443ec52... M	"Bejerholm/src/Model/Tilf\303\270jelse.java"
+
+user:Nick Hansen
+1366280886
+:100644 100644 dd79ff0... 61ffb01... M	Bejerholm/nbproject/private/private.properties
+:000000 100644 0000000... 13f8344... A	Bejerholm/src/Database/DBConnection.java
+:000000 100644 0000000... 3bd81af... A	Bejerholm/src/Database/Handler.java
+
+user:Nick Hansen
+1366639918
+:100644 100644 2925093... 72525d1... M	Bejerholm/nbproject/project.properties
+:100644 100644 13f8344... b91ef52... M	Bejerholm/src/Database/DBConnection.java
+:100644 100644 3bd81af... aea5e22... M	Bejerholm/src/Database/Handler.java
+:100644 100644 5a3286a... 805fe29... M	Bejerholm/src/GUI/Main.form
+:100644 100644 63319f7... 10366d5... M	Bejerholm/src/GUI/Main.java
+:100644 000000 6803b28... 0000000... D	Bejerholm/src/bejerholm/Bejerholm.java
+
+user:Dan-Philip Christensen
+1366640551
+:100644 100644 5ebd21a... b9ac80d... M	.gitignore
+:100644 100644 72525d1... 08bf037... M	Bejerholm/nbproject/project.properties
+
+user:anubiz03
+1366679295
+:100644 100644 105ee12... 290a1af... M	Bejerholm/src/Model/Kunde.java
+
+user:Dan-Philip Christensen
+1366679417
+:100644 100644 61ffb01... 886c1c2... M	Bejerholm/nbproject/private/private.properties
+
+user:Dan-Philip-N
+1366703916
+:100644 000000 b91ef52... 0000000... D	Bejerholm/src/Database/DBConnection.java
+:100644 000000 aea5e22... 0000000... D	Bejerholm/src/Database/Handler.java
+:100644 000000 805fe29... 0000000... D	Bejerholm/src/GUI/Main.form
+:100644 000000 10366d5... 0000000... D	Bejerholm/src/GUI/Main.java
+:000000 100644 0000000... 3d8b940... A	Bejerholm/src/model/Kunde.java
+:000000 100644 0000000... edb8457... A	Bejerholm/src/model/Ordre.java
+:000000 100644 0000000... 36cdbe0... A	Bejerholm/src/model/Produkt.java
+:000000 100644 0000000... 61fb55e... A	"Bejerholm/src/model/Tilf\303\270jelse.java"
+:000000 100644 0000000... e497a1c... A	Bejerholm/src/model/database/DBConnection.java
+:000000 100644 0000000... 91e7b79... A	Bejerholm/src/model/database/Handler.java
+:000000 100644 0000000... 805fe29... A	Bejerholm/src/view/Main.form
+:000000 100644 0000000... 0370864... A	Bejerholm/src/view/Main.java
+
+user:Dan-Philip Christensen
+1366711815
+:100644 000000 a9605c0... 0000000... D	Bejerholm/src/Control/NewClass.java
+:100644 000000 290a1af... 0000000... D	Bejerholm/src/Model/Kunde.java
+:100644 000000 d336786... 0000000... D	Bejerholm/src/Model/Ordre.java
+:100644 000000 1865286... 0000000... D	Bejerholm/src/Model/Produkt.java
+:100644 000000 443ec52... 0000000... D	"Bejerholm/src/Model/Tilf\303\270jelse.java"
+:100644 100644 91e7b79... 061388b... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366740704
+:100644 100644 3d8b940... 3d7bb1d... M	Bejerholm/src/model/Kunde.java
+
+user:Dan-Philip Christensen
+1366742163
+:100644 100644 edb8457... ca423e4... M	Bejerholm/src/model/Ordre.java
+:100644 100644 36cdbe0... 8ec89a1... M	Bejerholm/src/model/Produkt.java
+:100644 100644 61fb55e... 544e642... M	"Bejerholm/src/model/Tilf\303\270jelse.java"
+:100644 100644 e497a1c... 0b066fd... M	Bejerholm/src/model/database/DBConnection.java
+:100644 100644 0370864... 5bf033f... M	Bejerholm/src/view/Main.java
+
+user:Nick Hansen
+1366796269
+:100644 100644 886c1c2... 61ffb01... M	Bejerholm/nbproject/private/private.properties
+:000000 100644 0000000... 14ced05... A	Bejerholm/src/view/LogPaaGUI.form
+:000000 100644 0000000... dc46cb4... A	Bejerholm/src/view/LogPaaGUI.java
+:100644 000000 805fe29... 0000000... D	Bejerholm/src/view/Main.form
+:100644 100644 5bf033f... a5ca813... M	Bejerholm/src/view/Main.java
+:000000 100644 0000000... 86321ea... A	Bejerholm/src/view/SystemGUI.form
+:000000 100644 0000000... 661c3db... A	Bejerholm/src/view/SystemGUI.java
+
+user:Dan-Philip Christensen
+1366796790
+:100644 100644 61ffb01... 2e864bf... M	Bejerholm/nbproject/private/private.properties
+:000000 100644 0000000... 4710ceb... A	Bejerholm/src/control/NewClass.java
+
+user:Dan-Philip Christensen
+1366797186
+:100644 100644 0b066fd... a37e9d8... M	Bejerholm/src/model/database/DBConnection.java
+
+user:Nick Hansen
+1366797578
+:000000 100644 0000000... 81485e9... A	Bejerholm/src/control/ModelControl.java
+:100644 000000 4710ceb... 0000000... D	Bejerholm/src/control/NewClass.java
+:000000 100644 0000000... a972c15... A	Bejerholm/src/control/ViewControl.java
+
+user:Dan-Philip Christensen
+1366799209
+:100644 100644 a37e9d8... 37607a7... M	Bejerholm/src/model/database/DBConnection.java
+:100644 100644 061388b... 2afd25c... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366813141
+:100644 100644 2e864bf... 886c1c2... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 3d7bb1d... 324d0d6... M	Bejerholm/src/model/Kunde.java
+:100644 100644 37607a7... abccfaf... M	Bejerholm/src/model/database/DBConnection.java
+:100644 100644 2afd25c... 34eae72... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366822061
+:100644 100644 08bf037... b278d19... M	Bejerholm/nbproject/project.properties
+:100644 100644 324d0d6... 2bce372... M	Bejerholm/src/model/Kunde.java
+:100644 100644 abccfaf... 8988688... M	Bejerholm/src/model/database/DBConnection.java
+:100644 100644 34eae72... 1ea80e6... M	Bejerholm/src/model/database/Handler.java
+:000000 100644 0000000... fa4b8a2... A	Bejerholm/test/model/KundeTest.java
+
+user:Dan-Philip Christensen
+1366824030
+:100644 100644 1ea80e6... f0847ee... M	Bejerholm/src/model/database/Handler.java
+:100644 100644 dc46cb4... f1b55b9... M	Bejerholm/src/view/LogPaaGUI.java
+:100644 100644 fa4b8a2... 221be54... M	Bejerholm/test/model/KundeTest.java
+
+user:Dan-Philip Christensen
+1366824854
+:100644 100644 f0847ee... 3d0f685... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366854693
+:000000 100644 0000000... c76533e... A	Bejerholm/src/model/Bedemand.java
+:100644 100644 2bce372... b21f4fb... M	Bejerholm/src/model/Kunde.java
+:100644 100644 8ec89a1... 1c7e505... M	Bejerholm/src/model/Produkt.java
+:100644 100644 3d0f685... e567e70... M	Bejerholm/src/model/database/Handler.java
+:000000 100644 0000000... a319e8b... A	Bejerholm/test/model/BedemandTest.java
+:100644 100644 221be54... eabbdd0... M	Bejerholm/test/model/KundeTest.java
+:000000 100644 0000000... f11e452... A	Bejerholm/test/model/ProduktTest.java
+
+user:Dan-Philip Christensen
+1366879870
+:000000 100644 0000000... c4c0672... A	Bejerholm/src/model/Tilfoejelse.java
+:100644 000000 544e642... 0000000... D	"Bejerholm/src/model/Tilf\303\270jelse.java"
+:100644 100644 8988688... f444d18... M	Bejerholm/src/model/database/DBConnection.java
+:100644 100644 e567e70... 03e2d87... M	Bejerholm/src/model/database/Handler.java
+:000000 100644 0000000... 27a9c31... A	Bejerholm/test/model/TilfoejelseTest.java
+
+user:Dan-Philip Christensen
+1366895480
+:100644 100644 c76533e... 2dbb7ce... M	Bejerholm/src/model/Bedemand.java
+:100644 100644 b21f4fb... 93e338d... M	Bejerholm/src/model/Kunde.java
+:100644 100644 1c7e505... 371bf6c... M	Bejerholm/src/model/Produkt.java
+:100644 100644 c4c0672... c3681da... M	Bejerholm/src/model/Tilfoejelse.java
+:100644 100644 03e2d87... 6662c09... M	Bejerholm/src/model/database/Handler.java
+:100644 000000 a319e8b... 0000000... D	Bejerholm/test/model/BedemandTest.java
+:100644 000000 eabbdd0... 0000000... D	Bejerholm/test/model/KundeTest.java
+:100644 000000 f11e452... 0000000... D	Bejerholm/test/model/ProduktTest.java
+:100644 000000 27a9c31... 0000000... D	Bejerholm/test/model/TilfoejelseTest.java
+
+user:Dan-Philip Christensen
+1366923741
+:000000 100644 0000000... 1748e68... A	Bejerholm/src/model/Faktura.java
+:000000 100644 0000000... f7d0b16... A	Bejerholm/src/model/Provisionsseddel.java
+:100644 100644 6662c09... b30c848... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366926523
+:000000 100644 0000000... 666e57e... A	Bejerholm/src/model/Kontoudtog.java
+:100644 100644 b30c848... 7b72b07... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366936791
+:000000 100644 0000000... fac83b6... A	Bejerholm/src/model/KirkegaardsOrdre.java
+:100644 100644 ca423e4... da4dcd9... M	Bejerholm/src/model/Ordre.java
+:100644 100644 7b72b07... 0e53729... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366978233
+:100644 100644 da4dcd9... c52132d... M	Bejerholm/src/model/Ordre.java
+:100644 100644 0e53729... f3482bb... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1366981835
+:100644 100644 1748e68... ebda95c... M	Bejerholm/src/model/Faktura.java
+:100644 100644 fac83b6... fe0436a... M	Bejerholm/src/model/KirkegaardsOrdre.java
+:100644 100644 666e57e... 904f553... M	Bejerholm/src/model/Kontoudtog.java
+:100644 100644 c52132d... 0104399... M	Bejerholm/src/model/Ordre.java
+:100644 100644 371bf6c... 848eb31... M	Bejerholm/src/model/Produkt.java
+:100644 100644 f7d0b16... 15c9716... M	Bejerholm/src/model/Provisionsseddel.java
+:100644 100644 c3681da... e87d601... M	Bejerholm/src/model/Tilfoejelse.java
+:100644 100644 f3482bb... 03be72b... M	Bejerholm/src/model/database/Handler.java
+
+user:Nick Hansen
+1367219616
+:100644 100644 2e864bf... 61ffb01... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 08bf037... 4aeb8ff... M	Bejerholm/nbproject/project.properties
+:100644 100644 81485e9... fab923a... M	Bejerholm/src/control/ModelControl.java
+:100644 100644 a972c15... 204d548... M	Bejerholm/src/control/ViewControl.java
+:000000 100644 0000000... 966d250... A	Bejerholm/src/images/bejerholm.png
+:100644 100644 14ced05... 5dff0b2... M	Bejerholm/src/view/LogPaaGUI.form
+:100644 100644 dc46cb4... 96bed71... M	Bejerholm/src/view/LogPaaGUI.java
+:100644 100644 a5ca813... b7b9836... M	Bejerholm/src/view/Main.java
+:100644 100644 661c3db... 1dbeea6... M	Bejerholm/src/view/SystemGUI.java
+
+user:Nick Hansen
+1367220226
+:100644 100644 b278d19... efd725c... M	Bejerholm/nbproject/project.properties
+:000000 100644 0000000... 966d250... A	Bejerholm/src/images/bejerholm.png
+
+user:Nick Hansen
+1367224022
+:100644 100644 204d548... 39c8ce7... M	Bejerholm/src/control/ViewControl.java
+:100644 100644 5dff0b2... 927809c... M	Bejerholm/src/view/LogPaaGUI.form
+:100644 100644 86321ea... 7cbe28f... M	Bejerholm/src/view/SystemGUI.form
+:100644 100644 1dbeea6... 4875d4a... M	Bejerholm/src/view/SystemGUI.java
+
+user:Nick Hansen
+1367225275
+:100644 100644 b9ac80d... 5707e8d... M	.gitignore
+:000000 100644 0000000... d0da182... A	Bejerholm_1-Model/build.xml
+:000000 100644 0000000... 328e8e5... A	Bejerholm_1-Model/manifest.mf
+:000000 100644 0000000... d8d9b07... A	Bejerholm_1-Model/nbproject/build-impl.xml
+:000000 100644 0000000... 80f6f0a... A	Bejerholm_1-Model/nbproject/genfiles.properties
+:000000 100644 0000000... 27c15f1... A	Bejerholm_1-Model/nbproject/project.properties
+:000000 100644 0000000... b0a3de3... A	Bejerholm_1-Model/nbproject/project.xml
+:000000 100644 0000000... 4710ceb... A	Bejerholm_1-Model/src/control/NewClass.java
+:000000 100644 0000000... 966d250... A	Bejerholm_1-Model/src/images/bejerholm.png
+:000000 100644 0000000... 2dbb7ce... A	Bejerholm_1-Model/src/model/Bedemand.java
+:000000 100644 0000000... ebda95c... A	Bejerholm_1-Model/src/model/Faktura.java
+:000000 100644 0000000... fe0436a... A	Bejerholm_1-Model/src/model/KirkegaardsOrdre.java
+:000000 100644 0000000... 904f553... A	Bejerholm_1-Model/src/model/Kontoudtog.java
+:000000 100644 0000000... 93e338d... A	Bejerholm_1-Model/src/model/Kunde.java
+:000000 100644 0000000... 0104399... A	Bejerholm_1-Model/src/model/Ordre.java
+:000000 100644 0000000... 848eb31... A	Bejerholm_1-Model/src/model/Produkt.java
+:000000 100644 0000000... 15c9716... A	Bejerholm_1-Model/src/model/Provisionsseddel.java
+:000000 100644 0000000... e87d601... A	Bejerholm_1-Model/src/model/Tilfoejelse.java
+:000000 100644 0000000... f444d18... A	Bejerholm_1-Model/src/model/database/DBConnection.java
+:000000 100644 0000000... 03be72b... A	Bejerholm_1-Model/src/model/database/Handler.java
+:000000 100644 0000000... 14ced05... A	Bejerholm_1-Model/src/view/LogPaaGUI.form
+:000000 100644 0000000... f1b55b9... A	Bejerholm_1-Model/src/view/LogPaaGUI.java
+:000000 100644 0000000... a5ca813... A	Bejerholm_1-Model/src/view/Main.java
+:000000 100644 0000000... 86321ea... A	Bejerholm_1-Model/src/view/SystemGUI.form
+:000000 100644 0000000... 661c3db... A	Bejerholm_1-Model/src/view/SystemGUI.java
+:000000 100644 0000000... 4c05133... A	Bejerholm_1-view/build.xml
+:000000 100644 0000000... 328e8e5... A	Bejerholm_1-view/manifest.mf
+:000000 100644 0000000... cf8da1d... A	Bejerholm_1-view/nbproject/build-impl.xml
+:000000 100644 0000000... 3a140fc... A	Bejerholm_1-view/nbproject/genfiles.properties
+:000000 100644 0000000... be731ce... A	Bejerholm_1-view/nbproject/project.properties
+:000000 100644 0000000... 00fe883... A	Bejerholm_1-view/nbproject/project.xml
+:000000 100644 0000000... fab923a... A	Bejerholm_1-view/src/control/ModelControl.java
+:000000 100644 0000000... 39c8ce7... A	Bejerholm_1-view/src/control/ViewControl.java
+:000000 100644 0000000... 966d250... A	Bejerholm_1-view/src/images/bejerholm.png
+:000000 100644 0000000... 3d7bb1d... A	Bejerholm_1-view/src/model/Kunde.java
+:000000 100644 0000000... ca423e4... A	Bejerholm_1-view/src/model/Ordre.java
+:000000 100644 0000000... 8ec89a1... A	Bejerholm_1-view/src/model/Produkt.java
+:000000 100644 0000000... 544e642... A	"Bejerholm_1-view/src/model/Tilf\303\270jelse.java"
+:000000 100644 0000000... 0b066fd... A	Bejerholm_1-view/src/model/database/DBConnection.java
+:000000 100644 0000000... 061388b... A	Bejerholm_1-view/src/model/database/Handler.java
+:000000 100644 0000000... 927809c... A	Bejerholm_1-view/src/view/LogPaaGUI.form
+:000000 100644 0000000... 96bed71... A	Bejerholm_1-view/src/view/LogPaaGUI.java
+:000000 100644 0000000... b7b9836... A	Bejerholm_1-view/src/view/Main.java
+:000000 100644 0000000... 7cbe28f... A	Bejerholm_1-view/src/view/SystemGUI.form
+:000000 100644 0000000... 4875d4a... A	Bejerholm_1-view/src/view/SystemGUI.java
+
+user:Nick Hansen
+1367225643
+user:Dan-Philip Christensen
+1367862734
+:100644 100644 f444d18... f06b238... M	Bejerholm/src/model/database/DBConnection.java
+:100644 100644 03be72b... 0f30df3... M	Bejerholm/src/model/database/Handler.java
+
+user:Nick Hansen
+1367910544
+:100644 100644 cb57ff2... 83ea254... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 39c8ce7... 985d19b... M	Bejerholm/src/control/ViewControl.java
+:100644 100644 927809c... 43910bb... M	Bejerholm/src/view/LogPaaGUI.form
+:100644 100644 4d7668b... e3ba6cd... M	Bejerholm/src/view/LogPaaGUI.java
+:000000 100644 0000000... 7cbe28f... A	Bejerholm/src/view/OrdreGUI.form
+:000000 100644 0000000... 4875d4a... A	Bejerholm/src/view/OrdreGUI.java
+:100644 000000 7cbe28f... 0000000... D	Bejerholm/src/view/SystemGUI.form
+:100644 000000 4875d4a... 0000000... D	Bejerholm/src/view/SystemGUI.java
+
+user:Nick Hansen
+1367910556
+:000000 100644 0000000... 9e1020c... A	Bejerholm/src/view/AdminGUI.form
+:100644 100644 b7b9836... f915100... M	Bejerholm/src/view/Main.java
+:100644 100644 7cbe28f... 0820db9... M	Bejerholm/src/view/OrdreGUI.form
+:100644 100644 4875d4a... 3521e17... M	Bejerholm/src/view/OrdreGUI.java
+
+user:Nick Hansen
+1367910564
+:000000 100644 0000000... 98af98c... A	Bejerholm/src/view/AdminGUI.java
+:000000 100644 0000000... c9aea9e... A	Bejerholm/src/view/BejerholmGUI.form
+:000000 100644 0000000... e7b5156... A	Bejerholm/src/view/BejerholmGUI.java
+:000000 100644 0000000... 9b6fc39... A	Bejerholm/src/view/FrameTilBejerholm.java
+
+user:Nick Hansen
+1367910571
+:000000 100644 0000000... fef5e03... A	Bejerholm/src/view/OptionGUI.form
+:000000 100644 0000000... f589229... A	Bejerholm/src/view/OptionGUI.java
+
+user:Nick Hansen
+1367920394
+:100644 100644 9e1020c... 26aecb0... M	Bejerholm/src/view/AdminGUI.form
+:100644 100644 98af98c... b75ed66... M	Bejerholm/src/view/AdminGUI.java
+:100644 100644 c9aea9e... 323b130... M	Bejerholm/src/view/BejerholmGUI.form
+:100644 100644 e7b5156... 93ab2b1... M	Bejerholm/src/view/BejerholmGUI.java
+:100644 000000 fef5e03... 0000000... D	Bejerholm/src/view/OptionGUI.form
+:100644 000000 f589229... 0000000... D	Bejerholm/src/view/OptionGUI.java
+
+user:Nick Hansen
+1367920403
+:000000 100644 0000000... 8d93213... A	Bejerholm/src/view/LagerGUI.form
+:000000 100644 0000000... d475fcd... A	Bejerholm/src/view/LagerGUI.java
+:100644 100644 43910bb... 597992a... M	Bejerholm/src/view/LogPaaGUI.form
+:100644 100644 e3ba6cd... 087da34... M	Bejerholm/src/view/LogPaaGUI.java
+:100644 100644 0820db9... 26aecb0... M	Bejerholm/src/view/OrdreGUI.form
+:100644 100644 3521e17... c0484b9... M	Bejerholm/src/view/OrdreGUI.java
+
+user:Nick Hansen
+1367920410
+:000000 100644 0000000... 78ff647... A	Bejerholm/src/view/lager/BronzeGUI.form
+:000000 100644 0000000... f1ae9b8... A	Bejerholm/src/view/lager/BronzeGUI.java
+:000000 100644 0000000... f184aa7... A	Bejerholm/src/view/lager/FuglGUI.form
+:000000 100644 0000000... 99a1cae... A	Bejerholm/src/view/lager/FuglGUI.java
+:000000 100644 0000000... 26fe08e... A	Bejerholm/src/view/lager/GravstenGUI.form
+:000000 100644 0000000... 242d326... A	Bejerholm/src/view/lager/GravstenGUI.java
+:000000 100644 0000000... 224d06a... A	Bejerholm/src/view/lager/PlanGUI.form
+:000000 100644 0000000... 3e9e0c0... A	Bejerholm/src/view/lager/PlanGUI.java
+:000000 100644 0000000... 115e2b4... A	Bejerholm/src/view/lager/VaseGUI.form
+:000000 100644 0000000... c1481a3... A	Bejerholm/src/view/lager/VaseGUI.java
+
+user:Dan-Philip Christensen
+1367924839
+:100644 100644 83ea254... cb57ff2... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 f06b238... fd5fdbc... M	Bejerholm/src/model/database/DBConnection.java
+
+user:Jack Rasmussen
+1367997974
+:100644 100644 cb57ff2... a9d102b... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 78ff647... 9d65b95... M	Bejerholm/src/view/lager/BronzeGUI.form
+:100644 100644 f1ae9b8... 04d5f08... M	Bejerholm/src/view/lager/BronzeGUI.java
+:100644 100644 f184aa7... f67c953... M	Bejerholm/src/view/lager/FuglGUI.form
+:100644 100644 99a1cae... fde18a8... M	Bejerholm/src/view/lager/FuglGUI.java
+:100644 100644 26fe08e... 2d0c283... M	Bejerholm/src/view/lager/GravstenGUI.form
+:100644 100644 242d326... 0751393... M	Bejerholm/src/view/lager/GravstenGUI.java
+:100644 100644 224d06a... ebec2c1... M	Bejerholm/src/view/lager/PlanGUI.form
+:100644 100644 3e9e0c0... 7b5cedb... M	Bejerholm/src/view/lager/PlanGUI.java
+:100644 100644 115e2b4... 50d294f... M	Bejerholm/src/view/lager/VaseGUI.form
+:100644 100644 c1481a3... 1cafcdf... M	Bejerholm/src/view/lager/VaseGUI.java
+
+user:Nicolai
+1368002111
+:000000 100644 0000000... c370b65... A	Bejerholm/src/control/Controller.java
+
+user:Nick Hansen
+1368002666
+:100644 100644 a9d102b... 83ea254... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 efd725c... 876b514... M	Bejerholm/nbproject/project.properties
+:100644 100644 323b130... 0c56bb4... M	Bejerholm/src/view/BejerholmGUI.form
+:100644 100644 93ab2b1... fd72772... M	Bejerholm/src/view/BejerholmGUI.java
+:100644 100644 9d65b95... 825d409... M	Bejerholm/src/view/lager/BronzeGUI.form
+:100644 100644 04d5f08... 7673788... M	Bejerholm/src/view/lager/BronzeGUI.java
+:100644 100644 2d0c283... 3bf119d... M	Bejerholm/src/view/lager/GravstenGUI.form
+:100644 100644 0751393... 0b10145... M	Bejerholm/src/view/lager/GravstenGUI.java
+
+user:Nicolai
+1368002839
+user:Dan-Philip Christensen
+1368004249
+:100644 100644 f97edad... 583be02... M	Bejerholm/nbproject/build-impl.xml
+:100644 100644 a01b2d8... e2369eb... M	Bejerholm/nbproject/genfiles.properties
+:100644 100644 83ea254... 0cf00d7... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 848eb31... 522a48b... M	Bejerholm/src/model/Produkt.java
+:100644 100644 0f30df3... ed803bb... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1368006536
+:100644 100644 522a48b... cdcbce8... M	Bejerholm/src/model/Produkt.java
+:100644 100644 ed803bb... d0ad437... M	Bejerholm/src/model/database/Handler.java
+
+user:Nick Hansen
+1368015606
+:100644 100644 26aecb0... aab83c2... M	Bejerholm/src/view/OrdreGUI.form
+:100644 100644 c0484b9... 24e178b... M	Bejerholm/src/view/OrdreGUI.java
+:100644 100644 825d409... f34df23... M	Bejerholm/src/view/lager/BronzeGUI.form
+:100644 100644 7673788... f0fc2e6... M	Bejerholm/src/view/lager/BronzeGUI.java
+:100644 100644 f67c953... 451bfad... M	Bejerholm/src/view/lager/FuglGUI.form
+:100644 100644 fde18a8... 1514be1... M	Bejerholm/src/view/lager/FuglGUI.java
+:100644 100644 3bf119d... 72e165b... M	Bejerholm/src/view/lager/GravstenGUI.form
+:100644 100644 0b10145... 842e073... M	Bejerholm/src/view/lager/GravstenGUI.java
+:100644 100644 ebec2c1... c99d170... M	Bejerholm/src/view/lager/PlanGUI.form
+:100644 100644 7b5cedb... 6837c73... M	Bejerholm/src/view/lager/PlanGUI.java
+:100644 100644 50d294f... cc6b3ba... M	Bejerholm/src/view/lager/VaseGUI.form
+:100644 100644 1cafcdf... fdb0308... M	Bejerholm/src/view/lager/VaseGUI.java
+:000000 100644 0000000... 0a64c68... A	Bejerholm/src/view/ordre/KundeGUI.form
+:000000 100644 0000000... f2829a5... A	Bejerholm/src/view/ordre/KundeGUI.java
+:000000 100644 0000000... a98dc9c... A	Bejerholm/src/view/ordre/OrdreGUI.form
+:000000 100644 0000000... efe3b2d... A	Bejerholm/src/view/ordre/OrdreGUI.java
+
+user:Dan-Philip Christensen
+1368493859
+:100644 100644 d0ad437... 9dab86e... M	Bejerholm/src/model/database/Handler.java
+
+user:Nick Hansen
+1368530679
+:100644 100644 0cf00d7... 83ea254... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 26aecb0... 8781d1c... M	Bejerholm/src/view/AdminGUI.form
+:100644 100644 b75ed66... 44febc7... M	Bejerholm/src/view/AdminGUI.java
+:100644 100644 0c56bb4... ef99ad4... M	Bejerholm/src/view/BejerholmGUI.form
+:100644 100644 fd72772... 9f9d68c... M	Bejerholm/src/view/BejerholmGUI.java
+:100644 100644 087da34... c18a2b3... M	Bejerholm/src/view/LogPaaGUI.java
+:000000 100644 0000000... cb42713... A	Bejerholm/src/view/admin/AdminBronzeGUI.form
+:000000 100644 0000000... e9f15f3... A	Bejerholm/src/view/admin/AdminBronzeGUI.java
+:000000 100644 0000000... b9c9150... A	Bejerholm/src/view/admin/AdminFuglGUI.form
+:000000 100644 0000000... b6bcadc... A	Bejerholm/src/view/admin/AdminFuglGUI.java
+:000000 100644 0000000... 89e7e1d... A	Bejerholm/src/view/admin/AdminGravstenGUI.form
+:000000 100644 0000000... 704835b... A	Bejerholm/src/view/admin/AdminGravstenGUI.java
+:000000 100644 0000000... fc6c1e6... A	Bejerholm/src/view/admin/AdminPlanGUI.form
+:000000 100644 0000000... eb822d9... A	Bejerholm/src/view/admin/AdminPlanGUI.java
+:000000 100644 0000000... 74d092e... A	Bejerholm/src/view/admin/AdminVaseGUI.form
+:000000 100644 0000000... b6339aa... A	Bejerholm/src/view/admin/AdminVaseGUI.java
+
+user:Dan-Philip Christensen
+1368533789
+:100644 100644 2dbb7ce... 59d215d... M	Bejerholm/src/model/Bedemand.java
+:100644 100644 0104399... 363b94d... M	Bejerholm/src/model/Ordre.java
+
+user:Dan-Philip Christensen
+1368576006
+:100644 100644 83ea254... cb57ff2... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 59d215d... 1e44f83... M	Bejerholm/src/model/Bedemand.java
+:100644 100644 ebda95c... 1f38966... M	Bejerholm/src/model/Faktura.java
+:100644 100644 fe0436a... acafd07... M	Bejerholm/src/model/KirkegaardsOrdre.java
+:100644 100644 904f553... ea59ee3... M	Bejerholm/src/model/Kontoudtog.java
+:100644 100644 93e338d... e6fbd42... M	Bejerholm/src/model/Kunde.java
+:100644 100644 363b94d... b94b0ec... M	Bejerholm/src/model/Ordre.java
+:100644 100644 cdcbce8... 4a7af36... M	Bejerholm/src/model/Produkt.java
+:100644 100644 15c9716... 778fd65... M	Bejerholm/src/model/Provisionsseddel.java
+:100644 100644 e87d601... 4b40396... M	Bejerholm/src/model/Tilfoejelse.java
+
+user:Dan-Philip Christensen
+1368603304
+:100644 100644 1e44f83... 091e6e5... M	Bejerholm/src/model/Bedemand.java
+
+user:Jack Rasmussen
+1368605329
+:100644 100644 9f9d68c... 8a21d21... M	Bejerholm/src/view/BejerholmGUI.java
+:100644 100644 cb42713... aa554b0... M	Bejerholm/src/view/admin/AdminBronzeGUI.form
+:100644 100644 e9f15f3... 1c41d49... M	Bejerholm/src/view/admin/AdminBronzeGUI.java
+:100644 100644 b9c9150... 27fc044... M	Bejerholm/src/view/admin/AdminFuglGUI.form
+:100644 100644 b6bcadc... f92902d... M	Bejerholm/src/view/admin/AdminFuglGUI.java
+:100644 100644 89e7e1d... ef841ab... M	Bejerholm/src/view/admin/AdminGravstenGUI.form
+:100644 100644 704835b... c3a0a31... M	Bejerholm/src/view/admin/AdminGravstenGUI.java
+:100644 100644 fc6c1e6... daf4eb3... M	Bejerholm/src/view/admin/AdminPlanGUI.form
+:100644 100644 eb822d9... 7be168f... M	Bejerholm/src/view/admin/AdminPlanGUI.java
+:100644 100644 74d092e... e9631d0... M	Bejerholm/src/view/admin/AdminVaseGUI.form
+:100644 100644 b6339aa... 6a5fb34... M	Bejerholm/src/view/admin/AdminVaseGUI.java
+
+user:Dan-Philip Christensen
+1368607807
+:100644 100644 b94b0ec... ccfc9eb... M	Bejerholm/src/model/Ordre.java
+:100644 100644 9dab86e... 1edd6b2... M	Bejerholm/src/model/database/Handler.java
+
+user:Dan-Philip Christensen
+1368608824
+:100644 100644 091e6e5... 3d79c19... M	Bejerholm/src/model/Bedemand.java
+:100644 100644 1edd6b2... 60d1d87... M	Bejerholm/src/model/database/Handler.java
+
+user:Jack Rasmussen
+1368609127
+:100644 100644 cb57ff2... a9d102b... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 44febc7... 43e92e2... M	Bejerholm/src/view/AdminGUI.java
+:100644 100644 597992a... a0a43e7... M	Bejerholm/src/view/LogPaaGUI.form
+:100644 100644 c18a2b3... e1fedd7... M	Bejerholm/src/view/LogPaaGUI.java
+:100644 100644 aab83c2... 442b203... M	Bejerholm/src/view/OrdreGUI.form
+:100644 100644 24e178b... dcc55c8... M	Bejerholm/src/view/OrdreGUI.java
+:100644 100644 aa554b0... 8adc944... M	Bejerholm/src/view/admin/AdminBronzeGUI.form
+:100644 100644 1c41d49... 444827a... M	Bejerholm/src/view/admin/AdminBronzeGUI.java
+:100644 100644 27fc044... e34a865... M	Bejerholm/src/view/admin/AdminFuglGUI.form
+:100644 100644 f92902d... a968afa... M	Bejerholm/src/view/admin/AdminFuglGUI.java
+:100644 100644 ef841ab... 2d4c629... M	Bejerholm/src/view/admin/AdminGravstenGUI.form
+:100644 100644 c3a0a31... 2c9badd... M	Bejerholm/src/view/admin/AdminGravstenGUI.java
+:100644 100644 daf4eb3... d52a422... M	Bejerholm/src/view/admin/AdminPlanGUI.form
+:100644 100644 7be168f... f43410b... M	Bejerholm/src/view/admin/AdminPlanGUI.java
+:100644 100644 e9631d0... d2f28b8... M	Bejerholm/src/view/admin/AdminVaseGUI.form
+:100644 100644 6a5fb34... 7ce42f5... M	Bejerholm/src/view/admin/AdminVaseGUI.java
+:100644 100644 f34df23... b4bd3d4... M	Bejerholm/src/view/lager/BronzeGUI.form
+:100644 100644 f0fc2e6... 7e344b3... M	Bejerholm/src/view/lager/BronzeGUI.java
+:100644 100644 451bfad... 3206d5f... M	Bejerholm/src/view/lager/FuglGUI.form
+:100644 100644 1514be1... 5081420... M	Bejerholm/src/view/lager/FuglGUI.java
+:100644 100644 72e165b... 3fb3905... M	Bejerholm/src/view/lager/GravstenGUI.form
+:100644 100644 842e073... 118bf50... M	Bejerholm/src/view/lager/GravstenGUI.java
+:100644 100644 c99d170... 55e45e0... M	Bejerholm/src/view/lager/PlanGUI.form
+:100644 100644 6837c73... 401e3b2... M	Bejerholm/src/view/lager/PlanGUI.java
+:000000 100644 0000000... 8ba079d... A	Bejerholm/src/view/ordre/BestillingsOrdreGUI.form
+:000000 100644 0000000... 72faef5... A	Bejerholm/src/view/ordre/BestillingsOrdreGUI.java
+:100644 100644 0a64c68... f84288e... M	Bejerholm/src/view/ordre/KundeGUI.form
+:100644 100644 f2829a5... eb5b6d0... M	Bejerholm/src/view/ordre/KundeGUI.java
+:100644 000000 a98dc9c... 0000000... D	Bejerholm/src/view/ordre/OrdreGUI.form
+:100644 000000 efe3b2d... 0000000... D	Bejerholm/src/view/ordre/OrdreGUI.java
+
+user:Nick Hansen
+1368614353
+:100644 100644 a9d102b... 83ea254... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 8781d1c... 1a6ab7d... M	Bejerholm/src/view/AdminGUI.form
+:100644 100644 43e92e2... 50f840f... M	Bejerholm/src/view/AdminGUI.java
+:100644 100644 ef99ad4... 9d1bec1... M	Bejerholm/src/view/BejerholmGUI.form
+:100644 100644 8a21d21... a52c561... M	Bejerholm/src/view/BejerholmGUI.java
+:100644 100644 8d93213... 69ea51a... M	Bejerholm/src/view/LagerGUI.form
+:100644 100644 d475fcd... 2a785dc... M	Bejerholm/src/view/LagerGUI.java
+:100644 100644 e1fedd7... 66fb060... M	Bejerholm/src/view/LogPaaGUI.java
+:100644 100644 442b203... 8bcfe56... M	Bejerholm/src/view/OrdreGUI.form
+:100644 100644 dcc55c8... 33ef1ee... M	Bejerholm/src/view/OrdreGUI.java
+:100644 100644 8adc944... b8658c3... M	Bejerholm/src/view/admin/AdminBronzeGUI.form
+:100644 100644 444827a... b24ffd6... M	Bejerholm/src/view/admin/AdminBronzeGUI.java
+:100644 100644 e34a865... e57d0d4... M	Bejerholm/src/view/admin/AdminFuglGUI.form
+:100644 100644 a968afa... 4957658... M	Bejerholm/src/view/admin/AdminFuglGUI.java
+:100644 100644 2d4c629... bc6b81e... M	Bejerholm/src/view/admin/AdminGravstenGUI.form
+:100644 100644 2c9badd... 7ed45d6... M	Bejerholm/src/view/admin/AdminGravstenGUI.java
+:100644 100644 d52a422... 2aafe35... M	Bejerholm/src/view/admin/AdminPlanGUI.form
+:100644 100644 f43410b... ede662e... M	Bejerholm/src/view/admin/AdminPlanGUI.java
+:100644 100644 d2f28b8... 44a8ee7... M	Bejerholm/src/view/admin/AdminVaseGUI.form
+:100644 100644 7ce42f5... 09a8a75... M	Bejerholm/src/view/admin/AdminVaseGUI.java
+:000000 100644 0000000... 660481f... A	Bejerholm/src/view/faktura/f.java
+:100644 100644 8ba079d... 925961d... M	Bejerholm/src/view/ordre/BestillingsOrdreGUI.form
+:100644 100644 72faef5... 47ca3e8... M	Bejerholm/src/view/ordre/BestillingsOrdreGUI.java
+:100644 100644 f84288e... 0fb9cfd... M	Bejerholm/src/view/ordre/KundeGUI.form
+:100644 100644 eb5b6d0... 3cec570... M	Bejerholm/src/view/ordre/KundeGUI.java
+
+user:Nick Hansen
+1368614363
+user:Jack Rasmussen
+1368647514
+:100644 100644 83ea254... 5642f81... M	Bejerholm/nbproject/private/private.properties
+:000000 100644 0000000... d457a5a... A	Bejerholm/src/images/bejerholm Faktura.png
+:000000 100644 0000000... e8d2777... A	Bejerholm/src/view/faktura/OrdreForm.form
+:000000 100644 0000000... c81c65e... A	Bejerholm/src/view/faktura/OrdreForm.java
+
+user:Dan-Philip Christensen
+1368651692
+:000000 100644 0000000... b4b000f... A	Bejerholm/iText/itextpdf-5.4.1-javadoc.jar
+:000000 100644 0000000... a80c2ad... A	Bejerholm/iText/itextpdf-5.4.1-sources.jar
+:000000 100644 0000000... 7671654... A	Bejerholm/iText/itextpdf-5.4.1.jar
+:100644 100644 876b514... 99185c0... M	Bejerholm/nbproject/project.properties
+:000000 100644 0000000... a83393b... A	Bejerholm/src/model/pdfWriter/PDFWriter.java
+
+user:Nick Hansen
+1368691309
+:100644 100644 5642f81... 83ea254... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 c370b65... 5517419... M	Bejerholm/src/control/Controller.java
+
+user:Dan-Philip Christensen
+1368691541
+:100644 100644 a83393b... e56e447... M	Bejerholm/src/model/pdfWriter/PDFWriter.java
+
+user:Jack Rasmussen
+1368695254
+:100644 100644 83ea254... 4361413... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 9b6fc39... 80af771... M	Bejerholm/src/view/FrameTilBejerholm.java
+:100644 100644 e8d2777... da9d294... M	Bejerholm/src/view/faktura/OrdreForm.form
+:100644 100644 c81c65e... 9708496... M	Bejerholm/src/view/faktura/OrdreForm.java
+:000000 100644 0000000... a98dc9c... A	Bejerholm/src/view/ordre/OrdreGUI.form
+:000000 100644 0000000... efe3b2d... A	Bejerholm/src/view/ordre/OrdreGUI.java
+
+user:Jack Rasmussen
+1368695857
+:100644 100644 80af771... c472326... M	Bejerholm/src/view/FrameTilBejerholm.java
+
+user:Dan-Philip Christensen
+1368698251
+:100644 100644 4361413... b04e0f0... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 e56e447... 7cf4118... M	Bejerholm/src/model/pdfWriter/PDFWriter.java
+:100644 100644 c472326... f8d21b9... M	Bejerholm/src/view/FrameTilBejerholm.java
+
+user:Nick Hansen
+1368698603
+user:Nick Hansen
+1368698622
+user:Jack Rasmussen
+1368882686
+:100644 100644 b04e0f0... b09a294... M	Bejerholm/nbproject/private/private.properties
+:000000 100644 0000000... d675c88... A	Bejerholm/src/view/faktura/FakturaForm.form
+:000000 100644 0000000... c494705... A	Bejerholm/src/view/faktura/FakturaForm.java
+:000000 100644 0000000... bdd69bb... A	Bejerholm/src/view/faktura/ProvisionForm.form
+:000000 100644 0000000... 89bab67... A	Bejerholm/src/view/faktura/ProvisionForm.java
+
+user:Jack Rasmussen
+1368917772
+:000000 100644 0000000... 959beec... A	Bejerholm/src/view/faktura/KontoudtogForm.form
+:000000 100644 0000000... 1874d50... A	Bejerholm/src/view/faktura/KontoudtogForm.java
+:100644 100644 bdd69bb... cb7a916... M	Bejerholm/src/view/faktura/ProvisionForm.form
+:100644 100644 89bab67... 22f00fe... M	Bejerholm/src/view/faktura/ProvisionForm.java
+
+user:Dan-Philip Christensen
+1369083328
+:100644 100644 7cf4118... a2f47b0... M	Bejerholm/src/model/pdfWriter/PDFWriter.java
+
+user:Dan-Philip Christensen
+1369083659
+:100644 100644 a2f47b0... f1c4b65... M	Bejerholm/src/model/pdfWriter/PDFWriter.java
+
+user:Dan-Philip Christensen
+1369086815
+:100644 100644 5517419... 3cd9dcf... M	Bejerholm/src/control/Controller.java
+:100644 100644 4a7af36... 0c07f84... M	Bejerholm/src/model/Produkt.java
+
+user:Nick Hansen
+1369127521
+:100644 100644 b09a294... 34d4f7f... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 69ea51a... a31bf4f... M	Bejerholm/src/view/LagerGUI.form
+:100644 100644 2a785dc... 834c924... M	Bejerholm/src/view/LagerGUI.java
+:100644 000000 b4bd3d4... 0000000... D	Bejerholm/src/view/lager/BronzeGUI.form
+:100644 000000 7e344b3... 0000000... D	Bejerholm/src/view/lager/BronzeGUI.java
+:100644 000000 3206d5f... 0000000... D	Bejerholm/src/view/lager/FuglGUI.form
+:100644 000000 5081420... 0000000... D	Bejerholm/src/view/lager/FuglGUI.java
+:100644 000000 3fb3905... 0000000... D	Bejerholm/src/view/lager/GravstenGUI.form
+:100644 000000 118bf50... 0000000... D	Bejerholm/src/view/lager/GravstenGUI.java
+:100644 000000 55e45e0... 0000000... D	Bejerholm/src/view/lager/PlanGUI.form
+:100644 000000 401e3b2... 0000000... D	Bejerholm/src/view/lager/PlanGUI.java
+:100644 000000 cc6b3ba... 0000000... D	Bejerholm/src/view/lager/VaseGUI.form
+:100644 000000 fdb0308... 0000000... D	Bejerholm/src/view/lager/VaseGUI.java
+
+user:Dan-Philip Christensen
+1369130127
+:100644 000000 fab923a... 0000000... D	Bejerholm/src/control/ModelControl.java
+:100644 000000 985d19b... 0000000... D	Bejerholm/src/control/ViewControl.java
+:100644 100644 f915100... 2bfd099... M	Bejerholm/src/view/Main.java
+
+user:Dan-Philip Christensen
+1369154128
+:100644 100644 5707e8d... 7fb9eda... M	.gitignore
+:100644 100644 34d4f7f... 42be143... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 4750962... a75b92d... M	Bejerholm/nbproject/private/private.xml
+:100644 100644 3cd9dcf... 00b7422... M	Bejerholm/src/control/Controller.java
+:100644 100644 3d79c19... b191a43... M	Bejerholm/src/model/Bedemand.java
+:100644 100644 1f38966... 322eeba... M	Bejerholm/src/model/Faktura.java
+:100644 100644 acafd07... f3ef6b9... M	Bejerholm/src/model/KirkegaardsOrdre.java
+:100644 100644 ea59ee3... 1f5dc27... M	Bejerholm/src/model/Kontoudtog.java
+:100644 100644 e6fbd42... 4f06b40... M	Bejerholm/src/model/Kunde.java
+:100644 100644 ccfc9eb... cf263b0... M	Bejerholm/src/model/Ordre.java
+:100644 100644 0c07f84... e67f270... M	Bejerholm/src/model/Produkt.java
+:100644 100644 778fd65... c5dc98c... M	Bejerholm/src/model/Provisionsseddel.java
+:100644 100644 4b40396... 9d8fa2a... M	Bejerholm/src/model/Tilfoejelse.java
+:100644 100644 fd5fdbc... fe57804... M	Bejerholm/src/model/database/DBConnection.java
+:100644 100644 60d1d87... 5b3ce51... M	Bejerholm/src/model/database/Handler.java
+:100644 100644 a52c561... d4da845... M	Bejerholm/src/view/BejerholmGUI.java
+:100644 100644 f8d21b9... 7971206... M	Bejerholm/src/view/FrameTilBejerholm.java
+:100644 100644 a0a43e7... 4675f0a... M	Bejerholm/src/view/LogPaaGUI.form
+:100644 100644 66fb060... 36e3981... M	Bejerholm/src/view/LogPaaGUI.java
+:100644 100644 3cec570... b0f9436... M	Bejerholm/src/view/ordre/KundeGUI.java
+
+user:Nicolai
+1369171492
+:100644 100644 42be143... 2bc3d8a... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 00b7422... 1619771... M	Bejerholm/src/control/Controller.java
+
+user:Dan-Philip Christensen
+1369233280
+:100644 100644 2bc3d8a... 42be143... M	Bejerholm/nbproject/private/private.properties
+:100644 100644 1619771... cd6ae13... M	Bejerholm/src/control/Controller.java
+:100644 100644 50f840f... 0a37db6... M	Bejerholm/src/view/AdminGUI.java
+:100644 100644 36e3981... 00c9d53... M	Bejerholm/src/view/LogPaaGUI.java
+:100644 100644 b8658c3... b148d85... M	Bejerholm/src/view/admin/AdminBronzeGUI.form
+:100644 100644 b24ffd6... d2a8176... M	Bejerholm/src/view/admin/AdminBronzeGUI.java
+:100644 100644 0fb9cfd... 7b63430... M	Bejerholm/src/view/ordre/KundeGUI.form
+:100644 100644 b0f9436... 052aeef... M	Bejerholm/src/view/ordre/KundeGUI.java
+
+user:Dan-Philip Christensen
+1369239426
+:100644 100644 b148d85... 197dc3e... M	Bejerholm/src/view/admin/AdminBronzeGUI.form
+:100644 100644 d2a8176... 4a067d4... M	Bejerholm/src/view/admin/AdminBronzeGUI.java
+:100644 100644 e57d0d4... 8156aba... M	Bejerholm/src/view/admin/AdminFuglGUI.form
+:100644 100644 4957658... 482ce97... M	Bejerholm/src/view/admin/AdminFuglGUI.java
+:100644 100644 bc6b81e... 64dd0c9... M	Bejerholm/src/view/admin/AdminGravstenGUI.form
+:100644 100644 7ed45d6... dd65056... M	Bejerholm/src/view/admin/AdminGravstenGUI.java
+:100644 100644 2aafe35... b1695c9... M	Bejerholm/src/view/admin/AdminPlanGUI.form
+:100644 100644 ede662e... fb620b9... M	Bejerholm/src/view/admin/AdminPlanGUI.java
+:100644 100644 44a8ee7... 32b59bd... M	Bejerholm/src/view/admin/AdminVaseGUI.form
+:100644 100644 09a8a75... 7160d55... M	Bejerholm/src/view/admin/AdminVaseGUI.java
+:100644 100644 052aeef... 68a0cd4... M	Bejerholm/src/view/ordre/KundeGUI.java
+
+user:Dan-Philip Christensen
+1369240331
+:100644 100644 cd6ae13... 01ce4ba... M	Bejerholm/src/control/Controller.java
+:100644 100644 4a067d4... 9b50622... M	Bejerholm/src/view/admin/AdminBronzeGUI.java
+:100644 100644 482ce97... 72fa088... M	Bejerholm/src/view/admin/AdminFuglGUI.java
+:100644 100644 dd65056... e2d58a1... M	Bejerholm/src/view/admin/AdminGravstenGUI.java
+:100644 100644 fb620b9... 29c453a... M	Bejerholm/src/view/admin/AdminPlanGUI.java
+:100644 100644 7160d55... 20fa431... M	Bejerholm/src/view/admin/AdminVaseGUI.java
+
+user:Dan-Philip Christensen
+1369240554
+:100644 100644 01ce4ba... 44cda0e... M	Bejerholm/src/control/Controller.java
+
+user:Dan-Philip Christensen
+1369258663
+:100644 100644 a75b92d... aef30f9... M	Bejerholm/nbproject/private/private.xml
+
+user:Dan-Philip Christensen
+1369293425
+:100644 100644 44cda0e... 39a862d... M	Bejerholm/src/control/Controller.java
+:100644 100644 4f06b40... 298d99f... M	Bejerholm/src/model/Kunde.java
+:100644 100644 5b3ce51... 5995f30... M	Bejerholm/src/model/database/Handler.java
+:100644 100644 68a0cd4... e9e11af... M	Bejerholm/src/view/ordre/KundeGUI.java
