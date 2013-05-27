@@ -5,6 +5,7 @@
 package view.ordre;
 
 import control.Controller;
+import java.awt.event.KeyEvent;
 import java.util.regex.Pattern;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -66,6 +67,12 @@ public class KundeGUI extends javax.swing.JPanel {
         mobTlfFelt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(100, 100, 100));
+
+        soegKundeFelt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                soegKundeFeltKeyTyped(evt);
+            }
+        });
 
         soegKundeKnap.setText("Søg kunde");
         soegKundeKnap.addActionListener(new java.awt.event.ActionListener() {
@@ -324,6 +331,13 @@ public class KundeGUI extends javax.swing.JPanel {
             postFelt.setText("");
         }
     }//GEN-LAST:event_postFeltFocusGained
+
+    private void soegKundeFeltKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_soegKundeFeltKeyTyped
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            soegKundeKnapActionPerformed(null);
+        }
+    }//GEN-LAST:event_soegKundeFeltKeyTyped
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
     private javax.swing.JLabel adressLabel;
