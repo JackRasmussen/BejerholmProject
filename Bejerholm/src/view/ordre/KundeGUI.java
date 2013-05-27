@@ -182,7 +182,19 @@ public class KundeGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void videreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_videreKnapActionPerformed
-        org.skiftOrdrePanel("BestillingsOrdreGUI");
+        if (!"".equals(fNavnFelt.getText())
+                && !"".equals(eNavnFelt.getText())
+                && !"".equals(adressFelt.getText())
+                && !"".equals(postFelt.getText())
+                && !"".equals(byFelt.getText())
+                && soegKundeFelt.getText().length() == 8
+                && !Pattern.matches("[a-zA-Z]+", soegKundeFelt.getText())
+                && !Pattern.matches("[a-zA-Z]+", postFelt.getText())
+                && !Pattern.matches("[a-zA-Z]+", mobTlfFelt.getText())) {
+            org.skiftOrdrePanel("BestillingsOrdreGUI");
+        } else {
+            JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
+        }
     }//GEN-LAST:event_videreKnapActionPerformed
 
     private void soegKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegKundeKnapActionPerformed
@@ -218,24 +230,29 @@ public class KundeGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_soegKundeKnapActionPerformed
 
     private void opretKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opretKundeKnapActionPerformed
-        Controller controller = new Controller();
-        int tlfNr = Integer.parseInt(soegKundeFelt.getText());
-        String fNavn = fNavnFelt.getText();
-        String eNavn = eNavnFelt.getText();
-        String adresse = adressFelt.getText();
-        int postNr = Integer.parseInt(postFelt.getText());
-        String byNavn = byFelt.getText();
-        int mobilNr = Integer.parseInt(mobTlfFelt.getText());
-        controller.connIndsaetKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
+        if (!"".equals(fNavnFelt.getText())
+                && !"".equals(eNavnFelt.getText())
+                && !"".equals(adressFelt.getText())
+                && !"".equals(postFelt.getText())
+                && !"".equals(byFelt.getText())
+                && soegKundeFelt.getText().length() == 8
+                && !Pattern.matches("[a-zA-Z]+", soegKundeFelt.getText())
+                && !Pattern.matches("[a-zA-Z]+", postFelt.getText())
+                && !Pattern.matches("[a-zA-Z]+", mobTlfFelt.getText())) {
+            Controller controller = new Controller();
+            int tlfNr = Integer.parseInt(soegKundeFelt.getText());
+            String fNavn = fNavnFelt.getText();
+            String eNavn = eNavnFelt.getText();
+            String adresse = adressFelt.getText();
+            int postNr = Integer.parseInt(postFelt.getText());
+            String byNavn = byFelt.getText();
+            int mobilNr = Integer.parseInt(mobTlfFelt.getText());
+            controller.connIndsaetKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
 
-        org.skiftOrdrePanel("BestillingsOrdreGUI");
-        fNavnFelt.setText("");
-        eNavnFelt.setText("");
-        adressFelt.setText("");
-        postFelt.setText("");
-        byFelt.setText("");
-        mobTlfFelt.setText("");
-        soegKundeFelt.setText("");
+            org.skiftOrdrePanel("BestillingsOrdreGUI");
+        } else {
+            JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
+        }
     }//GEN-LAST:event_opretKundeKnapActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
