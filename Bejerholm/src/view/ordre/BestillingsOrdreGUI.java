@@ -81,7 +81,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox2);
-        jComboBox2.setBounds(150, 320, 140, 27);
+        jComboBox2.setBounds(150, 310, 140, 27);
         add(jTextField2);
         jTextField2.setBounds(190, 410, 100, 20);
 
@@ -96,12 +96,12 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
             }
         });
         add(jTextField1);
-        jTextField1.setBounds(190, 370, 100, 20);
+        jTextField1.setBounds(190, 350, 100, 20);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Antal bogstaver:");
         add(jLabel4);
-        jLabel4.setBounds(40, 370, 150, 17);
+        jLabel4.setBounds(40, 350, 150, 17);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -145,7 +145,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Sten:");
         add(jLabel5);
-        jLabel5.setBounds(40, 320, 70, 17);
+        jLabel5.setBounds(40, 310, 70, 17);
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox3);
@@ -183,7 +183,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         add(jCheckBox4);
         jCheckBox4.setBounds(40, 80, 250, 21);
         add(jTextField3);
-        jTextField3.setBounds(460, 360, 110, 27);
+        jTextField3.setBounds(460, 360, 110, 20);
 
         jLabel8.setBackground(new java.awt.Color(100, 100, 100));
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,9 +207,9 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Rabat:");
         add(jLabel11);
-        jLabel11.setBounds(330, 410, 100, 17);
+        jLabel11.setBounds(40, 380, 100, 17);
         add(jTextField4);
-        jTextField4.setBounds(460, 410, 110, 27);
+        jTextField4.setBounds(190, 380, 100, 20);
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox4);
