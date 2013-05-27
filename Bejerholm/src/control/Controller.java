@@ -47,7 +47,6 @@ public class Controller {
             beg.getOrdre().setVisible(true);
             beg.getLager().setVisible(true);
             beg.getLogaf().setVisible(true);
-            beg.getKunde().setVisible(true);
         } else {
             throw new SQLException("Kunne ikke logge paa db", "Bad password or settings");
         }
@@ -64,7 +63,6 @@ public class Controller {
             beg.getAdmin().setVisible(false);
             beg.getOrdre().setVisible(false);
             beg.getLogaf().setVisible(false);
-            beg.getKunde().setVisible(false);
         }
     }
 

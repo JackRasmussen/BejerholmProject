@@ -36,73 +36,177 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setLayout(null);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1);
-        jComboBox1.setBounds(110, 200, 56, 20);
+        jComboBox1.setBounds(150, 240, 140, 20);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Inskription:");
         add(jLabel1);
-        jLabel1.setBounds(120, 110, 54, 14);
+        jLabel1.setBounds(90, 60, 120, 14);
 
         jCheckBox3.setBackground(new java.awt.Color(100, 100, 100));
         jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox3.setText("Plads til ekstra navn");
         add(jCheckBox3);
-        jCheckBox3.setBounds(250, 250, 121, 23);
+        jCheckBox3.setBounds(90, 280, 210, 23);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox2);
-        jComboBox2.setBounds(110, 290, 56, 20);
+        jComboBox2.setBounds(150, 320, 140, 20);
         add(jTextField2);
-        jTextField2.setBounds(240, 370, 100, 20);
+        jTextField2.setBounds(190, 410, 100, 20);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Pris:");
         add(jLabel2);
-        jLabel2.setBounds(100, 370, 21, 14);
+        jLabel2.setBounds(40, 410, 100, 14);
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
         add(jTextField4);
-        jTextField4.setBounds(240, 330, 100, 20);
+        jTextField4.setBounds(190, 370, 100, 20);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Antal bogstaver:");
         add(jLabel4);
-        jLabel4.setBounds(100, 330, 81, 14);
+        jLabel4.setBounds(40, 370, 150, 14);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextArea1KeyTyped(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(243, 93, 166, 96);
+        jScrollPane1.setBounds(30, 80, 250, 140);
 
-        jRadioButton1.setBackground(new java.awt.Color(100, 100, 100));
-        jRadioButton1.setText("Urne");
-        add(jRadioButton1);
-        jRadioButton1.setBounds(130, 50, 49, 23);
+        jCheckBox1.setBackground(new java.awt.Color(100, 100, 100));
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setText("Urne");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        add(jCheckBox1);
+        jCheckBox1.setBounds(40, 20, 110, 23);
 
-        jRadioButton2.setBackground(new java.awt.Color(100, 100, 100));
-        jRadioButton2.setText("Kiste");
-        add(jRadioButton2);
-        jRadioButton2.setBounds(270, 50, 50, 23);
+        jCheckBox2.setBackground(new java.awt.Color(100, 100, 100));
+        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox2.setText("Kiste");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+        add(jCheckBox2);
+        jCheckBox2.setBounds(190, 20, 120, 23);
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Skrifttype:");
+        add(jLabel3);
+        jLabel3.setBounds(40, 240, 90, 14);
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Sten:");
+        add(jLabel5);
+        jLabel5.setBounds(40, 320, 70, 14);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(jComboBox3);
+        jComboBox3.setBounds(450, 20, 130, 20);
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Skriftstørrelse:");
+        add(jLabel6);
+        jLabel6.setBounds(340, 20, 220, 14);
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextArea3KeyTyped(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jTextArea3);
+
+        add(jScrollPane3);
+        jScrollPane3.setBounds(330, 80, 250, 140);
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Bemærkninger:");
+        add(jLabel7);
+        jLabel7.setBounds(420, 60, 120, 14);
+
+        jButton1.setText("Opret ordre!");
+        add(jButton1);
+        jButton1.setBounds(460, 410, 120, 23);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+   
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextArea1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyTyped
+        String str = jTextArea1.getText();
+        str.replace(" ", "");
+        str.replace(".", "");
+        
+        jTextField4.setText((str.length() +1) + "");
+    }//GEN-LAST:event_jTextArea1KeyTyped
+
+    private void jTextArea3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextArea3KeyTyped
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables

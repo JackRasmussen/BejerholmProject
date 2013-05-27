@@ -2,6 +2,7 @@ package view;
 
 import control.Controller;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JButton;
 
 /**
@@ -25,7 +26,6 @@ public class BejerholmGUI extends javax.swing.JPanel {
         admin.setVisible(false);
         ordre.setVisible(false);
         logaf.setVisible(false);
-        kunde.setVisible(false);
 
         ((CardLayout) cards.getLayout()).addLayoutComponent(org, "OrdreGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(lpg, "LogPaaGUI");
@@ -55,7 +55,6 @@ public class BejerholmGUI extends javax.swing.JPanel {
         admin = new javax.swing.JButton();
         logaf = new javax.swing.JButton();
         lager = new javax.swing.JButton();
-        kunde = new javax.swing.JButton();
         cards = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(100, 100, 100));
@@ -67,38 +66,83 @@ public class BejerholmGUI extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(156, 23, 6));
 
+        ordre.setBackground(new java.awt.Color(136, 23, 6));
+        ordre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ordre.setForeground(new java.awt.Color(255, 255, 255));
         ordre.setText("Ordre");
+        ordre.setToolTipText("");
+        ordre.setBorderPainted(false);
+        ordre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ordreMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ordreMouseExited(evt);
+            }
+        });
         ordre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ordreActionPerformed(evt);
             }
         });
 
+        admin.setBackground(new java.awt.Color(136, 23, 6));
+        admin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        admin.setForeground(new java.awt.Color(255, 255, 255));
         admin.setText("Admin");
+        admin.setToolTipText("");
+        admin.setBorderPainted(false);
+        admin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                adminMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                adminMouseExited(evt);
+            }
+        });
         admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminActionPerformed(evt);
             }
         });
 
+        logaf.setBackground(new java.awt.Color(136, 23, 6));
+        logaf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        logaf.setForeground(new java.awt.Color(255, 255, 255));
         logaf.setText("Log af!");
+        logaf.setToolTipText("");
+        logaf.setBorderPainted(false);
+        logaf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                logafMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                logafMouseExited(evt);
+            }
+        });
         logaf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logafActionPerformed(evt);
             }
         });
 
+        lager.setBackground(new java.awt.Color(136, 23, 6));
+        lager.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lager.setForeground(new java.awt.Color(255, 255, 255));
         lager.setText("Lager");
+        lager.setToolTipText("");
+        lager.setBorderPainted(false);
+        lager.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lagerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lagerMouseExited(evt);
+            }
+        });
         lager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lagerActionPerformed(evt);
-            }
-        });
-
-        kunde.setText("Kunde");
-        kunde.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kundeActionPerformed(evt);
             }
         });
 
@@ -107,29 +151,26 @@ public class BejerholmGUI extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(kunde)
-                .addGap(18, 18, 18)
-                .addComponent(ordre)
-                .addGap(18, 18, 18)
-                .addComponent(admin)
-                .addGap(18, 18, 18)
-                .addComponent(lager)
-                .addGap(502, 502, 502)
-                .addComponent(logaf)
+                .addGap(120, 120, 120)
+                .addComponent(ordre, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(lager, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(550, 550, 550)
+                .addComponent(logaf, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ordre)
-                    .addComponent(admin)
-                    .addComponent(logaf)
-                    .addComponent(lager)
-                    .addComponent(kunde))
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ordre, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logaf, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lager, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 129, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout topBilledeLayout = new javax.swing.GroupLayout(topBillede);
@@ -154,6 +195,8 @@ public class BejerholmGUI extends javax.swing.JPanel {
         jPanel1.add(topBillede);
         topBillede.setBounds(0, 0, 1280, 200);
 
+        cards.setForeground(new java.awt.Color(255, 255, 255));
+        cards.setToolTipText("");
         cards.setPreferredSize(new java.awt.Dimension(1280, 520));
         cards.setLayout(new java.awt.CardLayout());
         jPanel1.add(cards);
@@ -200,16 +243,44 @@ public class BejerholmGUI extends javax.swing.JPanel {
         controller.closeDBConnection(this);
     }//GEN-LAST:event_logafActionPerformed
 
-    private void kundeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kundeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kundeActionPerformed
+    private void lagerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lagerMouseEntered
+        lager.setBackground(new Color(209,23,6));
+    }//GEN-LAST:event_lagerMouseEntered
+
+    private void lagerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lagerMouseExited
+        lager.setBackground(new Color(136,23,6));
+    }//GEN-LAST:event_lagerMouseExited
+
+    private void adminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseEntered
+        admin.setBackground(new Color(209,23,6));
+    }//GEN-LAST:event_adminMouseEntered
+
+    private void adminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseExited
+        admin.setBackground(new Color(136,23,6));
+    }//GEN-LAST:event_adminMouseExited
+
+    private void ordreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordreMouseEntered
+        ordre.setBackground(new Color(209,23,6));
+    }//GEN-LAST:event_ordreMouseEntered
+
+    private void ordreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordreMouseExited
+        ordre.setBackground(new Color(136,23,6));
+    }//GEN-LAST:event_ordreMouseExited
+
+    private void logafMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logafMouseEntered
+        logaf.setBackground(new Color(209,23,6));
+    }//GEN-LAST:event_logafMouseEntered
+
+    private void logafMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logafMouseExited
+        logaf.setBackground(new Color(136,23,6));
+    }//GEN-LAST:event_logafMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton admin;
     private javax.swing.JPanel cards;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton kunde;
     private javax.swing.JButton lager;
     private javax.swing.JButton logaf;
     private javax.swing.JButton ordre;
@@ -230,9 +301,5 @@ public class BejerholmGUI extends javax.swing.JPanel {
 
     public JButton getLogaf() {
         return logaf;
-    }
-
-    public JButton getKunde() {
-        return kunde;
     }
 }
