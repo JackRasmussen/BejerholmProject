@@ -77,6 +77,12 @@ public class KundeGUI extends javax.swing.JPanel {
         soegKundeLabel.setForeground(new java.awt.Color(255, 255, 255));
         soegKundeLabel.setText("Søg på kunde tlf nr.");
 
+        fNavnFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fNavnFeltFocusGained(evt);
+            }
+        });
+
         fNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
         fNavnLabel.setText("Fornavn:");
 
@@ -97,6 +103,12 @@ public class KundeGUI extends javax.swing.JPanel {
         eNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
         eNavnLabel.setText("Efternavn");
 
+        eNavnFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                eNavnFeltFocusGained(evt);
+            }
+        });
+
         adressLabel.setForeground(new java.awt.Color(255, 255, 255));
         adressLabel.setText("Adresse:");
 
@@ -105,6 +117,24 @@ public class KundeGUI extends javax.swing.JPanel {
 
         byLabel.setForeground(new java.awt.Color(255, 255, 255));
         byLabel.setText("By:");
+
+        adressFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                adressFeltFocusGained(evt);
+            }
+        });
+
+        postFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                postFeltFocusGained(evt);
+            }
+        });
+
+        byFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                byFeltFocusGained(evt);
+            }
+        });
 
         mobTlfLabel.setForeground(new java.awt.Color(255, 255, 255));
         mobTlfLabel.setText("Mobil tlf:");
@@ -191,6 +221,16 @@ public class KundeGUI extends javax.swing.JPanel {
                 && !Pattern.matches("[a-zA-Z]+", soegKundeFelt.getText())
                 && !Pattern.matches("[a-zA-Z]+", postFelt.getText())
                 && !Pattern.matches("[a-zA-Z]+", mobTlfFelt.getText())) {
+            Controller controller = new Controller();
+            int tlfNr = Integer.parseInt(soegKundeFelt.getText());
+            String fNavn = fNavnFelt.getText();
+            String eNavn = eNavnFelt.getText();
+            String adresse = adressFelt.getText();
+            int postNr = Integer.parseInt(postFelt.getText());
+            String byNavn = byFelt.getText();
+            int mobilNr = Integer.parseInt(mobTlfFelt.getText());
+            controller.connRedigerKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
+
             org.skiftOrdrePanel("BestillingsOrdreGUI");
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
@@ -254,6 +294,36 @@ public class KundeGUI extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
     }//GEN-LAST:event_opretKundeKnapActionPerformed
+
+    private void fNavnFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fNavnFeltFocusGained
+        if (fNavnFelt.getText().equals("Kunde findes ikke")) {
+            fNavnFelt.setText("");
+        }
+    }//GEN-LAST:event_fNavnFeltFocusGained
+
+    private void eNavnFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_eNavnFeltFocusGained
+        if (eNavnFelt.getText().equals("Kunde findes ikke")) {
+            eNavnFelt.setText("");
+        }
+    }//GEN-LAST:event_eNavnFeltFocusGained
+
+    private void adressFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adressFeltFocusGained
+        if (adressFelt.getText().equals("Kunde findes ikke")) {
+            adressFelt.setText("");
+        }
+    }//GEN-LAST:event_adressFeltFocusGained
+
+    private void byFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_byFeltFocusGained
+        if (byFelt.getText().equals("Kunde findes ikke")) {
+            byFelt.setText("");
+        }
+    }//GEN-LAST:event_byFeltFocusGained
+
+    private void postFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postFeltFocusGained
+        if (postFelt.getText().equals("0")) {
+            postFelt.setText("");
+        }
+    }//GEN-LAST:event_postFeltFocusGained
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
     private javax.swing.JLabel adressLabel;
