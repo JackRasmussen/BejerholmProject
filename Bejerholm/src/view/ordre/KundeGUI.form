@@ -106,6 +106,9 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="soegKundeFelt">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="soegKundeFeltKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="soegKundeKnap">
       <Properties>
@@ -124,6 +127,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="fNavnFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="fNavnFeltFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="fNavnLabel">
       <Properties>
@@ -158,6 +164,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="eNavnFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="eNavnFeltFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="adressLabel">
       <Properties>
@@ -184,10 +193,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="adressFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="adressFeltFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="postFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="postFeltFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="byFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="byFeltFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="mobTlfLabel">
       <Properties>
