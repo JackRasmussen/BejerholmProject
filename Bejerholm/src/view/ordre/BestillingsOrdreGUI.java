@@ -60,6 +60,12 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jTextField4 = new javax.swing.JTextField();
         jComboBox4 = new javax.swing.JComboBox();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setLayout(null);
@@ -183,25 +189,25 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         add(jCheckBox4);
         jCheckBox4.setBounds(40, 80, 250, 21);
         add(jTextField3);
-        jTextField3.setBounds(460, 360, 110, 20);
+        jTextField3.setBounds(460, 410, 110, 20);
 
         jLabel8.setBackground(new java.awt.Color(100, 100, 100));
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Bestillingsdato:");
         add(jLabel8);
-        jLabel8.setBounds(330, 320, 120, 17);
+        jLabel8.setBounds(330, 380, 120, 17);
 
         jLabel9.setBackground(new java.awt.Color(100, 100, 100));
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("jLabel9");
         add(jLabel9);
-        jLabel9.setBounds(460, 320, 250, 17);
+        jLabel9.setBounds(460, 380, 250, 17);
 
         jLabel10.setBackground(new java.awt.Color(100, 100, 100));
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Leveringsdato:");
         add(jLabel10);
-        jLabel10.setBounds(330, 360, 120, 17);
+        jLabel10.setBounds(330, 410, 120, 17);
 
         jLabel11.setBackground(new java.awt.Color(100, 100, 100));
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -220,6 +226,30 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel12.setText("Skriftstil:");
         add(jLabel12);
         jLabel12.setBounds(330, 100, 110, 17);
+
+        jLabel13.setBackground(new java.awt.Color(100, 100, 100));
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Række:");
+        add(jLabel13);
+        jLabel13.setBounds(330, 300, 90, 17);
+
+        jLabel14.setBackground(new java.awt.Color(100, 100, 100));
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Nummer:");
+        add(jLabel14);
+        jLabel14.setBounds(330, 320, 90, 17);
+
+        jLabel15.setBackground(new java.awt.Color(100, 100, 100));
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Afdeling:");
+        add(jLabel15);
+        jLabel15.setBounds(330, 340, 90, 17);
+        add(jTextField5);
+        jTextField5.setBounds(460, 300, 110, 20);
+        add(jTextField6);
+        jTextField6.setBounds(460, 320, 110, 20);
+        add(jTextField7);
+        jTextField7.setBounds(460, 340, 110, 20);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -260,6 +290,9 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -276,5 +309,8 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
