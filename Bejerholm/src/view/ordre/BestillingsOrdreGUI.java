@@ -12,14 +12,20 @@ import java.util.Date;
  * @author TheToiletpaper
  */
 public class BestillingsOrdreGUI extends javax.swing.JPanel {
-    private Date dateAndTime;
-    
+    private Calendar dato;
+    private int year;
+    private int month;
+    private int day;
     
     public BestillingsOrdreGUI() {
+        dato = Calendar.getInstance();
+        year = dato.get(Calendar.YEAR);
+        month = dato.get(Calendar.MONTH)+1; // Regner fra 0 - 11. Derfor +1
+        day = dato.get(Calendar.DAY_OF_MONTH);
+        
         initComponents();
         
-        dateAndTime = Calendar.getInstance().getTime();
-        jLabel9.setText(dateAndTime.toString());
+        jLabel9.setText(day+" / "+month+" / "+year);
     }
 
     /**
