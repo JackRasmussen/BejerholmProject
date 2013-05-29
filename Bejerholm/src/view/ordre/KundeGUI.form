@@ -24,35 +24,34 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="347" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="videreKnap" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="fNavnLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="soegKundeLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="eNavnLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="adressLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="postLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="byLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="mobTlfLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="fNavnFelt" alignment="0" pref="110" max="32767" attributes="0"/>
-                          <Component id="soegKundeFelt" alignment="0" pref="110" max="32767" attributes="0"/>
-                          <Component id="eNavnFelt" alignment="0" pref="110" max="32767" attributes="0"/>
-                          <Component id="adressFelt" alignment="0" pref="110" max="32767" attributes="0"/>
-                          <Component id="postFelt" alignment="0" pref="110" max="32767" attributes="0"/>
-                          <Component id="mobTlfFelt" pref="110" max="32767" attributes="0"/>
-                          <Component id="byFelt" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="opretKundeKnap" min="-2" max="-2" attributes="0"/>
-                          <Component id="soegKundeKnap" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="fNavnLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="soegKundeLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="eNavnLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="adressLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="postLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="byLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="mobTlfLabel" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="395" max="32767" attributes="0"/>
+              <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="fNavnFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                  <Component id="soegKundeFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                  <Component id="eNavnFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                  <Component id="adressFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                  <Component id="postFelt" alignment="0" pref="110" max="32767" attributes="0"/>
+                  <Component id="mobTlfFelt" pref="110" max="32767" attributes="0"/>
+                  <Component id="byFelt" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                      <Component id="opretKundeKnap" min="-2" max="-2" attributes="0"/>
+                      <Component id="soegKundeKnap" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="videreKnap" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="bedemandKnap" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="367" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,6 +93,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="mobTlfLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="mobTlfFelt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bedemandKnap" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="opretKundeKnap" min="-2" max="-2" attributes="0"/>
@@ -216,6 +216,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="mobTlfFelt">
+    </Component>
+    <Component class="javax.swing.JButton" name="bedemandKnap">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="V&#xe6;lg Bedemand"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

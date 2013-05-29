@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.*;
 import model.database.*;
+import view.ordre.BedemandGUI;
 import view.ordre.BestillingsOrdreGUI;
 import view.ordre.KundeGUI;
 
@@ -20,10 +21,13 @@ import view.ordre.KundeGUI;
 public class OrdreGUI extends javax.swing.JPanel {
 
     private Kunde kunde;
-    KundeGUI kg = new KundeGUI(this);
-    BestillingsOrdreGUI bog = new BestillingsOrdreGUI();
+    private KundeGUI kg;
+    private BestillingsOrdreGUI bog;
+    private BedemandGUI beg;
 
     public OrdreGUI() {
+        kg = new KundeGUI(this, beg);
+        bog = new BestillingsOrdreGUI();
 
         initComponents();
         cardsOrdre.add(kg);

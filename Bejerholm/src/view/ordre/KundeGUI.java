@@ -19,8 +19,9 @@ import view.OrdreGUI;
 public class KundeGUI extends javax.swing.JPanel {
 
     OrdreGUI org;
+    BedemandGUI beg;
 
-    public KundeGUI(OrdreGUI org) {
+    public KundeGUI(OrdreGUI org, BedemandGUI beg) {
         initComponents();
         adressFelt.setVisible(false);
         adressLabel.setVisible(false);
@@ -36,7 +37,9 @@ public class KundeGUI extends javax.swing.JPanel {
         postLabel.setVisible(false);
         videreKnap.setVisible(false);
         opretKundeKnap.setVisible(false);
+        bedemandKnap.setVisible(false);
         this.org = org;
+        this.beg = beg;
     }
 
     /**
@@ -65,6 +68,7 @@ public class KundeGUI extends javax.swing.JPanel {
         byFelt = new javax.swing.JTextField();
         mobTlfLabel = new javax.swing.JLabel();
         mobTlfFelt = new javax.swing.JTextField();
+        bedemandKnap = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(100, 100, 100));
 
@@ -146,6 +150,8 @@ public class KundeGUI extends javax.swing.JPanel {
         mobTlfLabel.setForeground(new java.awt.Color(255, 255, 255));
         mobTlfLabel.setText("Mobil tlf:");
 
+        bedemandKnap.setText("Vælg Bedemand");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,30 +159,30 @@ public class KundeGUI extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(347, 347, 347)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(videreKnap)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(fNavnLabel)
-                            .addComponent(soegKundeLabel)
-                            .addComponent(eNavnLabel)
-                            .addComponent(adressLabel)
-                            .addComponent(postLabel)
-                            .addComponent(byLabel)
-                            .addComponent(mobTlfLabel))
-                        .addGap(89, 89, 89)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fNavnFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(soegKundeFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(eNavnFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(adressFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(postFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(mobTlfFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(byFelt))
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(opretKundeKnap)
-                            .addComponent(soegKundeKnap))))
-                .addContainerGap(395, Short.MAX_VALUE))
+                    .addComponent(fNavnLabel)
+                    .addComponent(soegKundeLabel)
+                    .addComponent(eNavnLabel)
+                    .addComponent(adressLabel)
+                    .addComponent(postLabel)
+                    .addComponent(byLabel)
+                    .addComponent(mobTlfLabel))
+                .addGap(89, 89, 89)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fNavnFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(soegKundeFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(eNavnFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(adressFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(postFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(mobTlfFelt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(byFelt))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(opretKundeKnap)
+                        .addComponent(soegKundeKnap))
+                    .addComponent(videreKnap, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bedemandKnap, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +215,8 @@ public class KundeGUI extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mobTlfLabel)
-                    .addComponent(mobTlfFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mobTlfFelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bedemandKnap))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(opretKundeKnap)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -265,8 +272,10 @@ public class KundeGUI extends javax.swing.JPanel {
             if (fNavnFelt.getText().equals("Kunde findes ikke")) {
                 opretKundeKnap.setVisible(true);
                 videreKnap.setVisible(false);
+                bedemandKnap.setVisible(false);
             } else {
                 videreKnap.setVisible(true);
+                bedemandKnap.setVisible(true);
                 opretKundeKnap.setVisible(false);
             }
 
@@ -341,6 +350,7 @@ public class KundeGUI extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
     private javax.swing.JLabel adressLabel;
+    private javax.swing.JButton bedemandKnap;
     private javax.swing.JTextField byFelt;
     private javax.swing.JLabel byLabel;
     private javax.swing.JTextField eNavnFelt;
