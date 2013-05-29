@@ -49,8 +49,6 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox();
@@ -59,7 +57,6 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jTextArea3 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jCheckBox4 = new javax.swing.JCheckBox();
         jTextField3 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -74,6 +71,10 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jComboBox5 = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setLayout(null);
@@ -85,7 +86,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Inskription:");
         add(jLabel1);
-        jLabel1.setBounds(90, 130, 120, 17);
+        jLabel1.setBounds(100, 130, 120, 17);
 
         jCheckBox3.setBackground(new java.awt.Color(100, 100, 100));
         jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,9 +96,9 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox2);
-        jComboBox2.setBounds(150, 310, 140, 27);
+        jComboBox2.setBounds(160, 310, 140, 27);
         add(jTextField2);
-        jTextField2.setBounds(190, 410, 100, 20);
+        jTextField2.setBounds(200, 410, 100, 20);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Pris:");
@@ -110,10 +111,10 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
             }
         });
         add(jTextField1);
-        jTextField1.setBounds(190, 350, 100, 20);
+        jTextField1.setBounds(200, 350, 100, 20);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Antal bogstaver:");
+        jLabel4.setText("Antal bogstaver/timer:");
         add(jLabel4);
         jLabel4.setBounds(40, 350, 150, 17);
 
@@ -127,29 +128,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(30, 150, 262, 140);
-
-        jCheckBox1.setBackground(new java.awt.Color(100, 100, 100));
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Urne");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        add(jCheckBox1);
-        jCheckBox1.setBounds(40, 20, 80, 21);
-
-        jCheckBox2.setBackground(new java.awt.Color(100, 100, 100));
-        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setText("Kiste");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-        add(jCheckBox2);
-        jCheckBox2.setBounds(130, 20, 70, 21);
+        jScrollPane1.setBounds(40, 150, 262, 140);
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Skrifttype:");
@@ -190,12 +169,6 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jButton1.setText("Opret ordre!");
         add(jButton1);
         jButton1.setBounds(590, 410, 140, 27);
-
-        jCheckBox4.setBackground(new java.awt.Color(100, 100, 100));
-        jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox4.setText("Er dette en Bedemand?");
-        add(jCheckBox4);
-        jCheckBox4.setBounds(40, 80, 250, 21);
         add(jTextField3);
         jTextField3.setBounds(460, 410, 110, 20);
 
@@ -223,7 +196,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         add(jLabel11);
         jLabel11.setBounds(40, 380, 100, 17);
         add(jTextField4);
-        jTextField4.setBounds(190, 380, 100, 20);
+        jTextField4.setBounds(200, 380, 100, 20);
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox4);
@@ -258,15 +231,29 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jTextField6.setBounds(460, 320, 110, 20);
         add(jTextField7);
         jTextField7.setBounds(460, 340, 110, 20);
+
+        jLabel16.setBackground(new java.awt.Color(100, 100, 100));
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Miljøafgift 2,5 %");
+        add(jLabel16);
+        jLabel16.setBounds(175, 450, 120, 17);
+
+        jLabel17.setBackground(new java.awt.Color(100, 100, 100));
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Ved tilføjelse vælg opgavetype");
+        add(jLabel17);
+        jLabel17.setBounds(40, 20, 260, 17);
+
+        jLabel18.setBackground(new java.awt.Color(100, 100, 100));
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Opgavetype:");
+        add(jLabel18);
+        jLabel18.setBounds(40, 50, 110, 17);
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(jComboBox5);
+        jComboBox5.setBounds(180, 50, 120, 27);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-   
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 
@@ -286,14 +273,12 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -301,6 +286,9 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
