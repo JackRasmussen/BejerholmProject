@@ -4,6 +4,7 @@
  */
 package view.ordre;
 
+import javax.swing.JOptionPane;
 import view.OrdreGUI;
 
 /**
@@ -29,29 +30,283 @@ public class BedemandGUI extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        videreKnap = new javax.swing.JButton();
+        byLabel = new javax.swing.JLabel();
+        adressFelt = new javax.swing.JTextField();
+        postFelt = new javax.swing.JTextField();
+        fNavnLabel = new javax.swing.JLabel();
+        byFelt = new javax.swing.JTextField();
+        opretBedemandKnap = new javax.swing.JButton();
+        soegKundeLabel = new javax.swing.JLabel();
+        fNavnFelt = new javax.swing.JTextField();
+        soegBedemandFelt = new javax.swing.JTextField();
+        soegKundeKnap = new javax.swing.JButton();
+        postLabel = new javax.swing.JLabel();
+        adressLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(100, 100, 100));
 
         jButton1.setText("Gå videre");
+
+        videreKnap.setText("Videre");
+        videreKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                videreKnapActionPerformed(evt);
+            }
+        });
+
+        byLabel.setForeground(new java.awt.Color(255, 255, 255));
+        byLabel.setText("By:");
+
+        adressFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                adressFeltFocusGained(evt);
+            }
+        });
+
+        postFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                postFeltFocusGained(evt);
+            }
+        });
+
+        fNavnLabel.setForeground(new java.awt.Color(255, 255, 255));
+        fNavnLabel.setText("Firmanavn");
+
+        byFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                byFeltFocusGained(evt);
+            }
+        });
+
+        opretBedemandKnap.setText("Opret Bedemand");
+        opretBedemandKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opretBedemandKnapActionPerformed(evt);
+            }
+        });
+
+        soegKundeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        soegKundeLabel.setText("Søg på bedemand tlf nr.");
+
+        fNavnFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fNavnFeltFocusGained(evt);
+            }
+        });
+
+        soegBedemandFelt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                soegBedemandFeltKeyTyped(evt);
+            }
+        });
+
+        soegKundeKnap.setText("Søg Bedemand");
+        soegKundeKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                soegKundeKnapActionPerformed(evt);
+            }
+        });
+
+        postLabel.setForeground(new java.awt.Color(255, 255, 255));
+        postLabel.setText("Postnummer:");
+
+        adressLabel.setForeground(new java.awt.Color(255, 255, 255));
+        adressLabel.setText("Adresse:");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(1128, Short.MAX_VALUE)
+                .addContainerGap(283, Short.MAX_VALUE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(fNavnLabel)
+                    .add(soegKundeLabel)
+                    .add(adressLabel)
+                    .add(postLabel)
+                    .add(byLabel))
+                .add(89, 89, 89)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(fNavnFelt)
+                    .add(soegBedemandFelt)
+                    .add(adressFelt)
+                    .add(postFelt)
+                    .add(byFelt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(74, 74, 74)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(opretBedemandKnap)
+                        .add(soegKundeKnap))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, videreKnap))
+                .add(297, 297, 297)
                 .add(jButton1)
                 .add(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(427, Short.MAX_VALUE)
-                .add(jButton1)
+                .addContainerGap(75, Short.MAX_VALUE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(layout.createSequentialGroup()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(soegBedemandFelt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(soegKundeKnap)
+                            .add(soegKundeLabel))
+                        .add(44, 44, 44)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(fNavnFelt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(fNavnLabel))
+                        .add(18, 18, 18)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(adressLabel)
+                            .add(adressFelt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(18, 18, 18)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(postLabel)
+                            .add(postFelt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(18, 18, 18)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(byLabel)
+                            .add(byFelt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(86, 86, 86)
+                        .add(opretBedemandKnap)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(videreKnap))
+                    .add(jButton1))
                 .add(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void videreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_videreKnapActionPerformed
+        if (!"".equals(fNavnFelt.getText())
+            && !"".equals(eNavnFelt.getText())
+            && !"".equals(adressFelt.getText())
+            && !"".equals(postFelt.getText())
+            && !"".equals(byFelt.getText())
+            && soegBedemandFelt.getText().length() == 8
+            && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())
+            && !Pattern.matches("[a-zA-Z]+", postFelt.getText()) {
+            Controller controller = new Controller();
+            int tlfNr = Integer.parseInt(soegBedemandFelt.getText());
+            String fNavn = fNavnFelt.getText();
+            String eNavn = eNavnFelt.getText();
+            String adresse = adressFelt.getText();
+            int postNr = Integer.parseInt(postFelt.getText());
+            String byNavn = byFelt.getText();
+            int mobilNr = Integer.parseInt(mobTlfFelt.getText());
+            controller.connRedigerKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
+
+            org.skiftOrdrePanel("BestillingsOrdreGUI");
+        } else {
+            JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
+        }
+    }//GEN-LAST:event_videreKnapActionPerformed
+
+    private void adressFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adressFeltFocusGained
+        if (adressFelt.getText().equals("Kunde findes ikke")) {
+            adressFelt.setText("");
+        }
+    }//GEN-LAST:event_adressFeltFocusGained
+
+    private void postFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postFeltFocusGained
+        if (postFelt.getText().equals("0")) {
+            postFelt.setText("");
+        }
+    }//GEN-LAST:event_postFeltFocusGained
+
+    private void byFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_byFeltFocusGained
+        if (byFelt.getText().equals("Kunde findes ikke")) {
+            byFelt.setText("");
+        }
+    }//GEN-LAST:event_byFeltFocusGained
+
+    private void opretBedemandKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opretBedemandKnapActionPerformed
+        if (!"".equals(fNavnFelt.getText())
+            && !"".equals(eNavnFelt.getText())
+            && !"".equals(adressFelt.getText())
+            && !"".equals(postFelt.getText())
+            && !"".equals(byFelt.getText())
+            && soegBedemandFelt.getText().length() == 8
+            && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())
+            && !Pattern.matches("[a-zA-Z]+", postFelt.getText())
+            && !Pattern.matches("[a-zA-Z]+", mobTlfFelt.getText())) {
+            Controller controller = new Controller();
+            int tlfNr = Integer.parseInt(soegBedemandFelt.getText());
+            String fNavn = fNavnFelt.getText();
+            String eNavn = eNavnFelt.getText();
+            String adresse = adressFelt.getText();
+            int postNr = Integer.parseInt(postFelt.getText());
+            String byNavn = byFelt.getText();
+            int mobilNr = Integer.parseInt(mobTlfFelt.getText());
+            controller.connIndsaetKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
+
+            org.skiftOrdrePanel("BestillingsOrdreGUI");
+        } else {
+            JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
+        }
+    }//GEN-LAST:event_opretBedemandKnapActionPerformed
+
+    private void fNavnFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fNavnFeltFocusGained
+        if (fNavnFelt.getText().equals("Kunde findes ikke")) {
+            fNavnFelt.setText("");
+        }
+    }//GEN-LAST:event_fNavnFeltFocusGained
+
+    private void soegBedemandFeltKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_soegBedemandFeltKeyTyped
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            soegKundeKnapActionPerformed(null);
+        }
+    }//GEN-LAST:event_soegBedemandFeltKeyTyped
+
+    private void soegKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegKundeKnapActionPerformed
+        if (!Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText()) && soegBedemandFelt.getText().length() == 8) {
+            Controller controller = new Controller();
+            int telefonNr = Integer.parseInt(soegBedemandFelt.getText());
+            controller.connHentMuligKundeFraDatabase(telefonNr, this);
+            adressFelt.setVisible(true);
+            adressLabel.setVisible(true);
+            byFelt.setVisible(true);
+            byLabel.setVisible(true);
+            eNavnFelt.setVisible(true);
+            eNavnLabel.setVisible(true);
+            fNavnFelt.setVisible(true);
+            fNavnLabel.setVisible(true);
+            mobTlfFelt.setVisible(true);
+            mobTlfLabel.setVisible(true);
+            postFelt.setVisible(true);
+            postLabel.setVisible(true);
+
+            if (fNavnFelt.getText().equals("Kunde findes ikke")) {
+                opretBedemandKnap.setVisible(true);
+                videreKnap.setVisible(false);
+                bedemandKnap.setVisible(false);
+            } else {
+                videreKnap.setVisible(true);
+                bedemandKnap.setVisible(true);
+                opretBedemandKnap.setVisible(false);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Telefonnummer felt må ikke indeholde bogstaver og skal være 8 cifre",
+                "Advarsel", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_soegKundeKnapActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField adressFelt;
+    private javax.swing.JLabel adressLabel;
+    private javax.swing.JTextField byFelt;
+    private javax.swing.JLabel byLabel;
+    private javax.swing.JTextField fNavnFelt;
+    private javax.swing.JLabel fNavnLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton opretBedemandKnap;
+    private javax.swing.JTextField postFelt;
+    private javax.swing.JLabel postLabel;
+    private javax.swing.JTextField soegBedemandFelt;
+    private javax.swing.JButton soegKundeKnap;
+    private javax.swing.JLabel soegKundeLabel;
+    private javax.swing.JButton videreKnap;
     // End of variables declaration//GEN-END:variables
 }

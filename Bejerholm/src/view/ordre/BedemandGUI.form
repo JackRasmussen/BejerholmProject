@@ -22,7 +22,31 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="1128" max="32767" attributes="0"/>
+              <EmptySpace pref="283" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="fNavnLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="soegKundeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="adressLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="postLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="byLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="fNavnFelt" alignment="0" max="32767" attributes="0"/>
+                  <Component id="soegBedemandFelt" alignment="0" max="32767" attributes="0"/>
+                  <Component id="adressFelt" alignment="0" max="32767" attributes="0"/>
+                  <Component id="postFelt" alignment="0" max="32767" attributes="0"/>
+                  <Component id="byFelt" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                      <Component id="opretBedemandKnap" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="soegKundeKnap" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="videreKnap" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="297" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
           </Group>
@@ -31,8 +55,41 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="427" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="75" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="soegBedemandFelt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soegKundeKnap" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soegKundeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="fNavnFelt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fNavnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="adressLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="adressFelt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="postLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="postFelt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="byLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="byFelt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="opretBedemandKnap" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="videreKnap" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -42,6 +99,95 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="G&#xe5; videre"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="videreKnap">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Videre"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="videreKnapActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="byLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="By:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="adressFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="adressFeltFocusGained"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="postFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="postFeltFocusGained"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fNavnLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Firmanavn"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="byFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="byFeltFocusGained"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="opretBedemandKnap">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Opret Bedemand"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opretBedemandKnapActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="soegKundeLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="S&#xf8;g p&#xe5; bedemand tlf nr."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fNavnFelt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="fNavnFeltFocusGained"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="soegBedemandFelt">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="soegBedemandFeltKeyTyped"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="soegKundeKnap">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#xf8;g Bedemand"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="soegKundeKnapActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="postLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Postnummer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="adressLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Adresse:"/>
       </Properties>
     </Component>
   </SubComponents>
