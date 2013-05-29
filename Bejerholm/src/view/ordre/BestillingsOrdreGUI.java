@@ -5,19 +5,21 @@
 package view.ordre;
 
 import java.util.Calendar;
-import java.util.Date;
+import view.OrdreGUI;
 
 /**
  *
  * @author TheToiletpaper
  */
 public class BestillingsOrdreGUI extends javax.swing.JPanel {
+    OrdreGUI ordreGUI;
     private Calendar dato;
     private int year;
     private int month;
     private int day;
     
-    public BestillingsOrdreGUI() {
+    public BestillingsOrdreGUI(OrdreGUI org) {
+        this.ordreGUI = org;
         dato = Calendar.getInstance();
         year = dato.get(Calendar.YEAR);
         month = dato.get(Calendar.MONTH)+1; // Regner fra 0 - 11. Derfor +1

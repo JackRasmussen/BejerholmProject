@@ -19,9 +19,8 @@ import view.OrdreGUI;
 public class KundeGUI extends javax.swing.JPanel {
 
     OrdreGUI org;
-    BedemandGUI beg;
 
-    public KundeGUI(OrdreGUI org, BedemandGUI beg) {
+    public KundeGUI(OrdreGUI org) {
         initComponents();
         adressFelt.setVisible(false);
         adressLabel.setVisible(false);
@@ -39,7 +38,6 @@ public class KundeGUI extends javax.swing.JPanel {
         opretKundeKnap.setVisible(false);
         bedemandKnap.setVisible(false);
         this.org = org;
-        this.beg = beg;
     }
 
     /**
@@ -373,7 +371,7 @@ public class KundeGUI extends javax.swing.JPanel {
             int mobilNr = Integer.parseInt(mobTlfFelt.getText());
             controller.connRedigerKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
 
-            beg.skiftOrdrePanel("BestillingsOrdreGUI");
+            org.skiftOrdrePanel("BedemandGUI");
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }

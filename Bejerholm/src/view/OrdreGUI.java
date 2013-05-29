@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import java.awt.CardLayout;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.*;
-import model.database.*;
 import view.ordre.BedemandGUI;
 import view.ordre.BestillingsOrdreGUI;
+import view.ordre.KirkegaardGUI;
 import view.ordre.KundeGUI;
 
 /**
@@ -20,30 +12,33 @@ import view.ordre.KundeGUI;
  */
 public class OrdreGUI extends javax.swing.JPanel {
 
-    private Kunde kunde;
     private KundeGUI kg;
     private BestillingsOrdreGUI bog;
     private BedemandGUI beg;
+    private KirkegaardGUI kgg;
 
     public OrdreGUI() {
-        kg = new KundeGUI(this, beg);
-        bog = new BestillingsOrdreGUI();
+        kg = new KundeGUI(this);
+        beg = new BedemandGUI(this);
+        bog = new BestillingsOrdreGUI(this);
+        kgg = new KirkegaardGUI(this);
 
         initComponents();
         cardsOrdre.add(kg);
+        cardsOrdre.add(beg);
         cardsOrdre.add(bog);
-
-
+        cardsOrdre.add(kgg);
 
         ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(kg, "KundeGUI");
+        ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(beg, "BedemandGUI");
         ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(bog, "BestillingsOrdreGUI");
+        ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(kgg, "KirkegaardGUI");
 
         skiftOrdrePanel("KundeGUI");
     }
 
     public void skiftOrdrePanel(String jp) {
         ((CardLayout) cardsOrdre.getLayout()).show(cardsOrdre, jp);
-
     }
 
     /**
@@ -58,23 +53,31 @@ public class OrdreGUI extends javax.swing.JPanel {
         cardsOrdre = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         cardsOrdre.setLayout(new java.awt.CardLayout());
 
-        jButton2.setText("Bestilling!");
+        jButton2.setText("Bestilling");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Kundeoplysninger!");
+        jButton3.setText("Kundeoplysninger");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Bedemand");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -86,9 +89,10 @@ public class OrdreGUI extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(32, 32, 32)
-                .addComponent(cardsOrdre, javax.swing.GroupLayout.DEFAULT_SIZE, 1111, Short.MAX_VALUE))
+                .addComponent(cardsOrdre, javax.swing.GroupLayout.DEFAULT_SIZE, 1115, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,8 +100,10 @@ public class OrdreGUI extends javax.swing.JPanel {
                 .addGap(175, 175, 175)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addContainerGap(228, Short.MAX_VALUE))
             .addComponent(cardsOrdre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -107,11 +113,15 @@ public class OrdreGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       skiftOrdrePanel("KundeGUI");
+        skiftOrdrePanel("KundeGUI");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        skiftOrdrePanel("BedemandGUI");
+    }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardsOrdre;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     // End of variables declaration//GEN-END:variables
