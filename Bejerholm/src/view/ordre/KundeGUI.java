@@ -151,6 +151,11 @@ public class KundeGUI extends javax.swing.JPanel {
         mobTlfLabel.setText("Mobil tlf:");
 
         bedemandKnap.setText("Vælg Bedemand");
+        bedemandKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bedemandKnapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -329,6 +334,7 @@ public class KundeGUI extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_adressFeltFocusGained
 
+
     private void byFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_byFeltFocusGained
         if (byFelt.getText().equals("Kunde findes ikke")) {
             byFelt.setText("");
@@ -346,6 +352,32 @@ public class KundeGUI extends javax.swing.JPanel {
             soegKundeKnapActionPerformed(null);
         }
     }//GEN-LAST:event_soegKundeFeltKeyTyped
+
+    private void bedemandKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedemandKnapActionPerformed
+        if (!"".equals(fNavnFelt.getText())
+                && !"".equals(eNavnFelt.getText())
+                && !"".equals(adressFelt.getText())
+                && !"".equals(postFelt.getText())
+                && !"".equals(byFelt.getText())
+                && soegKundeFelt.getText().length() == 8
+                && !Pattern.matches("[a-zA-Z]+", soegKundeFelt.getText())
+                && !Pattern.matches("[a-zA-Z]+", postFelt.getText())
+                && !Pattern.matches("[a-zA-Z]+", mobTlfFelt.getText())) {
+            Controller controller = new Controller();
+            int tlfNr = Integer.parseInt(soegKundeFelt.getText());
+            String fNavn = fNavnFelt.getText();
+            String eNavn = eNavnFelt.getText();
+            String adresse = adressFelt.getText();
+            int postNr = Integer.parseInt(postFelt.getText());
+            String byNavn = byFelt.getText();
+            int mobilNr = Integer.parseInt(mobTlfFelt.getText());
+            controller.connRedigerKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
+
+            beg.skiftOrdrePanel("BestillingsOrdreGUI");
+        } else {
+            JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
+        }
+    }//GEN-LAST:event_bedemandKnapActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
