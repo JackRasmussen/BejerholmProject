@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.ordre;
 
 import control.Controller;
@@ -17,7 +13,7 @@ import view.OrdreGUI;
 public class BedemandGUI extends javax.swing.JPanel {
 
     OrdreGUI ordreGUI;
-    
+
     public BedemandGUI(OrdreGUI org) {
         ordreGUI = org;
         initComponents();
@@ -175,17 +171,19 @@ public class BedemandGUI extends javax.swing.JPanel {
 
     private void videreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_videreKnapActionPerformed
         if (!"".equals(fNavnFelt.getText())
-            && !"".equals(adressFelt.getText())
-            && !"".equals(postFelt.getText())
-            && !"".equals(byFelt.getText())
-            && soegBedemandFelt.getText().length() == 8
-            && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())){
+                && !"".equals(adressFelt.getText())
+                && !"".equals(postFelt.getText())
+                && !"".equals(byFelt.getText())
+                && soegBedemandFelt.getText().length() == 8
+                && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())) {
+            
             Controller controller = new Controller();
             int tlfNr = Integer.parseInt(soegBedemandFelt.getText());
             String fNavn = fNavnFelt.getText();
             String adresse = adressFelt.getText();
             int postNr = Integer.parseInt(postFelt.getText());
             String byNavn = byFelt.getText();
+            controller.redigerBedemand(tlfNr, fNavn, adresse, byNavn, postNr);
 
             ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
         } else {
@@ -194,7 +192,7 @@ public class BedemandGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_videreKnapActionPerformed
 
     private void adressFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adressFeltFocusGained
-        if (adressFelt.getText().equals("Kunde findes ikke")) {
+        if (adressFelt.getText().equals("Bedemand findes ikke")) {
             adressFelt.setText("");
         }
     }//GEN-LAST:event_adressFeltFocusGained
@@ -206,25 +204,27 @@ public class BedemandGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_postFeltFocusGained
 
     private void byFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_byFeltFocusGained
-        if (byFelt.getText().equals("Kunde findes ikke")) {
+        if (byFelt.getText().equals("Bedemand findes ikke")) {
             byFelt.setText("");
         }
     }//GEN-LAST:event_byFeltFocusGained
 
     private void opretBedemandKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opretBedemandKnapActionPerformed
         if (!"".equals(fNavnFelt.getText())
-            && !"".equals(adressFelt.getText())
-            && !"".equals(postFelt.getText())
-            && !"".equals(byFelt.getText())
-            && soegBedemandFelt.getText().length() == 8
-            && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())
-            && !Pattern.matches("[a-zA-Z]+", postFelt.getText())){
+                && !"".equals(adressFelt.getText())
+                && !"".equals(postFelt.getText())
+                && !"".equals(byFelt.getText())
+                && soegBedemandFelt.getText().length() == 8
+                && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())
+                && !Pattern.matches("[a-zA-Z]+", postFelt.getText())) {
+            
             Controller controller = new Controller();
             int tlfNr = Integer.parseInt(soegBedemandFelt.getText());
             String fNavn = fNavnFelt.getText();
             String adresse = adressFelt.getText();
             int postNr = Integer.parseInt(postFelt.getText());
             String byNavn = byFelt.getText();
+            controller.gemBedemandTilDatabase(tlfNr, fNavn, adresse, byNavn, postNr);
 
             ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
         } else {
@@ -233,7 +233,7 @@ public class BedemandGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_opretBedemandKnapActionPerformed
 
     private void fNavnFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fNavnFeltFocusGained
-        if (fNavnFelt.getText().equals("Kunde findes ikke")) {
+        if (fNavnFelt.getText().equals("Bedemand findes ikke")) {
             fNavnFelt.setText("");
         }
     }//GEN-LAST:event_fNavnFeltFocusGained
@@ -248,8 +248,8 @@ public class BedemandGUI extends javax.swing.JPanel {
         if (!Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText()) && soegBedemandFelt.getText().length() == 8) {
             Controller controller = new Controller();
             int telefonNr = Integer.parseInt(soegBedemandFelt.getText());
-            controller.hentBedemandViaTlfNr(telefonNr);
-            
+            controller.hentBedemandViaTlfNr(telefonNr, this);
+
             adressFelt.setVisible(true);
             adressLabel.setVisible(true);
             byFelt.setVisible(true);
@@ -259,7 +259,7 @@ public class BedemandGUI extends javax.swing.JPanel {
             postFelt.setVisible(true);
             postLabel.setVisible(true);
 
-            if (fNavnFelt.getText().equals("Kunde findes ikke")) {
+            if (fNavnFelt.getText().equals("Bedemand findes ikke")) {
                 opretBedemandKnap.setVisible(true);
                 videreKnap.setVisible(false);
             } else {
@@ -269,10 +269,9 @@ public class BedemandGUI extends javax.swing.JPanel {
 
         } else {
             JOptionPane.showMessageDialog(this, "Telefonnummer felt må ikke indeholde bogstaver og skal være 8 cifre",
-                "Advarsel", JOptionPane.WARNING_MESSAGE);
+                    "Advarsel", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_soegKundeKnapActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
     private javax.swing.JLabel adressLabel;
@@ -288,4 +287,11 @@ public class BedemandGUI extends javax.swing.JPanel {
     private javax.swing.JLabel soegKundeLabel;
     private javax.swing.JButton videreKnap;
     // End of variables declaration//GEN-END:variables
+
+    public void setFelter(String firmaNavn, String adresse, int postNr, String byNavn) {
+        this.fNavnFelt.setText(firmaNavn);
+        this.adressFelt.setText(adresse);
+        this.postFelt.setText(postNr + "");
+        this.byFelt.setText(byNavn);
+    }
 }
