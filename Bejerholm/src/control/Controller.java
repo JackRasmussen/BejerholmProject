@@ -19,6 +19,7 @@ import model.Provisionsseddel;
 import model.Tilfoejelse;
 import model.database.DBConnection;
 import view.BejerholmGUI;
+import view.ordre.BedemandGUI;
 import view.ordre.KundeGUI;
 
 /**
@@ -79,9 +80,15 @@ public class Controller {
 
     }
 
-    public void hentBedemandViaTlfNr(int tlfNr) {
+    public void hentBedemandViaTlfNr(int tlfNr, BedemandGUI bgui) {
         try {
             Bedemand bedemand = new Bedemand(tlfNr);
+            String firmaNavn = bedemand.getFirmaNavn();
+            String adresse = bedemand.getAdresse();
+            int postNr = bedemand.getPostNr();
+            String byNavn = bedemand.getByNavn();
+            
+            bgui.setFelter(firmaNavn, adresse, postNr, byNavn);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

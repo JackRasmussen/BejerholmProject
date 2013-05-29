@@ -40,7 +40,7 @@ public class Handler {
 
     public void tilfoejBedemand(int tlfNr, String firmaNavn, String adresse, int postNr, String byNavn) throws SQLException {
         String command = ("insert into Bedemand(tlfNr, firmaNavn, adresse, postNr, byNavn) "
-                + "values (" + tlfNr + ", '" + firmaNavn + "', '" + adresse + "', " + postNr + ", '" + byNavn + ");");
+                + "values (" + tlfNr + ", '" + firmaNavn + "', '" + adresse + "', " + postNr + ", '" + byNavn + "');");
         DBConnection.execute(command);
     }
 
