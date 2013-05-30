@@ -1,13 +1,6 @@
 package view;
 
-import java.awt.CardLayout;
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import model.pdfWriter.PDFWriter;
-import view.faktura.OrdreForm;
 
 /**
  *

@@ -18,16 +18,36 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="produktNavnFelt" min="-2" pref="80" max="-2" attributes="0"/>
-              <EmptySpace pref="1188" max="32767" attributes="0"/>
+              <Component id="produktID" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="produktNavnFelt" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="produktType" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="produktAntal" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="maalX" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="maalY" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="salgsPris" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace pref="337" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="8" max="32767" attributes="0"/>
-              <Component id="produktNavnFelt" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="produktNavnFelt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="produktID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="produktType" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="produktAntal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="maalX" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="maalY" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="salgsPris" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -37,6 +57,36 @@
     <Component class="javax.swing.JLabel" name="produktNavnFelt">
       <Properties>
         <Property name="text" type="java.lang.String" value="Navn"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="produktID">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Produkt ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="produktType">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Type"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="produktAntal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Antal"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="maalX">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="maalX"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="maalY">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="maalY"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="salgsPris">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pris"/>
       </Properties>
     </Component>
   </SubComponents>
