@@ -5,6 +5,7 @@
 package view.ordre;
 
 import java.awt.Dimension;
+import java.util.ArrayList;
 import view.OrdreGUI;
 
 /**
@@ -14,8 +15,12 @@ import view.OrdreGUI;
 public class TilfoejelseGUI extends javax.swing.JPanel {
 
     OrdreGUI ordreGUI;
-    
+    ArrayList<TilfojelseTilListe> listeAfTilfoejelser;
+    ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre;
+
     public TilfoejelseGUI(OrdreGUI org) {
+        listeAfTilfoejelser = new ArrayList<>();
+        listeAfTilfoejelserTilOrdre = new ArrayList<>();
         ordreGUI = org;
         initComponents();
     }
@@ -98,21 +103,24 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
 
     private void soegeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegeKnapActionPerformed
         TilfojelseTilListe ttl = new TilfojelseTilListe(1, "Test", 50.5);
-        //        listeAfProdukter.add(ptl);
-        jPanel1.add(ttl);
+        listeAfTilfoejelser.add(ttl);
 
-        //        for (int i = 0; i < listeAfProdukter.size(); i++) {
-            //            jPanel1.add(listeAfProdukter.get(i));
-            //        }
-        //        jPanel1.revalidate();
-        jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount()*45));
+        jPanel1.removeAll();
+        for (int i = 0; i < listeAfTilfoejelser.size(); i++) {
+            jPanel1.add(listeAfTilfoejelser.get(i));
+        }
+        jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount() * 45));
         produktListe.revalidate();
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
+        for (int i = 0; i < listeAfTilfoejelser.size(); i++) {
+            if (listeAfTilfoejelser.get(i).isChosen()) {
+                listeAfTilfoejelserTilOrdre.add(listeAfTilfoejelser.get(i));
+            }
+        }
         ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
     }//GEN-LAST:event_fortsaetKnapActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fortsaetKnap;
     private javax.swing.JButton indsaetProduktIOrdreKnap;

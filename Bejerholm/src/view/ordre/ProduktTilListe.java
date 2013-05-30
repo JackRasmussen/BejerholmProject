@@ -1,5 +1,6 @@
 package view.ordre;
 
+import java.awt.Color;
 import javax.swing.JLabel;
 
 /**
@@ -8,8 +9,11 @@ import javax.swing.JLabel;
  */
 public class ProduktTilListe extends javax.swing.JPanel {
 
+    private boolean chosen;
+
     public ProduktTilListe(int produktID, String produktNavn, String produktType, int produktAntalIDB, double maalX, double maalY, double salgsPris) {
         initComponents();
+        chosen = false;
         this.produktID.setText(produktID + "");
         this.produktNavnFelt.setText(produktNavn);
         this.produktType.setText(produktType);
@@ -22,7 +26,7 @@ public class ProduktTilListe extends javax.swing.JPanel {
     public JLabel getProduktID() {
         return produktID;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,6 +43,12 @@ public class ProduktTilListe extends javax.swing.JPanel {
         maalX = new javax.swing.JLabel();
         maalY = new javax.swing.JLabel();
         salgsPris = new javax.swing.JLabel();
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         produktNavnFelt.setText("Navn");
 
@@ -90,6 +100,20 @@ public class ProduktTilListe extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    public boolean isChosen() {
+        return chosen;
+    }
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        if (!chosen) {
+            chosen = true;
+            this.setBackground(Color.CYAN);
+        } else {
+            chosen = false;
+            this.setBackground(new Color(128, 128, 128));
+        }
+    }//GEN-LAST:event_formMouseClicked
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel maalX;
     private javax.swing.JLabel maalY;

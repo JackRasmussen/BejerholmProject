@@ -1,15 +1,17 @@
 package view.ordre;
 
+import java.awt.Color;
+
 /**
  *
  * @author Dan-Philip-N
  */
 public class TilfojelseTilListe extends javax.swing.JPanel {
 
-    /**
-     * Creates new form TilfojelseTilListe
-     */
+    private boolean chosen;
+    
     public TilfojelseTilListe(int tilfoejelsesID, String tilfoejelsesType, double tilfoejelsesPris) {
+        chosen = false;
         initComponents();
         this.tilfoejelsesID.setText(tilfoejelsesID + "");
         this.tilfoejelsesNavn.setText(tilfoejelsesType);
@@ -28,6 +30,12 @@ public class TilfojelseTilListe extends javax.swing.JPanel {
         tilfoejelsesID = new javax.swing.JLabel();
         tilfoejelsesNavn = new javax.swing.JLabel();
         salgsPris = new javax.swing.JLabel();
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         tilfoejelsesID.setText("Tilføjelses Nr.");
 
@@ -59,6 +67,21 @@ public class TilfojelseTilListe extends javax.swing.JPanel {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    public boolean isChosen() {
+        return chosen;
+    }
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        if (!chosen) {
+            chosen = true;
+            this.setBackground(Color.CYAN);
+        } else {
+            chosen = false;
+            this.setBackground(new Color(128, 128, 128));
+        }
+    }//GEN-LAST:event_formMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel salgsPris;
     private javax.swing.JLabel tilfoejelsesID;

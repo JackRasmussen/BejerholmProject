@@ -11,11 +11,13 @@ import view.OrdreGUI;
 public class ProduktGUI extends javax.swing.JPanel {
 
     OrdreGUI ordreGUI;
-//    ArrayList<ProduktTilListe> listeAfProdukter;
+    ArrayList<ProduktTilListe> listeAfProdukter;
+    ArrayList<ProduktTilListe> listeAfProdukterTilOrdre;
     
     public ProduktGUI(OrdreGUI org) {
         ordreGUI = org;
-//        listeAfProdukter = new ArrayList<>();
+        listeAfProdukter = new ArrayList<>();
+        listeAfProdukterTilOrdre = new ArrayList<>();
         initComponents();
     }
 
@@ -41,6 +43,8 @@ public class ProduktGUI extends javax.swing.JPanel {
         jLabel1.setText(" Produktnavn:");
 
         produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel1.setForeground(new java.awt.Color(128, 128, 128));
         produktListe.setViewportView(jPanel1);
 
         soegeKnap.setText("Søg");
@@ -83,12 +87,11 @@ public class ProduktGUI extends javax.swing.JPanel {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(28, 28, 28)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(soegeKnap)
-                        .add(indsaetProduktIOrdreKnap)
-                        .add(fortsaetKnap))
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(soegeKnap)
+                    .add(indsaetProduktIOrdreKnap)
+                    .add(fortsaetKnap)
                     .add(jLabel1))
                 .add(30, 30, 30)
                 .add(produktListe, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
@@ -96,20 +99,29 @@ public class ProduktGUI extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public ArrayList<ProduktTilListe> getListeAfProdukterTilOrdre() {
+        return listeAfProdukterTilOrdre;
+    }
+
     private void soegeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegeKnapActionPerformed
         ProduktTilListe ptl = new ProduktTilListe(1, "Produkt", "Type 1", 55, 10.4, 10.10, 50);
-//        listeAfProdukter.add(ptl);
+        listeAfProdukter.add(ptl);
         jPanel1.add(ptl);
         
-//        for (int i = 0; i < listeAfProdukter.size(); i++) {
-//            jPanel1.add(listeAfProdukter.get(i));
-//        }
-//        jPanel1.revalidate();
+        jPanel1.removeAll();
+        for (int i = 0; i < listeAfProdukter.size(); i++) {
+            jPanel1.add(listeAfProdukter.get(i));
+        }
         jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount()*45));
         produktListe.revalidate();
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
+        for (int i = 0; i < listeAfProdukter.size(); i++) {
+            if (listeAfProdukter.get(i).isChosen()) {
+                listeAfProdukterTilOrdre.add(listeAfProdukter.get(i));
+            }
+        }
         ordreGUI.skiftOrdrePanel("TilfoejelseGUI");
     }//GEN-LAST:event_fortsaetKnapActionPerformed
 
