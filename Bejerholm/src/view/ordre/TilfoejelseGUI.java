@@ -54,6 +54,11 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
         });
 
         indsaetProduktIOrdreKnap.setText("Indsæt valgte tilføjelse i ordre");
+        indsaetProduktIOrdreKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                indsaetProduktIOrdreKnapActionPerformed(evt);
+            }
+        });
 
         produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         produktListe.setViewportView(jPanel1);
@@ -114,13 +119,16 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
+        ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
+    }//GEN-LAST:event_fortsaetKnapActionPerformed
+
+    private void indsaetProduktIOrdreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indsaetProduktIOrdreKnapActionPerformed
         for (int i = 0; i < listeAfTilfoejelser.size(); i++) {
             if (listeAfTilfoejelser.get(i).isChosen()) {
                 listeAfTilfoejelserTilOrdre.add(listeAfTilfoejelser.get(i));
             }
         }
-        ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
-    }//GEN-LAST:event_fortsaetKnapActionPerformed
+    }//GEN-LAST:event_indsaetProduktIOrdreKnapActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fortsaetKnap;
     private javax.swing.JButton indsaetProduktIOrdreKnap;

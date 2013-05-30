@@ -13,7 +13,7 @@ public class ProduktGUI extends javax.swing.JPanel {
     OrdreGUI ordreGUI;
     ArrayList<ProduktTilListe> listeAfProdukter;
     ArrayList<ProduktTilListe> listeAfProdukterTilOrdre;
-    
+
     public ProduktGUI(OrdreGUI org) {
         ordreGUI = org;
         listeAfProdukter = new ArrayList<>();
@@ -55,6 +55,11 @@ public class ProduktGUI extends javax.swing.JPanel {
         });
 
         indsaetProduktIOrdreKnap.setText("Indsæt valgte produkt i ordre");
+        indsaetProduktIOrdreKnap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                indsaetProduktIOrdreKnapActionPerformed(evt);
+            }
+        });
 
         fortsaetKnap.setText("Videre");
         fortsaetKnap.addActionListener(new java.awt.event.ActionListener() {
@@ -107,24 +112,26 @@ public class ProduktGUI extends javax.swing.JPanel {
         ProduktTilListe ptl = new ProduktTilListe(1, "Produkt", "Type 1", 55, 10.4, 10.10, 50);
         listeAfProdukter.add(ptl);
         jPanel1.add(ptl);
-        
+
         jPanel1.removeAll();
         for (int i = 0; i < listeAfProdukter.size(); i++) {
             jPanel1.add(listeAfProdukter.get(i));
         }
-        jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount()*45));
+        jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount() * 45));
         produktListe.revalidate();
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
+        ordreGUI.skiftOrdrePanel("TilfoejelseGUI");
+    }//GEN-LAST:event_fortsaetKnapActionPerformed
+
+    private void indsaetProduktIOrdreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indsaetProduktIOrdreKnapActionPerformed
         for (int i = 0; i < listeAfProdukter.size(); i++) {
             if (listeAfProdukter.get(i).isChosen()) {
                 listeAfProdukterTilOrdre.add(listeAfProdukter.get(i));
             }
         }
-        ordreGUI.skiftOrdrePanel("TilfoejelseGUI");
-    }//GEN-LAST:event_fortsaetKnapActionPerformed
-
+    }//GEN-LAST:event_indsaetProduktIOrdreKnapActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fortsaetKnap;
     private javax.swing.JButton indsaetProduktIOrdreKnap;

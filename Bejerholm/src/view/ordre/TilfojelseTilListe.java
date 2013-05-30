@@ -9,7 +9,7 @@ import java.awt.Color;
 public class TilfojelseTilListe extends javax.swing.JPanel {
 
     private boolean chosen;
-    
+
     public TilfojelseTilListe(int tilfoejelsesID, String tilfoejelsesType, double tilfoejelsesPris) {
         chosen = false;
         initComponents();
@@ -81,7 +81,6 @@ public class TilfojelseTilListe extends javax.swing.JPanel {
             this.setBackground(new Color(128, 128, 128));
         }
     }//GEN-LAST:event_formMouseClicked
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel salgsPris;
     private javax.swing.JLabel tilfoejelsesID;
