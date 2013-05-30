@@ -9,8 +9,11 @@ public class TilfojelseTilListe extends javax.swing.JPanel {
     /**
      * Creates new form TilfojelseTilListe
      */
-    public TilfojelseTilListe() {
+    public TilfojelseTilListe(int tilfoejelsesID, String tilfoejelsesType, double tilfoejelsesPris) {
         initComponents();
+        this.tilfoejelsesID.setText(tilfoejelsesID + "");
+        this.tilfoejelsesNavn.setText(tilfoejelsesType);
+        this.salgsPris.setText(tilfoejelsesPris + "");
     }
 
     /**
@@ -22,17 +25,43 @@ public class TilfojelseTilListe extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tilfoejelsesID = new javax.swing.JLabel();
+        tilfoejelsesNavn = new javax.swing.JLabel();
+        salgsPris = new javax.swing.JLabel();
+
+        tilfoejelsesID.setText("Tilføjelses Nr.");
+
+        tilfoejelsesNavn.setText("Tilføjelsestype");
+
+        salgsPris.setText("Pris");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tilfoejelsesID, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tilfoejelsesNavn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(salgsPris, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(802, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tilfoejelsesID)
+                    .addComponent(tilfoejelsesNavn)
+                    .addComponent(salgsPris))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel salgsPris;
+    private javax.swing.JLabel tilfoejelsesID;
+    private javax.swing.JLabel tilfoejelsesNavn;
     // End of variables declaration//GEN-END:variables
 }

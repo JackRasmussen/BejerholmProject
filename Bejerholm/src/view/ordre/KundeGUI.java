@@ -248,7 +248,7 @@ public class KundeGUI extends javax.swing.JPanel {
             int mobilNr = Integer.parseInt(mobTlfFelt.getText());
             controller.connRedigerKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
 
-            org.skiftOrdrePanel("BestillingsOrdreGUI");
+            org.skiftOrdrePanel("ProduktGUI");
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
@@ -308,7 +308,7 @@ public class KundeGUI extends javax.swing.JPanel {
             int mobilNr = Integer.parseInt(mobTlfFelt.getText());
             controller.connIndsaetKundeIDatabase(tlfNr, fNavn, eNavn, adresse, postNr, byNavn, mobilNr);
 
-            org.skiftOrdrePanel("BestillingsOrdreGUI");
+            org.skiftOrdrePanel("ProduktGUI");
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }

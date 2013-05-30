@@ -1,9 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.ordre;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 import view.OrdreGUI;
 
@@ -43,6 +40,7 @@ public class ProduktGUI extends javax.swing.JPanel {
 
         jLabel1.setText(" Produktnavn:");
 
+        produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         produktListe.setViewportView(jPanel1);
 
         soegeKnap.setText("Søg");
@@ -106,11 +104,13 @@ public class ProduktGUI extends javax.swing.JPanel {
 //        for (int i = 0; i < listeAfProdukter.size(); i++) {
 //            jPanel1.add(listeAfProdukter.get(i));
 //        }
-        jPanel1.validate();
+//        jPanel1.revalidate();
+        jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount()*45));
+        produktListe.revalidate();
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
-        ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
+        ordreGUI.skiftOrdrePanel("TilfoejelseGUI");
     }//GEN-LAST:event_fortsaetKnapActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

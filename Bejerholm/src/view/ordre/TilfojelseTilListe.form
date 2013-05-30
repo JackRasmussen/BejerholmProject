@@ -16,13 +16,46 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="1274" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tilfoejelsesID" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="tilfoejelsesNavn" min="-2" pref="200" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="salgsPris" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace pref="802" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="tilfoejelsesID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tilfoejelsesNavn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="salgsPris" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="8" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="tilfoejelsesID">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tilf&#xf8;jelses Nr."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="tilfoejelsesNavn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tilf&#xf8;jelsestype"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="salgsPris">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pris"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>
