@@ -143,7 +143,7 @@ public class ProduktGUI extends javax.swing.JPanel {
                 listeAfProdukterTilOrdre.add(listeAfProdukter.get(i));
             }
         }
-        if (listeAfProdukterTilOrdre.size() == 0) {
+        if (listeAfProdukterTilOrdre.isEmpty()) {
             fortsaetKnap.setText("Spring over");
         }else {
             fortsaetKnap.setText("Videre");

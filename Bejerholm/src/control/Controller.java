@@ -23,6 +23,7 @@ import view.BejerholmGUI;
 import view.ordre.BedemandGUI;
 import view.ordre.KundeGUI;
 import view.ordre.ProduktGUI;
+import view.ordre.TilfoejelseGUI;
 
 /**
  *
@@ -477,6 +478,22 @@ public class Controller {
         try {
             Tilfoejelse tilfoejelse = new Tilfoejelse(tilfoejelsesID);
             tilfoejelse.sletTilfoejelse();
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void connSoegEfterTilfoejelse(String soegeString, TilfoejelseGUI tfg) {
+        try {
+            Tilfoejelse tilfoejelse = new Tilfoejelse();
+            for (Tilfoejelse tilfoejelseIListe : tilfoejelse.soegEfterTilfoejelse(soegeString)) {
+                tfg.foejTilListeAfTilfoejelser(tilfoejelseIListe.getTilfoejelsesID(),
+                        tilfoejelseIListe.getTilfoejelsesType(), tilfoejelseIListe.getTilfoejelsesPris());
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

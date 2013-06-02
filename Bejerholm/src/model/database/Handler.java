@@ -132,7 +132,12 @@ public class Handler {
     public ResultSet hentTilfoejelseFraDatabase(int tilfoejelsesID) throws SQLException {
         String command = ("select * from Tilfoejelse where tilfoejelsesID = '" + tilfoejelsesID + "';");
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
-
+        return rs;
+    }
+    
+    public ResultSet hentListeAfTilfoejelser() throws SQLException {
+        String command = "select * from Tilfoejelse";
+        ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
 

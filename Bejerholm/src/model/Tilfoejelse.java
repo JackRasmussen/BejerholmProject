@@ -2,6 +2,7 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import model.database.Handler;
 
 /**
@@ -19,6 +20,35 @@ public class Tilfoejelse {
         handler = new Handler();
         this.tilfoejelsesID = tilfoejelsesID;
         hentTilfoejelsesInfo();
+    }
+
+    /**
+     * <strong> Warning: BRUG KUN DENNE CONSTRUCTOR TIL HENTLISTE!! <strong>
+     *
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws Exception
+     */
+    public Tilfoejelse() throws SQLException, ClassNotFoundException, Exception {
+        this.handler = new Handler();
+    }
+
+    /**
+     * <strong> Warning: BRUG KUN DENNE CONSTRUCTOR TIL SOEGTILFOEJELSE!!
+     * <strong>
+     *
+     * @param tilfoejelsesID
+     * @param tilfoejelsesType
+     * @param tilfoejelsesPris
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws Exception
+     */
+    public Tilfoejelse(int tilfoejelsesID, String tilfoejelsesType, double tilfoejelsesPris) throws SQLException, ClassNotFoundException, Exception {
+        this.tilfoejelsesID = tilfoejelsesID;
+        this.tilfoejelsesType = tilfoejelsesType;
+        this.tilfoejelsesPris = tilfoejelsesPris;
+        this.handler = new Handler();
     }
 
     /**
@@ -75,6 +105,19 @@ public class Tilfoejelse {
      */
     public void sletTilfoejelse() throws SQLException {
         handler.sletTilfoejelseFraDatabase(tilfoejelsesID);
+    }
+
+    public ArrayList<Tilfoejelse> soegEfterTilfoejelse(String soegeString) throws SQLException, ClassNotFoundException, Exception {
+        ArrayList<Tilfoejelse> resultatListe = new ArrayList<>();
+        ResultSet rs = handler.hentListeAfTilfoejelser();
+        while (rs.next()) {
+            if (rs.getString("opgaveType").contains(soegeString)) {
+                Tilfoejelse tilfoejelse = new Tilfoejelse(rs.getInt("tilfoejelsesID"),
+                        rs.getString("opgaveType"), rs.getDouble("pris"));
+                resultatListe.add(tilfoejelse);
+            }
+        }
+        return resultatListe;
     }
 
     public int getTilfoejelsesID() {

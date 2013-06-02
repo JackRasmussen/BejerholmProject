@@ -4,6 +4,7 @@
  */
 package view.ordre;
 
+import control.Controller;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import view.OrdreGUI;
@@ -60,10 +61,11 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
             }
         });
 
+        produktListe.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         produktListe.setViewportView(jPanel1);
 
-        fortsaetKnap.setText("Videre");
+        fortsaetKnap.setText("Spring over");
         fortsaetKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fortsaetKnapActionPerformed(evt);
@@ -86,7 +88,7 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
                         .add(soegeKnap)
                         .add(18, 18, 18)
                         .add(indsaetProduktIOrdreKnap)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 631, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 599, Short.MAX_VALUE)
                         .add(fortsaetKnap)))
                 .addContainerGap())
         );
@@ -106,16 +108,24 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void soegeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegeKnapActionPerformed
-        TilfojelseTilListe ttl = new TilfojelseTilListe(1, "Test", 50.5);
+    public void foejTilListeAfTilfoejelser(int tilfoejelsesID, String tilfoejelsesType, double tilfoejelsesPris){
+        TilfojelseTilListe ttl = new TilfojelseTilListe(tilfoejelsesID, tilfoejelsesType, tilfoejelsesPris);
         listeAfTilfoejelser.add(ttl);
-
+    }
+    
+    private void soegeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegeKnapActionPerformed
+        listeAfTilfoejelser.clear();
+        
+        Controller controller = new Controller();
+        controller.connSoegEfterTilfoejelse(jTextField1.getText(), this);
+        
         jPanel1.removeAll();
         for (int i = 0; i < listeAfTilfoejelser.size(); i++) {
             jPanel1.add(listeAfTilfoejelser.get(i));
         }
         jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount() * 45));
         produktListe.revalidate();
+        produktListe.repaint();
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
@@ -127,6 +137,11 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
             if (listeAfTilfoejelser.get(i).isChosen()) {
                 listeAfTilfoejelserTilOrdre.add(listeAfTilfoejelser.get(i));
             }
+        }
+        if (listeAfTilfoejelserTilOrdre.isEmpty()) {
+            fortsaetKnap.setText("Spring over");
+        }else {
+            fortsaetKnap.setText("Videre");
         }
     }//GEN-LAST:event_indsaetProduktIOrdreKnapActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
