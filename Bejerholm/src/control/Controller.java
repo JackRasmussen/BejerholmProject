@@ -5,6 +5,7 @@
 package control;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,7 @@ import model.database.DBConnection;
 import view.BejerholmGUI;
 import view.ordre.BedemandGUI;
 import view.ordre.KundeGUI;
+import view.ordre.ProduktGUI;
 
 /**
  *
@@ -87,7 +89,7 @@ public class Controller {
             String adresse = bedemand.getAdresse();
             int postNr = bedemand.getPostNr();
             String byNavn = bedemand.getByNavn();
-            
+
             bgui.setFelter(firmaNavn, adresse, postNr, byNavn);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
@@ -224,6 +226,24 @@ public class Controller {
                 if (produktType.equalsIgnoreCase(produktIListe.getProduktType())) {
                     //INDSÆT LOGIK HER EFTER VIEW.LAGER ER RYDDET OP
                 }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void connSoegEfterProdukt(String produktSoegeString, ProduktGUI pdg) {
+        try {
+            Produkt produkt = new Produkt();
+            for (Produkt produktIListe : produkt.soegEfterProdukt(produktSoegeString)) {
+                pdg.foejTilListeAfProdukter(produktIListe.getProduktID(),
+                        produktIListe.getProduktNavn(), produktIListe.getProduktType(),
+                        produktIListe.getProduktAntal(), produktIListe.getMaalX(),
+                        produktIListe.getMaalY(), produktIListe.getSalgsPris());
             }
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);

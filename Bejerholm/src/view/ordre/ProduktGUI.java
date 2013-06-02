@@ -1,5 +1,6 @@
 package view.ordre;
 
+import control.Controller;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import view.OrdreGUI;
@@ -42,6 +43,8 @@ public class ProduktGUI extends javax.swing.JPanel {
 
         jLabel1.setText(" Produktnavn:");
 
+        produktListe.setBackground(new java.awt.Color(238, 238, 238));
+        produktListe.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel1.setForeground(new java.awt.Color(128, 128, 128));
@@ -61,7 +64,7 @@ public class ProduktGUI extends javax.swing.JPanel {
             }
         });
 
-        fortsaetKnap.setText("Videre");
+        fortsaetKnap.setText("Spring over");
         fortsaetKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fortsaetKnapActionPerformed(evt);
@@ -84,7 +87,7 @@ public class ProduktGUI extends javax.swing.JPanel {
                         .add(soegeKnap)
                         .add(18, 18, 18)
                         .add(indsaetProduktIOrdreKnap)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 630, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 598, Short.MAX_VALUE)
                         .add(fortsaetKnap)))
                 .addContainerGap())
         );
@@ -108,10 +111,18 @@ public class ProduktGUI extends javax.swing.JPanel {
         return listeAfProdukterTilOrdre;
     }
 
-    private void soegeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegeKnapActionPerformed
-        ProduktTilListe ptl = new ProduktTilListe(1, "Produkt", "Type 1", 55, 10.4, 10.10, 50);
+    public void foejTilListeAfProdukter(int produktNr, String produktNavn,
+            String produktType, int antalILager, double maalX, double maalY, double salgsPris) {
+        ProduktTilListe ptl = new ProduktTilListe(produktNr, produktNavn,
+                produktType, produktNr, maalX, maalY, salgsPris);
         listeAfProdukter.add(ptl);
-        jPanel1.add(ptl);
+    }
+
+    private void soegeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegeKnapActionPerformed
+        listeAfProdukter.clear();
+        
+        Controller controller = new Controller();
+        controller.connSoegEfterProdukt(jTextField1.getText(), this);
 
         jPanel1.removeAll();
         for (int i = 0; i < listeAfProdukter.size(); i++) {
@@ -119,6 +130,7 @@ public class ProduktGUI extends javax.swing.JPanel {
         }
         jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount() * 45));
         produktListe.revalidate();
+        produktListe.repaint();
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
@@ -130,6 +142,11 @@ public class ProduktGUI extends javax.swing.JPanel {
             if (listeAfProdukter.get(i).isChosen()) {
                 listeAfProdukterTilOrdre.add(listeAfProdukter.get(i));
             }
+        }
+        if (listeAfProdukterTilOrdre.size() == 0) {
+            fortsaetKnap.setText("Spring over");
+        }else {
+            fortsaetKnap.setText("Videre");
         }
     }//GEN-LAST:event_indsaetProduktIOrdreKnapActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables

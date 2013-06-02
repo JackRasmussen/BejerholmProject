@@ -48,6 +48,18 @@ public class Produkt {
         this.handler = new Handler();
     }
 
+    public Produkt(int produktID, String produktType, String produktNavn, int produktAntal, double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException, ClassNotFoundException, Exception {
+        this.produktID = produktID;
+        this.produktType = produktType;
+        this.produktNavn = produktNavn;
+        this.produktAntal = produktAntal;
+        this.salgsPris = salgsPris;
+        this.indkoebsPris = indkoebsPris;
+        this.maalX = maalX;
+        this.maalY = maalY;
+        this.handler = new Handler();
+    }
+
     /**
      * Denne metode kaldes fra constructoren og henter data fra databasen til at
      * sætte egenskaberne for det nuværende objekt af denne klasse. Hvis ikke
@@ -61,7 +73,7 @@ public class Produkt {
 
         if (rs.next()) {
             this.produktID = rs.getInt("produktID");
-            this.produktType = rs.getString("type");
+            this.produktType = rs.getString("produktType");
             this.produktAntal = rs.getInt("antal");
             this.salgsPris = rs.getDouble("salgsPris");
             this.indkoebsPris = rs.getDouble("indkoebsPris");
@@ -175,6 +187,20 @@ public class Produkt {
             produktListe.add(produkt);
         }
         return produktListe;
+    }
+
+    public ArrayList<Produkt> soegEfterProdukt(String soegeString) throws SQLException, ClassNotFoundException, Exception {
+        ArrayList<Produkt> resultatListe = new ArrayList<>();
+        ResultSet rs = handler.hentListeAfProdukterFraDatabase();
+        while (rs.next()) {
+            if (rs.getString("produktNavn").contains(soegeString)) {
+                Produkt produkt = new Produkt(rs.getInt("produktID"), rs.getString("produktType"),
+                        rs.getString("produktNavn"), rs.getInt("antal"), rs.getDouble("salgsPris"),
+                        rs.getDouble("indkoebsPris"), rs.getDouble("maalX"), rs.getDouble("maalY"));
+                resultatListe.add(produkt);
+            }
+        }
+        return resultatListe;
     }
 
     public int getProduktID() {

@@ -33,7 +33,7 @@
                       <Component id="soegeKnap" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="indsaetProduktIOrdreKnap" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="630" max="32767" attributes="0"/>
+                      <EmptySpace pref="598" max="32767" attributes="0"/>
                       <Component id="fortsaetKnap" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -69,6 +69,10 @@
     </Component>
     <Container class="javax.swing.JScrollPane" name="produktListe">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ee" green="ee" red="ee" type="rgb"/>
+        </Property>
+        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
         <Property name="verticalScrollBarPolicy" type="int" value="22"/>
       </Properties>
 
@@ -103,7 +107,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="fortsaetKnap">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Videre"/>
+        <Property name="text" type="java.lang.String" value="Spring over"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fortsaetKnapActionPerformed"/>
