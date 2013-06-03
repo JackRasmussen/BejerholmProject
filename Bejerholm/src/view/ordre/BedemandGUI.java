@@ -3,6 +3,7 @@ package view.ordre;
 import control.Controller;
 import java.awt.event.KeyEvent;
 import java.util.regex.Pattern;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import view.OrdreGUI;
 
@@ -176,7 +177,7 @@ public class BedemandGUI extends javax.swing.JPanel {
                 && !"".equals(byFelt.getText())
                 && soegBedemandFelt.getText().length() == 8
                 && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())) {
-            
+
             Controller controller = new Controller();
             int tlfNr = Integer.parseInt(soegBedemandFelt.getText());
             String fNavn = fNavnFelt.getText();
@@ -185,7 +186,7 @@ public class BedemandGUI extends javax.swing.JPanel {
             String byNavn = byFelt.getText();
             controller.redigerBedemand(tlfNr, fNavn, adresse, byNavn, postNr);
 
-            ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
+            ordreGUI.skiftOrdrePanel("ProduktGUI");
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
@@ -217,7 +218,7 @@ public class BedemandGUI extends javax.swing.JPanel {
                 && soegBedemandFelt.getText().length() == 8
                 && !Pattern.matches("[a-zA-Z]+", soegBedemandFelt.getText())
                 && !Pattern.matches("[a-zA-Z]+", postFelt.getText())) {
-            
+
             Controller controller = new Controller();
             int tlfNr = Integer.parseInt(soegBedemandFelt.getText());
             String fNavn = fNavnFelt.getText();
@@ -226,7 +227,7 @@ public class BedemandGUI extends javax.swing.JPanel {
             String byNavn = byFelt.getText();
             controller.gemBedemandTilDatabase(tlfNr, fNavn, adresse, byNavn, postNr);
 
-            ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
+            ordreGUI.skiftOrdrePanel("ProduktGUI");
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
@@ -293,5 +294,9 @@ public class BedemandGUI extends javax.swing.JPanel {
         this.adressFelt.setText(adresse);
         this.postFelt.setText(postNr + "");
         this.byFelt.setText(byNavn);
+    }
+
+    public int getBedemandTlfNr() {
+        return Integer.parseInt(soegBedemandFelt.getText());
     }
 }

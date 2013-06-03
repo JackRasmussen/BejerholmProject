@@ -425,10 +425,26 @@ public class Controller {
         }
     }
 
-    public void connIndsaetKirkegaardsOrdreTilDatabase(int kirkegaardsID, boolean urne_Kiste, int raekke, int nummer, String afdeling, int ordreID) {
+    public void connIndsaetKirkegaardsOrdreTilDatabase(boolean urne_Kiste, int raekke, int nummer,
+            String afdeling, int bedemandTlf, Date bestillingsDatoUdenSQL, Date leveringsDatoUdenSQL,
+            String skrifttype, int skriftStoerrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger,
+            double totalPris, double rabat, int tlfNr, ArrayList<ProduktTilListe> listeAfProdukterIOrdre,
+            ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre) {
+
+        int status = 0;
         try {
-            KirkegaardsOrdre ordre = new KirkegaardsOrdre(kirkegaardsID);
-            ordre.indsaetKirkegaardsOrdreTilDatabase(urne_Kiste, raekke, nummer, afdeling, ordreID);
+            java.sql.Date bestillingsDato = new java.sql.Date(bestillingsDatoUdenSQL.getTime());
+            java.sql.Date leveringsDato = new java.sql.Date(leveringsDatoUdenSQL.getTime());
+            Ordre ordre = new Ordre(status, bestillingsDato, leveringsDato, skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, tlfNr);
+            ordre.gemOrdreIDatabase();
+            for (ProduktTilListe produktTilListe : listeAfProdukterIOrdre) {
+                connIndsaetProduktTilOrdre(ordre.getOrdreID(), produktTilListe.getProduktID(), 1);
+            }
+            for (TilfojelseTilListe tilfojelseTilListe : listeAfTilfoejelserTilOrdre) {
+                connIndsaetTilfoejelseTilOrdre(ordre.getOrdreID(), tilfojelseTilListe.getTilfoejelsesID(), 1);
+            }
+            KirkegaardsOrdre kOrdre = new KirkegaardsOrdre();
+            kOrdre.indsaetKirkegaardsOrdreTilDatabase(urne_Kiste, raekke, nummer, afdeling, ordre.getOrdreID(), bedemandTlf);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

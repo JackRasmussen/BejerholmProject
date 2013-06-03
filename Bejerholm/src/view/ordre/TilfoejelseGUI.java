@@ -129,7 +129,11 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_soegeKnapActionPerformed
 
     private void fortsaetKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fortsaetKnapActionPerformed
-        ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
+        if (ordreGUI.isKirkegaardsOrdre()) {
+            ordreGUI.skiftOrdrePanel("KirkegaardGUI");
+        } else {
+            ordreGUI.skiftOrdrePanel("BestillingsOrdreGUI");
+        }
     }//GEN-LAST:event_fortsaetKnapActionPerformed
 
     private void indsaetProduktIOrdreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indsaetProduktIOrdreKnapActionPerformed

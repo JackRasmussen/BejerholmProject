@@ -81,7 +81,7 @@ public class Handler {
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
-    
+
     public ResultSet findProduktViaID(int produktID) throws SQLException {
         String command = ("select * from Produkt where produktID = " + produktID + ";");
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
@@ -204,9 +204,13 @@ public class Handler {
         return rs;
     }
 
-    public void indsaetKirkegaardsOrdreIDatabase(int kirkegaardsID, boolean urne_Kiste, int raekke, int nummer, String afdeling, int ordreID) throws SQLException {
-        String command = ("insert into KirkegaardsOrdre(kirkegaardsID, urne_Kiste, raekke, nummer, afdeling, ordreID) "
-                + "values (" + kirkegaardsID + ", " + urne_Kiste + ", " + raekke + ", " + nummer + ", '" + afdeling + "', " + ordreID + ");");
+    public void indsaetKirkegaardsOrdreIDatabase(boolean urne_Kiste, int raekke, int nummer, String afdeling, int ordreID, int bedemandTlfNr) throws SQLException {
+        String commandToGetID = "select max(kirkegaardsID) from KirkegaardsOrdre";
+        ResultSet rs = DBConnection.getResultSetWithCommand(commandToGetID);
+        rs.next();
+        int kirkegaardsID = rs.getInt("MAX(kirkegaardsID)") + 1;
+        String command = ("insert into KirkegaardsOrdre(kirkegaardsID, urne_Kiste, raekke, nummer, afdeling, ordreID, bedemandTlfNr) "
+                + "values (" + kirkegaardsID + ", " + urne_Kiste + ", " + raekke + ", " + nummer + ", '" + afdeling + "', " + ordreID + ", " + bedemandTlfNr + ");");
         DBConnection.execute(command);
     }
 
@@ -227,10 +231,10 @@ public class Handler {
     }
 
     public void redigerOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato,
-            String skrifttype, int skriftstørroelse, int skriftStil, String inskriptionsLinje, String bemaerkninger, double totalPris,
+            String skrifttype, int skriftstoerroelse, int skriftStil, String inskriptionsLinje, String bemaerkninger, double totalPris,
             double moms, double rabat, double miljoe_Afgift) throws SQLException {
         String command = ("update Ordre set status = " + status + ", bestillingsDato = " + bestillingsDato
-                + ", leveringsDato = " + leveringsDato + ", skriftType = '" + skrifttype + "', skriftStil = '"
+                + ", leveringsDato = " + leveringsDato + ", skriftType = '" + skrifttype + ", skriftStoerrelse = " + skriftstoerroelse + "', skriftStil = '"
                 + skriftStil + "', inskriptionsLinje = '" + inskriptionsLinje + "', bemaerkninger = '" + bemaerkninger + "', totalPris = " + totalPris
                 + ", moms = " + moms + ", rabat = " + rabat + ", miljoeAfgift = " + miljoe_Afgift + " where ordreID = " + ordreID + ";");
         DBConnection.execute(command);
@@ -250,7 +254,7 @@ public class Handler {
                 + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ", " + tlfNr + ");");
         System.out.println(command);
         DBConnection.execute(command);
-        
+
         return ordreID;
     }
 

@@ -23,6 +23,10 @@ public class KirkegaardsOrdre {
         hentKirkegaardsOrdre();
     }
 
+    public KirkegaardsOrdre() throws SQLException, ClassNotFoundException, Exception {
+        this.handler = new Handler();
+    }
+
     /**
      * Denne metode kaldes fra constructoren, og forsøger at hente egenskaber ud
      * fra databasen vha det givne id objektet af denne klasse har i øjeblikket.
@@ -61,13 +65,12 @@ public class KirkegaardsOrdre {
      * @param ordreID
      * @throws SQLException
      */
-    public void indsaetKirkegaardsOrdreTilDatabase(boolean urne_Kiste, int raekke, int nummer, String afdeling, int ordreID) throws SQLException {
+    public void indsaetKirkegaardsOrdreTilDatabase(boolean urne_Kiste, int raekke, int nummer, String afdeling, int ordreID, int bedemandTlf) throws SQLException {
         this.urne_Kiste = urne_Kiste;
         this.raekke = raekke;
         this.nummer = nummer;
         this.afdeling = afdeling;
-        this.ordreID = ordreID;
-        handler.indsaetKirkegaardsOrdreIDatabase(kirkegaardsID, urne_Kiste, raekke, nummer, afdeling, ordreID);
+        handler.indsaetKirkegaardsOrdreIDatabase(urne_Kiste, raekke, nummer, afdeling, ordreID, bedemandTlf);
     }
 
     /**
