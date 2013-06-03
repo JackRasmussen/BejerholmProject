@@ -252,7 +252,6 @@ public class Handler {
                 + "values (" + ordreID + ", " + status + ", '" + bestillingsDato + "', '" + leveringsDato + "', '"
                 + skrifttype + "', " + skriftstoerrelse + ", '" + skriftStil + "', '" + inskriptionsLinje + "', '" + bemaerkninger + "', "
                 + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ", " + tlfNr + ");");
-        System.out.println(command);
         DBConnection.execute(command);
 
         return ordreID;
