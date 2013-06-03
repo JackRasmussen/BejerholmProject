@@ -49,6 +49,9 @@ public class OrdreGUI extends javax.swing.JPanel {
 
     public void skiftOrdrePanel(String jp) {
         ((CardLayout) cardsOrdre.getLayout()).show(cardsOrdre, jp);
+        if (jp.equals("BestillingsOrdreGUI")) {
+            bog.opdaterPris();
+        }
     }
 
     /**
@@ -183,4 +186,20 @@ public class OrdreGUI extends javax.swing.JPanel {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     // End of variables declaration//GEN-END:variables
+
+    public KundeGUI getKundeGUI() {
+        return kg;
+    }
+
+    public BedemandGUI getBedemandGUI() {
+        return beg;
+    }
+
+    public ProduktGUI getProduktGUI() {
+        return pdg;
+    }
+
+    public TilfoejelseGUI getTilfoejelseGUI() {
+        return tfg;
+    }
 }

@@ -86,4 +86,14 @@ public class TilfojelseTilListe extends javax.swing.JPanel {
     private javax.swing.JLabel tilfoejelsesID;
     private javax.swing.JLabel tilfoejelsesNavn;
     // End of variables declaration//GEN-END:variables
+
+    public double getPris(){
+        double pris = Double.parseDouble(salgsPris.getText());
+        return pris;
+    }
+    
+    public int getTilfoejelsesID(){
+        int tilfoejelsesIDNr = Integer.parseInt(tilfoejelsesID.getText());
+        return tilfoejelsesIDNr;
+    }
 }

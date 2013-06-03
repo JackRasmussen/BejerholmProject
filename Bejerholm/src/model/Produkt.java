@@ -42,6 +42,20 @@ public class Produkt {
     }
 
     /**
+     * Denne constructor skaber et nyt objekt af denne klasse og parametre fra
+     * databasen efter inputtet denne constructor modtager.
+     * @param produktID
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws Exception 
+     */
+    public Produkt(int produktID) throws SQLException, ClassNotFoundException, Exception {
+        this.handler = new Handler();
+        this.produktID = produktID;
+        findProduktViaID();
+    }
+
+    /**
      * <strong> Warning: BRUG KUN DENNE CONSTRUCTOR TIL HENTLISTE!! <strong>
      */
     public Produkt() throws SQLException, ClassNotFoundException, Exception {
@@ -81,6 +95,28 @@ public class Produkt {
             this.maalY = rs.getDouble("maalY");
         } else {
             this.produktID = 0;
+            this.produktType = "Produkt findes ikke";
+            this.produktAntal = 0;
+            this.salgsPris = 0;
+            this.indkoebsPris = 0;
+            this.maalX = 0;
+            this.maalY = 0;
+        }
+    }
+    
+    private void findProduktViaID() throws SQLException{
+        ResultSet rs = handler.findProduktViaID(produktID);
+        
+        if (rs.next()) {
+            this.produktNavn = rs.getString("produktNavn");
+            this.produktType = rs.getString("produktType");
+            this.produktAntal = rs.getInt("antal");
+            this.salgsPris = rs.getDouble("salgsPris");
+            this.indkoebsPris = rs.getDouble("indkoebsPris");
+            this.maalX = rs.getDouble("maalX");
+            this.maalY = rs.getDouble("maalY");
+        } else {
+            this.produktNavn = "Produkt findes ikke";
             this.produktType = "Produkt findes ikke";
             this.produktAntal = 0;
             this.salgsPris = 0;

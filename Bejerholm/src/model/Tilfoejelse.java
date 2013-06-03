@@ -62,7 +62,7 @@ public class Tilfoejelse {
     private void hentTilfoejelsesInfo() throws SQLException {
         ResultSet rs = handler.hentTilfoejelseFraDatabase(tilfoejelsesID);
         if (rs.next()) {
-            this.tilfoejelsesType = rs.getString("tilfoejelsesType");
+            this.tilfoejelsesType = rs.getString("opgaveType");
             this.tilfoejelsesPris = rs.getDouble("pris");
         } else {
             this.tilfoejelsesType = "Tilfoejelse findes ikke";

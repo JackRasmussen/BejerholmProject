@@ -332,7 +332,6 @@ public class KundeGUI extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_adressFeltFocusGained
 
-
     private void byFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_byFeltFocusGained
         if (byFelt.getText().equals("Kunde findes ikke")) {
             byFelt.setText("");
@@ -376,7 +375,6 @@ public class KundeGUI extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
     }//GEN-LAST:event_bedemandKnapActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
     private javax.swing.JLabel adressLabel;
@@ -413,6 +411,11 @@ public class KundeGUI extends javax.swing.JPanel {
 
     public JButton getVidereKnap() {
         return videreKnap;
+    }
+
+    public int getKundeTelefonNr() {
+        int telefonNr = Integer.parseInt(soegKundeFelt.getText());
+        return telefonNr;
     }
 
     public JTextField getAdressFelt() {

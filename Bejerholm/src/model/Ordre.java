@@ -4,9 +4,9 @@
  */
 package model;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import model.database.Handler;
 
 /**
@@ -27,15 +27,38 @@ public class Ordre {
     private double totalPris;
     private double rabat;
     private int tlfNr;
-    private int bedemandCvr;
     private Handler handler;
     private final double MOMS = 25;
     private final double MILJOE_AFGIFT = 2.5;
 
+    /**
+     * Denne Constructor bruges til at hente en ordre fra db, og sætte dette
+     * objekts egenskaber derefter.
+     *
+     * @param ordreID
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws Exception
+     */
     public Ordre(int ordreID) throws SQLException, ClassNotFoundException, Exception {
         this.ordreID = ordreID;
         handler = new Handler();
         hentOrdreFraDatabase();
+    }
+
+    public Ordre(int status, Date bestillingsDato, Date leveringsDato, String skrifttype, int skriftStoerrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger, double totalPris, double rabat, int tlfNr) throws SQLException, ClassNotFoundException, Exception {
+        this.status = status;
+        this.bestillingsDato = bestillingsDato;
+        this.leveringsDato = leveringsDato;
+        this.skrifttype = skrifttype;
+        this.skriftStoerrelse = skriftStoerrelse;
+        this.skriftStil = skriftStil;
+        this.inskriptionsLinje = inskriptionsLinje;
+        this.bemaerkninger = bemaerkninger;
+        this.totalPris = totalPris;
+        this.rabat = rabat;
+        this.tlfNr = tlfNr;
+        this.handler = new Handler();
     }
 
     /**
@@ -49,7 +72,7 @@ public class Ordre {
     private void hentOrdreFraDatabase() throws SQLException {
         ResultSet rs = handler.hentOrdreFraDatabase(ordreID);
         if (rs.next()) {
-            this.status = rs.getInt("status");
+            this.status = rs.getInt("ordreStatus");
             this.bestillingsDato = rs.getDate("bestillingsDato");
             this.leveringsDato = rs.getDate("leveringsDato");
             this.skrifttype = rs.getString("skriftType");
@@ -60,7 +83,6 @@ public class Ordre {
             this.totalPris = rs.getDouble("totalPris");
             this.rabat = rs.getDouble("rabat");
             this.tlfNr = rs.getInt("tlfNr");
-            this.bedemandCvr = rs.getInt("bedemandCvr");
         } else {
             this.status = 0;
             this.bestillingsDato = null;
@@ -73,14 +95,12 @@ public class Ordre {
             this.totalPris = 0;
             this.rabat = 0;
             this.tlfNr = 0;
-            this.bedemandCvr = 0;
         }
     }
 
     /**
-     * Denne metode indsætter en ny record i databasen ud fra de givne input
-     * metoden modtager og sætter samtidig egenskaberne for det nuværende objekt
-     * af denne klasse.
+     * Denne metode indsætter en ny record i databasen ud fra dette objekts
+     * egenskaber.
      *
      * @param status
      * @param bestillingsDato
@@ -92,26 +112,12 @@ public class Ordre {
      * @param totalPris
      * @param rabat
      * @param tlfNr
-     * @param bedemandCvr
      * @throws SQLException
      */
-    public void gemOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
-            String skrifttype, int skriftstørrelse, int skriftStil, String inskriptionsLinje, String bemærkninger,
-            double totalPris, double rabat, int tlfNr, int bedemandCvr) throws SQLException {
-        this.status = status;
-        this.bestillingsDato = bestillingsDato;
-        this.leveringsDato = leveringsDato;
-        this.skrifttype = skrifttype;
-        this.skriftStoerrelse = skriftstørrelse;
-        this.skriftStil = skriftStil;
-        this.inskriptionsLinje = inskriptionsLinje;
-        this.bemaerkninger = bemærkninger;
-        this.totalPris = totalPris;
-        this.rabat = rabat;
-        this.tlfNr = tlfNr;
-        this.bedemandCvr = bedemandCvr;
-        handler.indsaetOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
-                skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT, tlfNr, bedemandCvr);
+    public void gemOrdreIDatabase() throws SQLException {
+        this.ordreID = handler.indsaetOrdreIDatabase(status, bestillingsDato, leveringsDato,
+                skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje,
+                bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT, tlfNr);
     }
 
     /**
@@ -126,6 +132,21 @@ public class Ordre {
     public void indsaetProduktTilOrdre(Produkt produktAtIndsaette, int antal) throws SQLException {
         if (ordreID != 0) {
             handler.indsaetProduktOrdreData(ordreID, produktAtIndsaette.getProduktID(), antal);
+        }
+    }
+
+    /**
+     * Denne metode indsætter en tilføjelse til Ordre_Tilfoejelse tabellen i
+     * databasen ud fra det givne input. Den modtager i samme omgang et objekt
+     * af Produkt til at indsætte produktID fra.
+     *
+     * @param tilfoejelseAtIndsaette
+     * @param antal
+     * @throws SQLException
+     */
+    public void indsaetTilfoejelseTilOrdre(Tilfoejelse tilfoejelseAtIndsaette, int antal) throws SQLException {
+        if (ordreID != 0) {
+            handler.indsaetOrdreTilfoejelseData(ordreID, tilfoejelseAtIndsaette.getTilfoejelsesID(), antal);
         }
     }
 
@@ -205,7 +226,7 @@ public class Ordre {
     public String getInskriptionsLinje() {
         return inskriptionsLinje;
     }
-    
+
     public String getBemaerkninger() {
         return bemaerkninger;
     }
@@ -220,9 +241,5 @@ public class Ordre {
 
     public int getTlfNr() {
         return tlfNr;
-    }
-
-    public int getBedemandCvr() {
-        return bedemandCvr;
     }
 }

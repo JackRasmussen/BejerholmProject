@@ -23,10 +23,6 @@ public class ProduktTilListe extends javax.swing.JPanel {
         this.salgsPris.setText(salgsPris + "");
     }
 
-    public JLabel getProduktID() {
-        return produktID;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -123,4 +119,12 @@ public class ProduktTilListe extends javax.swing.JPanel {
     private javax.swing.JLabel produktType;
     private javax.swing.JLabel salgsPris;
     // End of variables declaration//GEN-END:variables
+
+    public double getSalgsPris() {
+        return Double.parseDouble(salgsPris.getText());
+    }
+    
+    public int getProduktID(){
+        return Integer.parseInt(produktID.getText());
+    }
 }

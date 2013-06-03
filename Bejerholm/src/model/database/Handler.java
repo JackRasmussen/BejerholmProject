@@ -1,9 +1,9 @@
 package model.database;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 
 public class Handler {
 
@@ -81,6 +81,12 @@ public class Handler {
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
+    
+    public ResultSet findProduktViaID(int produktID) throws SQLException {
+        String command = ("select * from Produkt where produktID = " + produktID + ";");
+        ResultSet rs = DBConnection.getResultSetWithCommand(command);
+        return rs;
+    }
 
     public ResultSet hentListeAfProdukterFraDatabase() throws SQLException {
         String command = ("select * from Produkt");
@@ -134,7 +140,7 @@ public class Handler {
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
         return rs;
     }
-    
+
     public ResultSet hentListeAfTilfoejelser() throws SQLException {
         String command = "select * from Tilfoejelse";
         ResultSet rs = DBConnection.getResultSetWithCommand(command);
@@ -230,15 +236,22 @@ public class Handler {
         DBConnection.execute(command);
     }
 
-    public void indsaetOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato,
+    public int indsaetOrdreIDatabase(int status, Date bestillingsDato, Date leveringsDato,
             String skrifttype, int skriftstoerrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger, double totalPris,
-            double moms, double rabat, double miljoe_Afgift, int tlfNr, int bedemandCvr) throws SQLException {
-        String command = ("insert into Ordre (ordreID, status, bestillingsDato, leveringsDato, skriftType,"
-                + " skriftStoerrselse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, moms, rabat, miljoeAfgift, tlfNr, bedemandCvr) "
-                + "values (" + ordreID + ", " + status + ", " + bestillingsDato + ", " + leveringsDato + ", '"
-                + skrifttype + "', " + skriftstoerrelse + ", " + skriftStil + "', '" + inskriptionsLinje + "', '" + bemaerkninger + "', "
-                + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ", " + tlfNr + ", " + bedemandCvr + ");");
+            double moms, double rabat, double miljoe_Afgift, int tlfNr) throws SQLException {
+        String commandToGetID = ("select max(ordreID) from Ordre");
+        ResultSet rs = DBConnection.getResultSetWithCommand(commandToGetID);
+        rs.next();
+        int ordreID = rs.getInt("MAX(ordreID)") + 1;
+        String command = ("insert into Ordre (ordreID, ordreStatus, bestillingsDato, leveringsDato, skrifttype,"
+                + " skriftstoerrelse, skriftstil, inskriptionsLinje, bemaerkninger, totalPris, moms, rabat, miljoeAfgift, tlfNr) "
+                + "values (" + ordreID + ", " + status + ", '" + bestillingsDato + "', '" + leveringsDato + "', '"
+                + skrifttype + "', " + skriftstoerrelse + ", '" + skriftStil + "', '" + inskriptionsLinje + "', '" + bemaerkninger + "', "
+                + totalPris + ", " + moms + ", " + rabat + ", " + miljoe_Afgift + ", " + tlfNr + ");");
+        System.out.println(command);
         DBConnection.execute(command);
+        
+        return ordreID;
     }
 
     public void indsaetProduktOrdreData(int ordreID, int produktID, int maengde) throws SQLException {

@@ -23,7 +23,9 @@ import view.BejerholmGUI;
 import view.ordre.BedemandGUI;
 import view.ordre.KundeGUI;
 import view.ordre.ProduktGUI;
+import view.ordre.ProduktTilListe;
 import view.ordre.TilfoejelseGUI;
+import view.ordre.TilfojelseTilListe;
 
 /**
  *
@@ -268,12 +270,22 @@ public class Controller {
         }
     }
 
-    public void connGemOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato,
-            String skrifttype, int skriftstørrelse, int skriftStil, String inskriptionsLinje, String bemærkninger,
-            double totalPris, double rabat, int tlfNr, int bedemandCvr) {
+    public void connGemOrdreIDatabase(Date bestillingsDatoUdenSQL, Date leveringsDatoUdenSQL,
+            String skrifttype, int skriftStoerrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger,
+            double totalPris, double rabat, int tlfNr, ArrayList<ProduktTilListe> listeAfProdukterIOrdre,
+            ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre) {
+        int status = 0;
         try {
-            Ordre ordre = new Ordre(ordreID);
-            ordre.gemOrdreIDatabase(status, bestillingsDato, leveringsDato, skrifttype, skriftstørrelse, skriftStil, inskriptionsLinje, bemærkninger, totalPris, rabat, tlfNr, bedemandCvr);
+            java.sql.Date bestillingsDato = new java.sql.Date(bestillingsDatoUdenSQL.getTime());
+            java.sql.Date leveringsDato = new java.sql.Date(leveringsDatoUdenSQL.getTime());
+            Ordre ordre = new Ordre(status, bestillingsDato, leveringsDato, skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, tlfNr);
+            ordre.gemOrdreIDatabase();
+            for (ProduktTilListe produktTilListe : listeAfProdukterIOrdre) {
+                connIndsaetProduktTilOrdre(ordre.getOrdreID(), produktTilListe.getProduktID(), 1);
+            }
+            for (TilfojelseTilListe tilfojelseTilListe : listeAfTilfoejelserTilOrdre) {
+                connIndsaetTilfoejelseTilOrdre(ordre.getOrdreID(), tilfojelseTilListe.getTilfoejelsesID(), 1);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -283,9 +295,10 @@ public class Controller {
         }
     }
 
-    public void connIndsaetProduktTilOrdre(int ordreID, Produkt produktAtIndsaette, int antal) {
+    private void connIndsaetProduktTilOrdre(int ordreID, int produktID, int antal) {
         try {
             Ordre ordre = new Ordre(ordreID);
+            Produkt produktAtIndsaette = new Produkt(produktID);
             ordre.indsaetProduktTilOrdre(produktAtIndsaette, antal);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
@@ -296,11 +309,27 @@ public class Controller {
         }
     }
 
-    public void connRedigerOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato,
+    private void connIndsaetTilfoejelseTilOrdre(int ordreID, int tilfoejelsesID, int antal) {
+        try {
+            Ordre ordre = new Ordre(ordreID);
+            Tilfoejelse tilfoejelseAtIndsaette = new Tilfoejelse(tilfoejelsesID);
+            ordre.indsaetTilfoejelseTilOrdre(tilfoejelseAtIndsaette, antal);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void connRedigerOrdreIDatabase(int ordreID, int status, Date bestillingsDatoUdenSQL, Date leveringsDatoUdenSQL,
             String skrifttype, int skriftstørrelse, int skriftStil, String inskriptionsLinje, String bemærkninger,
             double totalPris, double rabat) {
         try {
             Ordre ordre = new Ordre(ordreID);
+            java.sql.Date bestillingsDato = new java.sql.Date(bestillingsDatoUdenSQL.getTime());
+            java.sql.Date leveringsDato = new java.sql.Date(leveringsDatoUdenSQL.getTime());
             ordre.redigerOrdreIDatabase(status, bestillingsDato, leveringsDato, skrifttype, skriftstørrelse, skriftStil, inskriptionsLinje, bemærkninger, totalPris, rabat);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
@@ -516,9 +545,10 @@ public class Controller {
         }
     }
 
-    public void connIndsaetProvisionsSeddelIDatabase(int provisionsID, Date provisionsDato, int provisionsProcent, String beskrivelse, int ordreID) {
+    public void connIndsaetProvisionsSeddelIDatabase(int provisionsID, Date provisionsDatoUdenSQL, int provisionsProcent, String beskrivelse, int ordreID) {
         try {
             Provisionsseddel seddel = new Provisionsseddel(provisionsID);
+            java.sql.Date provisionsDato = new java.sql.Date(provisionsDatoUdenSQL.getTime());
             seddel.indsaetProvisionsSeddelIDatabase(provisionsDato, provisionsProcent, beskrivelse, ordreID);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
@@ -555,9 +585,10 @@ public class Controller {
         }
     }
 
-    public void connIndsaetKontoUdtogIDatabase(int kontoudtogsID, Date kontoudtogsDato, String ordreLinjePris, String ordreLinjeProv, int ordreID) {
+    public void connIndsaetKontoUdtogIDatabase(int kontoudtogsID, Date kontoudtogsDatoUdenSQL, String ordreLinjePris, String ordreLinjeProv, int ordreID) {
         try {
             Kontoudtog konto = new Kontoudtog(kontoudtogsID);
+            java.sql.Date kontoudtogsDato = new java.sql.Date(kontoudtogsDatoUdenSQL.getTime());
             konto.indsaetKontoUdtogIDatabase(kontoudtogsDato, ordreLinjePris, ordreLinjeProv, ordreID);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
@@ -594,9 +625,10 @@ public class Controller {
         }
     }
 
-    public void connIndsaetFakturaIDatabase(int fakturaNr, Date fakturaDato, String bankOplysninger, int ordreID) {
+    public void connIndsaetFakturaIDatabase(int fakturaNr, Date fakturaDatoUdenSQL, String bankOplysninger, int ordreID) {
         try {
             Faktura faktura = new Faktura(fakturaNr);
+            java.sql.Date fakturaDato = new java.sql.Date(fakturaDatoUdenSQL.getTime());
             faktura.indsaetFakturaIDatabase(fakturaDato, bankOplysninger, ordreID);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
