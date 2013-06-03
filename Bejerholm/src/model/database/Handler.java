@@ -153,10 +153,16 @@ public class Handler {
         return rs;
     }
 
-    public void indsaetFakturaIDatabase(int fakturaNr, Date fakturaDato, String vedroerende, String bankOplysninger, int ordreID) throws SQLException {
+    public int indsaetFakturaIDatabase(Date fakturaDato, String vedroerende, String bankOplysninger, int ordreID) throws SQLException {
+        String commandToGetID = ("select max(faktureringsNr) from Faktura");
+        ResultSet rs = DBConnection.getResultSetWithCommand(commandToGetID);
+        rs.next();
+        int fakturaNr = rs.getInt("MAX(faktureringsNr)") + 1;
+        
         String command = ("insert into Faktura (faktureringsNr, faktureringsDato, vedroerende, bankOplysninger, ordreID) "
-                + "values (" + fakturaNr + ", " + fakturaDato + ", '" + vedroerende + "', '" + bankOplysninger + "', " + ordreID + ");");
+                + "values (" + fakturaNr + ", '" + fakturaDato + "', '" + vedroerende + "', '" + bankOplysninger + "', " + ordreID + ");");
         DBConnection.execute(command);
+        return fakturaNr;
     }
 
     public void sletFakturaFraDatabase(int fakturaNr) throws SQLException {
@@ -233,8 +239,8 @@ public class Handler {
     public void redigerOrdreIDatabase(int ordreID, int status, Date bestillingsDato, Date leveringsDato,
             String skrifttype, int skriftstoerroelse, int skriftStil, String inskriptionsLinje, String bemaerkninger, double totalPris,
             double moms, double rabat, double miljoe_Afgift) throws SQLException {
-        String command = ("update Ordre set status = " + status + ", bestillingsDato = " + bestillingsDato
-                + ", leveringsDato = " + leveringsDato + ", skriftType = '" + skrifttype + ", skriftStoerrelse = " + skriftstoerroelse + "', skriftStil = '"
+        String command = ("update Ordre set ordreStatus = " + status + ", bestillingsDato = '" + bestillingsDato
+                + "', leveringsDato = '" + leveringsDato + "', skriftType = '" + skrifttype + "', skriftStoerrelse = " + skriftstoerroelse + ", skriftStil = '"
                 + skriftStil + "', inskriptionsLinje = '" + inskriptionsLinje + "', bemaerkninger = '" + bemaerkninger + "', totalPris = " + totalPris
                 + ", moms = " + moms + ", rabat = " + rabat + ", miljoeAfgift = " + miljoe_Afgift + " where ordreID = " + ordreID + ";");
         DBConnection.execute(command);

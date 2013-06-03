@@ -1,7 +1,8 @@
 package view;
 
-import com.apple.jobjc.JObjC;
 import control.Controller;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -10,9 +11,19 @@ import javax.swing.JOptionPane;
  * @author Dan-Philip Christensen
  */
 public class OrdreRedigering extends javax.swing.JPanel {
+    
+    private int year;
+    private int month;
+    private int day;
+    private Calendar cal;
 
     public OrdreRedigering() {
+        cal = Calendar.getInstance();
+        year = cal.get(Calendar.YEAR);
+        month = cal.get(Calendar.MONTH) + 1;
+        day = cal.get(Calendar.DAY_OF_MONTH);
         initComponents();
+        jTextField4.setText(day + "/" + month + "/" + year);
     }
 
     /**
@@ -29,12 +40,16 @@ public class OrdreRedigering extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(100, 100, 100));
 
@@ -54,8 +69,7 @@ public class OrdreRedigering extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Status: ");
 
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Bedemand tlf nr:");
+        jTextField2.setEditable(false);
 
         jButton2.setText("Sæt status");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +87,17 @@ public class OrdreRedigering extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bestilt", "Igangværende", "Færdiggjort", "Afsendt" }));
 
+        jTextField4.setEditable(false);
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Dags dato:");
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Bankoplysninger:");
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Vedrørende:");
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,13 +107,17 @@ public class OrdreRedigering extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel1)
                     .add(jLabel2)
-                    .add(jLabel4)
-                    .add(jLabel3))
+                    .add(jLabel3)
+                    .add(jLabel5)
+                    .add(jLabel6)
+                    .add(jLabel7))
                 .add(30, 30, 30)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jTextField6)
+                    .add(jTextField5)
+                    .add(jTextField4)
                     .add(jTextField1)
                     .add(jTextField2)
-                    .add(jTextField3)
                     .add(jComboBox1, 0, 175, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -97,7 +126,7 @@ public class OrdreRedigering extends javax.swing.JPanel {
                         .add(jButton2)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jButton3)))
-                .addContainerGap(613, Short.MAX_VALUE))
+                .addContainerGap(608, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -111,17 +140,25 @@ public class OrdreRedigering extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel2)
                     .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel4)
-                    .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
+                .add(28, 28, 28)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel3)
                     .add(jButton2)
                     .add(jButton3)
                     .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel5))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel6))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel7))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -129,7 +166,7 @@ public class OrdreRedigering extends javax.swing.JPanel {
         Controller controller = new Controller();
         if (!Pattern.matches("[a-zA-Z]+", jTextField1.getText())) {
             int ordreNr = Integer.parseInt(jTextField1.getText());
-            controller.connHentOrdreFraDatabase(ordreNr);
+            controller.connHentOrdreFraDatabase(this, ordreNr);
         } else {
             JOptionPane.showMessageDialog(this, "Ordre nummer felt må ikke være tomt eller indeholde bogstaver.", "Advarsel", JOptionPane.WARNING_MESSAGE);
         }
@@ -142,7 +179,14 @@ public class OrdreRedigering extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        Controller controller = new Controller();
+        int ordreNr = Integer.parseInt(jTextField1.getText());
+        int kundeTlfNr = Integer.parseInt(jTextField2.getText());
+        String bankOplysninger = jTextField5.getText();
+        String vedroerende = jTextField6.getText();
+        Date dato = cal.getTime();
+        
+        controller.connIndsaetFakturaIDatabase(this, dato, bankOplysninger, ordreNr, vedroerende);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -153,15 +197,26 @@ public class OrdreRedigering extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 
-    public void setFelter(int kundeTlf, int bedemandTlf, int status) {
+    public void setFelter(int kundeTlf, int status) {
         jTextField2.setText(kundeTlf + "");
-        jTextField3.setText(bedemandTlf + "");
         jComboBox1.setSelectedIndex(status);
+    }
+    
+    public void fortaelBrugerFakturaNr(int fakturaNr){
+        JOptionPane.showMessageDialog(this, "Faktura oprettet med faktura nr: " + fakturaNr);
+    }
+    
+    public int getKundeTlfNr(){
+        return Integer.parseInt(jTextField2.getText());
     }
 }

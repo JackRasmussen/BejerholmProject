@@ -4,6 +4,7 @@ import control.Controller;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import view.OrdreGUI;
 
 /**
@@ -11,7 +12,7 @@ import view.OrdreGUI;
  * @author TheToiletpaper
  */
 public class BestillingsOrdreGUI extends javax.swing.JPanel {
-    
+
     OrdreGUI ordreGUI;
     private Calendar dato;
     private Calendar deliveryDato;
@@ -21,7 +22,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     private int yearDelivery;
     private int monthDelivery;
     private int dayDelivery;
-    
+
     public BestillingsOrdreGUI(OrdreGUI org) {
         this.ordreGUI = org;
         dato = Calendar.getInstance();
@@ -33,13 +34,13 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         yearDelivery = deliveryDato.get(Calendar.YEAR);
         monthDelivery = deliveryDato.get(Calendar.MONTH) + 1;
         dayDelivery = deliveryDato.get(Calendar.DAY_OF_MONTH);
-        
+
         initComponents();
-        
+
         jTextField5.setText(day + " / " + month + " / " + year);
         jTextField3.setText(dayDelivery + " / " + monthDelivery + " / " + yearDelivery);
     }
-    
+
     public void opdaterPris() {
         double totalPris = 0;
         double inskriptionsPris = 0;
@@ -63,6 +64,10 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jTextField2.setText(totalPris + "");
         double prisMedMoms = totalPris + ((totalPris / 100) * 25);
         jTextField9.setText(prisMedMoms + "");
+    }
+
+    public void fortaelBrugerAtOrdreOprettet(int ordreNr) {
+        JOptionPane.showMessageDialog(this, "Ordre oprette med ordre nr: " + ordreNr);
     }
 
     /**
@@ -238,7 +243,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jTextField1.setText(length + "");
         opdaterPris();
     }//GEN-LAST:event_jTextArea1KeyReleased
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Controller controller = new Controller();
         Date bestilling = dato.getTime();
@@ -251,11 +256,11 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         double totalPris = Double.parseDouble(jTextField2.getText());
         double rabat = Double.parseDouble(jTextField4.getText());
         int kundeTlf = ordreGUI.getKundeGUI().getKundeTelefonNr();
-        
+
         ArrayList<ProduktTilListe> ptl = ordreGUI.getProduktGUI().getListeAfProdukterTilOrdre();
         ArrayList<TilfojelseTilListe> tfl = ordreGUI.getTilfoejelseGUI().getListeAfTilfoejelserTilOrdre();
-        
-        controller.connGemOrdreIDatabase(bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl);
+
+        controller.connGemOrdreIDatabase(bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl, this);
 
     }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables

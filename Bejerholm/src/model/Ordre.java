@@ -192,7 +192,7 @@ public class Ordre {
     public void saetOrdreStatus(int status) throws SQLException {
         this.status = status;
         handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, leveringsDato,
-                skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, totalPris);
+                skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, MILJOE_AFGIFT);
     }
 
     public int getOrdreID() {

@@ -15,6 +15,7 @@ public class BejerholmGUI extends javax.swing.JPanel {
     LogPaaGUI lpg = new LogPaaGUI(this);
     AdminGUI adg = new AdminGUI();
     LagerGUI lag = new LagerGUI();
+    OrdreRedigering orrg = new OrdreRedigering();
 
     public BejerholmGUI() {
         initComponents();
@@ -22,15 +23,18 @@ public class BejerholmGUI extends javax.swing.JPanel {
         cards.add(lpg);
         cards.add(adg);
         cards.add(lag);
+        cards.add(orrg);
         lager.setVisible(false);
         admin.setVisible(false);
         ordre.setVisible(false);
         logaf.setVisible(false);
+        faktura.setVisible(false);
 
         ((CardLayout) cards.getLayout()).addLayoutComponent(org, "OrdreGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(lpg, "LogPaaGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(adg, "AdminGUI");
         ((CardLayout) cards.getLayout()).addLayoutComponent(lag, "LagerGUI");
+        ((CardLayout) cards.getLayout()).addLayoutComponent(orrg, "OrdreRedigering");
         skiftPanel("LogPaaGUI");
     }
 
@@ -55,6 +59,7 @@ public class BejerholmGUI extends javax.swing.JPanel {
         admin = new javax.swing.JButton();
         logaf = new javax.swing.JButton();
         lager = new javax.swing.JButton();
+        faktura = new javax.swing.JButton();
         cards = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(100, 100, 100));
@@ -113,11 +118,11 @@ public class BejerholmGUI extends javax.swing.JPanel {
         logaf.setToolTipText("");
         logaf.setBorderPainted(false);
         logaf.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                logafMouseEntered(evt);
-            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 logafMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                logafMouseEntered(evt);
             }
         });
         logaf.addActionListener(new java.awt.event.ActionListener() {
@@ -146,6 +151,26 @@ public class BejerholmGUI extends javax.swing.JPanel {
             }
         });
 
+        faktura.setBackground(new java.awt.Color(136, 23, 6));
+        faktura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        faktura.setForeground(new java.awt.Color(255, 255, 255));
+        faktura.setText("Rediger ordre");
+        faktura.setToolTipText("");
+        faktura.setBorderPainted(false);
+        faktura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                fakturaMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                fakturaMouseEntered(evt);
+            }
+        });
+        faktura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fakturaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -157,7 +182,9 @@ public class BejerholmGUI extends javax.swing.JPanel {
                 .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75)
                 .addComponent(lager, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(550, 550, 550)
+                .addGap(75, 75, 75)
+                .addComponent(faktura)
+                .addGap(353, 353, 353)
                 .addComponent(logaf, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -169,7 +196,8 @@ public class BejerholmGUI extends javax.swing.JPanel {
                     .addComponent(logaf, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lager, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lager, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(faktura, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 129, Short.MAX_VALUE))
         );
 
@@ -180,7 +208,7 @@ public class BejerholmGUI extends javax.swing.JPanel {
             .addGroup(topBilledeLayout.createSequentialGroup()
                 .addGap(84, 84, 84)
                 .addComponent(jLabel1)
-                .addContainerGap(746, Short.MAX_VALUE))
+                .addContainerGap())
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         topBilledeLayout.setVerticalGroup(
@@ -244,40 +272,52 @@ public class BejerholmGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_logafActionPerformed
 
     private void lagerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lagerMouseEntered
-        lager.setBackground(new Color(209,23,6));
+        lager.setBackground(new Color(209, 23, 6));
     }//GEN-LAST:event_lagerMouseEntered
 
     private void lagerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lagerMouseExited
-        lager.setBackground(new Color(136,23,6));
+        lager.setBackground(new Color(136, 23, 6));
     }//GEN-LAST:event_lagerMouseExited
 
     private void adminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseEntered
-        admin.setBackground(new Color(209,23,6));
+        admin.setBackground(new Color(209, 23, 6));
     }//GEN-LAST:event_adminMouseEntered
 
     private void adminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseExited
-        admin.setBackground(new Color(136,23,6));
+        admin.setBackground(new Color(136, 23, 6));
     }//GEN-LAST:event_adminMouseExited
 
     private void ordreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordreMouseEntered
-        ordre.setBackground(new Color(209,23,6));
+        ordre.setBackground(new Color(209, 23, 6));
     }//GEN-LAST:event_ordreMouseEntered
 
     private void ordreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordreMouseExited
-        ordre.setBackground(new Color(136,23,6));
+        ordre.setBackground(new Color(136, 23, 6));
     }//GEN-LAST:event_ordreMouseExited
 
     private void logafMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logafMouseEntered
-        logaf.setBackground(new Color(209,23,6));
+        logaf.setBackground(new Color(209, 23, 6));
     }//GEN-LAST:event_logafMouseEntered
 
     private void logafMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logafMouseExited
-        logaf.setBackground(new Color(136,23,6));
+        logaf.setBackground(new Color(136, 23, 6));
     }//GEN-LAST:event_logafMouseExited
 
+    private void fakturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fakturaMouseEntered
+        faktura.setBackground(new Color(209, 23, 6));
+    }//GEN-LAST:event_fakturaMouseEntered
+
+    private void fakturaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fakturaMouseExited
+        faktura.setBackground(new Color(136, 23, 6));
+    }//GEN-LAST:event_fakturaMouseExited
+
+    private void fakturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fakturaActionPerformed
+        skiftPanel("OrdreRedigering");
+    }//GEN-LAST:event_fakturaActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton admin;
     private javax.swing.JPanel cards;
+    private javax.swing.JButton faktura;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -301,5 +341,9 @@ public class BejerholmGUI extends javax.swing.JPanel {
 
     public JButton getLogaf() {
         return logaf;
+    }
+
+    public JButton getFaktura() {
+        return faktura;
     }
 }

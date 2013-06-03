@@ -355,12 +355,11 @@ public class KirkegaardGUI extends javax.swing.JPanel {
                             .add(jLabel4)
                             .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .add(4, 4, 4)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE, false)
-                            .add(layout.createSequentialGroup()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                                 .add(jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(4, 4, 4))
-                            .add(jTextField4))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                            .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel2))))
@@ -406,21 +405,23 @@ public class KirkegaardGUI extends javax.swing.JPanel {
             ArrayList<ProduktTilListe> ptl = ordreGUI.getProduktGUI().getListeAfProdukterTilOrdre();
             ArrayList<TilfojelseTilListe> tfl = ordreGUI.getTilfoejelseGUI().getListeAfTilfoejelserTilOrdre();
 
-            controller.connIndsaetKirkegaardsOrdreTilDatabase(urne_kiste, raekke, nummer, afdeling, bededemandTlf, bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl);
+            controller.connIndsaetKirkegaardsOrdreTilDatabase(urne_kiste, raekke, nummer, afdeling, bededemandTlf, bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl, this);
         } else if (jCheckBox4.isSelected() && !jCheckBox5.isSelected()) {
             urne_kiste = false;
             ArrayList<ProduktTilListe> ptl = ordreGUI.getProduktGUI().getListeAfProdukterTilOrdre();
             ArrayList<TilfojelseTilListe> tfl = ordreGUI.getTilfoejelseGUI().getListeAfTilfoejelserTilOrdre();
 
-            controller.connIndsaetKirkegaardsOrdreTilDatabase(urne_kiste, raekke, nummer, afdeling, bededemandTlf, bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl);
+            controller.connIndsaetKirkegaardsOrdreTilDatabase(urne_kiste, raekke, nummer, afdeling, bededemandTlf, bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl, this);
         } else {
             JOptionPane.showMessageDialog(this, "Ingen eller begge muligheder "
                     + "af kiste eller urne er valgt.", "Advarsel", JOptionPane.WARNING_MESSAGE);
         }
-
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void fortaelBrugerAtOrdreOprettet(int ordreNr){
+        JOptionPane.showMessageDialog(this, "Ordre oprette med ordre nr: " + ordreNr);
+    }
+    
     private void jTextArea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyReleased
         String str = jTextArea1.getText();
         str.replace(" ", "");

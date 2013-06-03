@@ -20,7 +20,10 @@ import model.Provisionsseddel;
 import model.Tilfoejelse;
 import model.database.DBConnection;
 import view.BejerholmGUI;
+import view.OrdreRedigering;
 import view.ordre.BedemandGUI;
+import view.ordre.BestillingsOrdreGUI;
+import view.ordre.KirkegaardGUI;
 import view.ordre.KundeGUI;
 import view.ordre.ProduktGUI;
 import view.ordre.ProduktTilListe;
@@ -53,6 +56,7 @@ public class Controller {
             beg.getOrdre().setVisible(true);
             beg.getLager().setVisible(true);
             beg.getLogaf().setVisible(true);
+            beg.getFaktura().setVisible(true);
         } else {
             throw new SQLException("Kunne ikke logge paa db", "Bad password or settings");
         }
@@ -69,6 +73,7 @@ public class Controller {
             beg.getAdmin().setVisible(false);
             beg.getOrdre().setVisible(false);
             beg.getLogaf().setVisible(false);
+            beg.getFaktura().setVisible(false);
         }
     }
 
@@ -258,10 +263,10 @@ public class Controller {
     }
 
     // Begynder connect til Ordre
-    public void connHentOrdreFraDatabase(int ordreID) {
+    public void connHentOrdreFraDatabase(OrdreRedigering org, int ordreID) {
         try {
             Ordre ordre = new Ordre(ordreID);
-            
+            org.setFelter(ordre.getTlfNr(), ordre.getStatus());
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -274,7 +279,7 @@ public class Controller {
     public void connGemOrdreIDatabase(Date bestillingsDatoUdenSQL, Date leveringsDatoUdenSQL,
             String skrifttype, int skriftStoerrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger,
             double totalPris, double rabat, int tlfNr, ArrayList<ProduktTilListe> listeAfProdukterIOrdre,
-            ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre) {
+            ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre, BestillingsOrdreGUI beg) {
         int status = 0;
         try {
             java.sql.Date bestillingsDato = new java.sql.Date(bestillingsDatoUdenSQL.getTime());
@@ -287,6 +292,7 @@ public class Controller {
             for (TilfojelseTilListe tilfojelseTilListe : listeAfTilfoejelserTilOrdre) {
                 connIndsaetTilfoejelseTilOrdre(ordre.getOrdreID(), tilfojelseTilListe.getTilfoejelsesID(), 1);
             }
+            beg.fortaelBrugerAtOrdreOprettet(ordre.getOrdreID());
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -357,7 +363,7 @@ public class Controller {
     public void connSaetOrdreStatus(int ordreID, int status) {
         try {
             Ordre ordre = new Ordre(ordreID);
-            ordre.sletOrdreFraDatabase();
+            ordre.saetOrdreStatus(status);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -430,7 +436,7 @@ public class Controller {
             String afdeling, int bedemandTlf, Date bestillingsDatoUdenSQL, Date leveringsDatoUdenSQL,
             String skrifttype, int skriftStoerrelse, int skriftStil, String inskriptionsLinje, String bemaerkninger,
             double totalPris, double rabat, int tlfNr, ArrayList<ProduktTilListe> listeAfProdukterIOrdre,
-            ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre) {
+            ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre, KirkegaardGUI kirkegaardGUI) {
 
         int status = 0;
         try {
@@ -446,6 +452,7 @@ public class Controller {
             }
             KirkegaardsOrdre kOrdre = new KirkegaardsOrdre();
             kOrdre.indsaetKirkegaardsOrdreTilDatabase(urne_Kiste, raekke, nummer, afdeling, ordre.getOrdreID(), bedemandTlf);
+            kirkegaardGUI.fortaelBrugerAtOrdreOprettet(ordre.getOrdreID());
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -642,11 +649,13 @@ public class Controller {
         }
     }
 
-    public void connIndsaetFakturaIDatabase(int fakturaNr, Date fakturaDatoUdenSQL, String bankOplysninger, int ordreID) {
+    public void connIndsaetFakturaIDatabase(OrdreRedigering org, Date fakturaDatoUdenSQL, String bankOplysninger, int ordreID, String vedroerende) {
         try {
-            Faktura faktura = new Faktura(fakturaNr);
             java.sql.Date fakturaDato = new java.sql.Date(fakturaDatoUdenSQL.getTime());
-            faktura.indsaetFakturaIDatabase(fakturaDato, bankOplysninger, ordreID);
+            Faktura faktura = new Faktura(fakturaDato, bankOplysninger, ordreID, vedroerende);
+            faktura.indsaetFakturaIDatabase();
+            org.fortaelBrugerFakturaNr(faktura.getFakturaNr());
+            faktura.indsaetKundeFakturaData(org.getKundeTlfNr(), true);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
