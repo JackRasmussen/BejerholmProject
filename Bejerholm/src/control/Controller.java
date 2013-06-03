@@ -261,6 +261,7 @@ public class Controller {
     public void connHentOrdreFraDatabase(int ordreID) {
         try {
             Ordre ordre = new Ordre(ordreID);
+            
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
