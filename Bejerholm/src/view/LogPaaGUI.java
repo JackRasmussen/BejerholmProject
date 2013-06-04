@@ -1,6 +1,7 @@
 package view;
 
 import control.Controller;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,23 +49,38 @@ public class LogPaaGUI extends javax.swing.JPanel {
         setLayout(null);
 
         username.setText("root");
+        username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                usernameKeyPressed(evt);
+            }
+        });
         add(username);
         username.setBounds(570, 110, 100, 28);
 
         hostname.setText("localhost");
-        hostname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hostnameActionPerformed(evt);
+        hostname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                hostnameKeyPressed(evt);
             }
         });
         add(hostname);
         hostname.setBounds(570, 190, 100, 28);
 
         port.setText("3306");
+        port.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                portKeyPressed(evt);
+            }
+        });
         add(port);
         port.setBounds(570, 230, 100, 28);
 
         database.setText("Bejerholm");
+        database.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                databaseKeyPressed(evt);
+            }
+        });
         add(database);
         database.setBounds(570, 270, 100, 28);
 
@@ -112,6 +128,12 @@ public class LogPaaGUI extends javax.swing.JPanel {
         });
         add(jCheckBox1);
         jCheckBox1.setBounds(451, 340, 90, 23);
+
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordKeyPressed(evt);
+            }
+        });
         add(password);
         password.setBounds(570, 150, 100, 28);
     }// </editor-fold>//GEN-END:initComponents
@@ -149,9 +171,36 @@ public class LogPaaGUI extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void hostnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hostnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hostnameActionPerformed
+    private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            loginActionPerformed(null);
+        }
+    }//GEN-LAST:event_passwordKeyPressed
+
+    private void usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameKeyPressed
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            loginActionPerformed(null);
+        }
+    }//GEN-LAST:event_usernameKeyPressed
+
+    private void hostnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hostnameKeyPressed
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            loginActionPerformed(null);
+        }
+    }//GEN-LAST:event_hostnameKeyPressed
+
+    private void portKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_portKeyPressed
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            loginActionPerformed(null);
+        }
+    }//GEN-LAST:event_portKeyPressed
+
+    private void databaseKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_databaseKeyPressed
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            loginActionPerformed(null);
+        }
+    }//GEN-LAST:event_databaseKeyPressed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel brugernavnLabel;
     private javax.swing.JTextField database;
