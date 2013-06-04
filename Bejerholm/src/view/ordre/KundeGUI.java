@@ -256,6 +256,8 @@ public class KundeGUI extends javax.swing.JPanel {
 
             org.setKirkegaardsOrdre(false);
             org.skiftOrdrePanel("ProduktGUI");
+            org.setOrdreGrenVisibility(true);
+            org.setKirkegaardsGrenVisibility(false);
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
@@ -382,6 +384,8 @@ public class KundeGUI extends javax.swing.JPanel {
 
             org.setKirkegaardsOrdre(true);
             org.skiftOrdrePanel("BedemandGUI");
+            org.setKirkegaardsGrenVisibility(true);
+            org.setOrdreGrenVisibility(false);
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }

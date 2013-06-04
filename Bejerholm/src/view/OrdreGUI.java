@@ -47,6 +47,13 @@ public class OrdreGUI extends javax.swing.JPanel {
         ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(tfg, "TilfoejelseGUI");
 
         skiftOrdrePanel("KundeGUI");
+        jButton1.setVisible(false);
+        jButton2.setVisible(false);
+        jButton4.setVisible(false);
+        jButton5.setVisible(false);
+        jButton6.setVisible(false);
+        jButton7.setVisible(false);
+        jButton8.setVisible(false);
     }
 
     public void skiftOrdrePanel(String jp) {
@@ -57,6 +64,19 @@ public class OrdreGUI extends javax.swing.JPanel {
         if (jp.equals("KirkegaardGUI")) {
             kgg.opdaterPris();
         }
+    }
+    
+    public void setKirkegaardsGrenVisibility(boolean newValue){
+        jButton1.setVisible(newValue);
+        jButton5.setVisible(newValue);
+        jButton7.setVisible(newValue);
+        jButton8.setVisible(newValue);
+    }
+    
+    public void setOrdreGrenVisibility(boolean newValue){
+        jButton2.setVisible(newValue);
+        jButton4.setVisible(newValue);
+        jButton6.setVisible(newValue);
     }
 
     /**
