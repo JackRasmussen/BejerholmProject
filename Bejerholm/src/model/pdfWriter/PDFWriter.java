@@ -25,14 +25,18 @@ public class PDFWriter {
     FileOutputStream destination;
     File file;
 
-    public PDFWriter(JPanel panelToPrint, String fileName) throws FileNotFoundException {
+    public PDFWriter(JPanel panelToPrint, String fileName) 
+            throws FileNotFoundException {
         this.panelToPrint = panelToPrint;
-        this.file = new File(this.getClass().getResource("").getPath() + fileName + ".pdf");
-        System.out.println(this.getClass().getResource("").getPath() + fileName + ".pdf");
+        this.file = new File(this.getClass().getResource("").getPath() + 
+                fileName + ".pdf");
+        System.out.println(this.getClass().getResource("").getPath() +
+                fileName + ".pdf");
         this.destination = new FileOutputStream(file);
     }
 
-    public PDFWriter(JPanel panelToPrint, File destinationFile) throws FileNotFoundException {
+    public PDFWriter(JPanel panelToPrint, File destinationFile) 
+            throws FileNotFoundException {
         this.panelToPrint = panelToPrint;
         this.file = destinationFile;
         this.destination = new FileOutputStream(file);
@@ -52,8 +56,12 @@ public class PDFWriter {
             PdfWriter pdfWriter = PdfWriter.getInstance(document, fIO);
             document.open();
             PdfContentByte contentByte = pdfWriter.getDirectContent();
-            PdfTemplate template = contentByte.createTemplate(PageSize.A4.getWidth(), PageSize.A4.getHeight());
-            Graphics2D g2d = new PdfGraphics2D(contentByte, PageSize.A4.getWidth(), PageSize.A4.getHeight());
+            PdfTemplate template = 
+                    contentByte.createTemplate(PageSize.A4.getWidth(), 
+                    PageSize.A4.getHeight());
+            Graphics2D g2d = 
+                    new PdfGraphics2D(contentByte, PageSize.A4.getWidth(), 
+                    PageSize.A4.getHeight());
             panelToPrint.printAll(g2d);
             g2d.dispose();
             contentByte.addTemplate(template, 0, 0);

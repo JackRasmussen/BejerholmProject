@@ -16,13 +16,15 @@ public class Bedemand {
     private int postNr;
     private String byNavn;
 
-    public Bedemand(int tlfNr) throws SQLException, ClassNotFoundException, Exception {
+    public Bedemand(int tlfNr) throws SQLException, ClassNotFoundException, 
+            Exception {
         this.handler = new Handler();
         this.tlfNr = tlfNr;
         findBedemandViaTlf(tlfNr);
     }
 
-    public Bedemand(String firmaNavn) throws SQLException, ClassNotFoundException, Exception {
+    public Bedemand(String firmaNavn) throws SQLException, 
+            ClassNotFoundException, Exception {
         this.handler = new Handler();
         this.firmaNavn = firmaNavn;
         findBedemandViaNavn(firmaNavn);
@@ -85,7 +87,8 @@ public class Bedemand {
      * @param firmaNavn
      * @throws SQLException
      */
-    public void tilfoejBedemandTilDatabase(int tlfNr, String firmaNavn, String adresse, String byNavn, int postNr) throws SQLException {
+    public void tilfoejBedemandTilDatabase(int tlfNr, String firmaNavn, 
+            String adresse, String byNavn, int postNr) throws SQLException {
         this.adresse = adresse;
         this.byNavn = byNavn;
         this.postNr = postNr;
@@ -113,7 +116,8 @@ public class Bedemand {
      * @param tlfNr
      * @throws SQLException
      */
-    public void redigerBedemandIDatabase(int tlfNr, String firmaNavn, String adresse, String byNavn, int postNr) throws SQLException {
+    public void redigerBedemandIDatabase(int tlfNr, String firmaNavn, 
+            String adresse, String byNavn, int postNr) throws SQLException {
         handler.redigerBedemand(tlfNr, firmaNavn, adresse, postNr, byNavn);
     }
 

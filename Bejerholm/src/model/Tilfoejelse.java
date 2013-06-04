@@ -16,7 +16,8 @@ public class Tilfoejelse {
     private String tilfoejelsesType;
     private double tilfoejelsesPris;
 
-    public Tilfoejelse(int tilfoejelsesID) throws SQLException, ClassNotFoundException, Exception {
+    public Tilfoejelse(int tilfoejelsesID) throws SQLException, 
+            ClassNotFoundException, Exception {
         handler = new Handler();
         this.tilfoejelsesID = tilfoejelsesID;
         hentTilfoejelsesInfo();
@@ -29,7 +30,8 @@ public class Tilfoejelse {
      * @throws ClassNotFoundException
      * @throws Exception
      */
-    public Tilfoejelse() throws SQLException, ClassNotFoundException, Exception {
+    public Tilfoejelse() throws SQLException, ClassNotFoundException, 
+            Exception {
         this.handler = new Handler();
     }
 
@@ -44,7 +46,9 @@ public class Tilfoejelse {
      * @throws ClassNotFoundException
      * @throws Exception
      */
-    public Tilfoejelse(int tilfoejelsesID, String tilfoejelsesType, double tilfoejelsesPris) throws SQLException, ClassNotFoundException, Exception {
+    public Tilfoejelse(int tilfoejelsesID, String tilfoejelsesType, 
+            double tilfoejelsesPris) throws SQLException, 
+            ClassNotFoundException, Exception {
         this.tilfoejelsesID = tilfoejelsesID;
         this.tilfoejelsesType = tilfoejelsesType;
         this.tilfoejelsesPris = tilfoejelsesPris;
@@ -79,10 +83,12 @@ public class Tilfoejelse {
      * @param pris
      * @throws SQLException
      */
-    public void indsaetTilfoejelseIDatabase(String tilfoejelsesType, double pris) throws SQLException {
+    public void indsaetTilfoejelseIDatabase(String tilfoejelsesType, 
+            double pris) throws SQLException {
         this.tilfoejelsesType = tilfoejelsesType;
         this.tilfoejelsesPris = pris;
-        handler.indsaetTilfoejelseIDatabase(tilfoejelsesID, tilfoejelsesType, pris);
+        handler.indsaetTilfoejelseIDatabase(tilfoejelsesID, tilfoejelsesType, 
+                pris);
     }
 
     /**
@@ -93,7 +99,8 @@ public class Tilfoejelse {
      * @param pris
      * @throws SQLException
      */
-    public void redigerTilfoejelse(String type, double pris) throws SQLException {
+    public void redigerTilfoejelse(String type, double pris) 
+            throws SQLException {
         handler.redigerTilfoejelseIDatabase(tilfoejelsesID, type, pris);
     }
 
@@ -107,12 +114,14 @@ public class Tilfoejelse {
         handler.sletTilfoejelseFraDatabase(tilfoejelsesID);
     }
 
-    public ArrayList<Tilfoejelse> soegEfterTilfoejelse(String soegeString) throws SQLException, ClassNotFoundException, Exception {
+    public ArrayList<Tilfoejelse> soegEfterTilfoejelse(String soegeString) 
+            throws SQLException, ClassNotFoundException, Exception {
         ArrayList<Tilfoejelse> resultatListe = new ArrayList<>();
         ResultSet rs = handler.hentListeAfTilfoejelser();
         while (rs.next()) {
             if (rs.getString("opgaveType").contains(soegeString)) {
-                Tilfoejelse tilfoejelse = new Tilfoejelse(rs.getInt("tilfoejelsesID"),
+                Tilfoejelse tilfoejelse = 
+                        new Tilfoejelse(rs.getInt("tilfoejelsesID"),
                         rs.getString("opgaveType"), rs.getDouble("pris"));
                 resultatListe.add(tilfoejelse);
             }

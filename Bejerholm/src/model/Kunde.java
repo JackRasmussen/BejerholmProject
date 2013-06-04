@@ -19,7 +19,8 @@ public class Kunde {
     private int mobil;
     Handler handler;
 
-    public Kunde(int tlfNr) throws SQLException, ClassNotFoundException, Exception {
+    public Kunde(int tlfNr) throws SQLException, ClassNotFoundException, 
+            Exception {
         this.handler = new Handler();
         this.tlfNr = tlfNr;
         hentMuligKundeFraDatabase();
@@ -65,13 +66,16 @@ public class Kunde {
      * @param by
      * @throws SQLException
      */
-    public void indsaetKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by, int mobil) throws SQLException {
+    public void indsaetKundeIDatabase(String fNavn, String eNavn, 
+            String adresse, int postNr, String by, int mobil) 
+            throws SQLException {
         this.fNavn = fNavn;
         this.eNavn = eNavn;
         this.adresse = adresse;
         this.postNr = postNr;
         this.by = by;
-        handler.indsaetKunde(tlfNr, fNavn, eNavn, adresse, postNr, eNavn, mobil);
+        handler.indsaetKunde(tlfNr, fNavn, eNavn, adresse, 
+                postNr, eNavn, mobil);
     }
 
     /**
@@ -85,7 +89,9 @@ public class Kunde {
      * @param by
      * @throws SQLException
      */
-    public void redigerKundeIDatabase(String fNavn, String eNavn, String adresse, int postNr, String by, int mobil) throws SQLException {
+    public void redigerKundeIDatabase(String fNavn, String eNavn, 
+            String adresse, int postNr, String by, int mobil) 
+            throws SQLException {
         handler.redigerKunde(tlfNr, fNavn, eNavn, adresse, postNr, by, mobil);
     }
 

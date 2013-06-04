@@ -35,7 +35,8 @@ public class Produkt {
      * @param produktNavn
      * @throws SQLException
      */
-    public Produkt(String produktNavn) throws SQLException, ClassNotFoundException, Exception {
+    public Produkt(String produktNavn) throws SQLException, 
+            ClassNotFoundException, Exception {
         this.handler = new Handler();
         this.produktNavn = produktNavn;
         findProduktViaNavn();
@@ -49,7 +50,8 @@ public class Produkt {
      * @throws ClassNotFoundException
      * @throws Exception 
      */
-    public Produkt(int produktID) throws SQLException, ClassNotFoundException, Exception {
+    public Produkt(int produktID) throws SQLException, 
+            ClassNotFoundException, Exception {
         this.handler = new Handler();
         this.produktID = produktID;
         findProduktViaID();
@@ -62,7 +64,10 @@ public class Produkt {
         this.handler = new Handler();
     }
 
-    public Produkt(int produktID, String produktType, String produktNavn, int produktAntal, double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException, ClassNotFoundException, Exception {
+    public Produkt(int produktID, String produktType, String produktNavn, 
+            int produktAntal, double salgsPris, double indkoebsPris, 
+            double maalX, double maalY) throws SQLException, 
+            ClassNotFoundException, Exception {
         this.produktID = produktID;
         this.produktType = produktType;
         this.produktNavn = produktNavn;
@@ -162,7 +167,9 @@ public class Produkt {
      * @param maalY
      * @throws SQLException
      */
-    public void indsaetProduktIDatabase(int produktID, String produktType, int produktAntal, double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException {
+    public void indsaetProduktIDatabase(int produktID, String produktType, 
+            int produktAntal, double salgsPris, double indkoebsPris, 
+            double maalX, double maalY) throws SQLException {
         this.produktID = produktID;
         this.produktType = produktType;
         this.produktAntal = produktAntal;
@@ -170,7 +177,8 @@ public class Produkt {
         this.indkoebsPris = indkoebsPris;
         this.maalX = maalX;
         this.maalY = maalY;
-        handler.tilfoejProdukt(produktID, produktType, produktNavn, produktAntal, salgsPris, indkoebsPris, maalX, maalY);
+        handler.tilfoejProdukt(produktID, produktType, produktNavn, 
+                produktAntal, salgsPris, indkoebsPris, maalX, maalY);
     }
 
     /**
@@ -197,15 +205,17 @@ public class Produkt {
      * @param maalY
      * @throws SQLException
      */
-    public void redigerProduktIDatabase(String produktType, String produktNavn, int antal,
-            double salgsPris, double indkoebsPris, double maalX, double maalY) throws SQLException {
+    public void redigerProduktIDatabase(String produktType, String produktNavn,
+            int antal, double salgsPris, double indkoebsPris, double maalX, 
+            double maalY) throws SQLException {
         this.produktType = produktType;
         this.produktAntal = antal;
         this.salgsPris = salgsPris;
         this.indkoebsPris = indkoebsPris;
         this.maalX = maalX;
         this.maalY = maalY;
-        handler.redigerProduktIDatabase(produktID, produktType, produktNavn, antal, salgsPris, indkoebsPris, maalX, maalY);
+        handler.redigerProduktIDatabase(produktID, produktType, produktNavn, 
+                antal, salgsPris, indkoebsPris, maalX, maalY);
     }
 
     /**
@@ -215,7 +225,8 @@ public class Produkt {
      * @return
      * @throws SQLException
      */
-    public ArrayList<Produkt> hentListeAfProdukter() throws SQLException, ClassNotFoundException, Exception {
+    public ArrayList<Produkt> hentListeAfProdukter() throws SQLException, 
+            ClassNotFoundException, Exception {
         ArrayList<Produkt> produktListe = new ArrayList<>();
         ResultSet rs = handler.hentListeAfProdukterFraDatabase();
         while (rs.next()) {
@@ -225,14 +236,17 @@ public class Produkt {
         return produktListe;
     }
 
-    public ArrayList<Produkt> soegEfterProdukt(String soegeString) throws SQLException, ClassNotFoundException, Exception {
+    public ArrayList<Produkt> soegEfterProdukt(String soegeString) 
+            throws SQLException, ClassNotFoundException, Exception {
         ArrayList<Produkt> resultatListe = new ArrayList<>();
         ResultSet rs = handler.hentListeAfProdukterFraDatabase();
         while (rs.next()) {
             if (rs.getString("produktNavn").contains(soegeString)) {
-                Produkt produkt = new Produkt(rs.getInt("produktID"), rs.getString("produktType"),
-                        rs.getString("produktNavn"), rs.getInt("antal"), rs.getDouble("salgsPris"),
-                        rs.getDouble("indkoebsPris"), rs.getDouble("maalX"), rs.getDouble("maalY"));
+                Produkt produkt = new Produkt(rs.getInt("produktID"), 
+                        rs.getString("produktType"),rs.getString("produktNavn"), 
+                        rs.getInt("antal"), rs.getDouble("salgsPris"),
+                        rs.getDouble("indkoebsPris"), rs.getDouble("maalX"), 
+                        rs.getDouble("maalY"));
                 resultatListe.add(produkt);
             }
         }

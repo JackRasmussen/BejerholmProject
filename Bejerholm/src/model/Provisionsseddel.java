@@ -18,7 +18,8 @@ public class Provisionsseddel {
     private int ordreID;
     private Handler handler;
 
-    public Provisionsseddel(int provisionsID) throws SQLException, ClassNotFoundException, Exception {
+    public Provisionsseddel(int provisionsID) throws SQLException, 
+            ClassNotFoundException, Exception {
         this.provisionsID = provisionsID;
         handler = new Handler();
         hentProvisionsseddelFraDatabase();
@@ -57,12 +58,15 @@ public class Provisionsseddel {
      * @param ordreID
      * @throws SQLException
      */
-    public void indsaetProvisionsSeddelIDatabase(Date provisionsDato, int provisionsProcent, String beskrivelse, int ordreID) throws SQLException {
+    public void indsaetProvisionsSeddelIDatabase(Date provisionsDato, 
+            int provisionsProcent, String beskrivelse, int ordreID) 
+            throws SQLException {
         this.provisionsDato = provisionsDato;
         this.provisionsProcent = provisionsProcent;
         this.beskrivelse = beskrivelse;
         this.ordreID = ordreID;
-        handler.indsaetProvisionsseddelIDatabase(provisionsID, provisionsDato, vedroerende, provisionsProcent, beskrivelse, ordreID);
+        handler.indsaetProvisionsseddelIDatabase(provisionsID, provisionsDato, 
+                vedroerende, provisionsProcent, beskrivelse, ordreID);
     }
 
     /**

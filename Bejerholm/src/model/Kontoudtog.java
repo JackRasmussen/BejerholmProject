@@ -1,8 +1,8 @@
 package model;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
 import model.database.Handler;
 
 /**
@@ -18,7 +18,8 @@ public class Kontoudtog {
     private int ordreID;
     private Handler handler;
 
-    public Kontoudtog(int kontoudtogsID) throws SQLException, ClassNotFoundException, Exception {
+    public Kontoudtog(int kontoudtogsID) throws SQLException, 
+            ClassNotFoundException, Exception {
         this.kontoudtogsID = kontoudtogsID;
         handler = new Handler();
         hentKontoUdtog();
@@ -57,12 +58,15 @@ public class Kontoudtog {
      * @param ordreID
      * @throws SQLException
      */
-    public void indsaetKontoUdtogIDatabase(Date kontoudtogsDato, String ordreLinjePris, String ordreLinjeProv, int ordreID) throws SQLException {
+    public void indsaetKontoUdtogIDatabase(Date kontoudtogsDato, 
+            String ordreLinjePris, String ordreLinjeProv, int ordreID) 
+            throws SQLException {
         this.kontoudtogsDato = kontoudtogsDato;
         this.ordreLinjePris = ordreLinjePris;
         this.ordreLinjeProv = ordreLinjeProv;
         this.ordreID = ordreID;
-        handler.indsaetKontoudtogIDatabase(kontoudtogsID, kontoudtogsDato, vedroerende, ordreLinjePris, ordreLinjeProv, ordreID);
+        handler.indsaetKontoudtogIDatabase(kontoudtogsID, kontoudtogsDato, 
+                vedroerende, ordreLinjePris, ordreLinjeProv, ordreID);
     }
 
     /**
