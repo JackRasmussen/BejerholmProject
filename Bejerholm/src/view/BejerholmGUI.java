@@ -92,9 +92,9 @@ public class BejerholmGUI extends javax.swing.JPanel {
         });
 
         admin.setBackground(new java.awt.Color(136, 23, 6));
-        admin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        admin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         admin.setForeground(new java.awt.Color(255, 255, 255));
-        admin.setText("Admin");
+        admin.setText("Tilpas lager");
         admin.setToolTipText("");
         admin.setBorderPainted(false);
         admin.addMouseListener(new java.awt.event.MouseAdapter() {

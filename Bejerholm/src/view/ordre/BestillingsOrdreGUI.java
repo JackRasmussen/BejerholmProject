@@ -67,7 +67,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     }
 
     public void fortaelBrugerAtOrdreOprettet(int ordreNr) {
-        JOptionPane.showMessageDialog(this, "Ordre oprette med ordre nr: " + ordreNr);
+        JOptionPane.showMessageDialog(this, "Ordre oprettet med ordre nr: " + ordreNr);
     }
 
     /**
@@ -105,6 +105,8 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jTextField8 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setLayout(null);
@@ -112,7 +114,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Inskription:");
         add(jLabel1);
-        jLabel1.setBounds(100, 130, 120, 16);
+        jLabel1.setBounds(100, 130, 120, 14);
 
         jTextField2.setText("0");
         add(jTextField2);
@@ -121,16 +123,21 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Pris u/ moms:");
         add(jLabel2);
-        jLabel2.setBounds(40, 380, 100, 16);
+        jLabel2.setBounds(40, 380, 100, 14);
 
         jTextField1.setText("0");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         add(jTextField1);
         jTextField1.setBounds(200, 320, 100, 20);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Antal bogstaver/timer:");
         add(jLabel4);
-        jLabel4.setBounds(40, 320, 150, 16);
+        jLabel4.setBounds(40, 320, 150, 14);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -142,29 +149,29 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(40, 150, 244, 140);
+        jScrollPane1.setBounds(40, 150, 166, 140);
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Skrifttype:");
         add(jLabel3);
-        jLabel3.setBounds(330, 60, 90, 16);
+        jLabel3.setBounds(330, 60, 90, 14);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Skriftstørrelse:");
         add(jLabel6);
-        jLabel6.setBounds(330, 20, 120, 16);
+        jLabel6.setBounds(330, 20, 120, 14);
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
         add(jScrollPane3);
-        jScrollPane3.setBounds(330, 150, 244, 140);
+        jScrollPane3.setBounds(330, 150, 166, 140);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Bemærkninger:");
         add(jLabel7);
-        jLabel7.setBounds(390, 130, 120, 16);
+        jLabel7.setBounds(390, 130, 120, 14);
 
         jButton1.setText("Opret ordre!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +180,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(590, 410, 140, 29);
+        jButton1.setBounds(590, 410, 140, 23);
         add(jTextField3);
         jTextField3.setBounds(450, 410, 110, 20);
 
@@ -187,13 +194,13 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Leveringsdato:");
         add(jLabel10);
-        jLabel10.setBounds(330, 410, 120, 16);
+        jLabel10.setBounds(330, 410, 120, 14);
 
         jLabel11.setBackground(new java.awt.Color(100, 100, 100));
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Rabat:");
         add(jLabel11);
-        jLabel11.setBounds(40, 350, 100, 16);
+        jLabel11.setBounds(40, 350, 100, 14);
 
         jTextField4.setText("0");
         add(jTextField4);
@@ -203,13 +210,13 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Skriftstil:");
         add(jLabel12);
-        jLabel12.setBounds(330, 100, 110, 16);
+        jLabel12.setBounds(330, 100, 110, 14);
 
         jLabel16.setBackground(new java.awt.Color(100, 100, 100));
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Miljøafgift 2,5 %");
         add(jLabel16);
-        jLabel16.setBounds(175, 450, 120, 16);
+        jLabel16.setBounds(175, 450, 120, 14);
         add(jTextField5);
         jTextField5.setBounds(450, 380, 110, 20);
 
@@ -228,11 +235,19 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Pris m/ moms:");
         add(jLabel5);
-        jLabel5.setBounds(40, 410, 100, 16);
+        jLabel5.setBounds(40, 410, 100, 14);
 
         jTextField9.setText("0");
         add(jTextField9);
         jTextField9.setBounds(200, 410, 100, 20);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(jComboBox1);
+        jComboBox1.setBounds(590, 60, 56, 20);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(jComboBox2);
+        jComboBox2.setBounds(590, 100, 56, 20);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextArea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyReleased
@@ -263,8 +278,15 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         controller.connGemOrdreIDatabase(bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl, this);
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
