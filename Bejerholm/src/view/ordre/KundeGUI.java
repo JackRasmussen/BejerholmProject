@@ -148,6 +148,12 @@ public class KundeGUI extends javax.swing.JPanel {
         mobTlfLabel.setForeground(new java.awt.Color(255, 255, 255));
         mobTlfLabel.setText("Mobil tlf:");
 
+        mobTlfFelt.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                mobTlfFeltFocusGained(evt);
+            }
+        });
+
         bedemandKnap.setText("Vælg Bedemand");
         bedemandKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,6 +317,8 @@ public class KundeGUI extends javax.swing.JPanel {
 
             JOptionPane.showMessageDialog(this, "Kunde oprettet i database");
             opretKundeKnap.setVisible(false);
+            videreKnap.setVisible(true);
+            bedemandKnap.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
@@ -378,6 +386,13 @@ public class KundeGUI extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
     }//GEN-LAST:event_bedemandKnapActionPerformed
+
+    private void mobTlfFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mobTlfFeltFocusGained
+        if (mobTlfFelt.getText().equals("0")) {
+            mobTlfFelt.setText("");
+        }
+    }//GEN-LAST:event_mobTlfFeltFocusGained
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;
     private javax.swing.JLabel adressLabel;

@@ -112,8 +112,6 @@ public class LogPaaGUI extends javax.swing.JPanel {
         });
         add(jCheckBox1);
         jCheckBox1.setBounds(451, 340, 90, 23);
-
-        password.setText("root");
         add(password);
         password.setBounds(570, 150, 100, 28);
     }// </editor-fold>//GEN-END:initComponents
