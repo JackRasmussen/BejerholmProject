@@ -25,8 +25,8 @@ public class DBConnection {
         database = "Bejerholm";
     }
 
-    private static void connection() throws SQLException, 
-            ClassNotFoundException, Exception{
+    private static void connection()
+            throws SQLException, ClassNotFoundException, Exception {
         boolean result = true;
         String conString = "jdbc:mysql://" + host + ":" + port + "/" + database;
         try {
@@ -35,8 +35,8 @@ public class DBConnection {
             state = conn.createStatement();
         } catch (SQLException ex) {
             result = false;
-            System.out.println("Could not connect: " + conString + " , " + 
-                    user + " , " + pass);
+            System.out.println("Could not connect: " + conString + " , "
+                    + user + " , " + pass);
             System.out.println(ex.getLocalizedMessage());
         } catch (ClassNotFoundException ex) {
             result = false;
@@ -44,15 +44,15 @@ public class DBConnection {
             System.out.println(ex.getLocalizedMessage());
         } catch (Exception ex) {
             result = false;
-            System.out.println("exception: " + ex.getClass().getName() + " = " +
-                    ex.getLocalizedMessage());
+            System.out.println("exception: " + ex.getClass().getName() + " = "
+                    + ex.getLocalizedMessage());
         }
         connected = result;
     }
-    
-    public static void setConnectionParameters(String user, String pass, 
-            String host, String port, String database) throws SQLException, 
-            ClassNotFoundException, Exception{
+
+    public static void setConnectionParameters(String user, String pass,
+            String host, String port, String database)
+            throws SQLException, ClassNotFoundException, Exception {
         DBConnection.user = user;
         DBConnection.pass = pass;
         DBConnection.host = host;
@@ -61,8 +61,8 @@ public class DBConnection {
         connection();
     }
 
-    public static Connection getConn() throws SQLException, 
-            ClassNotFoundException, Exception{
+    public static Connection getConn()
+            throws SQLException, ClassNotFoundException, Exception {
         if (connected) {
             return conn;
         } else {
@@ -75,7 +75,7 @@ public class DBConnection {
         state.execute(sql);
     }
 
-    public static ResultSet getResultSetWithCommand(String sql) 
+    public static ResultSet getResultSetWithCommand(String sql)
             throws SQLException {
         ResultSet rs = state.executeQuery(sql);
         return rs;
@@ -87,7 +87,7 @@ public class DBConnection {
             state.close();
             conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, 
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE,
                     null, ex);
             result = true;
         }

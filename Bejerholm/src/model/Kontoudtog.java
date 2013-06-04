@@ -18,8 +18,8 @@ public class Kontoudtog {
     private int ordreID;
     private Handler handler;
 
-    public Kontoudtog(int kontoudtogsID) throws SQLException, 
-            ClassNotFoundException, Exception {
+    public Kontoudtog(int kontoudtogsID)
+            throws SQLException, ClassNotFoundException, Exception {
         this.kontoudtogsID = kontoudtogsID;
         handler = new Handler();
         hentKontoUdtog();
@@ -58,14 +58,14 @@ public class Kontoudtog {
      * @param ordreID
      * @throws SQLException
      */
-    public void indsaetKontoUdtogIDatabase(Date kontoudtogsDato, 
-            String ordreLinjePris, String ordreLinjeProv, int ordreID) 
+    public void indsaetKontoUdtogIDatabase(Date kontoudtogsDato,
+            String ordreLinjePris, String ordreLinjeProv, int ordreID)
             throws SQLException {
         this.kontoudtogsDato = kontoudtogsDato;
         this.ordreLinjePris = ordreLinjePris;
         this.ordreLinjeProv = ordreLinjeProv;
         this.ordreID = ordreID;
-        handler.indsaetKontoudtogIDatabase(kontoudtogsID, kontoudtogsDato, 
+        handler.indsaetKontoudtogIDatabase(kontoudtogsID, kontoudtogsDato,
                 vedroerende, ordreLinjePris, ordreLinjeProv, ordreID);
     }
 

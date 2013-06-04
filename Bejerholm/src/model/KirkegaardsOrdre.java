@@ -17,15 +17,15 @@ public class KirkegaardsOrdre {
     private String afdeling;
     private Handler handler;
 
-    public KirkegaardsOrdre(int kirkegaardsID) throws SQLException, 
-            ClassNotFoundException, Exception {
+    public KirkegaardsOrdre(int kirkegaardsID)
+            throws SQLException, ClassNotFoundException, Exception {
         this.kirkegaardsID = kirkegaardsID;
         this.handler = new Handler();
         hentKirkegaardsOrdre();
     }
 
-    public KirkegaardsOrdre() throws SQLException, ClassNotFoundException, 
-            Exception {
+    public KirkegaardsOrdre()
+            throws SQLException, ClassNotFoundException, Exception {
         this.handler = new Handler();
     }
 
@@ -67,14 +67,14 @@ public class KirkegaardsOrdre {
      * @param ordreID
      * @throws SQLException
      */
-    public void indsaetKirkegaardsOrdreTilDatabase(boolean urne_Kiste, 
-            int raekke, int nummer, String afdeling, int ordreID, 
+    public void indsaetKirkegaardsOrdreTilDatabase(boolean urne_Kiste,
+            int raekke, int nummer, String afdeling, int ordreID,
             int bedemandTlf) throws SQLException {
         this.urne_Kiste = urne_Kiste;
         this.raekke = raekke;
         this.nummer = nummer;
         this.afdeling = afdeling;
-        handler.indsaetKirkegaardsOrdreIDatabase(urne_Kiste, raekke, nummer, 
+        handler.indsaetKirkegaardsOrdreIDatabase(urne_Kiste, raekke, nummer,
                 afdeling, ordreID, bedemandTlf);
     }
 
@@ -88,13 +88,13 @@ public class KirkegaardsOrdre {
      * @param afdeling
      * @throws SQLException
      */
-    public void redigerKirkegaardsOrdre(boolean urne_Kiste, int raekke, 
+    public void redigerKirkegaardsOrdre(boolean urne_Kiste, int raekke,
             int nummer, String afdeling) throws SQLException {
         this.urne_Kiste = urne_Kiste;
         this.raekke = raekke;
         this.nummer = nummer;
         this.afdeling = afdeling;
-        handler.redigerKirkegaardsOrdreIDatabase(kirkegaardsID, urne_Kiste, 
+        handler.redigerKirkegaardsOrdreIDatabase(kirkegaardsID, urne_Kiste,
                 raekke, nummer, afdeling);
     }
 

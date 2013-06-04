@@ -40,18 +40,18 @@ public class Ordre {
      * @throws ClassNotFoundException
      * @throws Exception
      */
-    public Ordre(int ordreID) throws SQLException, ClassNotFoundException, 
-            Exception {
+    public Ordre(int ordreID)
+            throws SQLException, ClassNotFoundException, Exception {
         this.ordreID = ordreID;
         handler = new Handler();
         hentOrdreFraDatabase();
     }
 
-    public Ordre(int status, Date bestillingsDato, Date leveringsDato, 
-            String skrifttype, int skriftStoerrelse, int skriftStil, 
-            String inskriptionsLinje, String bemaerkninger, double totalPris, 
-            double rabat, int tlfNr) throws SQLException, 
-            ClassNotFoundException, Exception {
+    public Ordre(int status, Date bestillingsDato, Date leveringsDato,
+            String skrifttype, int skriftStoerrelse, int skriftStil,
+            String inskriptionsLinje, String bemaerkninger, double totalPris,
+            double rabat, int tlfNr)
+            throws SQLException, ClassNotFoundException, Exception {
         this.status = status;
         this.bestillingsDato = bestillingsDato;
         this.leveringsDato = leveringsDato;
@@ -120,9 +120,9 @@ public class Ordre {
      * @throws SQLException
      */
     public void gemOrdreIDatabase() throws SQLException {
-        this.ordreID = handler.indsaetOrdreIDatabase(status, bestillingsDato, 
-                leveringsDato, skrifttype, skriftStoerrelse, skriftStil, 
-                inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, 
+        this.ordreID = handler.indsaetOrdreIDatabase(status, bestillingsDato,
+                leveringsDato, skrifttype, skriftStoerrelse, skriftStil,
+                inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat,
                 MILJOE_AFGIFT, tlfNr);
     }
 
@@ -135,10 +135,10 @@ public class Ordre {
      * @param antal
      * @throws SQLException
      */
-    public void indsaetProduktTilOrdre(Produkt produktAtIndsaette, int antal) 
+    public void indsaetProduktTilOrdre(Produkt produktAtIndsaette, int antal)
             throws SQLException {
         if (ordreID != 0) {
-            handler.indsaetProduktOrdreData(ordreID, 
+            handler.indsaetProduktOrdreData(ordreID,
                     produktAtIndsaette.getProduktID(), antal);
         }
     }
@@ -152,10 +152,10 @@ public class Ordre {
      * @param antal
      * @throws SQLException
      */
-    public void indsaetTilfoejelseTilOrdre(Tilfoejelse tilfoejelseAtIndsaette, 
+    public void indsaetTilfoejelseTilOrdre(Tilfoejelse tilfoejelseAtIndsaette,
             int antal) throws SQLException {
         if (ordreID != 0) {
-            handler.indsaetOrdreTilfoejelseData(ordreID, 
+            handler.indsaetOrdreTilfoejelseData(ordreID,
                     tilfoejelseAtIndsaette.getTilfoejelsesID(), antal);
         }
     }
@@ -175,14 +175,14 @@ public class Ordre {
      * @param rabat
      * @throws SQLException
      */
-    public void redigerOrdreIDatabase(int status, Date bestillingsDato, 
+    public void redigerOrdreIDatabase(int status, Date bestillingsDato,
             Date leveringsDato,
-            String skrifttype, int skriftstørrelse, int skriftStil, 
+            String skrifttype, int skriftstørrelse, int skriftStil,
             String inskriptionsLinje, String bemaerkninger,
             double totalPris, double rabat) throws SQLException {
-        handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, 
-                leveringsDato, skrifttype, skriftstørrelse, skriftStil, 
-                inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, 
+        handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato,
+                leveringsDato, skrifttype, skriftstørrelse, skriftStil,
+                inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat,
                 MILJOE_AFGIFT);
     }
 
@@ -205,9 +205,9 @@ public class Ordre {
      */
     public void saetOrdreStatus(int status) throws SQLException {
         this.status = status;
-        handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato, 
-                leveringsDato, skrifttype, skriftStoerrelse, skriftStil, 
-                inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat, 
+        handler.redigerOrdreIDatabase(ordreID, status, bestillingsDato,
+                leveringsDato, skrifttype, skriftStoerrelse, skriftStil,
+                inskriptionsLinje, bemaerkninger, totalPris, MOMS, rabat,
                 MILJOE_AFGIFT);
     }
 

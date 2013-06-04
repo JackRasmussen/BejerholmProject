@@ -21,16 +21,16 @@ public class Faktura {
     private int ordreID;
     private Handler handler;
 
-    public Faktura(int fakturaNr) throws SQLException, ClassNotFoundException, 
-            Exception {
+    public Faktura(int fakturaNr)
+            throws SQLException, ClassNotFoundException, Exception {
         this.fakturaNr = fakturaNr;
         handler = new Handler();
         hentFaktura();
     }
 
-    public Faktura(Date fakturaDato, String bankOplysninger, int ordreID, 
-            String vedroerende) throws SQLException, ClassNotFoundException, 
-            Exception {
+    public Faktura(Date fakturaDato, String bankOplysninger, int ordreID,
+            String vedroerende)
+            throws SQLException, ClassNotFoundException, Exception {
         this.fakturaDato = fakturaDato;
         this.bankOplysninger = bankOplysninger;
         this.ordreID = ordreID;
@@ -70,20 +70,20 @@ public class Faktura {
      * @throws SQLException
      */
     public void indsaetFakturaIDatabase() throws SQLException {
-        this.fakturaNr = handler.indsaetFakturaIDatabase(fakturaDato, 
+        this.fakturaNr = handler.indsaetFakturaIDatabase(fakturaDato,
                 vedroerende, bankOplysninger, ordreID);
     }
-    
-    public void indsaetKundeFakturaData(int kundeTlfNr, boolean faerdigFaktura) 
-            throws SQLException{
+
+    public void indsaetKundeFakturaData(int kundeTlfNr, boolean faerdigFaktura)
+            throws SQLException {
         handler.indsaetKundeFakturaData(kundeTlfNr, fakturaNr, faerdigFaktura);
     }
-    
-    public void lavFakturaPdf(JPanel panelAtPrinte, File destination) 
-            throws FileNotFoundException{
+
+    public void lavFakturaPdf(JPanel panelAtPrinte, File destination)
+            throws FileNotFoundException {
         PDFWriter pdfw = new PDFWriter(panelAtPrinte, destination);
     }
-    
+
     /**
      * Denne metode sletter en record fra databasen ud fra det nuværende objekt
      * af denne klasse.
