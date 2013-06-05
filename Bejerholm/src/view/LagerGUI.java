@@ -33,186 +33,64 @@ public class LagerGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        indsaetProduktIOrdreKnap = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        produktListe = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        soegeKnap = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        varegruppe = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setPreferredSize(new java.awt.Dimension(1280, 480));
 
-        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel3.setText("Navn:");
-
-        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel1.setText(" Produktnavn:");
-
-        indsaetProduktIOrdreKnap.setText("Opdater Lager");
-        indsaetProduktIOrdreKnap.addActionListener(new java.awt.event.ActionListener() {
+        varegruppe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        varegruppe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                indsaetProduktIOrdreKnapActionPerformed(evt);
+                varegruppeActionPerformed(evt);
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel2.setText("VareID:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        produktListe.setBackground(new java.awt.Color(238, 238, 238));
-        produktListe.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        jPanel1.setBackground(new java.awt.Color(60, 60, 60));
-        jPanel1.setForeground(new java.awt.Color(128, 128, 128));
-        produktListe.setViewportView(jPanel1);
-
-        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel4.setText("Type:");
-
-        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel5.setText("Antal:");
-
-        soegeKnap.setText("Søg");
-        soegeKnap.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Skift!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                soegeKnapActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel8.setText("Pris:");
-
-        jLabel6.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel6.setText("Længde:");
-
-        jLabel7.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel7.setText("Bredde:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(534, 534, 534)
+                .addComponent(varegruppe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(615, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(produktListe)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel2)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(jLabel3)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(soegeKnap)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(47, 47, 47)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(indsaetProduktIOrdreKnap)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)
-                                .addGap(104, 104, 104)
-                                .addComponent(jLabel6)
-                                .addGap(79, 79, 79)
-                                .addComponent(jLabel7)
-                                .addGap(101, 101, 101)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 376, Short.MAX_VALUE)))))
+                .addComponent(jScrollPane2)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(soegeKnap)
-                    .addComponent(indsaetProduktIOrdreKnap)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(10, 10, 10)
-                .addComponent(produktListe, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
-                .addContainerGap())
+                    .addComponent(varegruppe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void indsaetProduktIOrdreKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indsaetProduktIOrdreKnapActionPerformed
-//        for (int i = 0; i < listeAfProdukter.size(); i++) {
-//            if (listeAfProdukter.get(i).isChosen()) {
-//                listeAfProdukterTilOrdre.add(listeAfProdukter.get(i));
-//            }
-//        }
-//        if (listeAfProdukterTilOrdre.isEmpty()) {
-//            fortsaetKnap.setText("Spring over");
-//        }else {
-//            fortsaetKnap.setText("Videre");
-//        }
-    }//GEN-LAST:event_indsaetProduktIOrdreKnapActionPerformed
+    private void varegruppeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varegruppeActionPerformed
+    }//GEN-LAST:event_varegruppeActionPerformed
 
-    private void soegeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegeKnapActionPerformed
-//        listeAfProdukter.clear();
-//
-//        Controller controller = new Controller();
-//        controller.connSoegEfterProdukt(jTextField1.getText(), this);
-//
-//        jPanel1.removeAll();
-//        for (int i = 0; i < listeAfProdukter.size(); i++) {
-//            jPanel1.add(listeAfProdukter.get(i));
-//        }
-//        jPanel1.setPreferredSize(new Dimension(1272, jPanel1.getComponentCount() * 45));
-//        produktListe.revalidate();
-//        produktListe.repaint();
-    }//GEN-LAST:event_soegeKnapActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton indsaetProduktIOrdreKnap;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JScrollPane produktListe;
-    private javax.swing.JButton soegeKnap;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JComboBox varegruppe;
     // End of variables declaration//GEN-END:variables
 }

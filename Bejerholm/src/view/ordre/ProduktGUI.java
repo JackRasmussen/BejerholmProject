@@ -38,25 +38,15 @@ public class ProduktGUI extends javax.swing.JPanel {
         soegeKnap = new javax.swing.JButton();
         indsaetProduktIOrdreKnap = new javax.swing.JButton();
         fortsaetKnap = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(100, 100, 100));
 
-        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText(" Produktnavn:");
 
         produktListe.setBackground(new java.awt.Color(238, 238, 238));
         produktListe.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jPanel1.setBackground(new java.awt.Color(60, 60, 60));
         jPanel1.setForeground(new java.awt.Color(128, 128, 128));
         produktListe.setViewportView(jPanel1);
 
@@ -81,29 +71,6 @@ public class ProduktGUI extends javax.swing.JPanel {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel2.setText("VareID:");
-
-        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel3.setText("Navn:");
-
-        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel4.setText("Type:");
-
-        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel5.setText("Antal:");
-
-        jLabel6.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel6.setText("Længde:");
-
-        jLabel7.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel7.setText("Bredde:");
-
-        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel8.setText("Pris:");
-
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,43 +80,15 @@ public class ProduktGUI extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(produktListe)
                     .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(layout.createSequentialGroup()
-                                .add(10, 10, 10)
-                                .add(jLabel2)))
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(4, 4, 4)
-                                .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 167, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(layout.createSequentialGroup()
-                                .add(61, 61, 61)
-                                .add(jLabel3)))
+                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(4, 4, 4)
+                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 167, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(layout.createSequentialGroup()
-                                .add(soegeKnap)
-                                .add(18, 18, 18)
-                                .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(layout.createSequentialGroup()
-                                .add(jLabel4)
-                                .add(47, 47, 47)))
+                        .add(soegeKnap)
                         .add(18, 18, 18)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(indsaetProduktIOrdreKnap)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(fortsaetKnap))
-                            .add(layout.createSequentialGroup()
-                                .add(18, 18, 18)
-                                .add(jLabel5)
-                                .add(104, 104, 104)
-                                .add(jLabel6)
-                                .add(79, 79, 79)
-                                .add(jLabel7)
-                                .add(101, 101, 101)
-                                .add(jLabel8)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 363, Short.MAX_VALUE)))))
+                        .add(indsaetProduktIOrdreKnap)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 598, Short.MAX_VALUE)
+                        .add(fortsaetKnap)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -161,18 +100,8 @@ public class ProduktGUI extends javax.swing.JPanel {
                     .add(soegeKnap)
                     .add(indsaetProduktIOrdreKnap)
                     .add(fortsaetKnap)
-                    .add(jLabel1)
-                    .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel2)
-                    .add(jLabel3)
-                    .add(jLabel4)
-                    .add(jLabel5)
-                    .add(jLabel6)
-                    .add(jLabel7)
-                    .add(jLabel8))
-                .add(10, 10, 10)
+                    .add(jLabel1))
+                .add(30, 30, 30)
                 .add(produktListe, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -223,15 +152,7 @@ public class ProduktGUI extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fortsaetKnap;
     private javax.swing.JButton indsaetProduktIOrdreKnap;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JScrollPane produktListe;
