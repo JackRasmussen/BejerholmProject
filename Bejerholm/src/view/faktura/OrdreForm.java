@@ -268,42 +268,42 @@ public class OrdreForm extends javax.swing.JPanel {
         nyStenNrLabelNoChange.setText("Ny sten (nr.)     ");
         nyStenNrLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(nyStenNrLabelNoChange);
-        nyStenNrLabelNoChange.setBounds(10, 299, 79, 16);
+        nyStenNrLabelNoChange.setBounds(10, 299, 83, 18);
 
         tilfoejelseLabelNoChange.setText("Tilføjelse            ");
         tilfoejelseLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(tilfoejelseLabelNoChange);
-        tilfoejelseLabelNoChange.setBounds(10, 326, 80, 16);
+        tilfoejelseLabelNoChange.setBounds(10, 326, 88, 18);
 
         kisteUrneLabelNoChange.setText("Kiste / Urne       ");
         kisteUrneLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(kisteUrneLabelNoChange);
-        kisteUrneLabelNoChange.setBounds(10, 353, 79, 16);
+        kisteUrneLabelNoChange.setBounds(10, 353, 87, 18);
 
         afhDatoLabelNoChange.setText("Afh. dato     ");
         afhDatoLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(afhDatoLabelNoChange);
-        afhDatoLabelNoChange.setBounds(183, 299, 63, 16);
+        afhDatoLabelNoChange.setBounds(183, 299, 64, 18);
 
         levDatoLabelNoChange.setText("Lev. dato     ");
         levDatoLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(levDatoLabelNoChange);
-        levDatoLabelNoChange.setBounds(183, 326, 63, 16);
+        levDatoLabelNoChange.setBounds(183, 326, 66, 18);
 
         kirkegaardLabelNoChange.setText("Kirkegård:         ");
         kirkegaardLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(kirkegaardLabelNoChange);
-        kirkegaardLabelNoChange.setBounds(373, 299, 78, 16);
+        kirkegaardLabelNoChange.setBounds(373, 299, 85, 18);
 
         afdelingLabelNoChange.setText("Afdeling:           ");
         afdelingLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(afdelingLabelNoChange);
-        afdelingLabelNoChange.setBounds(373, 326, 78, 16);
+        afdelingLabelNoChange.setBounds(373, 326, 82, 18);
 
         raekkeOgNrLabelNoChange.setText("Række + Nr.:   ");
         raekkeOgNrLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(raekkeOgNrLabelNoChange);
-        raekkeOgNrLabelNoChange.setBounds(373, 353, 77, 16);
+        raekkeOgNrLabelNoChange.setBounds(373, 353, 82, 18);
 
         kundeNavnLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         kundeNavnLabel.setText(" ");
@@ -562,22 +562,22 @@ public class OrdreForm extends javax.swing.JPanel {
 
         samletPrisUMomsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         add(samletPrisUMomsLabel);
-        samletPrisUMomsLabel.setBounds(450, 740, 120, 0);
+        samletPrisUMomsLabel.setBounds(450, 740, 120, 20);
 
         momsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         add(momsLabel);
-        momsLabel.setBounds(450, 760, 120, 0);
+        momsLabel.setBounds(450, 760, 120, 20);
 
         totalPrisLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         add(totalPrisLabel);
-        totalPrisLabel.setBounds(450, 780, 120, 0);
+        totalPrisLabel.setBounds(450, 780, 120, 20);
 
         bemærkningerTextArea.setColumns(20);
         bemærkningerTextArea.setRows(5);
         jScrollPane1.setViewportView(bemærkningerTextArea);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(10, 740, 330, 96);
+        jScrollPane1.setBounds(10, 740, 330, 98);
 
         inskriptionArea.setColumns(20);
         inskriptionArea.setRows(5);

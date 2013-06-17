@@ -4,11 +4,16 @@
  */
 package control;
 
+import java.io.File;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import model.Bedemand;
 import model.Faktura;
 import model.KirkegaardsOrdre;
@@ -19,8 +24,11 @@ import model.Produkt;
 import model.Provisionsseddel;
 import model.Tilfoejelse;
 import model.database.DBConnection;
+import model.pdfWriter.PDFWriter;
 import view.BejerholmGUI;
 import view.OrdreRedigering;
+import view.faktura.FakturaForm;
+import view.faktura.OrdreForm;
 import view.ordre.BedemandGUI;
 import view.ordre.BestillingsOrdreGUI;
 import view.ordre.KirkegaardGUI;
@@ -298,8 +306,8 @@ public class Controller {
     public void connSoegEfterProdukt(String produktSoegeString, ProduktGUI pdg) {
         try {
             Produkt produkt = new Produkt();
-            for (Produkt produktIListe :
-                    produkt.soegEfterProdukt(produktSoegeString)) {
+            for (Produkt produktIListe
+                    : produkt.soegEfterProdukt(produktSoegeString)) {
                 pdg.foejTilListeAfProdukter(produktIListe.getProduktID(),
                         produktIListe.getProduktNavn(),
                         produktIListe.getProduktType(),
@@ -343,7 +351,7 @@ public class Controller {
             double totalPris, double rabat, int tlfNr,
             ArrayList<ProduktTilListe> listeAfProdukterIOrdre,
             ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre,
-            BestillingsOrdreGUI beg) {
+            BestillingsOrdreGUI beg, File destinationFile) {
         int status = 0;
         try {
             java.sql.Date bestillingsDato =
@@ -359,11 +367,15 @@ public class Controller {
                 connIndsaetProduktTilOrdre(ordre.getOrdreID(),
                         produktTilListe.getProduktID(), 1);
             }
-            for (TilfojelseTilListe tilfojelseTilListe :
-                    listeAfTilfoejelserTilOrdre) {
+            for (TilfojelseTilListe tilfojelseTilListe
+                    : listeAfTilfoejelserTilOrdre) {
                 connIndsaetTilfoejelseTilOrdre(ordre.getOrdreID(),
                         tilfojelseTilListe.getTilfoejelsesID(), 1);
             }
+            connLavPDFAfOrdre(bestillingsDatoUdenSQL, leveringsDatoUdenSQL,
+                    skrifttype, skriftStoerrelse, skriftStil, inskriptionsLinje,
+                    bemaerkninger, totalPris, rabat, tlfNr, listeAfProdukterIOrdre,
+                    listeAfTilfoejelserTilOrdre, beg, ordre, destinationFile);
             beg.fortaelBrugerAtOrdreOprettet(ordre.getOrdreID());
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null,
@@ -374,6 +386,74 @@ public class Controller {
         } catch (Exception ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null,
                     ex);
+        }
+    }
+
+    private void connLavPDFAfOrdre(Date bestillingsDatoUdenSQL,
+            Date leveringsDatoUdenSQL,
+            String skrifttype, int skriftStoerrelse, int skriftStil,
+            String inskriptionsLinje, String bemaerkninger,
+            double totalPris, double rabat, int tlfNr,
+            ArrayList<ProduktTilListe> listeAfProdukterIOrdre,
+            ArrayList<TilfojelseTilListe> listeAfTilfoejelserTilOrdre,
+            BestillingsOrdreGUI beg, Ordre ordre, File destinationFile) {
+        try {
+            Kunde kunde = new Kunde(tlfNr);
+
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String leveringsDato = sdf.format(leveringsDatoUdenSQL);
+            String bestillingsDato = sdf.format(bestillingsDatoUdenSQL);
+            int[] arrayAfAntal = new int[6];
+            String[] arrayAfNavne = new String[6];
+            String[] arrayAfPriser = new String[6];
+            for (int i = 5; i >= 0; i--) {
+                try {
+                    listeAfProdukterIOrdre.get(i);
+                    arrayAfAntal[i] = 1;
+                } catch (IndexOutOfBoundsException ex) {
+                    arrayAfAntal[i] = 0;
+                }
+            }
+            for (int i = 5; i >= 0; i--) {
+                try {
+                    listeAfProdukterIOrdre.get(i);
+                    arrayAfNavne[i] = listeAfProdukterIOrdre.get(i).getProduktNavn();
+                } catch (IndexOutOfBoundsException ex) {
+                    arrayAfNavne[i] = "";
+                }
+            }
+            for (int i = 5; i >= 0; i--) {
+                try {
+                    listeAfProdukterIOrdre.get(i);
+                    arrayAfPriser[i] = listeAfProdukterIOrdre.get(i).getSalgsPris() + "";
+                } catch (IndexOutOfBoundsException ex) {
+                    arrayAfPriser[i] = "";
+                }
+            }
+            OrdreForm ordreForm = new OrdreForm();
+            ordreForm.setVariables(kunde.getfNavn() + " " + kunde.geteNavn(),
+                    kunde.getAdresse(), kunde.getPostNr() + " " + kunde.getBy(),
+                    bestillingsDato, tlfNr + "", ordre.getOrdreID(), 0, "", "",
+                    null, leveringsDato, "", "", "", inskriptionsLinje, 0,
+                    skrifttype, arrayAfAntal[0], arrayAfAntal[1], arrayAfAntal[2],
+                    arrayAfAntal[3], arrayAfAntal[4], arrayAfAntal[5], beg.getAntalBogstaver(),
+                    arrayAfNavne[0], arrayAfNavne[1], arrayAfNavne[2], arrayAfNavne[3],
+                    arrayAfNavne[4], arrayAfNavne[5], "Indhugget bogstaver a' 65 kr.", arrayAfPriser[0], arrayAfPriser[1], arrayAfPriser[2],
+                    arrayAfPriser[3], arrayAfPriser[4], arrayAfPriser[5], beg.getBogstavsPris() + "", totalPris * 0.025 + "", bemaerkninger,
+                    totalPris + "", (totalPris * 0.25) + "",
+                    totalPris * 1.275 + "");
+            JFrame frame = new JFrame();
+            frame.setSize(595, 842);
+            frame.add(ordreForm);
+            frame.setVisible(true);
+            PDFWriter pdfw = new PDFWriter(ordreForm, destinationFile);
+            pdfw.writePDF();
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -573,8 +653,8 @@ public class Controller {
                 connIndsaetProduktTilOrdre(ordre.getOrdreID(),
                         produktTilListe.getProduktID(), 1);
             }
-            for (TilfojelseTilListe tilfojelseTilListe :
-                    listeAfTilfoejelserTilOrdre) {
+            for (TilfojelseTilListe tilfojelseTilListe
+                    : listeAfTilfoejelserTilOrdre) {
                 connIndsaetTilfoejelseTilOrdre(ordre.getOrdreID(),
                         tilfojelseTilListe.getTilfoejelsesID(), 1);
             }
@@ -697,8 +777,8 @@ public class Controller {
             TilfoejelseGUI tfg) {
         try {
             Tilfoejelse tilfoejelse = new Tilfoejelse();
-            for (Tilfoejelse tilfoejelseIListe :
-                    tilfoejelse.soegEfterTilfoejelse(soegeString)) {
+            for (Tilfoejelse tilfoejelseIListe
+                    : tilfoejelse.soegEfterTilfoejelse(soegeString)) {
                 tfg.foejTilListeAfTilfoejelser(tilfoejelseIListe.getTilfoejelsesID(),
                         tilfoejelseIListe.getTilfoejelsesType(),
                         tilfoejelseIListe.getTilfoejelsesPris());

@@ -1,9 +1,11 @@
 package view.ordre;
 
 import control.Controller;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import view.OrdreGUI;
 
@@ -22,6 +24,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     private int yearDelivery;
     private int monthDelivery;
     private int dayDelivery;
+    private final double BOGSTAV_PRIS = 65.0;
 
     public BestillingsOrdreGUI(OrdreGUI org) {
         this.ordreGUI = org;
@@ -54,7 +57,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
             totalPris = totalPris + tilfojelseTilListe.getPris();
         }
         if (!jTextField1.getText().isEmpty()) {
-            inskriptionsPris = Double.parseDouble(jTextField1.getText());
+            inskriptionsPris = Integer.parseInt(jTextField1.getText()) * BOGSTAV_PRIS;
         }
         totalPris = totalPris + inskriptionsPris;
         if (!jTextField4.getText().isEmpty()) {
@@ -62,7 +65,7 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
             totalPris = totalPris - rabat;
         }
         jTextField2.setText(totalPris + "");
-        double prisMedMoms = totalPris + ((totalPris / 100) * 25);
+        double prisMedMoms = totalPris + ((totalPris / 100) * 27.5);
         jTextField9.setText(prisMedMoms + "");
     }
 
@@ -245,6 +248,9 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextArea1KeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JFileChooser jfc = new JFileChooser();
+        if (jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+        File destinationFile = jfc.getSelectedFile();
         Controller controller = new Controller();
         Date bestilling = dato.getTime();
         Date levering = deliveryDato.getTime();
@@ -260,7 +266,8 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         ArrayList<ProduktTilListe> ptl = ordreGUI.getProduktGUI().getListeAfProdukterTilOrdre();
         ArrayList<TilfojelseTilListe> tfl = ordreGUI.getTilfoejelseGUI().getListeAfTilfoejelserTilOrdre();
 
-        controller.connGemOrdreIDatabase(bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl, this);
+        controller.connGemOrdreIDatabase(bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl, this, destinationFile);
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -291,4 +298,12 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+    public int getAntalBogstaver() {
+        return Integer.parseInt(jTextField1.getText());
+    }
+    
+    public double getBogstavsPris(){
+        return Integer.parseInt(jTextField1.getText()) * BOGSTAV_PRIS;
+    }
 }
