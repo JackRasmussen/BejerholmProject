@@ -1,6 +1,7 @@
 package view.ordre;
 
 import control.Controller;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.regex.Pattern;
 import javax.swing.JButton;
@@ -116,7 +117,7 @@ public class BedemandGUI extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(283, Short.MAX_VALUE)
+                .addContainerGap(407, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(fNavnLabel)
                     .add(soegKundeLabel)
@@ -136,12 +137,12 @@ public class BedemandGUI extends javax.swing.JPanel {
                         .add(opretBedemandKnap)
                         .add(soegKundeKnap))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, videreKnap))
-                .add(449, 449, 449))
+                .add(361, 361, 361))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .add(60, 60, 60)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(soegBedemandFelt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(soegKundeKnap)
@@ -166,7 +167,7 @@ public class BedemandGUI extends javax.swing.JPanel {
                 .add(opretBedemandKnap)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(videreKnap)
-                .add(24, 24, 24))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -190,6 +191,9 @@ public class BedemandGUI extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
+        ordreGUI.getBedemand().setBackground(new Color(240,240,240));
+        ordreGUI.getBprodukt().setBackground(new Color(150,150,150));
+        
     }//GEN-LAST:event_videreKnapActionPerformed
 
     private void adressFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adressFeltFocusGained

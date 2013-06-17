@@ -5,11 +5,16 @@
 package view.ordre;
 
 import control.Controller;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.regex.Pattern;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import view.LagerGUI;
 import view.OrdreGUI;
 
 /**
@@ -103,6 +108,11 @@ public class KundeGUI extends javax.swing.JPanel {
         });
 
         videreKnap.setText("Videre");
+        videreKnap.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                videreKnapMouseClicked(evt);
+            }
+        });
         videreKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 videreKnapActionPerformed(evt);
@@ -261,6 +271,9 @@ public class KundeGUI extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
+   
+        org.getProdukt().setBackground(new Color(150,150,150));
+        org.getKundeoplysninger().setBackground(new Color(240,240,240));
     }//GEN-LAST:event_videreKnapActionPerformed
 
     private void soegKundeKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soegKundeKnapActionPerformed
@@ -389,6 +402,9 @@ public class KundeGUI extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(this, "Et felt er tomt, eller et nummerfelt indeholder bogstaver!");
         }
+        org.getKundeoplysninger().setBackground(new Color(240,240,240));
+        org.getBedemand().setBackground(new Color(150,150,150));
+        
     }//GEN-LAST:event_bedemandKnapActionPerformed
 
     private void mobTlfFeltFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mobTlfFeltFocusGained
@@ -396,6 +412,10 @@ public class KundeGUI extends javax.swing.JPanel {
             mobTlfFelt.setText("");
         }
     }//GEN-LAST:event_mobTlfFeltFocusGained
+
+    private void videreKnapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_videreKnapMouseClicked
+
+    }//GEN-LAST:event_videreKnapMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressFelt;

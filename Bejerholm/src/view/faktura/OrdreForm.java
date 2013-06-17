@@ -17,6 +17,70 @@ public class OrdreForm extends javax.swing.JPanel {
         initComponents();
         bemærkningerTextArea.setEditable(false);
     }
+    
+    public void setVariables(String kundeNavnLabel, String kundeAdresseLabel, 
+            String kundePostOgByLabel, String datoLabelTilOrdrebekræftelse, 
+            String telefonLabelTilOrdrebekræftelse, int ordreNrLabelTilOrdrebekræftelse, 
+            int nyStenNrLabel, String tilfoejelseLabel, String kisteUrneLabel, 
+            String afhDatoLabel, String levDatoLabel, String kirkegaardLabel, 
+            String afdelingLabel, String raekkeNrLabel, String inskriptionArea, 
+            int antalNavneLabel, String skriftTypeLabel, int antaEtLabel, 
+            int antaToLabel, int antaTreLabel, int antaFireLabel, 
+            int antaFemLabel, int antaSeksLabel, int antaSyvLabel, 
+            String vareEtLabel, String vareToLabel, String vareTreLabel, 
+            String vareFireLabel, String vareFemLabel, String vareSeksLabel, 
+            String vareSyvLabel, String prisEtLabel, String prisToLabel, 
+            String prisTreLabel, String prisFireLabel, String prisFemLabel, 
+            String prisSeksLabel, String prisSyvLabel, String prisMiljøafgift, 
+            String bemærkningerTextArea, String samletPrisUMomsLabel, 
+            String momsLabel, String totalPrisLabel) {
+        
+        this.kundeNavnLabel.setText(kundeNavnLabel);
+        this.kundeAdresseLabel.setText(kundeAdresseLabel);
+        this.kundePostOgByLabel.setText(kundePostOgByLabel);
+        this.datoLabelTilOrdrebekræftelse.setText(datoLabelTilOrdrebekræftelse);
+        this.telefonLabelTilOrdrebekræftelse.setText(telefonLabelTilOrdrebekræftelse);
+        this.ordreNrLabelTilOrdrebekræftelse.setText(ordreNrLabelTilOrdrebekræftelse+"");
+        this.nyStenNrLabel.setText(nyStenNrLabel+"");
+        this.tilfoejelseLabel.setText(tilfoejelseLabel);
+        this.kisteUrneLabel.setText(kisteUrneLabel);
+        this.afhDatoLabel.setText(afhDatoLabel);
+        this.levDatoLabel.setText(levDatoLabel);
+        this.kirkegaardLabel.setText(kirkegaardLabel);
+        this.afdelingLabel.setText(afdelingLabel);
+        this.raekkeNrLabel.setText(raekkeNrLabel);
+        this.inskriptionArea.setText(inskriptionArea);
+        this.antalNavneLabel.setText(antalNavneLabel+"");
+        this.skriftTypeLabel.setText(skriftTypeLabel);
+        this.antaEtLabel.setText(antaEtLabel+"");
+        this.antaToLabel.setText(antaToLabel+"");
+        this.antaTreLabel.setText(antaTreLabel+"");
+        this.antaFireLabel.setText(antaFireLabel+"");
+        this.antaFemLabel.setText(antaFemLabel+"");
+        this.antaSeksLabel.setText(antaSeksLabel+"");
+        this.antaSyvLabel.setText(antaSyvLabel+"");
+        this.vareEtLabel.setText(vareEtLabel);
+        this.vareToLabel.setText(vareToLabel);
+        this.varetreLabel.setText(vareTreLabel);
+        this.vareFireLabel.setText(vareFireLabel);
+        this.vareFemLabel.setText(vareFemLabel);
+        this.vareSeksLabel.setText(vareSeksLabel);
+        this.vareSyvLabel.setText(vareSyvLabel);
+        this.prisEtLabel.setText(prisEtLabel);
+        this.prisToLabel.setText(prisToLabel);
+        this.prisTreLabel.setText(prisTreLabel);
+        this.prisFireLabel.setText(prisFireLabel);
+        this.prisFemLabel.setText(prisFemLabel);
+        this.prisSeksLabel.setText(prisSeksLabel);
+        this.prisSyvLabel.setText(prisSyvLabel);
+        this.prisMiljøafgift.setText(prisMiljøafgift);
+        this.bemærkningerTextArea.setText(bemærkningerTextArea);
+        this.samletPrisUMomsLabel.setText(samletPrisUMomsLabel);
+        this.momsLabel.setText(momsLabel);
+        this.totalPrisLabel.setText(totalPrisLabel);
+        
+    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,11 +129,6 @@ public class OrdreForm extends javax.swing.JPanel {
         afdelingLabel = new javax.swing.JLabel();
         raekkeNrLabel = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        inskriptionFørsteLinie = new javax.swing.JLabel();
-        inskriptionAndenLinie = new javax.swing.JLabel();
-        inskriptionTredjeLinie = new javax.swing.JLabel();
-        inskriptionFjerdeLinie = new javax.swing.JLabel();
-        inskriptionFemteLinie = new javax.swing.JLabel();
         pladsTilLabelNoChange = new javax.swing.JLabel();
         antalNavneLabel = new javax.swing.JLabel();
         navneLabelNoChange = new javax.swing.JLabel();
@@ -110,6 +169,8 @@ public class OrdreForm extends javax.swing.JPanel {
         totalPrisLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         bemærkningerTextArea = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        inskriptionArea = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -207,42 +268,42 @@ public class OrdreForm extends javax.swing.JPanel {
         nyStenNrLabelNoChange.setText("Ny sten (nr.)     ");
         nyStenNrLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(nyStenNrLabelNoChange);
-        nyStenNrLabelNoChange.setBounds(10, 299, 79, 16);
+        nyStenNrLabelNoChange.setBounds(10, 299, 83, 18);
 
         tilfoejelseLabelNoChange.setText("Tilføjelse            ");
         tilfoejelseLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(tilfoejelseLabelNoChange);
-        tilfoejelseLabelNoChange.setBounds(10, 326, 80, 16);
+        tilfoejelseLabelNoChange.setBounds(10, 326, 88, 18);
 
         kisteUrneLabelNoChange.setText("Kiste / Urne       ");
         kisteUrneLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(kisteUrneLabelNoChange);
-        kisteUrneLabelNoChange.setBounds(10, 353, 79, 16);
+        kisteUrneLabelNoChange.setBounds(10, 353, 87, 18);
 
         afhDatoLabelNoChange.setText("Afh. dato     ");
         afhDatoLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(afhDatoLabelNoChange);
-        afhDatoLabelNoChange.setBounds(183, 299, 63, 16);
+        afhDatoLabelNoChange.setBounds(183, 299, 64, 18);
 
         levDatoLabelNoChange.setText("Lev. dato     ");
         levDatoLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(levDatoLabelNoChange);
-        levDatoLabelNoChange.setBounds(183, 326, 63, 16);
+        levDatoLabelNoChange.setBounds(183, 326, 66, 18);
 
         kirkegaardLabelNoChange.setText("Kirkegård:         ");
         kirkegaardLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(kirkegaardLabelNoChange);
-        kirkegaardLabelNoChange.setBounds(373, 299, 78, 16);
+        kirkegaardLabelNoChange.setBounds(373, 299, 85, 18);
 
         afdelingLabelNoChange.setText("Afdeling:           ");
         afdelingLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(afdelingLabelNoChange);
-        afdelingLabelNoChange.setBounds(373, 326, 78, 16);
+        afdelingLabelNoChange.setBounds(373, 326, 82, 18);
 
         raekkeOgNrLabelNoChange.setText("Række + Nr.:   ");
         raekkeOgNrLabelNoChange.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(raekkeOgNrLabelNoChange);
-        raekkeOgNrLabelNoChange.setBounds(373, 353, 77, 16);
+        raekkeOgNrLabelNoChange.setBounds(373, 353, 82, 18);
 
         kundeNavnLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         kundeNavnLabel.setText(" ");
@@ -300,31 +361,6 @@ public class OrdreForm extends javax.swing.JPanel {
         add(jLabel38);
         jLabel38.setBounds(242, 387, 70, 14);
 
-        inskriptionFørsteLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        inskriptionFørsteLinie.setText("jLabel39");
-        add(inskriptionFørsteLinie);
-        inskriptionFørsteLinie.setBounds(242, 419, 54, 19);
-
-        inskriptionAndenLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        inskriptionAndenLinie.setText("jLabel40");
-        add(inskriptionAndenLinie);
-        inskriptionAndenLinie.setBounds(242, 439, 54, 19);
-
-        inskriptionTredjeLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        inskriptionTredjeLinie.setText("jLabel41");
-        add(inskriptionTredjeLinie);
-        inskriptionTredjeLinie.setBounds(242, 459, 54, 19);
-
-        inskriptionFjerdeLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        inskriptionFjerdeLinie.setText("jLabel42");
-        add(inskriptionFjerdeLinie);
-        inskriptionFjerdeLinie.setBounds(242, 479, 54, 19);
-
-        inskriptionFemteLinie.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        inskriptionFemteLinie.setText("jLabel43");
-        add(inskriptionFemteLinie);
-        inskriptionFemteLinie.setBounds(242, 499, 54, 19);
-
         pladsTilLabelNoChange.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         pladsTilLabelNoChange.setText("Plads til");
         add(pladsTilLabelNoChange);
@@ -343,10 +379,8 @@ public class OrdreForm extends javax.swing.JPanel {
         skrifttypeLabelNoChange.setText("Skrifttype:");
         add(skrifttypeLabelNoChange);
         skrifttypeLabelNoChange.setBounds(350, 531, 60, 14);
-
-        skriftTypeLabel.setText("jLabel48");
         add(skriftTypeLabel);
-        skriftTypeLabel.setBounds(456, 531, 40, 14);
+        skriftTypeLabel.setBounds(456, 531, 0, 0);
 
         antalLabelNoChange.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         antalLabelNoChange.setText("Antal:                            ");
@@ -527,26 +561,30 @@ public class OrdreForm extends javax.swing.JPanel {
         totalPrisLabelNoChange.setBounds(388, 780, 40, 14);
 
         samletPrisUMomsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        samletPrisUMomsLabel.setText("jLabel79");
         add(samletPrisUMomsLabel);
-        samletPrisUMomsLabel.setBounds(450, 740, 120, 14);
+        samletPrisUMomsLabel.setBounds(450, 740, 120, 20);
 
         momsLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        momsLabel.setText("jLabel80");
         add(momsLabel);
-        momsLabel.setBounds(450, 760, 120, 14);
+        momsLabel.setBounds(450, 760, 120, 20);
 
         totalPrisLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        totalPrisLabel.setText("jLabel81");
         add(totalPrisLabel);
-        totalPrisLabel.setBounds(450, 780, 120, 14);
+        totalPrisLabel.setBounds(450, 780, 120, 20);
 
         bemærkningerTextArea.setColumns(20);
         bemærkningerTextArea.setRows(5);
         jScrollPane1.setViewportView(bemærkningerTextArea);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(10, 740, 330, 96);
+        jScrollPane1.setBounds(10, 740, 330, 98);
+
+        inskriptionArea.setColumns(20);
+        inskriptionArea.setRows(5);
+        jScrollPane2.setViewportView(inskriptionArea);
+
+        add(jScrollPane2);
+        jScrollPane2.setBounds(40, 410, 490, 110);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -577,13 +615,10 @@ public class OrdreForm extends javax.swing.JPanel {
     private javax.swing.JLabel infoSyvLabel;
     private javax.swing.JLabel infoToLabel;
     private javax.swing.JLabel infoTreLabel;
-    private javax.swing.JLabel inskriptionAndenLinie;
-    private javax.swing.JLabel inskriptionFemteLinie;
-    private javax.swing.JLabel inskriptionFjerdeLinie;
-    private javax.swing.JLabel inskriptionFørsteLinie;
-    private javax.swing.JLabel inskriptionTredjeLinie;
+    private javax.swing.JTextArea inskriptionArea;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel kirkegaardLabel;
     private javax.swing.JLabel kirkegaardLabelNoChange;
     private javax.swing.JLabel kisteUrneLabel;

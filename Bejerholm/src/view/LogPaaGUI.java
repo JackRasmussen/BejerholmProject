@@ -150,6 +150,7 @@ public class LogPaaGUI extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Forkerte indstillinger eller forkert password, prøv venligst igen.", 
                     "Advarsel", JOptionPane.WARNING_MESSAGE);
         }
+      
     }//GEN-LAST:event_loginActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed

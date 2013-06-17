@@ -92,9 +92,9 @@ public class BejerholmGUI extends javax.swing.JPanel {
         });
 
         admin.setBackground(new java.awt.Color(136, 23, 6));
-        admin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        admin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         admin.setForeground(new java.awt.Color(255, 255, 255));
-        admin.setText("Tilpas lager");
+        admin.setText("Admin");
         admin.setToolTipText("");
         admin.setBorderPainted(false);
         admin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -253,7 +253,6 @@ public class BejerholmGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ordreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordreActionPerformed
-//        ((CardLayout) cards.getLayout()).show(cards, "OrdreGUI");
         skiftPanel("OrdreGUI");
 
     }//GEN-LAST:event_ordreActionPerformed
