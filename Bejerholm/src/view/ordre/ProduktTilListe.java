@@ -127,4 +127,8 @@ public class ProduktTilListe extends javax.swing.JPanel {
     public int getProduktID(){
         return Integer.parseInt(produktID.getText());
     }
+    
+    public String getProduktNavn(){
+        return produktNavnFelt.getText();
+    }
 }

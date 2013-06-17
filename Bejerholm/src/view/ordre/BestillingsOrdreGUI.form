@@ -314,6 +314,7 @@
         </Constraint>
       </Constraints>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -348,5 +349,7 @@
         </Constraint>
       </Constraints>
     </Component>
+=======
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
   </SubComponents>
 </Form>

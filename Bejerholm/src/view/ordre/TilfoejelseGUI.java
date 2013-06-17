@@ -43,6 +43,7 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
         produktListe = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         fortsaetKnap = new javax.swing.JButton();
+<<<<<<< HEAD
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,6 +56,13 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(100, 100, 100));
 
+=======
+
+        setBackground(new java.awt.Color(100, 100, 100));
+
+        jLabel1.setText("Tilføjelsestype:");
+
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
         soegeKnap.setText("Søg");
         soegeKnap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,8 +79,6 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
 
         produktListe.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         produktListe.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        jPanel1.setBackground(new java.awt.Color(60, 60, 60));
         produktListe.setViewportView(jPanel1);
 
         fortsaetKnap.setText("Spring over");
@@ -82,6 +88,7 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("Navn:");
 
@@ -117,6 +124,8 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
             }
         });
 
+=======
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,6 +135,7 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(produktListe)
                     .add(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(layout.createSequentialGroup()
                                 .add(10, 10, 10)
@@ -155,6 +165,17 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
                                 .add(jLabel8))
                             .add(fortsaetKnap))
                         .add(0, 289, Short.MAX_VALUE)))
+=======
+                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(4, 4, 4)
+                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 167, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(soegeKnap)
+                        .add(18, 18, 18)
+                        .add(indsaetProduktIOrdreKnap)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 599, Short.MAX_VALUE)
+                        .add(fortsaetKnap)))
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -165,6 +186,7 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
                     .add(soegeKnap)
                     .add(indsaetProduktIOrdreKnap)
                     .add(fortsaetKnap)
+<<<<<<< HEAD
                     .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton1))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -179,6 +201,11 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel2))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(produktListe, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
+=======
+                    .add(jLabel1))
+                .add(30, 30, 30)
+                .add(produktListe, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -228,6 +255,7 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
             fortsaetKnap.setText("Videre");
         }
     }//GEN-LAST:event_indsaetProduktIOrdreKnapActionPerformed
+<<<<<<< HEAD
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -259,6 +287,12 @@ public class TilfoejelseGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+=======
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton fortsaetKnap;
+    private javax.swing.JButton indsaetProduktIOrdreKnap;
+    private javax.swing.JLabel jLabel1;
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane produktListe;
     private javax.swing.JButton soegeKnap;

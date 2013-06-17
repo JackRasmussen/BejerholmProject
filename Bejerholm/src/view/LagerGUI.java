@@ -37,6 +37,7 @@ public class LagerGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
@@ -49,10 +50,16 @@ public class LagerGUI extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+=======
+        varegruppe = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
 
         setBackground(new java.awt.Color(100, 100, 100));
         setPreferredSize(new java.awt.Dimension(1280, 480));
 
+<<<<<<< HEAD
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("Navn:");
 
@@ -77,11 +84,23 @@ public class LagerGUI extends javax.swing.JPanel {
 
         soegeKnap.setText("Søg");
         soegeKnap.addActionListener(new java.awt.event.ActionListener() {
+=======
+        varegruppe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        varegruppe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                soegeKnapActionPerformed(evt);
+                varegruppeActionPerformed(evt);
             }
         });
 
+        jButton1.setText("Skift!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+<<<<<<< HEAD
         jLabel8.setForeground(new java.awt.Color(240, 240, 240));
         jLabel8.setText("Pris:");
 
@@ -98,12 +117,21 @@ public class LagerGUI extends javax.swing.JPanel {
             }
         });
 
+=======
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(534, 534, 534)
+                .addComponent(varegruppe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(615, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(produktListe)
                     .addGroup(layout.createSequentialGroup()
@@ -131,11 +159,15 @@ public class LagerGUI extends javax.swing.JPanel {
                         .addGap(101, 101, 101)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 426, Short.MAX_VALUE)))
+=======
+                .addComponent(jScrollPane2)
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soegeKnap)
@@ -177,6 +209,23 @@ public class LagerGUI extends javax.swing.JPanel {
         produktListe.revalidate();
         produktListe.repaint();
     }//GEN-LAST:event_soegeKnapActionPerformed
+=======
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(varegruppe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void varegruppeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varegruppeActionPerformed
+    }//GEN-LAST:event_varegruppeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         listeAfProdukter.clear();
@@ -195,6 +244,7 @@ public class LagerGUI extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+<<<<<<< HEAD
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -206,5 +256,9 @@ public class LagerGUI extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane produktListe;
     private javax.swing.JButton soegeKnap;
+=======
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JComboBox varegruppe;
+>>>>>>> a97dbf69963c103e96a8b97144608a25a58076f2
     // End of variables declaration//GEN-END:variables
 }
