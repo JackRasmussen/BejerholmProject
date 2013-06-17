@@ -1,6 +1,7 @@
 package view.ordre;
 
 import control.Controller;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -39,6 +40,18 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
 
         jTextField5.setText(day + " / " + month + " / " + year);
         jTextField3.setText(dayDelivery + " / " + monthDelivery + " / " + yearDelivery);
+        
+                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
+                    "1. VOLTA", "2. Volta", "3. Schwabacher",
+                    "4. HELVETICA", "5. Helvetica", "6. Murry Hill",
+                    "7. Kaligraphia", "8. Skriveskrift", "9. BASKERVILLE",
+                    "10. Baskerville", "11. Old English", "12. ANTIKVA",
+                    "13. TIME ROMAN", "14. Time Roman", "15. Black Chancery",
+                    "16. Andet"}));
+                
+                jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
+                    "Kursiv", "Fed", "Fed & Kursiv"
+                }));
     }
 
     public void opdaterPris() {
@@ -101,8 +114,6 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox();
@@ -126,11 +137,6 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         jLabel2.setBounds(40, 380, 100, 14);
 
         jTextField1.setText("0");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
         add(jTextField1);
         jTextField1.setBounds(200, 320, 100, 20);
 
@@ -224,14 +230,6 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         add(jTextField6);
         jTextField6.setBounds(460, 20, 120, 20);
 
-        jTextField7.setText("0");
-        add(jTextField7);
-        jTextField7.setBounds(460, 58, 120, 20);
-
-        jTextField8.setText("0");
-        add(jTextField8);
-        jTextField8.setBounds(460, 98, 120, 20);
-
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Pris m/ moms:");
         add(jLabel5);
@@ -243,11 +241,11 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1);
-        jComboBox1.setBounds(590, 60, 56, 20);
+        jComboBox1.setBounds(460, 60, 130, 20);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox2);
-        jComboBox2.setBounds(590, 100, 56, 20);
+        jComboBox2.setBounds(460, 100, 130, 20);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextArea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyReleased
@@ -263,9 +261,9 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         Controller controller = new Controller();
         Date bestilling = dato.getTime();
         Date levering = deliveryDato.getTime();
-        String skriftType = jTextField7.getText();
+        String skriftType = jComboBox1.getSelectedItem().toString();
         int skrifStoerrelse = Integer.parseInt(jTextField6.getText());
-        int skriftStil = Integer.parseInt(jTextField8.getText());
+        int skriftStil = jComboBox2.getSelectedIndex()+1;
         String inskriptionsLinje = jTextArea1.getText();
         String bemaerkninger = jTextArea3.getText();
         double totalPris = Double.parseDouble(jTextField2.getText());
@@ -276,12 +274,11 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
         ArrayList<TilfojelseTilListe> tfl = ordreGUI.getTilfoejelseGUI().getListeAfTilfoejelserTilOrdre();
 
         controller.connGemOrdreIDatabase(bestilling, levering, skriftType, skrifStoerrelse, skriftStil, inskriptionsLinje, bemaerkninger, totalPris, rabat, kundeTlf, ptl, tfl, this);
-
+        
+        ordreGUI.skiftOrdrePanel("KundeGUI");
+        ordreGUI.getOrdre().setBackground(new Color(240,240,240));
+        ordreGUI.getKundeoplysninger().setBackground(new Color(150,150,150));
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -309,8 +306,6 @@ public class BestillingsOrdreGUI extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

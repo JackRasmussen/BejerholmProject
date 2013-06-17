@@ -253,7 +253,6 @@ public class BejerholmGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ordreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordreActionPerformed
-//        ((CardLayout) cards.getLayout()).show(cards, "OrdreGUI");
         skiftPanel("OrdreGUI");
 
     }//GEN-LAST:event_ordreActionPerformed

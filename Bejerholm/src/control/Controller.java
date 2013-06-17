@@ -20,6 +20,7 @@ import model.Provisionsseddel;
 import model.Tilfoejelse;
 import model.database.DBConnection;
 import view.BejerholmGUI;
+import view.LagerGUI;
 import view.OrdreRedigering;
 import view.ordre.BedemandGUI;
 import view.ordre.BestillingsOrdreGUI;
@@ -240,9 +241,9 @@ public class Controller {
         }
     }
 
-    public void connSletProduktFraDatabase(String produktNavn) {
+    public void connSletProduktFraDatabase(int produktID) {
         try {
-            Produkt produkt = new Produkt(produktNavn);
+            Produkt produkt = new Produkt(produktID);
             produkt.sletProduktFraDatabase();
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null,
@@ -319,6 +320,29 @@ public class Controller {
         }
     }
 
+        public void connSoegEfterProdukt(String produktSoegeString, LagerGUI lag) {
+        try {
+            Produkt produkt = new Produkt();
+            for (Produkt produktIListe :
+                    produkt.soegEfterProdukt(produktSoegeString)) {
+                lag.foejTilListeAfProdukter(produktIListe.getProduktID(),
+                        produktIListe.getProduktNavn(),
+                        produktIListe.getProduktType(),
+                        produktIListe.getProduktAntal(),
+                        produktIListe.getMaalX(),
+                        produktIListe.getMaalY(), produktIListe.getSalgsPris());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null,
+                    ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null,
+                    ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null,
+                    ex);
+        }
+    }
     // Begynder connect til Ordre
     public void connHentOrdreFraDatabase(OrdreRedigering org, int ordreID) {
         try {

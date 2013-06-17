@@ -33,12 +33,12 @@ public class AdminGUI extends javax.swing.JPanel {
         cardsAdmin.add(avg);
 
         lagervare.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
-                    "Gravsten", "Bronze Dekorationer", "Granitplaner", "Fuglebade", "Granitvaser"
+                    "Gravsten", "Bronze Dekorationer", "Granitplaner", "Fuglebad", "Granitvaser"
                 }));
         ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(abg, "Bronze Dekorationer");
         ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(agg, "Gravsten");
         ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(apg, "Granitplaner");
-        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(afg, "Fuglebade");
+        ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(afg, "Fuglebad");
         ((CardLayout) cardsAdmin.getLayout()).addLayoutComponent(avg, "Granitvaser");
         skiftLagerPanel("Gravsten");
     }
@@ -63,6 +63,11 @@ public class AdminGUI extends javax.swing.JPanel {
         setBackground(new java.awt.Color(100, 100, 100));
 
         lagervare.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        lagervare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lagervareActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Skift!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +106,11 @@ public class AdminGUI extends javax.swing.JPanel {
         ((CardLayout) cardsAdmin.getLayout()).show(cardsAdmin, (String) lagervare.getSelectedItem());
         cardsAdmin.setSize(1280, 480);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void lagervareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lagervareActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lagervareActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardsAdmin;
     private javax.swing.JButton jButton1;

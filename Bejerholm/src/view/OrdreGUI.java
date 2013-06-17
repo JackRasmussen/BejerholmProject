@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JButton;
 import view.ordre.BedemandGUI;
 import view.ordre.BestillingsOrdreGUI;
 import view.ordre.KirkegaardGUI;
@@ -30,8 +32,10 @@ public class OrdreGUI extends javax.swing.JPanel {
         pdg = new ProduktGUI(this);
         tfg = new TilfoejelseGUI(this);
         kirkegaardsOrdre = false;
+        
 
         initComponents();
+        kundeoplysninger.setBackground(new Color(150,150,150));
         cardsOrdre.add(kg);
         cardsOrdre.add(beg);
         cardsOrdre.add(bog);
@@ -47,13 +51,13 @@ public class OrdreGUI extends javax.swing.JPanel {
         ((CardLayout) cardsOrdre.getLayout()).addLayoutComponent(tfg, "TilfoejelseGUI");
 
         skiftOrdrePanel("KundeGUI");
-        jButton1.setVisible(false);
-        jButton2.setVisible(false);
-        jButton4.setVisible(false);
-        jButton5.setVisible(false);
-        jButton6.setVisible(false);
-        jButton7.setVisible(false);
-        jButton8.setVisible(false);
+        bedemand.setVisible(false);
+        ordre.setVisible(false);
+        produkt.setVisible(false);
+        kirkegarrd.setVisible(false);
+        tilføjelser.setVisible(false);
+        bprodukt.setVisible(false);
+        btilføjelser.setVisible(false);
     }
 
     public void skiftOrdrePanel(String jp) {
@@ -67,16 +71,16 @@ public class OrdreGUI extends javax.swing.JPanel {
     }
     
     public void setKirkegaardsGrenVisibility(boolean newValue){
-        jButton1.setVisible(newValue);
-        jButton5.setVisible(newValue);
-        jButton7.setVisible(newValue);
-        jButton8.setVisible(newValue);
+        bedemand.setVisible(newValue);
+        kirkegarrd.setVisible(newValue);
+        bprodukt.setVisible(newValue);
+        btilføjelser.setVisible(newValue);
     }
     
     public void setOrdreGrenVisibility(boolean newValue){
-        jButton2.setVisible(newValue);
-        jButton4.setVisible(newValue);
-        jButton6.setVisible(newValue);
+        ordre.setVisible(newValue);
+        produkt.setVisible(newValue);
+        tilføjelser.setVisible(newValue);
     }
 
     /**
@@ -89,73 +93,73 @@ public class OrdreGUI extends javax.swing.JPanel {
     private void initComponents() {
 
         cardsOrdre = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        ordre = new javax.swing.JButton();
+        kundeoplysninger = new javax.swing.JButton();
+        bedemand = new javax.swing.JButton();
+        produkt = new javax.swing.JButton();
+        kirkegarrd = new javax.swing.JButton();
+        tilføjelser = new javax.swing.JButton();
+        bprodukt = new javax.swing.JButton();
+        btilføjelser = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(100, 100, 100));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         cardsOrdre.setLayout(new java.awt.CardLayout());
 
-        jButton2.setText("Ordre");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ordre.setText("Ordre");
+        ordre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ordreActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Kundeoplysninger");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        kundeoplysninger.setText("Kundeoplysninger");
+        kundeoplysninger.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                kundeoplysningerActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Bedemand");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bedemand.setText("Bedemand");
+        bedemand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bedemandActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Produkt");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        produkt.setText("Produkt");
+        produkt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                produktActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Kirkegårds Ordre");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        kirkegarrd.setText("Kirkegårds Ordre");
+        kirkegarrd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                kirkegarrdActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Tilføjelser");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        tilføjelser.setText("Tilføjelser");
+        tilføjelser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                tilføjelserActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Produkt");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        bprodukt.setText("Produkt");
+        bprodukt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                bproduktActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Tilføjelser");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btilføjelser.setText("Tilføjelser");
+        btilføjelser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btilføjelserActionPerformed(evt);
             }
         });
 
@@ -166,14 +170,14 @@ public class OrdreGUI extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ordre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(kundeoplysninger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bedemand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(produkt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(kirkegarrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tilføjelser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bprodukt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btilføjelser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(46, 46, 46)
                 .addComponent(cardsOrdre, javax.swing.GroupLayout.DEFAULT_SIZE, 1101, Short.MAX_VALUE))
         );
@@ -181,67 +185,131 @@ public class OrdreGUI extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
+                .addComponent(kundeoplysninger)
                 .addGap(100, 100, 100)
-                .addComponent(jButton4)
+                .addComponent(produkt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
+                .addComponent(tilføjelser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(ordre)
                 .addGap(100, 100, 100)
-                .addComponent(jButton1)
+                .addComponent(bedemand)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
+                .addComponent(bprodukt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
+                .addComponent(btilføjelser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(kirkegarrd)
                 .addContainerGap(61, Short.MAX_VALUE))
             .addComponent(cardsOrdre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ordreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordreActionPerformed
         skiftOrdrePanel("BestillingsOrdreGUI");
-    }//GEN-LAST:event_jButton2ActionPerformed
+        getProdukt().setBackground(new Color(240,240,240));
+        getTilføjelser().setBackground(new Color(240,240,240));
+        getOrdre().setBackground(new Color(150,150,150));
+        getBprodukt().setBackground(new Color(240,240,240));
+        getBtilføjelser().setBackground(new Color(240,240,240));
+        getKirkegarrd().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(240,240,240));
+        getKundeoplysninger().setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_ordreActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void kundeoplysningerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kundeoplysningerActionPerformed
         skiftOrdrePanel("KundeGUI");
-    }//GEN-LAST:event_jButton3ActionPerformed
+        getProdukt().setBackground(new Color(240,240,240));
+        getTilføjelser().setBackground(new Color(240,240,240));
+        getOrdre().setBackground(new Color(240,240,240));
+        getBprodukt().setBackground(new Color(240,240,240));
+        getBtilføjelser().setBackground(new Color(240,240,240));
+        getKirkegarrd().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(240,240,240));
+        getKundeoplysninger().setBackground(new Color(150,150,150));
+    }//GEN-LAST:event_kundeoplysningerActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bedemandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedemandActionPerformed
         skiftOrdrePanel("BedemandGUI");
-    }//GEN-LAST:event_jButton1ActionPerformed
+        getProdukt().setBackground(new Color(240,240,240));
+        getTilføjelser().setBackground(new Color(240,240,240));
+        getOrdre().setBackground(new Color(240,240,240));
+        getBprodukt().setBackground(new Color(240,240,240));
+        getBtilføjelser().setBackground(new Color(240,240,240));
+        getKirkegarrd().setBackground(new Color(240,240,240));
+        getKundeoplysninger().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(150,150,150));
+    }//GEN-LAST:event_bedemandActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void produktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produktActionPerformed
         skiftOrdrePanel("ProduktGUI");
-    }//GEN-LAST:event_jButton4ActionPerformed
+        getProdukt().setBackground(new Color(150,150,150));
+        getTilføjelser().setBackground(new Color(240,240,240));
+        getOrdre().setBackground(new Color(240,240,240));
+        getBprodukt().setBackground(new Color(240,240,240));
+        getBtilføjelser().setBackground(new Color(240,240,240));
+        getKirkegarrd().setBackground(new Color(240,240,240));
+        getKundeoplysninger().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_produktActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void tilføjelserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjelserActionPerformed
         skiftOrdrePanel("TilfoejelseGUI");
-    }//GEN-LAST:event_jButton6ActionPerformed
+        getProdukt().setBackground(new Color(240,240,240));
+        getTilføjelser().setBackground(new Color(150,150,150));
+        getOrdre().setBackground(new Color(240,240,240));
+        getBprodukt().setBackground(new Color(240,240,240));
+        getBtilføjelser().setBackground(new Color(240,240,240));
+        getKirkegarrd().setBackground(new Color(240,240,240));
+        getKundeoplysninger().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_tilføjelserActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void kirkegarrdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kirkegarrdActionPerformed
         skiftOrdrePanel("KirkegaardGUI");
-    }//GEN-LAST:event_jButton5ActionPerformed
+        getProdukt().setBackground(new Color(240,240,240));
+        getTilføjelser().setBackground(new Color(240,240,240));
+        getOrdre().setBackground(new Color(240,240,240));
+        getBprodukt().setBackground(new Color(240,240,240));
+        getBtilføjelser().setBackground(new Color(240,240,240));
+        getKirkegarrd().setBackground(new Color(150,150,150));
+        getKundeoplysninger().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_kirkegarrdActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void bproduktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bproduktActionPerformed
         skiftOrdrePanel("ProduktGUI");
-    }//GEN-LAST:event_jButton7ActionPerformed
+        getProdukt().setBackground(new Color(240,240,240));
+        getTilføjelser().setBackground(new Color(240,240,240));
+        getOrdre().setBackground(new Color(240,240,240));
+        getBprodukt().setBackground(new Color(150,150,150));
+        getBtilføjelser().setBackground(new Color(240,240,240));
+        getKirkegarrd().setBackground(new Color(240,240,240));
+        getKundeoplysninger().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_bproduktActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btilføjelserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btilføjelserActionPerformed
         skiftOrdrePanel("TilfoejelseGUI");
-    }//GEN-LAST:event_jButton8ActionPerformed
+        getProdukt().setBackground(new Color(240,240,240));
+        getTilføjelser().setBackground(new Color(240,240,240));
+        getOrdre().setBackground(new Color(240,240,240));
+        getBprodukt().setBackground(new Color(240,240,240));
+        getBtilføjelser().setBackground(new Color(150,150,150));
+        getKirkegarrd().setBackground(new Color(240,240,240));
+        getKundeoplysninger().setBackground(new Color(240,240,240));
+        getBedemand().setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_btilføjelserActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bedemand;
+    private javax.swing.JButton bprodukt;
+    private javax.swing.JButton btilføjelser;
     private javax.swing.JPanel cardsOrdre;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton kirkegarrd;
+    private javax.swing.JButton kundeoplysninger;
+    private javax.swing.JButton ordre;
+    private javax.swing.JButton produkt;
+    private javax.swing.JButton tilføjelser;
     // End of variables declaration//GEN-END:variables
 
     public KundeGUI getKundeGUI() {
@@ -266,5 +334,37 @@ public class OrdreGUI extends javax.swing.JPanel {
 
     public void setKirkegaardsOrdre(boolean kirkegaardsOrdre) {
         this.kirkegaardsOrdre = kirkegaardsOrdre;
+    }
+
+    public JButton getBedemand() {
+        return bedemand;
+    }
+
+    public JButton getBprodukt() {
+        return bprodukt;
+    }
+
+    public JButton getBtilføjelser() {
+        return btilføjelser;
+    }
+
+    public JButton getKirkegarrd() {
+        return kirkegarrd;
+    }
+
+    public JButton getOrdre() {
+        return ordre;
+    }
+
+    public JButton getProdukt() {
+        return produkt;
+    }
+
+    public JButton getTilføjelser() {
+        return tilføjelser;
+    }
+
+    public JButton getKundeoplysninger() {
+        return kundeoplysninger;
     }
 }
